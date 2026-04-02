@@ -1,0 +1,56 @@
+.hero {
+  height: 50svh;
+  min-height: 280px;
+  background: linear-gradient(135deg, $color-secondary 0%, $color-secondary-light 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 $spacing-lg;
+}
+
+.heroContent {
+  max-width: 720px;
+}
+
+.heroTitle {
+  font-family: $font-family-heading;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: $color-white;
+  margin-bottom: $spacing-lg;
+
+  @include respond-to('tablet') {
+    font-size: $font-size-2xl;
+  }
+}
+
+.heroSubtitle {
+  font-size: $font-size-lg;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: $line-height-base;
+}
+
+.section {
+  @include section-padding;
+  background: $color-bg;
+}
+
+.container {
+  @include container;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-lg;
+
+  @include respond-to('desktop') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to('tablet') {
+    grid-template-columns: 1fr;
+  }
+}
+

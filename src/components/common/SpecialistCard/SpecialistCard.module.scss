@@ -1,0 +1,105 @@
+.card {
+  display: flex;
+  gap: $spacing-lg;
+  background: $color-bg;
+  border-radius: $border-radius-lg;
+  padding: $spacing-xl;
+  border-left: 4px solid $color-primary;
+  transition: box-shadow $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-md;
+  }
+
+  @include respond-to('mobile') {
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+}
+
+// ── Photo ──────────────────────────────────────────────────────────────────
+.photo {
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background: $color-secondary;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.photoPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, $color-secondary, $color-secondary-light);
+
+  svg {
+    width: 100%;
+    height: 100%;
+    padding: $spacing-sm;
+  }
+}
+
+// ── Sizes ──────────────────────────────────────────────────────────────────
+.card {
+  &.sm .photo {
+    width: 80px;
+    height: 80px;
+  }
+
+  &.md .photo {
+    width: 120px;
+    height: 120px;
+
+    @include respond-to('tablet') {
+      width: 80px;
+      height: 80px;
+    }
+  }
+}
+
+// ── Info ───────────────────────────────────────────────────────────────────
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  flex: 1;
+}
+
+.titlePrefix {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  font-style: italic;
+}
+
+.name {
+  font-family: $font-family-heading;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text;
+  margin: 0;
+}
+
+.role {
+  font-size: $font-size-base;
+  color: $color-primary;
+  font-weight: $font-weight-medium;
+}
+
+.bio {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $color-text-light;
+  margin: $spacing-sm 0 0;
+}
+
+.action {
+  margin-top: $spacing-md;
+  align-self: flex-start;
+}

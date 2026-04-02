@@ -1,0 +1,112 @@
+.about {
+  background: $color-white;
+  @include section-padding;
+}
+
+.container {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4xl;
+}
+
+// ── Subsection ──────────────────────────────────────────────
+.subsection {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2xl;
+}
+
+.headerWrap {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.label {
+  font-size: $font-size-sm;
+  color: $color-primary;
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.heading {
+  font-family: $font-family-heading;
+  // font-size: clamp(2.4rem, 6vw, 6.5rem);
+    font-size: clamp(1.6rem, 3.8vw, 4.2rem);
+
+  font-weight: 300;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: $color-text;
+  line-height: 1.0;
+  padding-bottom: 0.06em;
+}
+
+// ── Wave (identyczne z Hero/Team/Offer) ──────────────────────
+.waveWrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.waveChar {
+  display: inline-block;
+  animation: slideUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 1 both;
+}
+
+@keyframes slideUp {
+  0%   { transform: translateY(110%); }
+  100% { transform: translateY(0); }
+}
+
+// ── Founders layout ─────────────────────────────────────────
+.foundersLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-3xl;
+  align-items: start;
+
+  @include respond-to('desktop') {
+    grid-template-columns: 1fr;
+    gap: $spacing-2xl;
+  }
+}
+
+.foundersIntro {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xl;
+}
+
+.introText {
+  font-size: $font-size-lg;
+  line-height: $line-height-base;
+  color: $color-text-light;
+}
+
+// ── Founders cards ───────────────────────────────────────────
+.foundersCards {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+// ── Cabinet layout ───────────────────────────────────────────
+.cabinetLayout {
+  background: $color-accent-blue;
+  border-radius: $border-radius-lg;
+  padding: $spacing-2xl;
+
+  @include respond-to('tablet') {
+    padding: $spacing-xl;
+  }
+}
+
+.cabinetText {
+  font-size: $font-size-lg;
+  line-height: $line-height-base;
+  color: $color-text-light;
+  max-width: 800px;
+}

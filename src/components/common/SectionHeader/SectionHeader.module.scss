@@ -1,0 +1,19 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.header {
+  text-align: center;
+  margin-bottom: $spacing-3xl;
+}
+
+.title {
+  @include section-title;
+}
+
+.subtitle {
+  font-size: $font-size-base;
+  color: $color-text-muted;
+  max-width: 600px;
+  margin: $spacing-md auto 0;
+  line-height: $line-height-base;
+}

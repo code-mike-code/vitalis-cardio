@@ -1,0 +1,372 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.offer {
+  @include section-padding;
+  background: $color-white;
+  overflow: hidden;
+}
+
+.container {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4xl;
+}
+
+// ── Heading (Hero-style) ──────────────────────────────────────────
+
+.headingWrap {
+  width: 100%;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: $spacing-xs;
+  color: $color-text;
+}
+
+.headingRow {
+  display: flex;
+  align-items: baseline;
+  gap: $spacing-md;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.row1 { justify-content: flex-start; }
+.row2 { justify-content: center; }
+.row3 { justify-content: flex-end; }
+
+.mobileOnly {
+  display: none;
+  @include respond-to('tablet') { display: inline-flex; }
+}
+
+.desktopOnly {
+  @include respond-to('tablet') { display: none; }
+}
+
+.textLarge {
+  font-family: $font-family-heading;
+  font-size: clamp(1.6rem, 3.8vw, 4.2rem);
+  font-weight: 300;
+  letter-spacing: 0.10em;
+  line-height: 1.0;
+  text-transform: uppercase;
+}
+
+.textSmall {
+  font-family: $font-family-heading;
+  font-size: clamp(0.9rem, 1.9vw, 2.1rem);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  line-height: 1.0;
+  text-transform: uppercase;
+}
+
+.waveWrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.waveChar {
+  display: inline-block;
+  animation: slideUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) 1 both;
+}
+
+@keyframes slideUp {
+  0%   { transform: translateY(110%); }
+  100% { transform: translateY(0); }
+}
+
+// ── Obszary usług ─────────────────────────────────────────────────
+
+.areas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $spacing-lg;
+
+  @include respond-to('desktop') { grid-template-columns: repeat(2, 1fr); }
+  @include respond-to('mobile')  { grid-template-columns: 1fr; }
+}
+
+.areaCard {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  transition: box-shadow $transition-base, transform $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-3px);
+
+    .areaImagePlaceholder { background: $color-accent-blue; }
+    .areaIconPlaceholder  { color: $color-primary; }
+  }
+}
+
+.areaImageWrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.areaImagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background: $color-accent-blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background $transition-base;
+}
+
+.areaIconPlaceholder {
+  width: 56px;
+  height: 56px;
+  color: $color-secondary;
+  transition: color $transition-base;
+  svg { width: 100%; height: 100%; }
+}
+
+.areaContent {
+  padding: $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  flex: 1;
+}
+
+.areaTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text;
+}
+
+.areaDesc {
+  font-size: $font-size-sm;
+  color: $color-text-light;
+  line-height: $line-height-base;
+}
+
+// ── Cennik — sekcja z wideo tłem ──────────────────────────────────
+
+.pricingSection {
+  position: relative;
+  border-radius: $border-radius-xl;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+// Wideo tło — wyłączone z flow, pokrywa cały kontener
+.pricingVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  // Domyślny fallback gdy wideo się nie załaduje — ciemny kolor marki
+  background: $color-bg-dark;
+}
+
+// Gradient overlay: ciemny niebieski → akcent czerwony
+.pricingOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 35, 50, 0.92) 0%,
+    rgba(26, 35, 50, 0.82) 55%,
+    rgba(196, 30, 58, 0.30) 100%
+  );
+}
+
+// Treść nad wideo i overlayem
+.pricingContent {
+  position: relative;
+  z-index: 2;
+  padding: $spacing-4xl $spacing-3xl;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2xl;
+
+  @include respond-to('tablet') {
+    padding: $spacing-3xl $spacing-xl;
+  }
+
+  @include respond-to('mobile') {
+    padding: $spacing-2xl $spacing-md;
+    gap: $spacing-xl;
+  }
+}
+
+.pricingHeader {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.pricingLabel {
+  font-size: $font-size-sm;
+  color: $color-primary-light;
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pricingHeading {
+  font-family: $font-family-heading;
+  font-size: clamp(1.6rem, 3.5vw, 3.8rem);
+  font-weight: 300;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: $color-white;
+  line-height: 1.0;
+}
+
+.pricingCtaWrap {
+  display: flex;
+}
+
+// ── Accordion ─────────────────────────────────────────────────────
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.accordionItem {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.accordionTrigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-lg 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: $spacing-md;
+  color: $color-white;
+
+  // Na hover: strzałka animuje się do pozycji poziomej
+  &:hover .accordionArrow {
+    transform: rotate(0deg);
+  }
+}
+
+// ── Tytuł z efektem wave na hover ────────────────────────────────
+
+.accordionTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-white;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+// Clip-wrapper dla każdego znaku (żeby animacja wychodziła spod podstawy)
+.titleCharClip {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  // Trochę miejsca żeby dolne literki nie były ucięte
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+
+// Domyślny stan znaku (bez animacji)
+.titleChar {
+  display: inline-block;
+}
+
+// Animowany stan znaku (na hover triggera)
+.titleCharWave {
+  display: inline-block;
+  animation: titleSlideUp 0.4s cubic-bezier(0.22, 1, 0.36, 1) 1 both;
+}
+
+@keyframes titleSlideUp {
+  0%   { transform: translateY(110%); }
+  100% { transform: translateY(0); }
+}
+
+// ── Strzałka accordiona ───────────────────────────────────────────
+
+.accordionArrow {
+  flex-shrink: 0;
+  font-size: $font-size-xl;
+  color: $color-white;
+  display: inline-block;
+  // Domyślnie: strzałka skierowana 45° w górę (↗)
+  transform: rotate(-45deg);
+  transition: transform $transition-base;
+  line-height: 1;
+  // Obrót gdy item jest otwarty
+  .open & {
+    transform: rotate(0deg);
+  }
+}
+
+// ── Accordion body — poprawiony collaps ───────────────────────────
+// Technika: grid-template-rows 0fr→1fr + overflow:hidden na dziecku
+
+.accordionBody {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows $transition-base;
+
+  .open & {
+    grid-template-rows: 1fr;
+  }
+}
+
+// KLUCZOWE: overflow:hidden musi być na bezpośrednim dziecku grida
+.accordionBodyInner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.priceList {
+  list-style: none;
+  padding-bottom: $spacing-lg;
+}
+
+.priceItem {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: $spacing-md;
+  padding: $spacing-sm 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+
+  &:last-child { border-bottom: none; }
+}
+
+.priceName {
+  font-size: $font-size-sm;
+  color: rgba(255, 255, 255, 0.75);
+  flex: 1;
+}
+
+.priceValue {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-primary-light;
+  white-space: nowrap;
+}

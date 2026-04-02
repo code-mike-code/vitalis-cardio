@@ -1,0 +1,431 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+// ── Sekcja ────────────────────────────────────────────────────────
+
+.section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: $spacing-4xl 0;
+
+  @include respond-to('tablet') {
+    padding: $spacing-3xl 0;
+  }
+}
+
+// ── Wideo tło ─────────────────────────────────────────────────────
+
+.videoBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  background: $color-bg-dark;
+  will-change: transform;
+}
+
+// ── Gradient overlay ──────────────────────────────────────────────
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    160deg,
+    rgba(26, 35, 50, 0.96)  0%,
+    rgba(20, 26, 40, 0.90)  45%,
+    rgba(26, 35, 50, 0.88)  70%,
+    rgba(196, 30, 58, 0.22) 100%
+  );
+}
+
+// ── Treść (nad wideo) ─────────────────────────────────────────────
+
+.inner {
+  position: relative;
+  z-index: 2;
+  @include container;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-2xl;
+
+  @include respond-to('tablet') {
+    gap: $spacing-xl;
+  }
+}
+
+// ── Nagłówek ─────────────────────────────────────────────────────
+
+.headerWrap {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.label {
+  font-size: $font-size-sm;
+  color: $color-primary-light;
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  font-family: $font-family-heading;
+  font-size: clamp(1.6rem, 3.8vw, 4.2rem);
+  font-weight: 300;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: $color-white;
+  line-height: 1.05;
+  // Clip potrzebny dla waveWrap
+  padding-bottom: 0.06em;
+}
+
+.headingLine {
+  display: block;
+  overflow: hidden; // clip dla waveWrap dzieci
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+
+// Wave — identyczne z Hero/Offer/Team
+.waveWrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.waveChar {
+  display: inline-block;
+  animation: slideUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 1 both;
+}
+
+@keyframes slideUp {
+  0%   { transform: translateY(110%); }
+  100% { transform: translateY(0); }
+}
+
+// ── Karuzela ─────────────────────────────────────────────────────
+
+.carouselWrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+
+  @include respond-to('tablet') { gap: $spacing-md; }
+  @include respond-to('mobile') { gap: $spacing-sm; }
+}
+
+// Viewport: overflow hidden, flex: 1 — tu mierzymy slideW
+.viewport {
+  flex: 1;
+  overflow: hidden;
+  min-width: 0;
+  cursor: grab;
+  // Blokuj zaznaczanie tekstu podczas dragu
+  user-select: none;
+  -webkit-user-select: none;
+  // Blokuj natywny scroll przeglądarki podczas przesuwania poziomego
+  touch-action: pan-y;
+}
+
+.viewportDragging {
+  cursor: grabbing;
+}
+
+// Track: szerokość ustawiana inline (slideW * SLIDES.length),
+// transform ustawiany inline (translateX)
+.track {
+  display: flex;
+  // NIE ustawiaj overflow: hidden tutaj — to rola viewportu
+  will-change: transform;
+}
+
+// Każdy slajd: szerokość ustawiana inline (slideW px)
+.slide {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  padding: 0 $spacing-md;
+
+  @include respond-to('mobile') {
+    padding: 0 $spacing-sm;
+  }
+}
+
+// Aktywny slajd
+.slideActive {
+  .card {
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+}
+
+// Nieaktywne slajdy — wyszarzone, bez interakcji
+.slideInactive {
+  pointer-events: none;
+
+  .card {
+    opacity: 0.30;
+    transform: scale(0.97);
+    border-color: transparent;
+  }
+}
+
+// ── Karta recenzji ────────────────────────────────────────────────
+
+.card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: $border-radius-xl;
+  padding: $spacing-3xl $spacing-2xl $spacing-2xl;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  min-height: 380px;
+  transition: opacity $transition-base, transform $transition-base, border-color $transition-base;
+  -webkit-user-drag: none;
+
+  @include respond-to('tablet') {
+    padding: $spacing-2xl $spacing-xl $spacing-xl;
+    min-height: 320px;
+  }
+
+  @include respond-to('mobile') {
+    padding: $spacing-xl $spacing-lg $spacing-lg;
+    min-height: 280px;
+  }
+}
+
+// Cudzysłów dekoracyjny — duży, subtelny
+.quoteIcon {
+  position: absolute;
+  top: $spacing-xl;
+  right: $spacing-2xl;
+  font-family: Georgia, serif;
+  font-size: 16rem;
+  line-height: 0.75;
+  color: rgba(255, 255, 255, 0.07);
+  user-select: none;
+  pointer-events: none;
+
+  @include respond-to('tablet') {
+    font-size: 11rem;
+    top: $spacing-lg;
+    right: $spacing-xl;
+  }
+
+  @include respond-to('mobile') {
+    font-size: 8rem;
+    top: $spacing-md;
+    right: $spacing-lg;
+  }
+}
+
+.text {
+  font-size: clamp($font-size-base, 1.1vw, $font-size-lg);
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.7;
+  flex: 1;
+  margin: 0;
+  quotes: none;
+  // Zapobiegaj inicjowaniu dragu przez zaznaczanie tekstu
+  pointer-events: none;
+
+  @include respond-to('tablet') {
+    font-size: $font-size-base;
+  }
+}
+
+// ── Stopka karty ─────────────────────────────────────────────────
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  padding-top: $spacing-md;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  pointer-events: none;
+}
+
+.avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: $color-secondary;
+  @include flex-center;
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatarInitials {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  color: $color-white;
+  letter-spacing: 0.02em;
+}
+
+.authorInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.authorName {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-white;
+}
+
+.authorDate {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+  color: #F5C842;
+  flex-shrink: 0;
+}
+
+.starSvg {
+  width: 16px;
+  height: 16px;
+}
+
+// ── Strzałki ─────────────────────────────────────────────────────
+
+.arrow {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+  @include flex-center;
+  transition: background $transition-fast, border-color $transition-fast;
+  color: $color-white;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.45);
+  }
+
+  @include respond-to('mobile') {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.arrowIcon {
+  display: inline-block;
+  line-height: 1;
+  font-size: $font-size-xl;
+  transition: transform $transition-base;
+}
+
+// Lewa strzałka:
+//   domyślnie: rotate(-45deg) = ↗ skierowane w górę-prawo (symetria z prawą)
+//   hover:     rotate(180deg) = ← wskazuje w lewo
+.arrowPrev .arrowIcon {
+  transform: rotate(-45deg);
+}
+
+.arrowPrev:hover .arrowIcon {
+  transform: rotate(180deg);
+}
+
+// Prawa strzałka:
+//   domyślnie: rotate(-45deg) = ↗ skierowane w górę-prawo
+//   hover:     rotate(0deg)   = → wskazuje w prawo
+.arrowNext .arrowIcon {
+  transform: rotate(-45deg);
+}
+
+.arrowNext:hover .arrowIcon {
+  transform: rotate(0deg);
+}
+
+// ── Dot indicators (kółko → pigułka) ─────────────────────────────
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  align-self: center;
+}
+
+.dot {
+  height: 8px;
+  width: 8px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.30);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: width $transition-base, background $transition-base;
+
+  &:hover { background: rgba(255, 255, 255, 0.55); }
+}
+
+.dotActive {
+  width: 28px;
+  background: $color-white;
+}
+
+// ── Przycisk Google Review ────────────────────────────────────────
+
+.addReviewBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: $spacing-sm $spacing-lg;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 4px;
+  color: $color-text-light;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  align-self: center;
+
+  &::before {
+    content: '★';
+    color: $color-accent;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: $color-accent;
+    border-color: $color-accent;
+    color: #fff;
+    outline: none;
+
+    &::before {
+      color: #fff;
+    }
+  }
+}

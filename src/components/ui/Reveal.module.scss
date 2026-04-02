@@ -1,0 +1,42 @@
+@keyframes revealUp {
+  from { transform: translateY(32px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes revealLeft {
+  from { transform: translateX(-32px); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+
+@keyframes revealRight {
+  from { transform: translateX(32px); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+@keyframes revealScale {
+  from { transform: scale(0.88); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+$easing: cubic-bezier(0.16, 1, 0.3, 1);
+$duration: 0.6s;
+
+.hidden {
+  opacity: 0;
+}
+
+.animateUp {
+  animation: revealUp $duration $easing both;
+}
+
+.animateLeft {
+  animation: revealLeft $duration $easing both;
+}
+
+.animateRight {
+  animation: revealRight $duration $easing both;
+}
+
+.animateScale {
+  animation: revealScale $duration $easing both;
+}

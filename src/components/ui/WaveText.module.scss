@@ -1,0 +1,33 @@
+@keyframes charReveal {
+  from {
+    transform: translateY(110%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.wordWrapper {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.charClip {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.2em;
+  margin-bottom: -0.2em;
+}
+
+.charHidden {
+  display: inline-block;
+  opacity: 0;
+}
+
+.charVisible {
+  display: inline-block;
+  animation: charReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}

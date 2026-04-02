@@ -1,0 +1,35 @@
+.card {
+  @include card;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  text-decoration: none;
+  border-top: 3px solid $color-primary;
+  transition: box-shadow $transition-base, transform $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-2px);
+  }
+}
+
+.title {
+  font-family: $font-family-heading;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-secondary;
+  margin: 0;
+}
+
+.desc {
+  font-size: $font-size-sm;
+  color: $color-text-light;
+  line-height: $line-height-base;
+  flex: 1;
+}
+
+.link {
+  margin-top: $spacing-sm;
+  // pointer-events none — the parent <Link> already handles navigation
+  pointer-events: none;
+}

@@ -1,0 +1,242 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.team {
+  @include section-padding;
+  background: $color-bg;
+}
+
+.container {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-3xl;
+}
+
+// ── Nagłówek (ten sam styl co pricingHeading w Offer) ─────────────
+
+.headerWrap {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  max-width: 680px;
+}
+
+.label {
+  font-size: $font-size-sm;
+  color: $color-primary;
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.heading {
+  font-family: $font-family-heading;
+  font-size: clamp(1.6rem, 3.8vw, 4.2rem);
+  font-weight: 300;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: $color-text;
+  line-height: 1.0;
+  // Potrzebne żeby clipy waveWrap nie były ucinane od dołu
+  padding-bottom: 0.06em;
+}
+
+.subheading {
+  font-size: $font-size-lg;
+  color: $color-text-light;
+  line-height: $line-height-base;
+  max-width: 560px;
+}
+
+// ── Wave (identyczne z Hero/Offer) ────────────────────────────────
+
+.waveWrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.waveChar {
+  display: inline-block;
+  animation: slideUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 1 both;
+}
+
+@keyframes slideUp {
+  0%   { transform: translateY(110%); }
+  100% { transform: translateY(0); }
+}
+
+// ── Editorial numbered list ───────────────────────────────────────
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  // Linia oddzielająca przez border-top na każdym elemencie
+  border-top: 1px solid $color-border;
+}
+
+.item {
+  position: relative;
+  display: grid;
+  // | numer | zdjęcie | treść |
+  grid-template-columns: 72px 200px 1fr;
+  grid-template-areas: 'num photo content';
+  align-items: start;
+  gap: 0 $spacing-2xl;
+  padding: $spacing-2xl 0;
+  border-bottom: 1px solid $color-border;
+  transition: background $transition-base;
+
+  // Hover: subtelne podświetlenie całego wiersza
+  &:hover {
+    background: $color-white;
+
+    .number { color: $color-primary; opacity: 0.18; }
+    .photoWrap { transform: scale(1.02); }
+    .name { color: $color-primary; }
+  }
+
+  @include respond-to('desktop') {
+    grid-template-columns: 56px 160px 1fr;
+    gap: 0 $spacing-xl;
+  }
+
+  @include respond-to('tablet') {
+    grid-template-columns: 48px 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      'num photo'
+      '. content';
+    gap: $spacing-md $spacing-lg;
+    padding: $spacing-xl 0;
+  }
+
+  @include respond-to('mobile') {
+    grid-template-columns: 36px 1fr;
+    gap: $spacing-sm $spacing-md;
+  }
+}
+
+// ── Duży numer w tle ──────────────────────────────────────────────
+
+.number {
+  grid-area: num;
+  font-family: $font-family-heading;
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  font-weight: 300;
+  color: $color-text;
+  opacity: 0.10;
+  line-height: 1;
+  padding-top: 4px; // wyrównanie z górą zdjęcia
+  transition: color $transition-base, opacity $transition-base;
+  user-select: none;
+}
+
+// ── Zdjęcie ───────────────────────────────────────────────────────
+
+.photoWrap {
+  grid-area: photo;
+  position: relative;
+  transition: transform $transition-base;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: $border-radius-md;
+  flex-shrink: 0;
+
+  @include respond-to('tablet') {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+// Placeholder gdy nie ma zdjęcia
+.avatarPlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarBgA {
+  background: linear-gradient(145deg, $color-secondary-light, $color-secondary);
+}
+
+.avatarBgB {
+  background: linear-gradient(145deg, lighten(#C41E3A, 10%), #C41E3A);
+}
+
+.avatarSvg {
+  width: 60%;
+  height: 60%;
+}
+
+// Plakietka specjalizacji
+.badge {
+  position: absolute;
+  bottom: $spacing-sm;
+  left: $spacing-sm;
+  background: rgba(26, 35, 50, 0.82);
+  backdrop-filter: blur(6px);
+  color: $color-white;
+  font-size: 11px;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 3px $spacing-sm;
+  border-radius: $border-radius-sm;
+}
+
+// ── Treść ─────────────────────────────────────────────────────────
+
+.content {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  padding-top: 4px;
+
+  @include respond-to('tablet') {
+    padding-top: 0;
+  }
+}
+
+.name {
+  font-size: clamp($font-size-base, 1.4vw, $font-size-xl);
+  font-weight: $font-weight-bold;
+  color: $color-text;
+  line-height: 1.25;
+  transition: color $transition-fast;
+}
+
+.role {
+  font-size: $font-size-sm;
+  color: $color-primary;
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.02em;
+}
+
+.bio {
+  font-size: $font-size-sm;
+  color: $color-text-light;
+  line-height: $line-height-base;
+  max-width: 540px;
+  margin-top: $spacing-xs;
+}
+
+// ── CTA ───────────────────────────────────────────────────────────
+
+.ctaWrap {
+  display: flex;
+  justify-content: flex-start;
+}

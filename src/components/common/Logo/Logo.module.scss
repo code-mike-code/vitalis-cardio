@@ -1,0 +1,19 @@
+@use '@/styles/variables' as *;
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.logoImg {
+  display: block;
+  width: auto;
+  object-fit: contain;
+}
+
+.sm .logoImg { height: 28px; }
+.md .logoImg { height: 38px; }
+.lg .logoImg { height: 52px; }

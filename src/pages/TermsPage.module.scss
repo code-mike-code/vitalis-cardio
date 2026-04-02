@@ -1,0 +1,113 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.hero {
+  min-height: 35svh;
+  background: linear-gradient(135deg, $color-secondary 0%, $color-secondary-light 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: $spacing-3xl $spacing-lg;
+}
+
+.heroContent {
+  max-width: 640px;
+}
+
+.label {
+  display: inline-block;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: $spacing-sm;
+}
+
+.title {
+  font-family: $font-family-heading;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: $color-white;
+  margin-bottom: $spacing-sm;
+
+  @include respond-to('tablet') {
+    font-size: $font-size-2xl;
+  }
+}
+
+.meta {
+  font-size: $font-size-sm;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.article {
+  background: $color-bg;
+  padding: $spacing-4xl 0;
+
+  @include respond-to('tablet') {
+    padding: $spacing-3xl 0;
+  }
+}
+
+.container {
+  @include container;
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-3xl;
+}
+
+.section {
+  background: $color-white;
+  border-radius: $border-radius-lg;
+  padding: $spacing-2xl;
+  box-shadow: $shadow-sm;
+
+  h2 {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $color-text;
+    margin-bottom: $spacing-lg;
+    padding-bottom: $spacing-md;
+    border-bottom: 2px solid $color-accent;
+  }
+
+  ol {
+    padding-left: $spacing-lg;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    color: $color-text-light;
+    line-height: $line-height-base;
+
+    li {
+      font-size: $font-size-base;
+    }
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: $spacing-xl;
+    margin-top: $spacing-sm;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+
+    li {
+      font-size: $font-size-base;
+      color: $color-text-light;
+      line-height: $line-height-base;
+    }
+  }
+
+  a {
+    color: $color-primary;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

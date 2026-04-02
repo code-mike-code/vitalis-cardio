@@ -1,0 +1,16 @@
+@use 'reset';
+@use 'typography';
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.container {
+  @include container;
+}
+
+.section {
+  @include section-padding;
+}
+
+.section-title {
+  @include section-title;
+}

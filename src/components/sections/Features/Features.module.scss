@@ -1,0 +1,125 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.features {
+  @include section-padding;
+  background: $color-white;
+}
+
+.container {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-3xl;
+}
+
+// ── Nagłówek (identyczny wzorzec: Team / Offer / About) ──────────
+
+.headerWrap {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  max-width: 680px;
+}
+
+.label {
+  font-size: $font-size-sm;
+  color: $color-primary;
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.heading {
+  font-family: $font-family-heading;
+  font-size: clamp(1.6rem, 3.8vw, 4.2rem);
+  font-weight: 300;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: $color-text;
+  line-height: 1.0;
+  padding-bottom: 0.06em;
+}
+
+.subtitle {
+  font-size: $font-size-lg;
+  color: $color-text-light;
+  line-height: $line-height-base;
+  max-width: 560px;
+}
+
+// ── Wave ──────────────────────────────────────────────────────────
+
+.waveWrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.waveChar {
+  display: inline-block;
+  animation: slideUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 1 both;
+}
+
+@keyframes slideUp {
+  0%   { transform: translateY(110%); }
+  100% { transform: translateY(0); }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-xl;
+
+  @include respond-to('tablet') {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+.card {
+  @include card;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-md;
+  padding: $spacing-2xl $spacing-xl;
+  border: 1px solid $color-border;
+  transition: all $transition-base;
+
+  &:hover {
+    border-color: $color-primary;
+    box-shadow: $shadow-md;
+    transform: translateY(-4px);
+
+    .iconWrapper {
+      color: $color-primary;
+    }
+  }
+}
+
+.iconWrapper {
+  width: 64px;
+  height: 64px;
+  color: $color-secondary;
+  transition: color $transition-base;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.cardTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text;
+}
+
+.cardText {
+  font-size: $font-size-sm;
+  color: $color-text-light;
+  line-height: $line-height-base;
+}

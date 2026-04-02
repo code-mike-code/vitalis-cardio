@@ -1,0 +1,135 @@
+@use '@/styles/variables' as *;
+
+// ── Desktop ───────────────────────────────────────────────────────
+
+.switcher {
+  display: flex;
+  gap: $spacing-xs;
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background: none;
+  border: none;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text-muted;
+  cursor: pointer;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $border-radius-sm;
+  line-height: 1;
+  transition: color 0.18s cubic-bezier(0.4, 2, 0.6, 1);
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    z-index: -1;
+    background: $color-primary;
+    transition: width 0.6s cubic-bezier(0.4, 2, 0.6, 1);
+  }
+
+  &:not(:hover):not(:focus-visible)::before {
+    right: 0;
+    left: auto;
+    width: 0%;
+    transition: width 0.5s cubic-bezier(0.4, 2, 0.6, 1);
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: $color-white;
+
+    &::before { width: 100%; }
+  }
+}
+
+.active {
+  color: $color-primary;
+  font-weight: $font-weight-semibold;
+}
+
+// ── Mobile ────────────────────────────────────────────────────────
+
+.mobileSwitcher {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+.inactiveGroup {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-xs;
+  max-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(24px);
+  transition:
+    max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.25s ease,
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.inactiveGroupVisible {
+  max-width: 120px;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mobileInactiveBtn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background: none;
+  border: none;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text-muted;
+  cursor: pointer;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $border-radius-sm;
+  line-height: 1;
+  white-space: nowrap;
+  transition: color 0.18s cubic-bezier(0.4, 2, 0.6, 1);
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    z-index: -1;
+    background: $color-primary;
+    transition: width 0.6s cubic-bezier(0.4, 2, 0.6, 1);
+  }
+
+  &:not(:hover)::before {
+    right: 0;
+    left: auto;
+    width: 0%;
+    transition: width 0.5s cubic-bezier(0.4, 2, 0.6, 1);
+  }
+
+  &:hover {
+    color: $color-white;
+
+    &::before { width: 100%; }
+  }
+}
+
+.mobileActiveBtn {
+  &::after {
+    content: ' ▾';
+    font-size: 9px;
+    vertical-align: middle;
+    opacity: 0.6;
+  }
+}

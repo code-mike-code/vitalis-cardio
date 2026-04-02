@@ -1,0 +1,36 @@
+@use '@/styles/variables' as *;
+
+.slot {
+  width: 100%;
+}
+
+.label {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  margin-bottom: $spacing-md;
+}
+
+.widgetContainer {
+  width: 100%;
+  min-height: 400px;
+  border: 1px dashed $color-border;
+  border-radius: $border-radius-md;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $color-bg;
+}
+
+.placeholder {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  text-align: center;
+
+  code {
+    font-family: monospace;
+    background: $color-border;
+    padding: 2px 6px;
+    border-radius: $border-radius-sm;
+    margin-left: $spacing-xs;
+  }
+}

@@ -1,0 +1,201 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  height: 120svh;
+  padding-top: $header-height;
+}
+
+// ── Górny rząd (50%) ──────────────────────────────────────────────
+.rowTop {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: $color-white;
+  border-bottom: 1px solid $color-border;
+}
+
+.container {
+  width: 100%;
+  padding: $spacing-2xl 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: $spacing-xl;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: $spacing-xs;
+  color: $color-text;
+}
+
+.headingRow {
+  display: flex;
+  align-items: baseline;
+  gap: $spacing-md;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.row1 {
+  justify-content: flex-start;
+}
+
+.row2 {
+  justify-content: center;
+
+  @include respond-to('tablet') {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+}
+
+.row3 {
+  justify-content: flex-end;
+}
+
+.mobileOnly {
+  display: none;
+
+  @include respond-to('tablet') {
+    display: inline-flex;
+  }
+}
+
+.desktopOnly {
+  @include respond-to('tablet') {
+    display: none;
+  }
+}
+
+.textLarge {
+  font-family: $font-family-heading;
+  font-size: clamp(2rem, 4.5vw, 5rem);
+  font-weight: 300;
+  letter-spacing: 0.10em;
+  line-height: 1.0;
+  text-transform: uppercase;
+}
+
+.textSmall {
+  font-family: $font-family-heading;
+  font-size: clamp(1rem, 2.2vw, 2.5rem);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  line-height: 1.0;
+  text-transform: uppercase;
+}
+
+.waveWrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.waveChar {
+  display: inline-block;
+  animation: slideUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 1 both;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(110%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.rowTopContent {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-xl;
+  align-items: center;
+  justify-items: center;
+
+  @include respond-to('tablet') {
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+  }
+}
+
+// ── Partner logos (bullet3) ───────────────────────────────────────
+.partnerRow {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  flex-wrap: wrap;
+}
+
+.partnerLink {
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.8;
+  transition: opacity $transition-fast;
+
+  &:hover { opacity: 1; }
+}
+
+.partnerLogoNfz {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+}
+.partnerLogoLux {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+}
+
+// ── Bullets ───────────────────────────────────────────────────────
+.bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-medium;
+    color: $color-text;
+  }
+}
+
+.arrow {
+  color: $color-text;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  flex-shrink: 0;
+}
+
+// ── CTA ───────────────────────────────────────────────────────────
+.ctaWrap {
+  display: flex;
+  justify-content: flex-start;
+}
+
+// ── Dolny rząd (50%) ─────────────────────────────────────────────
+.rowBottom {
+  flex: 1;
+  overflow: hidden;
+}
+
+.clinicPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}

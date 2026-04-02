@@ -1,0 +1,115 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.finalCta {
+  @include section-padding;
+  background: $color-bg-dark;
+  color: $color-white;
+}
+
+.container {
+  @include container;
+  display: grid;
+  grid-template-columns: 65fr 35fr;
+  gap: $spacing-3xl;
+  align-items: center;
+
+  @include respond-to('tablet') {
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+  }
+}
+
+// ── Lewa kolumna: nagłówek ────────────────────────────────────────
+
+.headingCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.headingRow {
+  display: flex;
+  align-items: baseline;
+  gap: $spacing-md;
+  flex-wrap: nowrap;
+}
+
+.row1 {
+  justify-content: center;
+}
+
+.row2 {
+  justify-content: flex-start;
+}
+
+.textLarge {
+  font-family: $font-family-heading;
+  font-size: clamp(2rem, 3.5vw, 4rem);
+  font-weight: 300;
+  letter-spacing: 0.10em;
+  line-height: 1.0;
+  text-transform: uppercase;
+  color: $color-white;
+}
+
+.textItalic {
+  font-family: $font-family-heading;
+  font-size: clamp(1rem, 2vw, 2.2rem);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  line-height: 1.0;
+  text-transform: uppercase;
+  color: $color-white;
+}
+
+.waveWrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.waveChar {
+  display: inline-block;
+  animation: slideUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 1 both;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(110%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+// ── Prawa kolumna: opis + CTA ─────────────────────────────────────
+
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xl;
+  align-items: flex-start;
+}
+
+.subtext {
+  font-size: $font-size-lg;
+  line-height: $line-height-base;
+  color: rgba(255, 255, 255, 0.75);
+  white-space: pre-line;
+  text-align: left;
+}
+
+.ctaWrap {
+  align-self: flex-end;
+
+  @include respond-to('tablet') {
+    align-self: flex-start;
+  }
+}

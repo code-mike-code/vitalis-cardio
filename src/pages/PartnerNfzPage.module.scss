@@ -1,0 +1,129 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.hero {
+  min-height: 45svh;
+  background: linear-gradient(135deg, $color-secondary 0%, $color-secondary-light 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: $spacing-4xl $spacing-lg;
+}
+
+.heroContent {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-lg;
+}
+
+.heroLogo {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+.title {
+  font-family: $font-family-heading;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-white;
+  line-height: 1.2;
+
+  @include respond-to('tablet') {
+    font-size: $font-size-xl;
+  }
+}
+
+.subtitle {
+  font-size: $font-size-base;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: $line-height-base;
+}
+
+.section {
+  @include section-padding;
+  background: $color-bg;
+}
+
+.container {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-2xl;
+}
+
+.infoBox {
+  background: $color-white;
+  border-left: 4px solid $color-primary;
+  border-radius: $border-radius-md;
+  padding: $spacing-xl;
+  box-shadow: $shadow-sm;
+
+  strong {
+    display: block;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $color-text;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    font-size: $font-size-base;
+    color: $color-text-light;
+    line-height: $line-height-base;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-lg;
+
+  @include respond-to('desktop') {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  @include card;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.cardTitle {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text;
+}
+
+.cardDesc {
+  font-size: $font-size-base;
+  color: $color-text-light;
+  line-height: $line-height-base;
+  flex: 1;
+}
+
+.cardLink {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  text-decoration: none;
+  align-self: flex-start;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.disclaimer {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  text-align: center;
+  line-height: $line-height-base;
+}

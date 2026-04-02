@@ -1,0 +1,23 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $color-primary-dark;
+
+    .arrow {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform $transition-base;
+}
