@@ -1,7 +1,10 @@
 import { useState, useRef, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useLanguage } from '@/hooks/useLanguage'
 import { pricing } from '@/data'
 import CtaButton from '@components/common/CtaButton/CtaButton'
+import logoNfz from '@/assets/logo/logo-nfz.webp'
+import logoLuxmed from '@/assets/logo/logo-luxmed.png'
 import styles from './Offer.module.scss'
 
 // ── Heading wave animation (same pattern as Hero) ─────────────────
@@ -236,6 +239,41 @@ function Offer() {
               })}
             </div>
           </div>
+        </div>
+
+        {/* ── Karty partnerów ────────────────────────────────────── */}
+        <div className={styles.partnerCards}>
+
+          <Link to="/partnerzy/nfz" className={styles.partnerCard}>
+            <div className={styles.partnerAccent} style={{ background: '#003399' }} />
+            <div className={styles.partnerLogoWrap}>
+              <img src={logoNfz} alt="NFZ" className={styles.logoNfz} />
+            </div>
+            <div className={styles.partnerBody}>
+              <h3 className={styles.partnerTitle}>{t('offer.partnerNfzTitle')}</h3>
+              <p className={styles.partnerDesc}>{t('offer.partnerNfzDesc')}</p>
+            </div>
+            <span className={styles.partnerCta}>
+              {t('offer.partnerLearnMore')}
+              <span className={styles.partnerCtaArrow}>→</span>
+            </span>
+          </Link>
+
+          <Link to="/partnerzy/luxmed" className={styles.partnerCard}>
+            <div className={styles.partnerAccent} style={{ background: '#00A551' }} />
+            <div className={styles.partnerLogoWrap}>
+              <img src={logoLuxmed} alt="LuxMed" className={styles.logoLuxmed} />
+            </div>
+            <div className={styles.partnerBody}>
+              <h3 className={styles.partnerTitle}>{t('offer.partnerLuxmedTitle')}</h3>
+              <p className={styles.partnerDesc}>{t('offer.partnerLuxmedDesc')}</p>
+            </div>
+            <span className={styles.partnerCta}>
+              {t('offer.partnerLearnMore')}
+              <span className={styles.partnerCtaArrow}>→</span>
+            </span>
+          </Link>
+
         </div>
 
       </div>

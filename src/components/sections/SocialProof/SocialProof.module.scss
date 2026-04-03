@@ -4,7 +4,9 @@
 // ── Sekcja ────────────────────────────────────────────────────────
 
 .section {
-  position: relative;
+  position: sticky;
+  top: var(--sticky-top, 0px);
+  z-index: 7;
   isolation: isolate;
   overflow: hidden;
   padding: $spacing-4xl 0;
@@ -395,37 +397,3 @@
   background: $color-white;
 }
 
-// ── Przycisk Google Review ────────────────────────────────────────
-
-.addReviewBtn {
-  display: inline-flex;
-  align-items: center;
-  gap: $spacing-xs;
-  padding: $spacing-sm $spacing-lg;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 4px;
-  color: $color-text-light;
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
-  align-self: center;
-
-  &::before {
-    content: '★';
-    color: $color-accent;
-  }
-
-  &:hover,
-  &:focus-visible {
-    background-color: $color-accent;
-    border-color: $color-accent;
-    color: #fff;
-    outline: none;
-
-    &::before {
-      color: #fff;
-    }
-  }
-}

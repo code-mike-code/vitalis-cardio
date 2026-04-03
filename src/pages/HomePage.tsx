@@ -10,7 +10,7 @@ import FinalCTA from '@components/sections/FinalCTA/FinalCTA'
 
 function HomePage() {
   return (
-    <PageLayout>
+    <PageLayout stickyStack>
       <Hero />
       <About />
       <Features />

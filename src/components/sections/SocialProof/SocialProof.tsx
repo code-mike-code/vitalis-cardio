@@ -9,6 +9,7 @@ import { useLanguage } from '@/hooks/useLanguage'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { reviews } from '@/data/review-data'
 import styles from './SocialProof.module.scss'
+import CtaButton from '@components/common/CtaButton/CtaButton'
 
 // ── Helpers ───────────────────────────────────────────────────────
 
@@ -387,14 +388,9 @@ export default function SocialProof() {
         </div>
 
         {/* Google review CTA */}
-        <a
-          href={GOOGLE_REVIEW_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.addReviewBtn}
-        >
+        <CtaButton href={GOOGLE_REVIEW_URL} variant="outline" size="md">
           {t('socialProof.addReview')}
-        </a>
+        </CtaButton>
 
       </div>
     </section>

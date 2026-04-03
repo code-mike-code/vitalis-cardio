@@ -149,16 +149,10 @@ const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
                 <Link to="/partnerzy/nfz" className={styles.partnerLink} onClick={onClose}>
                   <img src={logoNfz} alt="NFZ" className={styles.partnerLogoNfz} />
                 </Link>
-                <Link to="/partnerzy/nfz" className={styles.partnerSubLink} onClick={onClose}>
-                  {t('nav.partnerNfzLink')}
-                </Link>
               </div>
               <div className={styles.partnerItem}>
                 <Link to="/partnerzy/luxmed" className={styles.partnerLink} onClick={onClose}>
                   <img src={logoLuxmed} alt="LuxMed" className={styles.partnerLogoLux} />
-                </Link>
-                <Link to="/partnerzy/luxmed" className={styles.partnerSubLink} onClick={onClose}>
-                  {t('nav.partnerLuxmedLink')}
                 </Link>
               </div>
             </div>

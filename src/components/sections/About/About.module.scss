@@ -1,4 +1,7 @@
 .about {
+  position: sticky;
+  top: var(--sticky-top, 0px);
+  z-index: 3;
   background: $color-white;
   @include section-padding;
 }

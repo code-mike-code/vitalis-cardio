@@ -2,6 +2,9 @@
 @use '@/styles/mixins' as *;
 
 .team {
+  position: sticky;
+  top: var(--sticky-top, 0px);
+  z-index: 6;
   @include section-padding;
   background: $color-bg;
 }

@@ -2,6 +2,9 @@
 @use '@/styles/mixins' as *;
 
 .features {
+  position: sticky;
+  top: var(--sticky-top, 0px);
+  z-index: 4;
   @include section-padding;
   background: $color-white;
 }

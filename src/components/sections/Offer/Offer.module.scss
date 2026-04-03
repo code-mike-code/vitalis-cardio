@@ -2,6 +2,9 @@
 @use '@/styles/mixins' as *;
 
 .offer {
+  position: sticky;
+  top: var(--sticky-top, 0px);
+  z-index: 5;
   @include section-padding;
   background: $color-white;
   overflow: hidden;
@@ -369,4 +372,106 @@
   font-weight: $font-weight-semibold;
   color: $color-primary-light;
   white-space: nowrap;
+}
+
+// ── Karty partnerów ───────────────────────────────────────────────
+.partnerCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-xl;
+
+  @include respond-to('tablet') {
+    grid-template-columns: 1fr;
+  }
+}
+
+.partnerCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  padding: $spacing-xl;
+  padding-top: calc(#{$spacing-xl} + 4px);
+  background: $color-white;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-lg;
+  text-decoration: none;
+  color: $color-text;
+  overflow: hidden;
+  transition: box-shadow $transition-base, transform $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-4px);
+
+    .partnerCtaArrow {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+// Kolorowy pasek akcentujący na górze karty
+.partnerAccent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.partnerLogoWrap {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+}
+
+.logoNfz {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logoLuxmed {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+}
+
+.partnerBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.partnerTitle {
+  font-family: $font-family-heading;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text;
+  margin: 0;
+}
+
+.partnerDesc {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $color-text-light;
+  margin: 0;
+}
+
+// Przycisk "Dowiedz się więcej" — prawy dolny róg
+.partnerCta {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  align-self: flex-end;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  margin-top: $spacing-sm;
+}
+
+.partnerCtaArrow {
+  display: inline-block;
+  transition: transform $transition-base;
 }

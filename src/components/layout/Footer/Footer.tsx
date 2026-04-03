@@ -101,16 +101,10 @@ function Footer() {
                   <Link to="/partnerzy/nfz" className={styles.partnerLink}>
                     <img src={logoNfz} alt="NFZ" className={styles.partnerLogoNfz} />
                   </Link>
-                  <Link to="/partnerzy/nfz" className={styles.partnerSubLink}>
-                    {t('nav.partnerNfzLink')}
-                  </Link>
                 </div>
                 <div className={styles.partnerItem}>
                   <Link to="/partnerzy/luxmed" className={styles.partnerLink}>
                     <img src={logoLuxmed} alt="LuxMed" className={styles.partnerLogoLux} />
-                  </Link>
-                  <Link to="/partnerzy/luxmed" className={styles.partnerSubLink}>
-                    {t('nav.partnerLuxmedLink')}
                   </Link>
                 </div>
               </div>

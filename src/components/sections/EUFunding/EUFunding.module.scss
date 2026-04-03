@@ -4,6 +4,9 @@
 $eu-blue: #003399;
 
 .euFunding {
+  position: sticky;
+  top: var(--sticky-top, 0px);
+  z-index: 8;
   background: $color-white;
   @include section-padding;
 }

@@ -2,6 +2,9 @@
 @use '@/styles/mixins' as *;
 
 .finalCta {
+  position: sticky;
+  top: var(--sticky-top, 0px);
+  z-index: 9;
   @include section-padding;
   background: $color-bg-dark;
   color: $color-white;

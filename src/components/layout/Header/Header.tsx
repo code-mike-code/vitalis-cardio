@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import styles from './Header.module.scss'
 import NavigationMenu from './NavigationMenu'
 import Logo from '@components/common/Logo/Logo'
 import { LanguageSwitcher } from '@components/common/LanguageSwitcher/LanguageSwitcher'
+import CtaButton from '@components/common/CtaButton/CtaButton'
 import { useLanguage } from '@/hooks/useLanguage'
 
 const Header = () => {
@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <>
-      <header className={styles.header}>
+      <header className={`${styles.header} ${isMenuOpen ? styles.menuOpen : ''}`}>
         <div className={styles.container}>
           {/* LEWA STRONA: Hamburger + Adres */}
           <div className={styles.leftSection}>
@@ -55,9 +55,9 @@ const Header = () => {
             </div>
 
             <div className={styles.desktopCTA}>
-              <Link to="/specjalizacje" className={styles.ctaTextOnly}>
+              <CtaButton to="/specjalizacje" variant="outline" size="md">
                 {t('header.bookAppointment')}
-              </Link>
+              </CtaButton>
             </div>
           </div>
         </div>
