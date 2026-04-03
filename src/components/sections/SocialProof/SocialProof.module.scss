@@ -370,6 +370,24 @@
   transform: rotate(0deg);
 }
 
+// ── Przycisk Google Review ────────────────────────────────────────
+
+.reviewBtn {
+  align-self: center !important;
+  color: $color-white !important;
+  border-color: rgba(255, 255, 255, 0.75) !important;
+
+  &:hover:not(:disabled),
+  &:focus-visible:not(:disabled) {
+    color: $color-white !important;
+    border-color: $color-white !important;
+  }
+
+  &::before {
+    background: rgba(255, 255, 255, 0.12) !important;
+  }
+}
+
 // ── Dot indicators (kółko → pigułka) ─────────────────────────────
 
 .dots {

@@ -388,7 +388,7 @@ export default function SocialProof() {
         </div>
 
         {/* Google review CTA */}
-        <CtaButton href={GOOGLE_REVIEW_URL} variant="outline" size="md">
+        <CtaButton href={GOOGLE_REVIEW_URL} variant="outline" size="md" className={styles.reviewBtn}>
           {t('socialProof.addReview')}
         </CtaButton>
 

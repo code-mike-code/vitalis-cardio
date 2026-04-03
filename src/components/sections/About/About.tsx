@@ -55,7 +55,7 @@ function About() {
           <div className={styles.foundersLayout}>
             <div className={styles.foundersIntro}>
               <p className={styles.introText}>{t('about.foundersText')}</p>
-              <CtaButton to="/specjalizacje" size="md">
+              <CtaButton to="/specjalizacje" size="md" className={styles.ctaBtn}>
                 {t('about.ctaBtn')}
               </CtaButton>
             </div>

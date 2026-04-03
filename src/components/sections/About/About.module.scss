@@ -64,6 +64,20 @@
   100% { transform: translateY(0); }
 }
 
+// ── CTA ─────────────────────────────────────────────────────
+.ctaBtn {
+  &:hover:not(:disabled),
+  &:focus-visible:not(:disabled) {
+    background: transparent !important;
+    color: $color-primary !important;
+    box-shadow: none !important;
+  }
+
+  &::before {
+    display: none !important;
+  }
+}
+
 // ── Founders layout ─────────────────────────────────────────
 .foundersLayout {
   display: grid;
