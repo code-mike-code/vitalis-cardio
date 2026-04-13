@@ -106,6 +106,18 @@ export const en = {
     label: 'Why us',
     heading: 'Why Vitalis Clinic?',
     subtitle: 'We combine years of medical expertise with an individual approach to every patient. Your health is our priority.',
+    card1: {
+      title: 'Comprehensive Care',
+      description: 'We provide a full range of medical care — from diagnostics through specialist treatment to rehabilitation. All in one place.',
+    },
+    card2: {
+      title: 'Team of Specialists',
+      description: 'Our team consists of medical specialists with years of clinical and scientific experience, constantly improving their qualifications.',
+    },
+    card3: {
+      title: 'Modern Rehabilitation',
+      description: 'We offer advanced rehabilitation programmes using the latest equipment and proven therapeutic methods.',
+    },
   },
   euFunding: {
     label: 'EU Funding',
@@ -144,6 +156,7 @@ export const en = {
     copyright: 'Vitalis Clinic. All rights reserved.',
   },
   common: {
+    menu: 'Menu',
     close: 'Close',
     closeMap: 'Close map',
     openInMaps: 'Open in Google Maps',
@@ -184,6 +197,31 @@ export const en = {
     heading: 'SPECIALISTS',
     subheading: 'The doctors and therapists at Vitalis are passionate about medicine and bring years of clinical experience. Every patient receives individual attention.',
     ctaAll: 'All specialists',
+    member1: {
+      role: 'Medical Director, Co-founder',
+      specialization: 'Cardiologist',
+      bio: 'Associate professor and internist with a habilitated doctorate in medical sciences. Co-founder of Vitalis Clinic in 2014. Has extensive experience in clinical and diagnostic cardiology.',
+    },
+    member2: {
+      role: 'Internist, Co-founder',
+      specialization: 'Cardiologist',
+      bio: 'Doctor of medical sciences, specialist in internal medicine and cardiology. Co-founder of Vitalis Clinic. Specialises in the diagnosis and treatment of arrhythmia and heart failure.',
+    },
+    member3: {
+      role: 'Neurology Specialist',
+      specialization: 'Neurologist',
+      bio: 'Doctor of medical sciences in neurology. Experience in the diagnosis and treatment of migraines, epilepsy and neurodegenerative diseases. Conducts EEG and EMG examinations.',
+    },
+    member4: {
+      role: 'Orthopaedics & Traumatology Specialist',
+      specialization: 'Orthopaedist',
+      bio: 'Specialist in orthopaedics and musculoskeletal traumatology. Expert in sports injury treatment, joint arthroscopy and spinal conditions. Performs ultrasound-guided joint injections.',
+    },
+    member5: {
+      role: 'Head of Rehabilitation',
+      specialization: 'Physiotherapist',
+      bio: 'Certified physiotherapist with a Master\'s degree. Specialises in manual therapy, kinesiotaping and post-traumatic rehabilitation. Conducts individual kinesiotherapy programmes.',
+    },
   },
   socialProof: {
     label: 'Patient reviews',

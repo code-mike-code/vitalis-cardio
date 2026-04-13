@@ -51,12 +51,29 @@ export interface Specialist {
   isFounder?: boolean
 }
 
+export interface SpecializationInfoSection {
+  title: string
+  content: string
+}
+
+export interface SpecializationServiceGroup {
+  title: string
+  items: string[]
+}
+
 export interface Specialization {
   id: number
   slug: string
   name: string
   menuLabel: string
   description: string
+  hideFromMenu?: boolean
+  conditions?: string[]
+  conditionsLabel?: string
+  examinations?: string[]
+  examinationsLabel?: string
+  serviceGroups?: SpecializationServiceGroup[]
+  infoSections?: SpecializationInfoSection[]
 }
 
 export interface PricingItem {
@@ -64,8 +81,14 @@ export interface PricingItem {
   price: string
 }
 
+export interface PricingSection {
+  subtitle: string
+  items: PricingItem[]
+}
+
 export interface PricingCategory {
   id: number
   title: string
-  items: PricingItem[]
+  items?: PricingItem[]
+  sections?: PricingSection[]
 }

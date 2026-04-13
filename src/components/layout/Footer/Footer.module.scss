@@ -1,7 +1,33 @@
 @use '@/styles/variables' as *;
 @use '@/styles/mixins' as *;
 
+// ── Fluid footer variables ────────────────────────────────────────
+$ft-cta-pad-y:      clamp(20px, 3.5vh, 48px);
+$ft-cta-gap:        clamp(8px, 1.2vh, 16px);
+$ft-cta-heading-fs: clamp(24px, 4vh, 48px);
+$ft-cta-subtext-fs: clamp(12px, 1.4vh, 15px);
+$ft-nav-pad-y:      clamp(12px, 2vh, 28px);
+$ft-nav-pad-x:      clamp(20px, 4vw, 64px);
+$ft-row-gap:        clamp(16px, 3.2vw, 40px);
+$ft-col-title-fs:   clamp(11px, 1.1vw, 15px);
+$ft-col-title-mb:   clamp(6px, 1vh, 14px);
+$ft-col-title-pb:   clamp(4px, 0.6vh, 8px);
+$ft-p-margin:       clamp(2px, 0.4vh, 6px);
+$ft-p-fs:           clamp(12px, 1.2vw, 16px);
+$ft-map-h:          clamp(100px, 13vh, 170px);
+$ft-spec-gap-y:     clamp(3px, 0.5vh, 7px);
+$ft-spec-fs:        clamp(11px, 1.1vw, 15px);
+$ft-subrow-mb:      clamp(8px, 1.2vh, 20px);
+$ft-service-gap:    clamp(2px, 0.5vh, 7px);
+$ft-logo-nfz-h:     clamp(28px, 3vw, 42px);
+$ft-logo-lux-h:     clamp(48px, 5vw, 74px);
+$ft-sitenav-gap:    clamp(4px, 0.7vh, 10px);
+$ft-legal-fs:       clamp(11px, 1vw, 14px);
+$ft-separator-m:    clamp(2px, 0.5vh, 6px);
+
 $bottom-h: 52px;
+
+// ─────────────────────────────────────────────────────────────────
 
 .footer {
   height: 100svh;
@@ -20,8 +46,8 @@ $bottom-h: 52px;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: clamp(20px, 3.5vh, 48px) $spacing-lg;
-  gap: clamp(8px, 1.2vh, 16px);
+  padding: $ft-cta-pad-y $spacing-lg;
+  gap: $ft-cta-gap;
   border-bottom: 1px solid rgba($color-white, 0.08);
 }
 
@@ -34,7 +60,7 @@ $bottom-h: 52px;
 }
 
 .ctaHeading {
-  font-size: clamp(24px, 4vh, 48px);
+  font-size: $ft-cta-heading-fs;
   font-weight: $font-weight-bold;
   color: $color-white;
   line-height: 1.2;
@@ -42,13 +68,12 @@ $bottom-h: 52px;
 }
 
 .ctaSubtext {
-  font-size: clamp(12px, 1.4vh, 15px);
+  font-size: $ft-cta-subtext-fs;
   color: rgba($color-white, 0.5);
   line-height: 1.5;
   margin: 0;
   max-width: 500px;
 }
-
 
 // ── NAV ───────────────────────────────────────────────────────────────
 .nav {
@@ -57,14 +82,14 @@ $bottom-h: 52px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding: clamp(12px, 2vh, 28px) clamp(20px, 2.5vw, 40px);
+  padding: $ft-nav-pad-y $ft-nav-pad-x;
   overflow: hidden;
 }
 
 .row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: $ft-row-gap;
 }
 
 .col {
@@ -73,36 +98,44 @@ $bottom-h: 52px;
 }
 
 .colTitle {
-  font-size: clamp(12px, 1.38vh, 15px);
+  font-size: $ft-col-title-fs;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: rgba($color-white, 0.45);
-  margin-bottom: clamp(6px, 1vh, 14px);
-  padding-bottom: clamp(4px, 0.6vh, 8px);
+  margin-bottom: $ft-col-title-mb;
+  padding-bottom: $ft-col-title-pb;
   border-bottom: 1px solid rgba($color-white, 0.1);
 }
 
 .col p {
-  margin: clamp(2px, 0.4vh, 6px) 0;
-  font-size: clamp(13px, 1.50vh, 16px);
+  margin: $ft-p-margin 0;
+  font-size: $ft-p-fs;
   color: rgba($color-white, 0.7);
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color $transition-fast;
+    &:hover { color: $color-white; }
+  }
 }
 
 .addressBtn {
   display: inline-block;
-  font-size: clamp(13px, 1.50vh, 16px);
+  font-size: $ft-p-fs;
   color: #6ab0f5;
   text-decoration: underline;
   text-align: left;
-  margin-bottom: clamp(6px, 1vh, 12px);
+  margin-bottom: $ft-subrow-mb;
+  transition: color $transition-fast;
 
-  &:hover { color: #90c8ff; }
+  &:hover { color: $color-white; }
 }
 
 .mapThumb {
   position: relative;
   width: 100%;
-  height: clamp(100px, 13vh, 170px);
+  height: $ft-map-h;
   border-radius: 6px;
   overflow: hidden;
   cursor: pointer;
@@ -132,11 +165,11 @@ $bottom-h: 52px;
 .specGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(3px, 0.5vh, 7px) 8px;
+  gap: $ft-spec-gap-y 8px;
 }
 
 .specLink {
-  font-size: clamp(12px, 1.38vh, 15px);
+  font-size: $ft-spec-fs;
   color: rgba($color-white, 0.65);
   text-decoration: none;
   cursor: pointer;
@@ -144,22 +177,33 @@ $bottom-h: 52px;
 }
 
 .subRow {
-  margin-bottom: clamp(8px, 1.2vh, 20px);
+  margin-bottom: $ft-subrow-mb;
 }
 
 .serviceList {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: clamp(2px, 0.5vh, 7px);
+  gap: $ft-service-gap;
 
   li {
-    font-size: clamp(13px, 1.50vh, 16px);
+    font-size: $ft-p-fs;
     color: rgba($color-white, 0.7);
 
     &::before {
       content: '→\00A0';
       color: rgba($color-white, 0.35);
+      display: inline-block;
+      transition: transform $transition-fast;
+    }
+
+    &:hover::before { transform: translateX(4px); }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color $transition-fast;
+      &:hover { color: $color-white; }
     }
   }
 }
@@ -180,26 +224,26 @@ $bottom-h: 52px;
 }
 
 .partnerLogoNfz {
-  height: 42px;
+  height: $ft-logo-nfz-h;
   width: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
 }
+
 .partnerLogoLux {
-  height: 74px;
+  height: $ft-logo-lux-h;
   width: auto;
   object-fit: contain;
-  // filter: brightness(0) invert(1);
 }
 
 .siteNav {
   display: flex;
   flex-direction: column;
-  gap: clamp(4px, 0.7vh, 10px);
+  gap: $ft-sitenav-gap;
 
   a {
     text-decoration: none;
-    font-size: clamp(13px, 1.50vh, 16px);
+    font-size: $ft-p-fs;
     font-weight: $font-weight-semibold;
     color: rgba($color-white, 0.75);
     &:hover { color: $color-white; }
@@ -207,15 +251,15 @@ $bottom-h: 52px;
 }
 
 .legal {
-  font-size: clamp(12px, 1.27vh, 14px) !important;
-  font-weight: $font-weight-normal !important;
-  color: rgba($color-white, 0.4) !important;
+  font-size: $ft-legal-fs;
+  font-weight: $font-weight-normal;
+  color: rgba($color-white, 0.35);
 }
 
 .separator {
   border: 0;
   border-top: 1px solid rgba($color-white, 0.1);
-  margin: clamp(2px, 0.5vh, 6px) 0;
+  margin: $ft-separator-m 0;
 }
 
 .partnerItem {

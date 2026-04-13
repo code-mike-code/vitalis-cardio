@@ -1,6 +1,10 @@
 @use '@/styles/variables' as *;
 @use '@/styles/mixins' as *;
 
+// ── Fluid typography ──────────────────────────────────────────────
+$sp-heading-fs:     clamp(1.6rem, 3.8vw, 4.2rem);
+$sp-review-text-fs: clamp(#{$font-size-base}, 1.1vw, #{$font-size-lg});
+
 // ── Sekcja ────────────────────────────────────────────────────────
 
 .section {
@@ -82,19 +86,18 @@
   flex-direction: column;
   gap: 0;
   font-family: $font-family-heading;
-  font-size: clamp(1.6rem, 3.8vw, 4.2rem);
+  font-size: $sp-heading-fs;
   font-weight: 300;
   letter-spacing: 0.10em;
   text-transform: uppercase;
   color: $color-white;
   line-height: 1.05;
-  // Clip potrzebny dla waveWrap
   padding-bottom: 0.06em;
 }
 
 .headingLine {
   display: block;
-  overflow: hidden; // clip dla waveWrap dzieci
+  overflow: hidden;
   padding-bottom: 0.1em;
   margin-bottom: -0.1em;
 }
@@ -128,16 +131,13 @@
   @include respond-to('mobile') { gap: $spacing-sm; }
 }
 
-// Viewport: overflow hidden, flex: 1 — tu mierzymy slideW
 .viewport {
   flex: 1;
   overflow: hidden;
   min-width: 0;
   cursor: grab;
-  // Blokuj zaznaczanie tekstu podczas dragu
   user-select: none;
   -webkit-user-select: none;
-  // Blokuj natywny scroll przeglądarki podczas przesuwania poziomego
   touch-action: pan-y;
 }
 
@@ -145,15 +145,11 @@
   cursor: grabbing;
 }
 
-// Track: szerokość ustawiana inline (slideW * SLIDES.length),
-// transform ustawiany inline (translateX)
 .track {
   display: flex;
-  // NIE ustawiaj overflow: hidden tutaj — to rola viewportu
   will-change: transform;
 }
 
-// Każdy slajd: szerokość ustawiana inline (slideW px)
 .slide {
   flex-shrink: 0;
   box-sizing: border-box;
@@ -164,14 +160,12 @@
   }
 }
 
-// Aktywny slajd
 .slideActive {
   .card {
     border-color: rgba(255, 255, 255, 0.18);
   }
 }
 
-// Nieaktywne slajdy — wyszarzone, bez interakcji
 .slideInactive {
   pointer-events: none;
 
@@ -210,7 +204,6 @@
   }
 }
 
-// Cudzysłów dekoracyjny — duży, subtelny
 .quoteIcon {
   position: absolute;
   top: $spacing-xl;
@@ -236,13 +229,12 @@
 }
 
 .text {
-  font-size: clamp($font-size-base, 1.1vw, $font-size-lg);
+  font-size: $sp-review-text-fs;
   color: rgba(255, 255, 255, 0.92);
   line-height: 1.7;
   flex: 1;
   margin: 0;
   quotes: none;
-  // Zapobiegaj inicjowaniu dragu przez zaznaczanie tekstu
   pointer-events: none;
 
   @include respond-to('tablet') {
@@ -348,47 +340,23 @@
   transition: transform $transition-base;
 }
 
-// Lewa strzałka:
-//   domyślnie: rotate(-45deg) = ↗ skierowane w górę-prawo (symetria z prawą)
-//   hover:     rotate(180deg) = ← wskazuje w lewo
-.arrowPrev .arrowIcon {
-  transform: rotate(-45deg);
-}
+.arrowPrev .arrowIcon { transform: rotate(-45deg); }
+.arrowPrev:hover .arrowIcon { transform: rotate(180deg); }
+.arrowNext .arrowIcon { transform: rotate(-45deg); }
+.arrowNext:hover .arrowIcon { transform: rotate(0deg); }
 
-.arrowPrev:hover .arrowIcon {
-  transform: rotate(180deg);
-}
-
-// Prawa strzałka:
-//   domyślnie: rotate(-45deg) = ↗ skierowane w górę-prawo
-//   hover:     rotate(0deg)   = → wskazuje w prawo
-.arrowNext .arrowIcon {
-  transform: rotate(-45deg);
-}
-
-.arrowNext:hover .arrowIcon {
-  transform: rotate(0deg);
-}
-
-// ── Przycisk Google Review ────────────────────────────────────────
+// ── Przycisk Google Review — biały wariant na ciemnym tle ─────────
 
 .reviewBtn {
-  align-self: center !important;
-  color: $color-white !important;
-  border-color: rgba(255, 255, 255, 0.75) !important;
-
-  &:hover:not(:disabled),
-  &:focus-visible:not(:disabled) {
-    color: $color-white !important;
-    border-color: $color-white !important;
-  }
-
-  &::before {
-    background: rgba(255, 255, 255, 0.12) !important;
-  }
+  align-self: center;
+  --btn-color:               #{$color-white};
+  --btn-border-color:        #{rgba(255, 255, 255, 0.75)};
+  --btn-hover-fill:          #{rgba(255, 255, 255, 0.12)};
+  --btn-hover-color:         #{$color-white};
+  --btn-hover-border-color:  #{$color-white};
 }
 
-// ── Dot indicators (kółko → pigułka) ─────────────────────────────
+// ── Dot indicators ───���────────────────────────────────────────────
 
 .dots {
   display: flex;
@@ -414,4 +382,3 @@
   width: 28px;
   background: $color-white;
 }
-

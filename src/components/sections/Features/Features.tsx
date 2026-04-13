@@ -1,20 +1,8 @@
-import { useRef, useEffect, useState } from 'react'
 import { features } from '@/data'
 import { useLanguage } from '@/hooks/useLanguage'
+import { useScrollReveal } from '@/hooks/useScrollReveal'
 import styles from './Features.module.scss'
-
-function waveSpans(text: string, baseDelay: number, charCls: string, wrapCls: string) {
-  return text.split('').map((char, i) => (
-    <span key={i} className={wrapCls}>
-      <span
-        className={charCls}
-        style={{ animationDelay: `${(baseDelay + i * 0.04).toFixed(2)}s` }}
-      >
-        {char === ' ' ? '\u00A0' : char}
-      </span>
-    </span>
-  ))
-}
+import { waveSpans } from '@/utils/waveSpans'
 
 const featureIcons: Record<string, JSX.Element> = {
   heart: (
@@ -45,19 +33,7 @@ const featureIcons: Record<string, JSX.Element> = {
 
 function Features() {
   const { t } = useLanguage()
-  const headingRef = useRef<HTMLDivElement>(null)
-  const [headingVisible, setHeadingVisible] = useState(false)
-
-  useEffect(() => {
-    const el = headingRef.current
-    if (!el) return
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setHeadingVisible(true); obs.disconnect() } },
-      { threshold: 0.2 }
-    )
-    obs.observe(el)
-    return () => obs.disconnect()
-  }, [])
+  const { ref: headingRef, isVisible: headingVisible } = useScrollReveal<HTMLDivElement>(0.2)
 
   return (
     <section className={styles.features} id="about">
@@ -75,8 +51,8 @@ function Features() {
               <div className={styles.iconWrapper}>
                 {featureIcons[feature.icon]}
               </div>
-              <h3 className={styles.cardTitle}>{feature.title}</h3>
-              <p className={styles.cardText}>{feature.description}</p>
+              <h3 className={styles.cardTitle}>{t(`features.card${feature.id}.title`)}</h3>
+              <p className={styles.cardText}>{t(`features.card${feature.id}.description`)}</p>
             </div>
           ))}
         </div>

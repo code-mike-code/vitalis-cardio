@@ -106,6 +106,18 @@ export const pl = {
     label: 'Dlaczego my',
     heading: 'Dlaczego Klinika Vitalis?',
     subtitle: 'Łączymy wieloletnie doświadczenie medyczne z indywidualnym podejściem do każdego pacjenta. Twoje zdrowie jest naszym priorytetem.',
+    card1: {
+      title: 'Kompleksowa opieka',
+      description: 'Zapewniamy pełen zakres opieki medycznej — od diagnostyki, przez leczenie specjalistyczne, po rehabilitację. Wszystko w jednym miejscu.',
+    },
+    card2: {
+      title: 'Zespół specjalistów',
+      description: 'Nasz zespół tworzą lekarze specjaliści z wieloletnim doświadczeniem klinicznym i naukowym, stale podnoszący swoje kwalifikacje.',
+    },
+    card3: {
+      title: 'Nowoczesna rehabilitacja',
+      description: 'Oferujemy zaawansowane programy rehabilitacyjne z wykorzystaniem najnowszego sprzętu i sprawdzonych metod terapeutycznych.',
+    },
   },
   euFunding: {
     label: 'Dofinansowanie z Unii Europejskiej',
@@ -144,6 +156,7 @@ export const pl = {
     copyright: 'Klinika Vitalis. Wszelkie prawa zastrzeżone.',
   },
   common: {
+    menu: 'Menu',
     close: 'Zamknij',
     closeMap: 'Zamknij mapę',
     openInMaps: 'Otwórz w Google Maps',
@@ -184,6 +197,31 @@ export const pl = {
     heading: 'SPECJALIŚCI',
     subheading: 'Lekarze i terapeuci Vitalis to osoby z pasją do medycyny i wieloletnim doświadczeniem klinicznym. Każdy pacjent jest u nas traktowany indywidualnie.',
     ctaAll: 'Wszyscy specjaliści',
+    member1: {
+      role: 'Dyrektor medyczny, współzałożyciel',
+      specialization: 'Kardiolog',
+      bio: 'Profesor nadzwyczajny i specjalista chorób wewnętrznych z tytułem doktora habilitowanego nauk medycznych. Współzałożyciel Poradni Vitalis w 2014 roku. Posiada wieloletnie doświadczenie w kardiologii klinicznej i diagnostycznej.',
+    },
+    member2: {
+      role: 'Specjalista chorób wewnętrznych, współzałożyciel',
+      specialization: 'Kardiolog',
+      bio: 'Doktor nauk medycznych, specjalista chorób wewnętrznych i kardiologii. Współzałożyciel Poradni Vitalis. Specjalizuje się w diagnostyce i leczeniu arytmii oraz niewydolności serca.',
+    },
+    member3: {
+      role: 'Specjalista neurologii',
+      specialization: 'Neurolog',
+      bio: 'Doktor nauk medycznych w dziedzinie neurologii. Doświadczenie w diagnostyce i leczeniu migren, padaczki oraz chorób neurodegeneracyjnych. Prowadzi badania EEG i EMG.',
+    },
+    member4: {
+      role: 'Specjalista ortopedii i traumatologii',
+      specialization: 'Ortopeda',
+      bio: 'Specjalista ortopedii i traumatologii narządu ruchu. Ekspert w leczeniu urazów sportowych, artroskopii stawów oraz schorzeń kręgosłupa. Wykonuje iniekcje dostawowe pod kontrolą USG.',
+    },
+    member5: {
+      role: 'Kierownik działu rehabilitacji',
+      specialization: 'Fizjoterapeutka',
+      bio: 'Certyfikowana fizjoterapeutka z tytułem magistra. Specjalizuje się w terapii manualnej, kinesiotapingu oraz rehabilitacji pourazowej. Prowadzi indywidualne programy kinezyterapii.',
+    },
   },
   socialProof: {
     label: 'Opinie pacjentów',

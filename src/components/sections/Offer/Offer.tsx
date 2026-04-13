@@ -1,89 +1,39 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
+import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '@/hooks/useLanguage'
 import { pricing } from '@/data'
 import CtaButton from '@components/common/CtaButton/CtaButton'
 import logoNfz from '@/assets/logo/logo-nfz.webp'
 import logoLuxmed from '@/assets/logo/logo-luxmed.png'
+import offerImg1 from '@/assets/img/offer-1.webp'
+import offerImg2 from '@/assets/img/offer-2.webp'
+import offerImg3 from '@/assets/img/offer-3.webp'
+import offerImg4 from '@/assets/img/offer-4.webp'
 import styles from './Offer.module.scss'
-
-// ── Heading wave animation (same pattern as Hero) ─────────────────
-function waveSpans(text: string, baseDelay: number, charCls: string, wrapCls: string) {
-  return text.split('').map((char, i) => (
-    <span key={i} className={wrapCls}>
-      <span
-        className={charCls}
-        style={{ animationDelay: `${(baseDelay + i * 0.04).toFixed(2)}s` }}
-      >
-        {char === ' ' ? '\u00A0' : char}
-      </span>
-    </span>
-  ))
-}
+import { waveSpans } from '@/utils/waveSpans'
 
 const areaKeys = ['clinics', 'usg', 'rehab', 'aesthetic'] as const
 
-const areaIcons: Record<typeof areaKeys[number], JSX.Element> = {
-  clinics: (
-    <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
-      <rect x="8" y="10" width="24" height="22" rx="2" stroke="currentColor" strokeWidth="1.8" fill="none"/>
-      <path d="M15 10V7h10v3" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
-      <line x1="20" y1="16" x2="20" y2="26" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-      <line x1="15" y1="21" x2="25" y2="21" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-    </svg>
-  ),
-  usg: (
-    <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
-      <rect x="6" y="12" width="20" height="18" rx="3" stroke="currentColor" strokeWidth="1.8" fill="none"/>
-      <path d="M26 18c3 0 6 2 6 5s-3 5-6 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
-      <path d="M26 22c1.5 0 3 .9 3 1.5s-1.5 1.5-3 1.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
-      <rect x="10" y="16" width="12" height="10" rx="1" fill="currentColor" opacity="0.15"/>
-      <line x1="10" y1="19" x2="22" y2="19" stroke="currentColor" strokeWidth="1.2"/>
-      <line x1="10" y1="22" x2="22" y2="22" stroke="currentColor" strokeWidth="1.2"/>
-    </svg>
-  ),
-  rehab: (
-    <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
-      <circle cx="20" cy="8" r="4" fill="currentColor" opacity="0.7"/>
-      <path d="M20 12v12" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"/>
-      <path d="M13 17l7-5 7 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-      <path d="M16 24l-3 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-      <path d="M24 24l3 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-    </svg>
-  ),
-  aesthetic: (
-    <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
-      <path d="M20 6c-6 0-11 5-11 12 0 5 3 9 7 11v3h8v-3c4-2 7-6 7-11 0-7-5-12-11-12z" stroke="currentColor" strokeWidth="1.8" fill="none"/>
-      <path d="M16 22c1 2 2 3 4 3s3-1 4-3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" fill="none"/>
-      <circle cx="16" cy="18" r="1.5" fill="currentColor"/>
-      <circle cx="24" cy="18" r="1.5" fill="currentColor"/>
-    </svg>
-  ),
+const areaImages: Record<typeof areaKeys[number], string> = {
+  clinics: offerImg1,
+  usg: offerImg2,
+  rehab: offerImg3,
+  aesthetic: offerImg4,
 }
+
 
 function Offer() {
   const { t } = useLanguage()
-  const [openIds, setOpenIds] = useState<Set<number>>(new Set())
-  const [hoveredId, setHoveredId] = useState<number | null>(null)
-  const headingRef = useRef<HTMLDivElement>(null)
-  const [headingVisible, setHeadingVisible] = useState(false)
+  const [openIds, setOpenIds] = useState<Set<string>>(new Set())
+  const [hoveredKey, setHoveredKey] = useState<string | null>(null)
+  const { ref: headingRef, isVisible: headingVisible } = useScrollReveal<HTMLDivElement>(0.2)
 
-  useEffect(() => {
-    const el = headingRef.current
-    if (!el) return
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setHeadingVisible(true); obs.disconnect() } },
-      { threshold: 0.2 }
-    )
-    obs.observe(el)
-    return () => obs.disconnect()
-  }, [])
-
-  function toggleAccordion(id: number) {
+  function toggleAccordion(key: string) {
     setOpenIds(prev => {
       const next = new Set(prev)
-      if (next.has(id)) next.delete(id)
-      else next.add(id)
+      if (next.has(key)) next.delete(key)
+      else next.add(key)
       return next
     })
   }
@@ -141,11 +91,13 @@ function Offer() {
           {areaKeys.map(key => (
             <div key={key} className={styles.areaCard}>
               <div className={styles.areaImageWrap}>
-                <div className={styles.areaImagePlaceholder} aria-hidden="true">
-                  <div className={styles.areaIconPlaceholder}>
-                    {areaIcons[key]}
-                  </div>
-                </div>
+                <img
+                  src={areaImages[key]}
+                  alt=""
+                  className={styles.areaImage}
+                  aria-hidden="true"
+                  loading="lazy"
+                />
               </div>
               <div className={styles.areaContent}>
                 <h3 className={styles.areaTitle}>{t(`offer.${key}Title`)}</h3>
@@ -179,64 +131,71 @@ function Offer() {
             </div>
 
             <div className={styles.pricingCtaWrap}>
-              <CtaButton href="#contact" variant="primary" size="lg">
+              <CtaButton to="/specjalizacje" variant="primary" size="lg">
                 {t('offer.pricingCta')}
               </CtaButton>
             </div>
 
             <div className={styles.accordion}>
-              {pricing.map(category => {
-                const isOpen = openIds.has(category.id)
-                const isHovered = hoveredId === category.id
+              {pricing.map(category => (
+                <div key={category.id} className={styles.pricingGroup}>
 
-                return (
-                  <div
-                    key={category.id}
-                    className={`${styles.accordionItem} ${isOpen ? styles.open : ''}`}
-                  >
-                    <button
-                      className={styles.accordionTrigger}
-                      onClick={() => toggleAccordion(category.id)}
-                      onMouseEnter={() => setHoveredId(category.id)}
-                      onMouseLeave={() => setHoveredId(null)}
-                      aria-expanded={isOpen}
-                    >
-                      {/* Tytuł z efektem wave na hover */}
-                      <span className={styles.accordionTitle} aria-label={category.title}>
-                        {category.title.split('').map((char, i) => (
-                          <span
-                            key={`${isHovered ? 'w' : 's'}-${i}`}
-                            className={styles.titleCharClip}
-                          >
-                            <span
-                              className={isHovered ? styles.titleCharWave : styles.titleChar}
-                              style={isHovered ? { animationDelay: `${(i * 0.025).toFixed(3)}s` } : undefined}
-                            >
-                              {char === ' ' ? '\u00A0' : char}
-                            </span>
+                  {/* ── Nagłówek sekcji (stylizowany jak button, bez toggle) ── */}
+                  <h3 className={styles.groupHeader}>{category.title}</h3>
+
+                  {/* ── Akordeony podsekcji ───────────────────────────────── */}
+                  {category.sections?.map((section, si) => {
+                    const key = `${category.id}-${si}`
+                    const isOpen = openIds.has(key)
+                    const isHovered = hoveredKey === key
+
+                    return (
+                      <div
+                        key={si}
+                        className={`${styles.accordionItem} ${isOpen ? styles.open : ''}`}
+                      >
+                        <button
+                          className={styles.accordionTrigger}
+                          onClick={() => toggleAccordion(key)}
+                          onMouseEnter={() => setHoveredKey(key)}
+                          onMouseLeave={() => setHoveredKey(null)}
+                          aria-expanded={isOpen}
+                        >
+                          <span className={styles.accordionTitle} aria-label={section.subtitle}>
+                            {section.subtitle.split('').map((char, i) => (
+                              <span
+                                key={`${isHovered ? 'w' : 's'}-${i}`}
+                                className={styles.titleCharClip}
+                              >
+                                <span
+                                  className={isHovered ? styles.titleCharWave : styles.titleChar}
+                                  style={isHovered ? { animationDelay: `${(i * 0.025).toFixed(3)}s` } : undefined}
+                                >
+                                  {char === ' ' ? '\u00A0' : char}
+                                </span>
+                              </span>
+                            ))}
                           </span>
-                        ))}
-                      </span>
+                          <span className={styles.accordionArrow} aria-hidden="true">→</span>
+                        </button>
 
-                      {/* Strzałka: domyślnie 45° w górę, hover → poziomo w prawo */}
-                      <span className={styles.accordionArrow} aria-hidden="true">→</span>
-                    </button>
-
-                    <div className={styles.accordionBody}>
-                      <div className={styles.accordionBodyInner}>
-                        <ul className={styles.priceList}>
-                          {category.items.map((item, i) => (
-                            <li key={i} className={styles.priceItem}>
-                              <span className={styles.priceName}>{item.name}</span>
-                              <span className={styles.priceValue}>{item.price}</span>
-                            </li>
-                          ))}
-                        </ul>
+                        <div className={styles.accordionBody}>
+                          <div className={styles.accordionBodyInner}>
+                            <ul className={styles.priceList}>
+                              {section.items.map((item, i) => (
+                                <li key={i} className={styles.priceItem}>
+                                  <span className={styles.priceName}>{item.name}</span>
+                                  <span className={styles.priceValue}>{item.price}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                )
-              })}
+                    )
+                  })}
+                </div>
+              ))}
             </div>
           </div>
         </div>

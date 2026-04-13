@@ -9,6 +9,16 @@
 // ── Base ──────────────────────────────────────────────────────────────────────
 
 .btn {
+  // Variant tokens — overridden per variant / consumer
+  --btn-color:               inherit;
+  --btn-bg:                  transparent;
+  --btn-border-color:        transparent;
+  --btn-hover-bg:            var(--btn-bg);
+  --btn-hover-fill:          transparent;
+  --btn-hover-color:         inherit;
+  --btn-hover-border-color:  transparent;
+  --btn-hover-shadow:        #{$shadow-md};
+
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -19,10 +29,15 @@
   font-family: $font-family-base;
   font-weight: $font-weight-semibold;
   cursor: pointer;
-  border: 2px solid transparent;
+  border: 2px solid var(--btn-border-color);
+  background: var(--btn-bg);
+  color: var(--btn-color);
   text-decoration: none;
   white-space: nowrap;
-  transition: color 0.18s cubic-bezier(0.4, 2, 0.6, 1), box-shadow 0.18s;
+  transition: color 0.3s ease,
+              border-color 0.3s ease,
+              background 0.3s ease,
+              box-shadow 0.18s;
   will-change: color;
 
   &::before {
@@ -33,6 +48,7 @@
     width: 0%;
     height: 100%;
     z-index: -1;
+    background: var(--btn-hover-fill);
     transition: width 0.6s cubic-bezier(0.4, 2, 0.6, 1);
   }
 
@@ -45,7 +61,10 @@
 
   &:hover:not(:disabled),
   &:focus-visible:not(:disabled) {
-    box-shadow: $shadow-md;
+    background: var(--btn-hover-bg);
+    color: var(--btn-hover-color);
+    border-color: var(--btn-hover-border-color);
+    box-shadow: var(--btn-hover-shadow);
 
     &::before { width: 100%; }
     .arrow { transform: rotate(-45deg); }
@@ -62,57 +81,74 @@
 // ── Variants ──────────────────────────────────────────────────────────────────
 
 .primary {
-  background: $color-primary;
-  color: $color-white;
-  border-color: $color-primary;
+  --btn-color:               #{$color-white};
+  --btn-bg:                  transparent;
+  --btn-border-color:        #{$color-primary};
+  --btn-hover-bg:            transparent;
+  --btn-hover-fill:          #{$color-primary};
+  --btn-hover-color:         #{$color-primary};
+  --btn-hover-border-color:  #{$color-primary};
 
-  &::before { background: $color-bg-dark; }
+  // ::before starts full (red) and slides OUT on hover
+  &::before {
+    right: 0;
+    left: auto;
+    width: 100%;
+  }
 
-  &:hover:not(:disabled),
-  &:focus-visible:not(:disabled) {
-    color: $color-white;
+  &:hover:not(:disabled)::before,
+  &:focus-visible:not(:disabled)::before {
+    width: 0%;
+  }
+
+  &:not(:hover):not(:focus-visible)::before {
+    left: auto;
+    right: 0;
+    width: 100%;
+    transition: width 0.5s cubic-bezier(0.4, 2, 0.6, 1);
   }
 }
 
 .secondary {
-  background: $color-secondary;
-  color: $color-white;
-  border-color: $color-secondary;
-
-  &::before { background: $color-primary; }
-
-  &:hover:not(:disabled),
-  &:focus-visible:not(:disabled) {
-    color: $color-white;
-  }
+  --btn-color:               #{$color-white};
+  --btn-bg:                  #{$color-secondary};
+  --btn-border-color:        #{$color-secondary};
+  --btn-hover-fill:          #{$color-primary};
+  --btn-hover-color:         #{$color-white};
+  --btn-hover-border-color:  #{$color-secondary};
 }
 
 .outline {
-  background: transparent;
-  color: $color-primary;
-  border-color: $color-primary;
-
-  &::before { background: $color-primary; }
-
-  &:hover:not(:disabled),
-  &:focus-visible:not(:disabled) {
-    color: $color-white;
-  }
+  --btn-color:               #{$color-primary};
+  --btn-bg:                  transparent;
+  --btn-border-color:        #{$color-primary};
+  --btn-hover-fill:          #{$color-primary};
+  --btn-hover-color:         #{$color-white};
+  --btn-hover-border-color:  #{$color-primary};
 }
 
 // ── Sizes ─────────────────────────────────────────────────────────────────────
 
 .sm {
-  padding: $spacing-xs $spacing-md;
-  font-size: $font-size-sm;
+  --btn-font-size: #{$font-size-sm};
+  --btn-padding-y: #{$spacing-xs};
+  --btn-padding-x: #{$spacing-md};
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  font-size: var(--btn-font-size);
 }
 
 .md {
-  padding: $spacing-sm $spacing-xl;
-  font-size: $font-size-base;
+  --btn-font-size: #{$font-size-base};
+  --btn-padding-y: #{$spacing-sm};
+  --btn-padding-x: #{$spacing-xl};
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  font-size: var(--btn-font-size);
 }
 
 .lg {
-  padding: $spacing-md $spacing-2xl;
-  font-size: $font-size-lg;
+  --btn-font-size: #{$font-size-lg};
+  --btn-padding-y: #{$spacing-md};
+  --btn-padding-x: #{$spacing-2xl};
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  font-size: var(--btn-font-size);
 }

@@ -1,22 +1,9 @@
-import { useRef, useEffect, useState } from 'react'
 import { team } from '@/data'
 import { useLanguage } from '@/hooks/useLanguage'
+import { useScrollReveal } from '@/hooks/useScrollReveal'
 import CtaButton from '@components/common/CtaButton/CtaButton'
 import styles from './Team.module.scss'
-
-// Wave animation — ten sam wzorzec co Offer/Hero
-function waveSpans(text: string, baseDelay: number, charCls: string, wrapCls: string) {
-  return text.split('').map((char, i) => (
-    <span key={i} className={wrapCls}>
-      <span
-        className={charCls}
-        style={{ animationDelay: `${(baseDelay + i * 0.04).toFixed(2)}s` }}
-      >
-        {char === ' ' ? '\u00A0' : char}
-      </span>
-    </span>
-  ))
-}
+import { waveSpans } from '@/utils/waveSpans'
 
 function AvatarPlaceholder({ index }: { index: number }) {
   // Alternuje między dwoma wariantami tła
@@ -36,21 +23,7 @@ function AvatarPlaceholder({ index }: { index: number }) {
 
 function Team() {
   const { t } = useLanguage()
-  const headingRef = useRef<HTMLDivElement>(null)
-  const [headingVisible, setHeadingVisible] = useState(false)
-
-  useEffect(() => {
-    const el = headingRef.current
-    if (!el) return
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) { setHeadingVisible(true); obs.disconnect() }
-      },
-      { threshold: 0.2 }
-    )
-    obs.observe(el)
-    return () => obs.disconnect()
-  }, [])
+  const { ref: headingRef, isVisible: headingVisible } = useScrollReveal<HTMLDivElement>(0.2)
 
   return (
     <section className={styles.team} id="team">
@@ -86,14 +59,14 @@ function Team() {
                 ) : (
                   <AvatarPlaceholder index={index} />
                 )}
-                <span className={styles.badge}>{member.specialization}</span>
+                <span className={styles.badge}>{t(`team.member${member.id}.specialization`)}</span>
               </div>
 
               {/* Treść */}
               <div className={styles.content}>
                 <h3 className={styles.name}>{member.name}</h3>
-                <span className={styles.role}>{member.role}</span>
-                <p className={styles.bio}>{member.bio}</p>
+                <span className={styles.role}>{t(`team.member${member.id}.role`)}</span>
+                <p className={styles.bio}>{t(`team.member${member.id}.bio`)}</p>
               </div>
 
               {/* Linia — widoczna dzięki ::after w SCSS */}

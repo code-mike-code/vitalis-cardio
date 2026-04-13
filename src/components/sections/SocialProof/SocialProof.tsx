@@ -7,9 +7,11 @@ import {
 } from 'react'
 import { useLanguage } from '@/hooks/useLanguage'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
+import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { reviews } from '@/data/review-data'
 import styles from './SocialProof.module.scss'
 import CtaButton from '@components/common/CtaButton/CtaButton'
+import { waveSpans } from '@/utils/waveSpans'
 
 // ── Helpers ───────────────────────────────────────────────────────
 
@@ -33,21 +35,6 @@ function formatDate(iso: string): string {
   return `${months[parseInt(month, 10) - 1]} ${year}`
 }
 
-// ── Wave animation (identyczna z Hero/Offer/Team) ─────────────────
-
-function waveSpans(text: string, baseDelay: number, charCls: string, wrapCls: string) {
-  return text.split('').map((char, i) => (
-    <span key={i} className={wrapCls}>
-      <span
-        className={charCls}
-        style={{ animationDelay: `${(baseDelay + i * 0.04).toFixed(2)}s` }}
-      >
-        {char === ' ' ? '\u00A0' : char}
-      </span>
-    </span>
-  ))
-}
-
 // ── Stałe karuzeli ────────────────────────────────────────────────
 // Infinity loop: [klon_ostatni, ...reviews, klon_pierwszy]
 // index 0       → klon ostatniego → teleport na TOTAL
@@ -59,6 +46,12 @@ const TRANSITION_MS = 500
 const DRAG_THRESHOLD_RATIO = 0.18 // 18% szerokości slajdu = przesuń
 const GOOGLE_REVIEW_URL = `https://search.google.com/local/writereview?placeid=${import.meta.env.VITE_GOOGLE_PLACE_ID ?? 'PLACE_ID_DO_UZUPELNIENIA'}`
 
+function getRealIndex(index: number): number {
+  if (index === 0) return TOTAL - 1
+  if (index === TOTAL + 1) return 0
+  return index - 1
+}
+
 // ── Komponent ─────────────────────────────────────────────────────
 
 export default function SocialProof() {
@@ -69,9 +62,8 @@ export default function SocialProof() {
   const sectionRef  = useRef<HTMLElement>(null)
   const videoRef    = useRef<HTMLVideoElement>(null)
   const viewportRef = useRef<HTMLDivElement>(null)
-  const headingRef  = useRef<HTMLDivElement>(null)
-  const [videoLoaded,    setVideoLoaded]    = useState(false)
-  const [headingVisible, setHeadingVisible] = useState(false)
+  const [videoLoaded, setVideoLoaded] = useState(false)
+  const { ref: headingRef, isVisible: headingVisible } = useScrollReveal<HTMLDivElement>(0.3)
 
   // ── Karuzela: index ────────────────────────────────────────────
   const [index,    setIndex]    = useState(1)    // 1 = pierwszy prawdziwy slajd
@@ -81,7 +73,7 @@ export default function SocialProof() {
   const [paused,   setPaused]   = useState(true)
 
   // Realny indeks dla dots (0-based, bez klonów)
-  const realIndex = index === 0 ? TOTAL - 1 : index === TOTAL + 1 ? 0 : index - 1
+  const realIndex = getRealIndex(index)
 
   // ── Szerokość slajdu — viewport.offsetWidth ───────────────────
   const [slideW, setSlideW] = useState(0)
@@ -91,8 +83,16 @@ export default function SocialProof() {
       if (viewportRef.current) setSlideW(viewportRef.current.offsetWidth)
     }
     measure()
-    window.addEventListener('resize', measure)
-    return () => window.removeEventListener('resize', measure)
+    let timer: ReturnType<typeof setTimeout>
+    function onResize() {
+      clearTimeout(timer)
+      timer = setTimeout(measure, 100)
+    }
+    window.addEventListener('resize', onResize)
+    return () => {
+      window.removeEventListener('resize', onResize)
+      clearTimeout(timer)
+    }
   }, [])
 
   // ── Drag / swipe (Pointer Events — mysz + dotyk) ──────────────
@@ -173,18 +173,6 @@ export default function SocialProof() {
     return () => obs.disconnect()
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [videoLoaded])
-
-  // ── Animacja nagłówka przy wejściu w viewport ────────────────
-  useEffect(() => {
-    const el = headingRef.current
-    if (!el) return
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setHeadingVisible(true); obs.disconnect() } },
-      { threshold: 0.3 }
-    )
-    obs.observe(el)
-    return () => obs.disconnect()
-  }, [])
 
   // ── Keyboard ──────────────────────────────────────────────────
   const handleKeyDown = useCallback((e: React.KeyboardEvent) => {

@@ -1,6 +1,13 @@
 @use '@/styles/variables' as *;
 @use '@/styles/mixins' as *;
 
+// ── Fluid typography ──────────────────────────────────────────────
+$hero-slide-heading-fs: clamp(1.8rem, 4vw, 3.5rem);
+$hero-slide-desc-fs:    clamp(0.9rem, 1.4vw, 1.1rem);
+$hero-bullets-fs:       clamp(0.85rem, 1.2vw, 1rem);
+$hero-text-large-fs:    clamp(1.4rem, 3.2vw, 3.8rem);
+$hero-text-small-fs:    clamp(0.75rem, 1.6vw, 2rem);
+
 // ── Sekcja 1 w stosie: karuzela (65svh) ───────────────────────────
 .heroCarousel {
   position: sticky;
@@ -38,13 +45,37 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.slideImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.52);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .slideContent {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: 860px;
   padding: calc(#{$header-height} + #{$spacing-xl}) $spacing-xl $spacing-xl;
-  color: $color-white;
+  color: $color-text;
   display: flex;
   flex-direction: column;
   gap: $spacing-md;
@@ -57,19 +88,19 @@
 
 .slideHeading {
   font-family: $font-family-heading;
-  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  font-size: $hero-slide-heading-fs;
   font-weight: 300;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 1.1;
-  color: $color-white;
+  color: $color-text;
   margin: 0;
 }
 
 .slideDesc {
-  font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+  font-size: $hero-slide-desc-fs;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.88);
+  color: $color-text-light;
   max-width: 580px;
   margin: 0;
 }
@@ -87,9 +118,9 @@
     display: flex;
     align-items: center;
     gap: $spacing-sm;
-    font-size: clamp(0.85rem, 1.2vw, 1rem);
+    font-size: $hero-bullets-fs;
     font-weight: $font-weight-medium;
-    color: rgba(255, 255, 255, 0.92);
+    color: $color-text;
     cursor: default;
 
     &:hover .bulletArrow {
@@ -99,11 +130,11 @@
 }
 
 .bulletArrow {
-  color: $color-white;
+  color: $color-text;
   font-size: $font-size-lg;
   font-weight: $font-weight-bold;
   flex-shrink: 0;
-  opacity: 0.75;
+  opacity: 0.6;
   display: inline-block;
 }
 
@@ -118,19 +149,13 @@
 }
 
 .slideBtn {
-  background: $color-primary !important;
-  color: $color-white !important;
-  border-color: $color-primary !important;
-
-  &:hover:not(:disabled),
-  &:focus-visible:not(:disabled) {
-    color: $color-white !important;
-    border-color: $color-primary-dark !important;
-  }
-
-  &::before {
-    background: $color-primary-dark !important;
-  }
+  --btn-bg:                 #{$color-primary};
+  --btn-color:              #{$color-white};
+  --btn-border-color:       #{$color-primary};
+  --btn-hover-bg:           #{$color-primary};
+  --btn-hover-fill:         #{$color-primary-dark};
+  --btn-hover-color:        #{$color-white};
+  --btn-hover-border-color: #{$color-primary-dark};
 }
 
 // ── Wskaźniki (dots) ──────────────────────────────────────────────
@@ -152,19 +177,19 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(0, 0, 0, 0.25);
   border: none;
   cursor: pointer;
   padding: 0;
   transition: all $transition-base;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(0, 0, 0, 0.5);
   }
 }
 
 .dotActive {
-  background: $color-white;
+  background: rgba(0, 0, 0, 0.75);
   width: 28px;
   border-radius: 4px;
 }
@@ -230,7 +255,7 @@
 
 .textLarge {
   font-family: $font-family-heading;
-  font-size: clamp(1.4rem, 3.2vw, 3.8rem);
+  font-size: $hero-text-large-fs;
   font-weight: 300;
   letter-spacing: 0.10em;
   line-height: 1.0;
@@ -239,7 +264,7 @@
 
 .textSmall {
   font-family: $font-family-heading;
-  font-size: clamp(0.75rem, 1.6vw, 2rem);
+  font-size: $hero-text-small-fs;
   font-weight: 300;
   font-style: italic;
   letter-spacing: 0.08em;

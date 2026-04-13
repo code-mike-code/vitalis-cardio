@@ -67,6 +67,171 @@
   }
 }
 
+// ── Examinations ─────────────────────────────────────────────
+.examinations {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xl;
+}
+
+.examinationsTitle {
+  font-family: $font-family-heading;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-secondary;
+  position: relative;
+  padding-bottom: $spacing-md;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 48px;
+    height: 3px;
+    background: $color-primary;
+    border-radius: 2px;
+  }
+}
+
+.examinationsList {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: $spacing-sm $spacing-xl;
+}
+
+.examinationsItem {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  font-size: $font-size-base;
+  color: $color-text;
+  padding: $spacing-sm 0;
+  border-bottom: 1px solid $color-border;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: $color-primary;
+    flex-shrink: 0;
+  }
+}
+
+// ── Service groups accordion ──────────────────────────────────
+.serviceGroupsSection {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xl;
+}
+
+.serviceGroupsAccordion {
+  border-top: 1px solid $color-border;
+}
+
+.serviceGroupItem {
+  border-bottom: 1px solid $color-border;
+}
+
+.serviceGroupTrigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-md 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: $spacing-md;
+  color: $color-text;
+
+  &:hover {
+    .serviceGroupTitle { color: $color-secondary; }
+    .serviceGroupArrow { transform: rotate(0deg); }
+  }
+}
+
+.serviceGroupTitle {
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  color: $color-text;
+  transition: color $transition-base;
+}
+
+.serviceGroupArrow {
+  flex-shrink: 0;
+  font-size: $font-size-lg;
+  color: $color-primary;
+  display: inline-block;
+  transform: rotate(-45deg);
+  transition: transform $transition-base;
+  line-height: 1;
+
+  .open & { transform: rotate(0deg); }
+}
+
+.serviceGroupBody {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows $transition-base;
+
+  .open & { grid-template-rows: 1fr; }
+}
+
+.serviceGroupBodyInner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.serviceGroupList {
+  list-style: none;
+  padding-bottom: $spacing-md;
+}
+
+// ── Info sections ─────────────────────────────────────────────
+.infoSectionsWrap {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-3xl;
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.infoSectionTitle {
+  font-family: $font-family-heading;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-secondary;
+  position: relative;
+  padding-bottom: $spacing-md;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 48px;
+    height: 3px;
+    background: $color-primary;
+    border-radius: 2px;
+  }
+}
+
+.infoSectionContent {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $color-text-light;
+  margin: 0;
+}
+
 // ── Specialists ───────────────────────────────────────────────
 .specialists {
   display: flex;

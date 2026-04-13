@@ -1,6 +1,13 @@
 @use '@/styles/variables' as *;
 @use '@/styles/mixins' as *;
 
+// ── Fluid typography ──────────────────────────────────────────────
+$team-heading-fs: clamp(1.6rem, 3.8vw, 4.2rem);
+$team-number-fs:  clamp(2rem, 3.5vw, 3.5rem);
+$team-name-fs:    clamp(#{$font-size-base}, 1.4vw, #{$font-size-xl});
+
+// ─────────────────────────────────────────────────────────────────
+
 .team {
   position: sticky;
   top: var(--sticky-top, 0px);
@@ -15,8 +22,6 @@
   flex-direction: column;
   gap: $spacing-3xl;
 }
-
-// ── Nagłówek (ten sam styl co pricingHeading w Offer) ─────────────
 
 .headerWrap {
   display: flex;
@@ -35,13 +40,12 @@
 
 .heading {
   font-family: $font-family-heading;
-  font-size: clamp(1.6rem, 3.8vw, 4.2rem);
+  font-size: $team-heading-fs;
   font-weight: 300;
   letter-spacing: 0.10em;
   text-transform: uppercase;
   color: $color-text;
   line-height: 1.0;
-  // Potrzebne żeby clipy waveWrap nie były ucinane od dołu
   padding-bottom: 0.06em;
 }
 
@@ -52,7 +56,7 @@
   max-width: 560px;
 }
 
-// ── Wave (identyczne z Hero/Offer) ────────────────────────────────
+// ── Wave ──────────────────────────────────────────────────────────
 
 .waveWrap {
   display: inline-block;
@@ -76,14 +80,12 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  // Linia oddzielająca przez border-top na każdym elemencie
   border-top: 1px solid $color-border;
 }
 
 .item {
   position: relative;
   display: grid;
-  // | numer | zdjęcie | treść |
   grid-template-columns: 72px 200px 1fr;
   grid-template-areas: 'num photo content';
   align-items: start;
@@ -92,7 +94,6 @@
   border-bottom: 1px solid $color-border;
   transition: background $transition-base;
 
-  // Hover: subtelne podświetlenie całego wiersza
   &:hover {
     background: $color-white;
 
@@ -122,22 +123,18 @@
   }
 }
 
-// ── Duży numer w tle ──────────────────────────────────────────────
-
 .number {
   grid-area: num;
   font-family: $font-family-heading;
-  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  font-size: $team-number-fs;
   font-weight: 300;
   color: $color-text;
   opacity: 0.10;
   line-height: 1;
-  padding-top: 4px; // wyrównanie z górą zdjęcia
+  padding-top: 4px;
   transition: color $transition-base, opacity $transition-base;
   user-select: none;
 }
-
-// ── Zdjęcie ───────────────────────────────────────────────────────
 
 .photoWrap {
   grid-area: photo;
@@ -162,7 +159,6 @@
   display: block;
 }
 
-// Placeholder gdy nie ma zdjęcia
 .avatarPlaceholder {
   width: 100%;
   height: 100%;
@@ -184,7 +180,6 @@
   height: 60%;
 }
 
-// Plakietka specjalizacji
 .badge {
   position: absolute;
   bottom: $spacing-sm;
@@ -200,8 +195,6 @@
   border-radius: $border-radius-sm;
 }
 
-// ── Treść ─────────────────────────────────────────────────────────
-
 .content {
   grid-area: content;
   display: flex;
@@ -215,7 +208,7 @@
 }
 
 .name {
-  font-size: clamp($font-size-base, 1.4vw, $font-size-xl);
+  font-size: $team-name-fs;
   font-weight: $font-weight-bold;
   color: $color-text;
   line-height: 1.25;
@@ -236,8 +229,6 @@
   max-width: 540px;
   margin-top: $spacing-xs;
 }
-
-// ── CTA ───────────────────────────────────────────────────────────
 
 .ctaWrap {
   display: flex;

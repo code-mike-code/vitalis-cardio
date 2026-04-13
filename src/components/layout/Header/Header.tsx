@@ -24,7 +24,7 @@ const Header = () => {
             <button
               className={styles.hamburger}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label={isMenuOpen ? t('common.close') : 'Menu'}
+              aria-label={isMenuOpen ? t('common.close') : t('common.menu')}
             >
               <span className={`${styles.hamburgerLine} ${styles.line1} ${isMenuOpen ? styles.line1Open : ''}`} />
               <span className={`${styles.hamburgerLine} ${isMenuOpen ? styles.line2Open : ''}`} />
@@ -33,7 +33,14 @@ const Header = () => {
 
             {!isMenuOpen && (
               <div className={styles.desktopAddress}>
-                <p>{t('nav.addressValue')}</p>
+                <a
+                  href="https://maps.google.com/?q=ul.+Kopernika+25,+32-540+Trzebinia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.addressLink}
+                >
+                  {t('nav.addressValue')}
+                </a>
               </div>
             )}
           </div>
@@ -55,7 +62,12 @@ const Header = () => {
             </div>
 
             <div className={styles.desktopCTA}>
-              <CtaButton to="/specjalizacje" variant="outline" size="md">
+              <CtaButton
+                to="/specjalizacje"
+                variant="outline"
+                size="md"
+                className={isMenuOpen ? undefined : styles.ctaOutlineWhite}
+              >
                 {t('header.bookAppointment')}
               </CtaButton>
             </div>

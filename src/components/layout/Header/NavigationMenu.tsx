@@ -44,7 +44,7 @@ const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
         <div className={styles.mobileSpecs}>
           <h2>{t('nav.specializations')}</h2>
           <div className={styles.mobileSpecGrid}>
-            {specializations.map(spec => (
+            {specializations.filter(s => !s.hideFromMenu).map(spec => (
               <Link
                 key={spec.id}
                 to={`/specjalizacje/${spec.slug}`}
@@ -91,7 +91,8 @@ const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
               height="100%"
               style={{ border: 0 }}
               loading="lazy"
-              title="Mapa"
+              title="Mapa dojazdu do gabinetu Vitalis"
+              sandbox="allow-scripts allow-same-origin"
             />
             <a
               href={MAPS_LINK}
@@ -109,7 +110,7 @@ const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
         <div className={styles.col}>
           <h2>{t('nav.specializations')}</h2>
           <div className={styles.specializationGrid}>
-            {specializations.map(spec => (
+            {specializations.filter(s => !s.hideFromMenu).map(spec => (
               <Link
                 key={spec.id}
                 to={`/specjalizacje/${spec.slug}`}

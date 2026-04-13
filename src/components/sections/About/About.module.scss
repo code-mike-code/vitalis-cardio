@@ -1,3 +1,8 @@
+// ── Fluid typography ──────────────────────────────────────────────
+$about-heading-fs: clamp(1.6rem, 3.8vw, 4.2rem);
+
+// ─────────────────────────────────────────────────────────────────
+
 .about {
   position: sticky;
   top: var(--sticky-top, 0px);
@@ -36,9 +41,7 @@
 
 .heading {
   font-family: $font-family-heading;
-  // font-size: clamp(2.4rem, 6vw, 6.5rem);
-    font-size: clamp(1.6rem, 3.8vw, 4.2rem);
-
+  font-size: $about-heading-fs;
   font-weight: 300;
   letter-spacing: 0.10em;
   text-transform: uppercase;
@@ -64,19 +67,6 @@
   100% { transform: translateY(0); }
 }
 
-// ── CTA ─────────────────────────────────────────────────────
-.ctaBtn {
-  &:hover:not(:disabled),
-  &:focus-visible:not(:disabled) {
-    background: transparent !important;
-    color: $color-primary !important;
-    box-shadow: none !important;
-  }
-
-  &::before {
-    display: none !important;
-  }
-}
 
 // ── Founders layout ─────────────────────────────────────────
 .foundersLayout {

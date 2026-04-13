@@ -1,6 +1,37 @@
 @use '@/styles/variables' as *;
 @use '@/styles/mixins' as *;
 
+// ── Fluid navigation menu variables ──────────────────────────────
+$nm-overlay-pad-y:   clamp(24px, 5vh, 56px);
+$nm-overlay-pad-x:   clamp(20px, 4vw, 64px);
+$nm-overlay-pad-bot: clamp(20px, 4vh, 40px);
+$nm-overlay-gap:     clamp(12px, 2vh, 32px);
+$nm-footer-pad-y:    clamp(16px, 2.5vh, 36px);
+$nm-footer-pad-x:    clamp(20px, 2.5vw, 40px);
+$nm-row-gap:         clamp(16px, 3.2vw, 40px);
+$nm-col-h2-fs:       clamp(14px, 1.6vw, 25px);
+$nm-col-h2-mb:       clamp(6px, 1.2vh, 20px);
+$nm-col-h2-pb:       clamp(4px, 0.7vh, 10px);
+$nm-col-p-margin:    clamp(2px, 0.5vh, 8px);
+$nm-col-p-fs:        clamp(12px, 1.4vw, 20px);
+$nm-addr-fs:         clamp(12px, 1.4vw, 20px);
+$nm-addr-mb:         clamp(8px, 1.2vh, 16px);
+$nm-map-h:           clamp(100px, 14vh, 200px);
+$nm-spec-gap:        clamp(4px, 0.8vh, 10px);
+$nm-spec-fs:         clamp(12px, 1.3vw, 19px);
+$nm-subrow-mb:       clamp(12px, 2vh, 36px);
+$nm-service-gap:     clamp(3px, 0.6vh, 8px);
+$nm-logo-nfz-h:      clamp(28px, 3.5vh, 42px);
+$nm-logo-lux-h:      clamp(48px, 6vh, 74px);
+$nm-sitenav-gap:     clamp(6px, 1vh, 12px);
+$nm-sitenav-fs:      clamp(12px, 1.4vw, 20px);
+$nm-legal-fs:        clamp(11px, 1.2vw, 17px);
+$nm-separator-m:     clamp(4px, 0.8vh, 10px);
+$nm-partner-fs:      clamp(12px, 1.4vw, 20px);
+$nm-partner-sub-fs:  clamp(11px, 1.1vw, 14px);
+
+// ─────────────────────────────────────────────────────────────────
+
 .menuOverlay {
   position: fixed;
   top: $header-height;
@@ -9,13 +40,12 @@
   height: calc(100svh - #{$header-height});
   background-color: white;
   z-index: 900;
-  padding: clamp(32px, 7vh, 56px) clamp(20px, 2.5vw, 40px) clamp(20px, 4vh, 40px);
+  padding: $nm-overlay-pad-y $nm-overlay-pad-x $nm-overlay-pad-bot;
   display: grid;
   grid-template-rows: 1fr 1fr;
-  gap: clamp(12px, 2vh, 32px);
+  gap: $nm-overlay-gap;
   overflow: hidden;
 
-  // Animacja z prawego dolnego rogu
   opacity: 0;
   visibility: hidden;
   transform: scale(0);
@@ -42,9 +72,9 @@
     opacity: 1;
     visibility: visible;
     transform: none;
-    padding: clamp(16px, 2.5vh, 36px) clamp(20px, 2.5vw, 40px) calc(clamp(16px, 2.5vh, 36px) + 52px);
+    padding: $nm-footer-pad-y $nm-footer-pad-x calc(#{$nm-footer-pad-y} + 52px);
 
-    .addressLink, .siteNav a, .specLink {
+    .addressLink, .siteNav a, .specLink, .col p a, .serviceList li a {
       color: #ccc;
       &:hover { color: white; }
     }
@@ -54,55 +84,55 @@
 }
 
 .row2, .row3 {
-  width: 1240px;
+  width: 100%;
+  max-width: 1240px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  align-content: start;
-}
-
-.row3 {
-  display: grid;
-  width: 1240px;
-  margin: 0 auto;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: $nm-row-gap;
   align-content: start;
 }
 
 .col {
   h2 {
-    font-size: clamp(17px, 1.84vh, 23px);
+    font-size: $nm-col-h2-fs;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: clamp(6px, 1.2vh, 20px);
-    padding-bottom: clamp(4px, 0.7vh, 10px);
+    margin-bottom: $nm-col-h2-mb;
+    padding-bottom: $nm-col-h2-pb;
     border-bottom: 1px solid #eee;
     color: #888;
   }
   p {
-    margin: clamp(2px, 0.5vh, 8px) 0;
+    margin: $nm-col-p-margin 0;
     font-weight: 500;
-    font-size: clamp(14px, 1.73vh, 18px);
+    font-size: $nm-col-p-fs;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color $transition-fast;
+      &:hover { color: #1a73e8; }
+    }
   }
 }
 
 .addressLink {
   display: inline-block;
-  font-size: clamp(14px, 1.73vh, 18px);
+  font-size: $nm-addr-fs;
   color: #1a73e8;
   text-decoration: underline;
   text-align: left;
-  margin-bottom: clamp(8px, 1.2vh, 16px);
+  margin-bottom: $nm-addr-mb;
+  transition: color $transition-fast;
 
-  &:hover { color: #1558b0; }
+  &:hover { color: #1a73e8; }
 }
 
 .mapThumb {
   position: relative;
   width: 100%;
-  height: clamp(120px, 16vh, 200px);
+  height: $nm-map-h;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
@@ -132,35 +162,47 @@
 .specializationGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(4px, 0.8vh, 10px);
+  gap: $nm-spec-gap;
 }
 
 .specLink {
-  font-size: clamp(13px, 1.61vh, 17px);
+  font-size: $nm-spec-fs;
   color: #333;
   text-decoration: none;
   cursor: pointer;
+  transition: color $transition-fast;
   &:hover { color: #1a73e8; }
 }
 
 .subRow {
-  margin-bottom: clamp(12px, 2vh, 36px);
+  margin-bottom: $nm-subrow-mb;
 }
 
 .serviceList {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: clamp(3px, 0.6vh, 8px);
+  gap: $nm-service-gap;
 
   li {
-    font-size: clamp(14px, 1.73vh, 18px);
+    font-size: $nm-col-p-fs;
     font-weight: 500;
     color: #333;
 
     &::before {
       content: '→\00A0';
-      color: #1a73e8;
+      color: $color-primary;
+      display: inline-block;
+      transition: transform $transition-fast;
+    }
+
+    &:hover::before { transform: translateX(4px); }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color $transition-fast;
+      &:hover { color: #1a73e8; }
     }
   }
 }
@@ -181,31 +223,33 @@
 }
 
 .partnerLogoNfz {
-  height: 42px;
+  height: $nm-logo-nfz-h;
   width: auto;
   object-fit: contain;
-//   filter: brightness(0) invert(1);
 }
+
 .partnerLogoLux {
-  height: 74px;
+  height: $nm-logo-lux-h;
   width: auto;
   object-fit: contain;
-  // filter: brightness(0) invert(1);
 }
 
 .siteNav {
   display: flex;
   flex-direction: column;
-  gap: clamp(6px, 1vh, 12px);
+  gap: $nm-sitenav-gap;
+
   a {
     text-decoration: none;
     color: #333;
     font-weight: 600;
-    font-size: clamp(14px, 1.73vh, 18px);
+    font-size: $nm-sitenav-fs;
+    transition: color $transition-fast;
     &:hover { color: #1a73e8; }
   }
+
   .legal {
-    font-size: clamp(13px, 1.50vh, 15px);
+    font-size: $nm-legal-fs;
     font-weight: 400;
     color: #777;
   }
@@ -214,12 +258,12 @@
 .separator {
   border: 0;
   border-top: 1px solid #eee;
-  margin: clamp(4px, 0.8vh, 10px) 0;
+  margin: $nm-separator-m 0;
 }
 
 @keyframes slideUp {
   from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  to   { transform: translateY(0);    opacity: 1; }
 }
 
 // ── Partner item layout ───────────────────────────────────────────
@@ -232,12 +276,13 @@
 }
 
 .partnerSubLink {
-  font-size: clamp(11px, 1.3vh, 13px);
+  font-size: $nm-partner-sub-fs;
   color: #1a73e8;
   text-decoration: underline;
   text-underline-offset: 2px;
+  transition: color $transition-fast;
 
-  &:hover { color: #1558b0; }
+  &:hover { color: #1a73e8; }
 }
 
 // ── Mobile menu (≤768px) ──────────────────────────────────────────
@@ -272,7 +317,7 @@
     border-bottom: 1px solid $color-border;
 
     &:last-child { border-bottom: none; }
-    &:hover { color: $color-primary; }
+    &:hover { color: #1a73e8; }
   }
 }
 
@@ -287,7 +332,7 @@
     color: $color-text;
     text-decoration: none;
 
-    &:hover { color: $color-primary; }
+    &:hover { color: #1a73e8; }
   }
 }
 

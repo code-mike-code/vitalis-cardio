@@ -15,7 +15,7 @@
   border: none;
   font-size: $font-size-sm;
   font-weight: $font-weight-medium;
-  color: $color-text-muted;
+  color: $color-text;
   cursor: pointer;
   padding: $spacing-xs $spacing-sm;
   border-radius: $border-radius-sm;
@@ -54,33 +54,59 @@
   font-weight: $font-weight-semibold;
 }
 
-// ── Mobile ────────────────────────────────────────────────────────
+.onDark .btn {
+  color: rgba(255, 255, 255, 0.7);
+
+  &:hover,
+  &:focus-visible {
+    color: $color-white;
+  }
+}
+
+.onDark .active {
+  color: $color-white;
+}
+
+.onDark .mobileInactiveBtn {
+  color: rgba(255, 255, 255, 0.7);
+
+  &:hover {
+    color: $color-white;
+  }
+}
+
+// ── Dropdown ──────────────────────────────────────────────────────
 
 .mobileSwitcher {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   position: relative;
 }
 
 .inactiveGroup {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
   display: flex;
-  flex-direction: row;
-  gap: $spacing-xs;
-  max-width: 0;
-  overflow: hidden;
+  flex-direction: column;
+  gap: 2px;
+  background: $color-white;
+  border: 1px solid $color-border;
+  border-radius: $border-radius-sm;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: $spacing-xs;
+  min-width: 64px;
+  z-index: 10;
+  pointer-events: none;
   opacity: 0;
-  transform: translateX(24px);
+  transform: translateY(-6px);
   transition:
-    max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.25s ease,
-    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity 0.18s ease,
+    transform 0.18s ease;
 }
 
 .inactiveGroupVisible {
-  max-width: 120px;
   opacity: 1;
-  transform: translateX(0);
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .mobileInactiveBtn {
@@ -91,12 +117,14 @@
   border: none;
   font-size: $font-size-sm;
   font-weight: $font-weight-medium;
-  color: $color-text-muted;
+  color: $color-text;
   cursor: pointer;
   padding: $spacing-xs $spacing-sm;
   border-radius: $border-radius-sm;
   line-height: 1;
   white-space: nowrap;
+  text-align: center;
+  width: 100%;
   transition: color 0.18s cubic-bezier(0.4, 2, 0.6, 1);
 
   &::before {

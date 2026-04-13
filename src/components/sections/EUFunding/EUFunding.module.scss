@@ -3,6 +3,9 @@
 
 $eu-blue: #003399;
 
+// ── Fluid typography ──────────────────────────────────────────────
+$eu-project-name-fs: clamp(#{$font-size-xl}, 3vw, #{$font-size-2xl});
+
 .euFunding {
   position: sticky;
   top: var(--sticky-top, 0px);
@@ -63,7 +66,7 @@ $eu-blue: #003399;
 
 .projectName {
   font-family: $font-family-heading;
-  font-size: clamp($font-size-xl, 3vw, $font-size-2xl);
+  font-size: $eu-project-name-fs;
   font-weight: $font-weight-normal;
   letter-spacing: 0.04em;
   line-height: 1.3;
