@@ -52,7 +52,12 @@ function SpecializationPage() {
       >
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>{specialization.name}</h1>
-          <CtaButton to={`/specjalizacje/${specialization.slug}/umow-wizyte`} size="lg">
+          <CtaButton
+            to={`/specjalizacje/${specialization.slug}/umow-wizyte`}
+            variant="outline"
+            size="lg"
+            className={styles.slideBtn}
+          >
             Umów wizytę
           </CtaButton>
         </div>

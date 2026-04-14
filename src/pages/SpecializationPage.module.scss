@@ -29,6 +29,16 @@
   gap: $spacing-xl;
 }
 
+.slideBtn {
+  --btn-bg:                 #{$color-primary};
+  --btn-color:              #{$color-white};
+  --btn-border-color:       #{$color-primary};
+  --btn-hover-bg:           #{$color-primary};
+  --btn-hover-fill:         #{$color-primary-dark};
+  --btn-hover-color:        #{$color-white};
+  --btn-hover-border-color: #{$color-primary-dark};
+}
+
 .heroTitle {
   font-family: $font-family-heading;
   font-size: $font-size-3xl;
