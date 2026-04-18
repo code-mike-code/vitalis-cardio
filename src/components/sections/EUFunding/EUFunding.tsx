@@ -1,5 +1,5 @@
 import { useLanguage } from '@/hooks/useLanguage'
-import euLogo from '@/assets/logo/EU-founds.jpg'
+import euLogo from '@/assets/logo/EU-founds.webp'
 import styles from './EUFunding.module.scss'
 
 function EUFunding() {

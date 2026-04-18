@@ -111,7 +111,7 @@ $feat-heading-fs: clamp(1.6rem, 3.8vw, 4.2rem);
   color: $color-secondary;
   transition: color $transition-base;
 
-  svg { width: 100%; height: 100%; }
+  svg, img { width: 100%; height: 100%; object-fit: contain; }
 }
 
 .cardTitle {
