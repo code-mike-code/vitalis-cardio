@@ -16,12 +16,15 @@ interface Props {
 }
 
 const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+  const langKey = language as 'en' | 'ua'
+  const specLabel = (spec: (typeof specializations)[number]) =>
+    spec.translations?.[langKey]?.menuLabel ?? spec.menuLabel
 
   return (
     <div className={`${styles.menuOverlay} ${isOpen ? styles.active : ''} ${isFooter ? styles.footerTheme : ''}`}>
 
-      {/* ── MOBILE LAYOUT (order: siteNav → phones → CTA → specGrid) ─ */}
+      {/* ── MOBILE LAYOUT (order: siteNav → phones → CTA → specGrid) ── */}
       <div className={styles.mobileMenu}>
         <nav className={styles.mobileSiteNav}>
           <Link to="/#about" onClick={onClose}>{t('nav.linkAbout')}</Link>
@@ -31,10 +34,12 @@ const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
         </nav>
 
         <div className={styles.mobilePhones}>
-          <a href="tel:+48221234567">tel: 22 123 45 67</a>
-          <a href="tel:+48500100200">tel: 500 100 200</a>
-          <a href="tel:+48500100300">tel: 500 100 300</a>
-          <a href="mailto:kontakt@vitalis.pl">kontakt@vitalis.pl</a>
+          <a href="tel:+48322109866">tel: 32 210 98 66</a>
+          <a href="tel:+48326200293">tel: 32 620 02 93</a>
+          <a href="tel:+48322109855">tel: 32 210 98 55</a>
+          <a href="tel:+48322109865">tel: 32 210 98 65</a>
+          <a href="tel:+48733433494">tel: 733 433 494</a>
+          <a href="mailto:jnvitalis@wp.pl">jnvitalis@wp.pl</a>
         </div>
 
         <Link to="/specjalizacje" className={styles.mobileCta} onClick={onClose}>
@@ -51,7 +56,7 @@ const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
                 className={styles.specLink}
                 onClick={onClose}
               >
-                {spec.menuLabel}
+                {specLabel(spec)}
               </Link>
             ))}
           </div>
@@ -62,12 +67,12 @@ const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
       <div className={styles.row2}>
         <div className={styles.col}>
           <h2>{t('nav.contactInfo')}</h2>
-          <p><a href="tel:+48221234567">tel: 22 123 45 67</a></p>
-          <p><a href="tel:+48500100200">tel: 500 100 200</a></p>
-          <p><a href="tel:+48500100300">tel: 500 100 300</a></p>
-          <p><a href="tel:+48500100400">tel: 500 100 400</a></p>
-          <p><a href="tel:+48500100500">tel: 500 100 500</a></p>
-          <p><a href="mailto:kontakt@vitalis.pl">email: kontakt@vitalis.pl</a></p>
+          <p><a href="tel:+48322109866">tel: 32 210 98 66</a></p>
+          <p><a href="tel:+48326200293">tel: 32 620 02 93</a></p>
+          <p><a href="tel:+48322109855">tel: 32 210 98 55</a></p>
+          <p><a href="tel:+48322109865">tel: 32 210 98 65</a></p>
+          <p><a href="tel:+48733433494">tel: 733 433 494</a></p>
+          <p><a href="mailto:jnvitalis@wp.pl">email: jnvitalis@wp.pl</a></p>
         </div>
         <div className={styles.col}>
           <h2>{t('nav.openingHours')}</h2>
@@ -91,7 +96,7 @@ const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
               height="100%"
               style={{ border: 0 }}
               loading="lazy"
-              title="Mapa dojazdu do gabinetu Vitalis"
+              title={t('common.mapDirections')}
               sandbox="allow-scripts allow-same-origin"
             />
             <a
@@ -117,7 +122,7 @@ const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
                 className={styles.specLink}
                 onClick={onClose}
               >
-                {spec.menuLabel}
+                {specLabel(spec)}
               </Link>
             ))}
           </div>

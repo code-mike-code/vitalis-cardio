@@ -29,21 +29,24 @@ function StarIcon({ filled }: { filled: boolean }) {
   )
 }
 
-function formatDate(iso: string): string {
+const LOCALE_MAP: Record<string, string> = { pl: 'pl-PL', en: 'en-GB', ua: 'uk-UA' }
+
+function formatDate(iso: string, lang: string): string {
   const [year, month] = iso.split('-')
-  const months = ['sty', 'lut', 'mar', 'kwi', 'maj', 'cze', 'lip', 'sie', 'wrz', 'paź', 'lis', 'gru']
-  return `${months[parseInt(month, 10) - 1]} ${year}`
+  const locale = LOCALE_MAP[lang] ?? 'pl-PL'
+  return new Date(Number(year), parseInt(month, 10) - 1, 1)
+    .toLocaleDateString(locale, { month: 'short', year: 'numeric' })
 }
 
-// ── Stałe karuzeli ────────────────────────────────────────────────
-// Infinity loop: [klon_ostatni, ...reviews, klon_pierwszy]
-// index 0       → klon ostatniego → teleport na TOTAL
-// index TOTAL+1 → klon pierwszego → teleport na 1
+// ── Carousel constants ────────────────────────────────────────────
+// Infinity loop: [last_clone, ...reviews, first_clone]
+// index 0       → clone of last  → teleport to TOTAL
+// index TOTAL+1 → clone of first → teleport to 1
 
 const TOTAL = reviews.length
 const SLIDES = [reviews[TOTAL - 1], ...reviews, reviews[0]]
 const TRANSITION_MS = 500
-const DRAG_THRESHOLD_RATIO = 0.18 // 18% szerokości slajdu = przesuń
+const DRAG_THRESHOLD_RATIO = 0.18 // 18% of slide width triggers navigation
 const GOOGLE_REVIEW_URL = `https://search.google.com/local/writereview?placeid=${import.meta.env.VITE_GOOGLE_PLACE_ID ?? 'PLACE_ID_DO_UZUPELNIENIA'}`
 
 function getRealIndex(index: number): number {
@@ -52,10 +55,10 @@ function getRealIndex(index: number): number {
   return index - 1
 }
 
-// ── Komponent ─────────────────────────────────────────────────────
+// ── Component ─────────────────────────────────────────────────────
 
 export default function SocialProof() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const isMobile = useMediaQuery('(max-width: 768px)')
 
   // ── Wideo / viewport / heading refs ──────────────────────────
@@ -69,10 +72,10 @@ export default function SocialProof() {
   const [index,    setIndex]    = useState(1)    // 1 = pierwszy prawdziwy slajd
   const [animated, setAnimated] = useState(true)
 
-  // paused = true na starcie — auto-advance włącza się dopiero po wejściu w viewport
+  // paused = true at start — auto-advance activates only when section enters viewport
   const [paused,   setPaused]   = useState(true)
 
-  // Realny indeks dla dots (0-based, bez klonów)
+  // Real index for dots (0-based, no clones)
   const realIndex = getRealIndex(index)
 
   // ── Szerokość slajdu — viewport.offsetWidth ───────────────────
@@ -128,7 +131,7 @@ export default function SocialProof() {
     }
   }, [index])
 
-  // Przywróć animację po teleporcie (double-rAF)
+  // Restore animation after teleport (double-rAF)
   useEffect(() => {
     if (!animated) {
       const id = requestAnimationFrame(() =>
@@ -157,7 +160,7 @@ export default function SocialProof() {
           setPaused(false)
           if (video && !videoLoaded) {
             video.load()
-            video.play().catch(() => {/* autoplay zablokowane — poster widoczny */})
+            video.play().catch(() => {/* autoplay blocked — poster is visible */})
             setVideoLoaded(true)
           } else if (video && videoLoaded) {
             video.play().catch(() => {})
@@ -182,13 +185,13 @@ export default function SocialProof() {
 
   // ── Pointer Events (drag + swipe) ─────────────────────────────
   const onPointerDown = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
-    // Ignoruj prawą mysz
+    // Ignore right mouse button
     if (e.pointerType === 'mouse' && e.button !== 0) return
     dragActive.current = true
     dragStartX.current = e.clientX
     setIsDragging(true)
     setPaused(true)
-    // Przechwytuj pointer żeby śledzić ruch poza elementem
+    // Capture pointer to track movement outside the element
     ;(e.currentTarget as HTMLDivElement).setPointerCapture(e.pointerId)
   }, [])
 
@@ -206,7 +209,7 @@ export default function SocialProof() {
     setDragOffset(0)
     if (delta < -threshold)  goNext()
     else if (delta > threshold) goPrev()
-    // Po puszczeniu wznawiamy (sekcja wciąż w viewport)
+    // Resume on release (section still in viewport)
     setPaused(false)
   }, [slideW, goNext, goPrev])
 
@@ -227,7 +230,7 @@ export default function SocialProof() {
       ref={sectionRef}
       aria-label={t('socialProof.label')}
     >
-      {/* ── Wideo tło ───────────────────────────────────────────── */}
+      {/* ── Video background ─────────────────────────────────────── */}
       <video
         ref={videoRef}
         className={styles.videoBg}
@@ -238,9 +241,9 @@ export default function SocialProof() {
         aria-hidden="true"
       >
         {/*
-          Pliki wideo do dostarczenia:
-            /public/video/socialproof-mobile.mp4   — ≤768px, maks. 720p
-            /public/video/socialproof-desktop.mp4  — >768px, maks. 1080p
+          Video files to provide:
+            /public/video/socialproof-mobile.mp4   — ≤768px, max 720p
+            /public/video/socialproof-desktop.mp4  — >768px, max 1080p
         */}
         {isMobile
           ? <source src="/video/socialproof-mobile.mp4"  type="video/mp4" />
@@ -249,10 +252,10 @@ export default function SocialProof() {
       </video>
       <div className={styles.overlay} aria-hidden="true" />
 
-      {/* ── Treść ───────────────────────────────────────────────── */}
+      {/* ── Content ───────────────────────────────────────────────── */}
       <div className={styles.inner}>
 
-        {/* Nagłówek z animacją wave */}
+        {/* Heading with wave animation */}
         <div className={styles.headerWrap} ref={headingRef}>
           <span className={styles.label}>{t('socialProof.label')}</span>
           <h2 className={styles.heading} aria-label={`${t('socialProof.headingLine1')} ${t('socialProof.headingLine2')}`}>
@@ -265,7 +268,7 @@ export default function SocialProof() {
           </h2>
         </div>
 
-        {/* Karuzela */}
+        {/* Carousel */}
         <div
           className={styles.carouselWrap}
           onKeyDown={handleKeyDown}
@@ -274,7 +277,7 @@ export default function SocialProof() {
           aria-label={t('socialProof.label')}
           tabIndex={0}
         >
-          {/* Strzałka lewo */}
+          {/* Left arrow */}
           <button
             className={`${styles.arrow} ${styles.arrowPrev}`}
             onClick={goPrev}
@@ -283,7 +286,7 @@ export default function SocialProof() {
             <span className={styles.arrowIcon} aria-hidden="true">→</span>
           </button>
 
-          {/* Viewport — overflow hidden, mierzy slideW */}
+          {/* Viewport — overflow hidden, measures slideW */}
           <div
             ref={viewportRef}
             className={`${styles.viewport} ${isDragging ? styles.viewportDragging : ''}`}
@@ -291,7 +294,7 @@ export default function SocialProof() {
             onPointerMove={onPointerMove}
             onPointerUp={onPointerUp}
             onPointerCancel={onPointerCancel}
-            // Hover: pauzuj auto-advance ALE nie blokuj drag
+            // Hover: pause auto-advance but do NOT block drag
             onMouseEnter={() => { if (!dragActive.current) setPaused(true)  }}
             onMouseLeave={() => { if (!dragActive.current) setPaused(false) }}
           >
@@ -332,7 +335,7 @@ export default function SocialProof() {
 
                         <div className={styles.authorInfo}>
                           <span className={styles.authorName}>{review.author}</span>
-                          <span className={styles.authorDate}>{formatDate(review.date)}</span>
+                          <span className={styles.authorDate}>{formatDate(review.date, language)}</span>
                         </div>
 
                         <div
@@ -351,7 +354,7 @@ export default function SocialProof() {
             </div>
           </div>
 
-          {/* Strzałka prawo */}
+          {/* Right arrow */}
           <button
             className={`${styles.arrow} ${styles.arrowNext}`}
             onClick={goNext}

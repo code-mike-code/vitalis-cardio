@@ -235,7 +235,7 @@ $offer-pricing-fs:       clamp(1.6rem, 3.5vw, 3.8rem);
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-// ── Grupy sekcji (nagłówki bez toggle) ───────────────────────────
+// ── Section groups (headings without toggle) ──────────────────────
 
 .pricingGroup {
   & + & {
@@ -256,7 +256,7 @@ $offer-pricing-fs:       clamp(1.6rem, 3.5vw, 3.8rem);
   margin-bottom: $spacing-xs;
 }
 
-// ── Akordeony podsekcji ───────────────────────────────────────────
+// ── Subsection accordions ─────────────────────────────────────────
 
 .accordionTrigger {
   width: 100%;
@@ -356,7 +356,7 @@ $offer-pricing-fs:       clamp(1.6rem, 3.5vw, 3.8rem);
   white-space: nowrap;
 }
 
-// ── Karty partnerów ───────────────────────────────────────────────
+// ── Partner cards ─────────────────────────────────────────────────
 
 .partnerCards {
   display: grid;

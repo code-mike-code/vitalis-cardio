@@ -19,7 +19,7 @@ const Header = () => {
     <>
       <header className={`${styles.header} ${isMenuOpen ? styles.menuOpen : ''}`}>
         <div className={styles.container}>
-          {/* LEWA STRONA: Hamburger + Adres */}
+          {/* LEFT: Hamburger + Address */}
           <div className={styles.leftSection}>
             <button
               className={styles.hamburger}
@@ -45,19 +45,19 @@ const Header = () => {
             )}
           </div>
 
-          {/* ŚRODEK: Logo */}
+          {/* CENTER: Logo */}
           <div className={styles.logoCenter}>
             <Logo size="md" />
           </div>
 
-          {/* PRAWA STRONA: Języki + Tel + CTA */}
+          {/* RIGHT: Languages + Phone + CTA */}
           <div className={styles.rightSection}>
             <LanguageSwitcher />
 
             <div className={styles.phoneWrapper}>
               <span className={styles.pulseDot} />
-              <a href="tel:+48123456789" className={styles.phone}>
-                +48 123 456 789
+              <a href="tel:+48322109866" className={styles.phone}>
+                32 210 98 66
               </a>
             </div>
 

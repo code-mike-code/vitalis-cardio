@@ -24,7 +24,26 @@ const areaImages: Record<typeof areaKeys[number], string> = {
 
 
 function Offer() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+  const langKey = language as 'en' | 'ua'
+  const localizedPricing = pricing.map(category => {
+    const catTr = category.translations?.[langKey]
+    return {
+      ...category,
+      title: catTr?.title ?? category.title,
+      sections: category.sections?.map((section, si) => {
+        const secTr = catTr?.sections?.[si]
+        return {
+          ...section,
+          subtitle: secTr?.subtitle ?? section.subtitle,
+          items: section.items.map((item, ii) => ({
+            ...item,
+            name: secTr?.items?.[ii]?.name ?? item.name,
+          })),
+        }
+      }),
+    }
+  })
   const [openIds, setOpenIds] = useState<Set<string>>(new Set())
   const [hoveredKey, setHoveredKey] = useState<string | null>(null)
   const { ref: headingRef, isVisible: headingVisible } = useScrollReveal<HTMLDivElement>(0.2)
@@ -42,7 +61,7 @@ function Offer() {
     <section className={styles.offer} id="offer">
       <div className={styles.container}>
 
-        {/* ── Nagłówek ───────────────────────────────────────────── */}
+        {/* ── Heading ──────────────────────────────────────────────── */}
         <div className={styles.headingWrap} ref={headingRef}>
           <h2 className={styles.heading}>
             <span className={`${styles.headingRow} ${styles.row1}`}>
@@ -86,7 +105,7 @@ function Offer() {
           </h2>
         </div>
 
-        {/* ── Obszary usług ──────────────────────────────────────── */}
+        {/* ── Service areas ────────────────────────────────────────── */}
         <div className={styles.areas}>
           {areaKeys.map(key => (
             <div key={key} className={styles.areaCard}>
@@ -107,9 +126,9 @@ function Offer() {
           ))}
         </div>
 
-        {/* ── Cennik ─────────────────────────────────────────────── */}
+        {/* ── Pricing ───────────────────────────────────────────────── */}
         <div className={styles.pricingSection} id="pricing">
-          {/* Wideo tło */}
+          {/* Video background */}
           <video
             className={styles.pricingVideo}
             autoPlay
@@ -119,7 +138,7 @@ function Offer() {
             preload="none"
             aria-hidden="true"
           >
-            {/* Zastąp ścieżkę docelowym plikiem wideo */}
+            {/* Replace path with the target video file */}
             <source src="/video/pricing-bg.mp4" type="video/mp4" />
           </video>
           <div className={styles.pricingOverlay} aria-hidden="true" />
@@ -137,13 +156,13 @@ function Offer() {
             </div>
 
             <div className={styles.accordion}>
-              {pricing.map(category => (
+              {localizedPricing.map(category => (
                 <div key={category.id} className={styles.pricingGroup}>
 
-                  {/* ── Nagłówek sekcji (stylizowany jak button, bez toggle) ── */}
+                  {/* ── Section heading (styled like a button, no toggle) ────── */}
                   <h3 className={styles.groupHeader}>{category.title}</h3>
 
-                  {/* ── Akordeony podsekcji ───────────────────────────────── */}
+                  {/* ── Subsection accordions ────────────────────────────────── */}
                   {category.sections?.map((section, si) => {
                     const key = `${category.id}-${si}`
                     const isOpen = openIds.has(key)
@@ -200,7 +219,7 @@ function Offer() {
           </div>
         </div>
 
-        {/* ── Karty partnerów ────────────────────────────────────── */}
+        {/* ── Partner cards ──────────────────────────────────────────── */}
         <div className={styles.partnerCards}>
 
           <Link to="/partnerzy/nfz" className={styles.partnerCard}>

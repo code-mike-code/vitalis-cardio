@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use '@/styles/variables' as *;
 @use '@/styles/mixins' as *;
 
@@ -172,7 +173,7 @@ $team-name-fs:    clamp(#{$font-size-base}, 1.4vw, #{$font-size-xl});
 }
 
 .avatarBgB {
-  background: linear-gradient(145deg, lighten(#C41E3A, 10%), #C41E3A);
+  background: linear-gradient(145deg, color.scale(#C41E3A, $lightness: 17.96%), #C41E3A);
 }
 
 .avatarSvg {

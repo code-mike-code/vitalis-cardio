@@ -1,3 +1,4 @@
+import { useLanguage } from '@/hooks/useLanguage'
 import PageLayout from '@components/layout/PageLayout/PageLayout'
 import styles from './PrivacyPage.module.scss'
 
@@ -9,13 +10,14 @@ const IOD_EMAIL = 'grabowskaodo@gmail.com'
 const IOD_NAME = 'Joanna Grabowska'
 
 function PrivacyPage() {
+  const { t } = useLanguage()
   return (
     <PageLayout>
       <div className={styles.hero}>
         <div className={styles.heroContent}>
-          <span className={styles.label}>Dokument prawny</span>
-          <h1 className={styles.title}>Polityka Prywatności i Cookies</h1>
-          <p className={styles.meta}>Ostatnia aktualizacja: {LAST_UPDATED}</p>
+          <span className={styles.label}>{t('privacy.heroLabel')}</span>
+          <h1 className={styles.title}>{t('privacy.heroTitle')}</h1>
+          <p className={styles.meta}>{t('privacy.heroMeta')} {LAST_UPDATED}</p>
         </div>
       </div>
 

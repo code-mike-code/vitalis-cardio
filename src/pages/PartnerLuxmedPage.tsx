@@ -1,89 +1,52 @@
 import { Link } from 'react-router-dom'
+import { useLanguage } from '@/hooks/useLanguage'
 import PageLayout from '@components/layout/PageLayout/PageLayout'
 import styles from './PartnerLuxmedPage.module.scss'
 import logoLuxmed from '@/assets/logo/logo-luxmed.png'
 
-const LUXMED_SERVICES = [
-  {
-    title: 'Kardiologia',
-    items: ['Konsultacja kardiologiczna', 'Badanie EKG', 'Echokardiografia (UKG)', 'Holter EKG', 'Próba wysiłkowa'],
-    slug: 'kardiologia',
-  },
-  {
-    title: 'Gastroenterologia',
-    items: ['Konsultacja gastroenterologiczna', 'Gastroskopia', 'Kolonoskopia'],
-    slug: 'gastroenterologia',
-  },
-  {
-    title: 'Psychiatria',
-    items: ['Konsultacja psychiatryczna'],
-    slug: 'psychiatria',
-  },
-  {
-    title: 'Ortopedia',
-    items: ['Konsultacja ortopedyczna', 'Diagnostyka USG stawów'],
-    slug: 'ortopedia',
-  },
-  {
-    title: 'Rehabilitacja',
-    items: ['Fizjoterapia', 'Kinezyterapia', 'Fizykoterapia', 'Masaż leczniczy', 'Kinesiotaping'],
-    slug: 'rehabilitacja',
-  },
-  {
-    title: 'Neurologia',
-    items: ['Konsultacja neurologiczna'],
-    slug: 'neurologia',
-  },
-  {
-    title: 'Endokrynologia',
-    items: ['Konsultacja endokrynologiczna'],
-    slug: 'endokrynologia',
-  },
-  {
-    title: 'Diagnostyka USG',
-    items: ['USG jamy brzusznej', 'USG tarczycy', 'USG piersi', 'USG układu moczowego', 'Doppler naczyń'],
-    slug: 'diagnostyka-usg',
-  },
-  {
-    title: 'Urologia',
-    items: ['Konsultacja urologiczna'],
-    slug: 'urologia',
-  },
-  {
-    title: 'Psychologia',
-    items: ['Konsultacja psychologiczna'],
-    slug: 'psychologia',
-  },
+const LUXMED_META = [
+  { slug: 'kardiologia', itemCount: 5 },
+  { slug: 'gastroenterologia', itemCount: 3 },
+  { slug: 'psychiatria', itemCount: 1 },
+  { slug: 'ortopedia', itemCount: 2 },
+  { slug: 'rehabilitacja', itemCount: 5 },
+  { slug: 'neurologia', itemCount: 1 },
+  { slug: 'endokrynologia', itemCount: 1 },
+  { slug: 'diagnostyka-usg', itemCount: 5 },
+  { slug: 'urologia', itemCount: 1 },
+  { slug: 'psychologia', itemCount: 1 },
 ]
 
 function PartnerLuxmedPage() {
+  const { t } = useLanguage()
+
+  const luxmedServices = LUXMED_META.map(({ slug, itemCount }, i) => ({
+    slug,
+    title: t(`partnerLuxmed.svc${i + 1}.title`),
+    items: Array.from({ length: itemCount }, (_, j) =>
+      t(`partnerLuxmed.svc${i + 1}.item${j + 1}`)
+    ),
+  }))
+
   return (
     <PageLayout>
       <div className={styles.hero}>
         <div className={styles.heroContent}>
           <img src={logoLuxmed} alt="LuxMed" className={styles.heroLogo} />
-          <h1 className={styles.title}>Usługi Vitalis w ramach abonamentu LuxMed</h1>
-          <p className={styles.subtitle}>
-            Posiadacze abonamentu medycznego LuxMed mogą korzystać z szerokiego zakresu
-            usług Poradni Vitalis bez dodatkowych opłat. Poniżej znajdziesz listę
-            świadczeń objętych abonamentem.
-          </p>
+          <h1 className={styles.title}>{t('partnerLuxmed.heroTitle')}</h1>
+          <p className={styles.subtitle}>{t('partnerLuxmed.heroSubtitle')}</p>
         </div>
       </div>
 
       <section className={styles.section}>
         <div className={styles.container}>
           <div className={styles.infoBox}>
-            <strong>Jak skorzystać z usług w ramach LuxMed?</strong>
-            <p>
-              Umów wizytę poprzez aplikację lub infolinię LuxMed, wybierając Poradnię Vitalis
-              jako miejsce realizacji usługi. Możesz też zadzwonić do naszej rejestracji —
-              poinformuj nas, że posiadasz abonament LuxMed.
-            </p>
+            <strong>{t('partnerLuxmed.infoBoxTitle')}</strong>
+            <p>{t('partnerLuxmed.infoBoxContent')}</p>
           </div>
 
           <div className={styles.grid}>
-            {LUXMED_SERVICES.map(svc => (
+            {luxmedServices.map(svc => (
               <div key={svc.slug} className={styles.card}>
                 <h3 className={styles.cardTitle}>{svc.title}</h3>
                 <ul className={styles.itemList}>
@@ -95,16 +58,13 @@ function PartnerLuxmedPage() {
                   to={`/specjalizacje/${svc.slug}`}
                   className={styles.cardLink}
                 >
-                  Dowiedz się więcej →
+                  {t('partnerLuxmed.learnMore')}
                 </Link>
               </div>
             ))}
           </div>
 
-          <p className={styles.disclaimer}>
-            Zakres usług dostępnych w ramach abonamentu LuxMed może ulec zmianie.
-            Aktualna lista świadczeń dostępna jest w aplikacji LuxMed lub pod numerem infolinii.
-          </p>
+          <p className={styles.disclaimer}>{t('partnerLuxmed.disclaimer')}</p>
         </div>
       </section>
     </PageLayout>

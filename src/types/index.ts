@@ -39,6 +39,11 @@ export interface Stat {
   label: string
 }
 
+export interface LocalizedSpecialistFields {
+  role?: string
+  bio?: string
+}
+
 export interface Specialist {
   id: number
   slug: string
@@ -49,6 +54,7 @@ export interface Specialist {
   photo: string
   bio: string
   isFounder?: boolean
+  translations?: { en?: LocalizedSpecialistFields; ua?: LocalizedSpecialistFields }
 }
 
 export interface SpecializationInfoSection {
@@ -59,6 +65,18 @@ export interface SpecializationInfoSection {
 export interface SpecializationServiceGroup {
   title: string
   items: string[]
+}
+
+export interface LocalizedSpecializationFields {
+  name?: string
+  menuLabel?: string
+  description?: string
+  conditionsLabel?: string
+  conditions?: string[]
+  examinationsLabel?: string
+  examinations?: string[]
+  serviceGroups?: SpecializationServiceGroup[]
+  infoSections?: SpecializationInfoSection[]
 }
 
 export interface Specialization {
@@ -74,6 +92,7 @@ export interface Specialization {
   examinationsLabel?: string
   serviceGroups?: SpecializationServiceGroup[]
   infoSections?: SpecializationInfoSection[]
+  translations?: { en?: LocalizedSpecializationFields; ua?: LocalizedSpecializationFields }
 }
 
 export interface PricingItem {
@@ -86,9 +105,24 @@ export interface PricingSection {
   items: PricingItem[]
 }
 
+export interface LocalizedPricingItem {
+  name?: string
+}
+
+export interface LocalizedPricingSection {
+  subtitle?: string
+  items?: LocalizedPricingItem[]
+}
+
+export interface LocalizedPricingCategory {
+  title?: string
+  sections?: LocalizedPricingSection[]
+}
+
 export interface PricingCategory {
   id: number
   title: string
   items?: PricingItem[]
   sections?: PricingSection[]
+  translations?: { en?: LocalizedPricingCategory; ua?: LocalizedPricingCategory }
 }

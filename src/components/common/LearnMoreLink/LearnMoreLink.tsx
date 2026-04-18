@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
+import { useLanguage } from '@/hooks/useLanguage'
 import styles from './LearnMoreLink.module.scss'
 
 interface Props {
@@ -8,10 +9,11 @@ interface Props {
   className?: string
 }
 
-function LearnMoreLink({ to, children = 'Dowiedz się więcej', className = '' }: Props) {
+function LearnMoreLink({ to, children, className = '' }: Props) {
+  const { t } = useLanguage()
   return (
     <Link to={to} className={[styles.link, className].filter(Boolean).join(' ')}>
-      {children}
+      {children ?? t('common.learnMore')}
       <span className={styles.arrow}>→</span>
     </Link>
   )

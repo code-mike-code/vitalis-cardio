@@ -14,7 +14,7 @@ interface LanguageSwitcherProps {
 }
 
 export function LanguageSwitcher({ variant }: LanguageSwitcherProps = {}) {
-  const { language, setLanguage } = useLanguage()
+  const { language, setLanguage, t } = useLanguage()
   const onDark = variant === 'onDark'
   const [expanded, setExpanded] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -46,7 +46,7 @@ export function LanguageSwitcher({ variant }: LanguageSwitcherProps = {}) {
             className={styles.mobileInactiveBtn}
             style={{ transitionDelay: expanded ? `${i * 0.05}s` : '0s' }}
             onClick={() => { setLanguage(code); setExpanded(false) }}
-            aria-label={`Zmień język na ${label}`}
+            aria-label={`${t('common.changeLanguageTo')} ${label}`}
           >
             {label}
           </button>
@@ -57,7 +57,7 @@ export function LanguageSwitcher({ variant }: LanguageSwitcherProps = {}) {
         className={`${styles.btn} ${styles.active} ${styles.mobileActiveBtn}`}
         onClick={() => setExpanded(prev => !prev)}
         aria-expanded={expanded}
-        aria-label="Zmień język"
+        aria-label={t('common.changeLanguage')}
       >
         {activeLabel}
       </button>

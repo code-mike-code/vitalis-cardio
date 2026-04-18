@@ -1,18 +1,18 @@
 /**
- * Ręcznie zarządzane recenzje pacjentów (wyłącznie 4–5 gwiazdek).
+ * Manually managed patient reviews (4–5 stars only).
  *
- * Dlaczego nie pobieramy automatycznie z Google?
+ * Why not fetch automatically from Google?
  * ─────────────────────────────────────────────
- * • Google Places API (klient)  → zwraca max 5 najnowszych recenzji,
- *   bez możliwości filtrowania po gwiazdkach. Wymaga klucza API
- *   widocznego publicznie → ryzyko nadużycia.
- * • Google My Business API       → wymaga OAuth 2.0 po stronie backendu
- *   (serwer z tokenem odświeżającym). Nie nadaje się do front-end only.
+ * • Google Places API (client)  → returns max 5 newest reviews,
+ *   with no way to filter by star rating. Requires an API key
+ *   exposed publicly → risk of abuse.
+ * • Google My Business API       → requires OAuth 2.0 on the backend
+ *   (server with a refresh token). Not suitable for front-end only.
  *
- * Jak dodawać recenzje:
+ * How to add reviews:
  * ─────────────────────
- * Skopiuj obiekt z `reviews` i uzupełnij pola. Pamiętaj o unikalnym `id`.
- * Dodawaj tylko recenzje z oceną 4 lub 5 gwiazdek.
+ * Copy an object from `reviews` and fill in the fields. Remember a unique `id`.
+ * Only add reviews with a rating of 4 or 5 stars.
  */
 
 export type StarRating = 4 | 5
@@ -20,14 +20,14 @@ export type StarRating = 4 | 5
 export interface Review {
   id: number
   author: string
-  /** Inicjały do awatara (gdy brak zdjęcia) */
+  /** Avatar initials (used when no photo is available) */
   initials: string
   rating: StarRating
-  /** Treść opinii */
+  /** Review text */
   text: string
   /** Format: YYYY-MM-DD */
   date: string
-  /** Opcjonalny URL zdjęcia profilowego */
+  /** Optional profile photo URL */
   photo?: string
 }
 

@@ -4,13 +4,13 @@ import { useLanguage } from '@/hooks/useLanguage'
 import CtaButton from '@components/common/CtaButton/CtaButton'
 import { waveSpans } from '@/utils/waveSpans'
 
-import cardiologyImg    from '@/assets/img/hero/cardiology-hero.png'
-import gynecologyImg    from '@/assets/img/hero/gynecology-hero.png'
-import orthopedicsImg   from '@/assets/img/hero/orthopedics-hero.png'
-import neurologyImg     from '@/assets/img/hero/neurology-hero.png'
-import rehabilitationImg from '@/assets/img/hero/rehabilitation-hero.png'
-import psychoImg        from '@/assets/img/hero/psycho-hero.png'
-import aestheticsImg    from '@/assets/img/hero/aesthetics-hero.png'
+import cardiologyImg    from '@/assets/img/hero/cardiology-hero.webp'
+import gynecologyImg    from '@/assets/img/hero/gynecology-hero.webp'
+import orthopedicsImg   from '@/assets/img/hero/orthopedics-hero.webp'
+import neurologyImg     from '@/assets/img/hero/neurology-hero.webp'
+import rehabilitationImg from '@/assets/img/hero/rehabilitation-hero.webp'
+import psychoImg        from '@/assets/img/hero/psycho-hero.webp'
+import aestheticsImg    from '@/assets/img/hero/aesthetics-hero.webp'
 
 const SLIDES = [
   { slug: 'kardiologia',         bg: '#1B4965', img: cardiologyImg },
@@ -41,7 +41,7 @@ function Hero() {
 
   return (
     <>
-      {/* Karuzela — osobna sekcja w stosie, z-index: 1 */}
+      {/* Carousel — separate stack section, z-index: 1 */}
       <section
         id="home"
         className={styles.heroCarousel}
@@ -65,6 +65,8 @@ function Hero() {
                 className={styles.slideImg}
                 aria-hidden="true"
                 loading={i === 0 ? 'eager' : 'lazy'}
+                fetchPriority={i === 0 ? 'high' : 'auto'}
+                decoding="async"
               />
               <div className={styles.slideContent}>
                 <h2 className={styles.slideHeading}>
@@ -124,7 +126,7 @@ function Hero() {
         </div>
       </section>
 
-      {/* Nagłówek główny — osobna sekcja w stosie, z-index: 2 */}
+      {/* Main heading — separate stack section, z-index: 2 */}
       <section className={styles.heroHeading}>
         <div className={styles.container}>
           <h1 className={styles.heading}>

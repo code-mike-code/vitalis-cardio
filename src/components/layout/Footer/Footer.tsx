@@ -10,7 +10,10 @@ const MAPS_LINK = `https://maps.google.com/?q=${encodeURIComponent(MAPS_ADDRESS)
 const MAPS_EMBED = `https://maps.google.com/maps?q=${encodeURIComponent(MAPS_ADDRESS)}&output=embed&hl=pl`
 
 function Footer() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+  const langKey = language as 'en' | 'ua'
+  const specLabel = (spec: (typeof specializations)[number]) =>
+    spec.translations?.[langKey]?.menuLabel ?? spec.menuLabel
   const currentYear = new Date().getFullYear()
 
   return (
@@ -20,12 +23,12 @@ function Footer() {
         <div className={styles.row}>
           <div className={styles.col}>
             <h3 className={styles.colTitle}>{t('nav.contactInfo')}</h3>
-            <p><a href="tel:+48221234567">tel: 22 123 45 67</a></p>
-            <p><a href="tel:+48500100200">tel: 500 100 200</a></p>
-            <p><a href="tel:+48500100300">tel: 500 100 300</a></p>
-            <p><a href="tel:+48500100400">tel: 500 100 400</a></p>
-            <p><a href="tel:+48500100500">tel: 500 100 500</a></p>
-            <p><a href="mailto:kontakt@vitalis.pl">email: kontakt@vitalis.pl</a></p>
+            <p><a href="tel:+48322109866">tel: 32 210 98 66</a></p>
+            <p><a href="tel:+48326200293">tel: 32 620 02 93</a></p>
+            <p><a href="tel:+48322109855">tel: 32 210 98 55</a></p>
+            <p><a href="tel:+48322109865">tel: 32 210 98 65</a></p>
+            <p><a href="tel:+48733433494">tel: 733 433 494</a></p>
+            <p><a href="mailto:jnvitalis@wp.pl">email: jnvitalis@wp.pl</a></p>
           </div>
           <div className={styles.col}>
             <h3 className={styles.colTitle}>{t('nav.openingHours')}</h3>
@@ -68,7 +71,7 @@ function Footer() {
             <div className={styles.specGrid}>
               {specializations.filter(s => !s.hideFromMenu).map(spec => (
                 <Link key={spec.id} to={`/specjalizacje/${spec.slug}`} className={styles.specLink}>
-                  {spec.menuLabel}
+                  {specLabel(spec)}
                 </Link>
               ))}
             </div>

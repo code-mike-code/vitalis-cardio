@@ -1,3 +1,4 @@
+import { useLanguage } from '@/hooks/useLanguage'
 import PageLayout from '@components/layout/PageLayout/PageLayout'
 import styles from './TermsPage.module.scss'
 
@@ -7,13 +8,14 @@ const ADMIN_ADDRESS = 'ul. Kopernika 25, 32-540 Trzebinia'
 const SERVICE_EMAIL = 'kontakt@vitalis.pl'
 
 function TermsPage() {
+  const { t } = useLanguage()
   return (
     <PageLayout>
       <div className={styles.hero}>
         <div className={styles.heroContent}>
-          <span className={styles.label}>Dokument prawny</span>
-          <h1 className={styles.title}>Regulamin Serwisu</h1>
-          <p className={styles.meta}>Ostatnia aktualizacja: {LAST_UPDATED}</p>
+          <span className={styles.label}>{t('terms.heroLabel')}</span>
+          <h1 className={styles.title}>{t('terms.heroTitle')}</h1>
+          <p className={styles.meta}>{t('terms.heroMeta')} {LAST_UPDATED}</p>
         </div>
       </div>
 

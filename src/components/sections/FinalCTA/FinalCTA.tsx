@@ -9,7 +9,7 @@ function FinalCTA() {
   return (
     <section className={styles.finalCta} id="final-cta">
       <div className={styles.container}>
-        {/* Lewa kolumna – nagłówek animowany */}
+        {/* Left column – animated heading */}
         <div className={styles.headingCol}>
           <h2 className={styles.heading}>
             <span className={`${styles.headingRow} ${styles.row1}`}>
@@ -28,7 +28,7 @@ function FinalCTA() {
           </h2>
         </div>
 
-        {/* Prawa kolumna – opis + CTA */}
+        {/* Right column – description + CTA */}
         <div className={styles.contentCol}>
           <p className={styles.subtext}>{t('finalCta.subtext')}</p>
           <div className={styles.ctaWrap}>

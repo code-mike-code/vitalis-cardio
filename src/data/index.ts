@@ -120,9 +120,9 @@ export const team: TeamMember[] = [
 
 export const contactInfo: ContactInfo = {
   address: 'ul. Kopernika 25, 32-540 Trzebinia',
-  phone: '+48 22 123 45 67',
-  email: 'rejestracja@klinika-vitalis.pl',
-  hours: 'Pon-Pt: 7:00-20:00, Sob: 8:00-14:00',
+  phone: '+48 32 210 98 66',
+  email: 'jnvitalis@wp.pl',
+  hours: 'Pon-Pt: 10:00-18:00',
 }
 
 export const specializations: Specialization[] = [
@@ -142,6 +142,38 @@ export const specializations: Specialization[] = [
       'Echokardiografia przezprzełykowa TEE, próba dobutaminowa',
       'Kontrola stymulatora/ICD',
     ],
+    translations: {
+      en: {
+        name: 'Cardiology',
+        menuLabel: 'Cardiologist',
+        description: 'The team of the "Vitalis" Specialist Outpatient Clinics was created by cardiologists with the goal of providing patients with access to modern and comprehensive outpatient cardiological care. Currently five specialists are employed. Each cardiologist, thanks to the clinic\'s modern diagnostic equipment, is able to treat almost all types of cardiovascular diseases. Close cooperation with the largest network of cardiac clinics in Poland (Polish-American Heart Clinics) and the County Hospital in Chrzanów enables rapid qualification for invasive procedures such as: coronary angiography, balloon angioplasty, implantation of pacemakers, defibrillators, bypasses, heart valve repair, ablations, surgical treatment of atrial fibrillation and hypertension. Each of our cardiologists is also able to conduct cardiac rehabilitation.',
+        examinations: [
+          'Consultation with resting ECG',
+          'ECG + Description (without specialist consultation)',
+          'Tilt test',
+          'Treadmill stress test',
+          'Holter ECG',
+          'Transthoracic echocardiography TTE',
+          'Transesophageal echocardiography TEE, dobutamine stress test',
+          'Pacemaker / ICD control',
+        ],
+      },
+      ua: {
+        name: 'Кардіологія',
+        menuLabel: 'Кардіолог',
+        description: 'Команда спеціалізованих амбулаторних клінік «Vitalis» була створена кардіологами з метою надання пацієнтам доступу до сучасної та комплексної амбулаторної кардіологічної допомоги. Наразі в закладі працює п\'ять спеціалістів. Кожен кардіолог завдяки сучасному діагностичному обладнанню клініки може лікувати майже всі типи серцево-судинних захворювань. Тісна співпраця з найбільшою мережею кардіологічних клінік у Польщі (Польсько-Американські Кардіологічні Клініки) та Районною лікарнею в Хшанові дозволяє швидко кваліфікувати пацієнтів для інвазивних процедур, таких як: коронарографія, балонна ангіопластика, імплантація кардіостимуляторів, дефібриляторів, шунтів, відновлення клапанів серця, абляція, хірургічне лікування фібриляції передсердь та артеріальної гіпертензії. Кожен з наших кардіологів також може проводити кардіологічну реабілітацію.',
+        examinations: [
+          'Консультація з ЕКГ у спокої',
+          'ЕКГ + опис (без консультації спеціаліста)',
+          'Тілт-тест',
+          'Стрес-тест на біговій доріжці',
+          'Холтер ЕКГ',
+          'Трансторакальна ехокардіографія ТТЕ',
+          'Трансезофагеальна ехокардіографія ТЕЕ, добутаміновий тест',
+          'Контроль кардіостимулятора / ICD',
+        ],
+      },
+    },
   },
   {
     id: 2,
@@ -154,6 +186,20 @@ export const specializations: Specialization[] = [
       'UKG',
       'Holter EKG i RR',
     ],
+    translations: {
+      en: {
+        name: 'Paediatric Cardiology',
+        menuLabel: 'Paediatric Cardiologist',
+        description: 'A paediatric cardiologist is a specialist in treating cardiovascular diseases in patients up to 18 years of age. The most common cardiac diseases in childhood include: arrhythmias, ventricular or atrial septal defects, right ventricular hypertrophy, heart failure, pulmonary valve and aortic valve defects.',
+        examinations: ['ECG', 'Echocardiography (UKG)', 'Holter ECG and BP'],
+      },
+      ua: {
+        name: 'Дитяча кардіологія',
+        menuLabel: 'Дитячий кардіолог',
+        description: 'Дитячий кардіолог — спеціаліст із лікування захворювань серцево-судинної системи у пацієнтів до 18 років. До найпоширеніших серцевих захворювань дитячого віку належать: аритмії, дефекти міжшлуночкової або міжпередсердної перегородки, гіпертрофія правого шлуночка, серцева недостатність, вади клапана легеневої артерії та аорти.',
+        examinations: ['ЕКГ', 'Ехокардіографія (УКГ)', 'Холтер ЕКГ та АТ'],
+      },
+    },
   },
   {
     id: 3,
@@ -171,6 +217,38 @@ export const specializations: Specialization[] = [
       'USG ginekologiczne',
       'USG trójwymiarowe',
     ],
+    translations: {
+      en: {
+        name: 'Gynaecology and Obstetrics',
+        menuLabel: 'Gynaecologist – Obstetrics',
+        description: 'A fully equipped consulting room (ultrasound, 3D, transvaginal probe, CTG) guarantees attentive and professional care. Our speciality is the diagnosis and treatment of infertility and pregnancy monitoring. The innovative naprotechnology method enables effective treatment in 40% of cases without IVF.',
+        examinationsLabel: 'Services provided',
+        examinations: [
+          'Gynaecological consultation',
+          'Pregnancy monitoring with obstetric ultrasound',
+          'CTG recordings during pregnancy',
+          'Transvaginal ultrasound',
+          'Breast ultrasound',
+          'Gynaecological ultrasound',
+          'Three-dimensional ultrasound',
+        ],
+      },
+      ua: {
+        name: 'Гінекологія та акушерство',
+        menuLabel: 'Гінеколог – акушерство',
+        description: 'Повністю обладнаний кабінет (УЗД, 3D, трансвагінальний датчик, КТГ) гарантує уважну та професійну допомогу. Наша спеціалізація — діагностика та лікування безпліддя і ведення вагітності. Інноваційний метод напротехнології дозволяє в 40% випадків ефективно лікувати без застосування ЕКЗ.',
+        examinationsLabel: 'Послуги, що надаються',
+        examinations: [
+          'Гінекологічна консультація',
+          'Ведення вагітності з акушерським УЗД',
+          'Запис КТГ під час вагітності',
+          'Трансвагінальне УЗД',
+          'УЗД грудей',
+          'Гінекологічне УЗД',
+          'Тривимірне УЗД',
+        ],
+      },
+    },
   },
   {
     id: 4,
@@ -184,6 +262,20 @@ export const specializations: Specialization[] = [
       'Endoskopowe usunięcie polipów',
       'USG',
     ],
+    translations: {
+      en: {
+        name: 'Gastroenterology',
+        menuLabel: 'Gastroenterologist',
+        description: 'We offer comprehensive diagnostics and treatment of gastrointestinal diseases.',
+        examinations: ['Colonoscopy, general anaesthesia', 'Gastroscopy', 'Endoscopic polyp removal', 'Ultrasound (USG)'],
+      },
+      ua: {
+        name: 'Гастроентерологія',
+        menuLabel: 'Гастроентеролог',
+        description: 'Ми пропонуємо повну діагностику та лікування захворювань шлунково-кишкового тракту.',
+        examinations: ['Колоноскопія, загальна анестезія', 'Гастроскопія', 'Ендоскопічне видалення поліпів', 'УЗД'],
+      },
+    },
   },
   {
     id: 5,
@@ -210,6 +302,44 @@ export const specializations: Specialization[] = [
       'EKG',
       'Biopsja tarczycy',
     ],
+    translations: {
+      en: {
+        name: 'Endocrinology',
+        menuLabel: 'Endocrinologist',
+        description: 'We offer competent and comprehensive treatment for patients with disorders of the thyroid, parathyroid glands, adrenal glands, pituitary gland and other endocrine glands. Rapid and accurate diagnosis is the key to patient satisfaction. In many cases histopathological examination is an indispensable part of diagnostics, especially in thyroid disease. Our clinic offers diagnostic fine-needle biopsy with precise microscopic evaluation, performed by Dr Jacek Pająk – a long-term academic at the Silesian Medical University.',
+        conditionsLabel: 'We diagnose and treat',
+        conditions: [
+          'Thyroid disorders: nodules, hyperthyroidism, hypothyroidism, Hashimoto\'s disease, goitre',
+          'Adrenal disorders: tumours, hyperfunction, hypofunction',
+          'Pituitary disorders: tumours, hyperfunction, hypofunction',
+          'Parathyroid disorders',
+          'Gonadal disorders: menstrual disorders, andropause, male infertility',
+          'Osteoporosis',
+          'Androgenic syndromes: hirsutism, acne, hair loss',
+          'Gynaecomastia, hyperprolactinaemia',
+        ],
+        examinationsLabel: 'We diagnose using',
+        examinations: ['Thyroid ultrasound', 'Abdominal and adrenal ultrasound', 'Parathyroid ultrasound', 'ECG', 'Thyroid biopsy'],
+      },
+      ua: {
+        name: 'Ендокринологія',
+        menuLabel: 'Ендокринолог',
+        description: 'Ми пропонуємо компетентне та комплексне лікування пацієнтів із порушеннями функції щитоподібної залози, прищитоподібних залоз, наднирників, гіпофіза та інших ендокринних залоз. Швидка та точна діагностика — запорука задоволеності пацієнта. У багатьох випадках гістопатологічне дослідження є невід\'ємною частиною діагностики, особливо при захворюваннях щитоподібної залози. Наша клініка пропонує діагностичну тонкоголкову біопсію з точною мікроскопічною оцінкою, яку виконує д-р Яцек Паяк — багаторічний науковий співробітник Сілезького медичного університету.',
+        conditionsLabel: 'Ми діагностуємо та лікуємо',
+        conditions: [
+          'Захворювання щитоподібної залози: вузли, гіперфункція, гіпофункція, хвороба Хашимото, зоб',
+          'Захворювання наднирників: пухлини, гіперфункція, гіпофункція',
+          'Захворювання гіпофіза: пухлини, гіперфункція, гіпофункція',
+          'Захворювання прищитоподібних залоз',
+          'Захворювання гонад: порушення менструального циклу, андропауза, чоловіче безпліддя',
+          'Остеопороз',
+          'Андрогенні синдроми: гірсутизм, акне, випадіння волосся',
+          'Гінекомастія, гіперпролактинемія',
+        ],
+        examinationsLabel: 'Ми діагностуємо за допомогою',
+        examinations: ['УЗД щитоподібної залози', 'УЗД черевної порожнини та наднирників', 'УЗД прищитоподібних залоз', 'ЕКГ', 'Біопсія щитоподібної залози'],
+      },
+    },
   },
   {
     id: 6,
@@ -221,6 +351,20 @@ export const specializations: Specialization[] = [
       'Konsultacja specjalistyczna',
       'Viscosuplementacja',
     ],
+    translations: {
+      en: {
+        name: 'Orthopaedics',
+        menuLabel: 'Orthopaedist',
+        description: 'A visit to the Orthopaedist consists of a detailed medical history and physical examination. Diagnostic imaging is often required. The orthopaedic doctor performs ultrasound of joints and soft tissues during the visit. In many cases MRI or CT is necessary.',
+        examinations: ['Specialist consultation', 'Viscosupplementation'],
+      },
+      ua: {
+        name: 'Ортопедія',
+        menuLabel: 'Ортопед',
+        description: 'Візит до ортопеда складається з детального анамнезу та фізичного огляду. Часто виникає необхідність розширення діагностики, насамперед за допомогою методів візуалізації. Лікар-ортопед під час візиту виконує УЗД суглобів та м\'яких тканин. У багатьох випадках необхідно виконати МРТ або КТ.',
+        examinations: ['Консультація спеціаліста', 'Віскосупліментація'],
+      },
+    },
   },
   {
     id: 7,
@@ -247,6 +391,56 @@ export const specializations: Specialization[] = [
       'Schorzenia układu pozapiramidowego',
       'Choroby nerwów obwodowych',
     ],
+    translations: {
+      en: {
+        name: 'Neurosurgery',
+        menuLabel: 'Neurosurgeon',
+        description: 'Neurosurgery deals with the diagnosis and treatment of disorders of the central and peripheral nervous system. Patients are most commonly referred to a neurosurgeon due to ineffectively treated back pain.',
+        conditionsLabel: 'In our clinic we treat',
+        conditions: [
+          'Degenerative spine disease',
+          'Disc disease of the cervical, thoracic and lumbar spine',
+          'Stenosis',
+          'Overload spine diseases',
+          'Compression fractures of the spine',
+          'Sciatica',
+          'Femoral neuralgia',
+          'Hydrocephalus',
+          'Spinal pain syndromes',
+          'Spondylolisthesis',
+          'Vascular diseases of the CNS',
+          'CNS tumours (brain, spine, spinal cord)',
+          'Chiari malformation and syringomyelia',
+          'Parkinson\'s disease',
+          'Extrapyramidal system disorders',
+          'Peripheral nerve diseases',
+        ],
+      },
+      ua: {
+        name: 'Нейрохірургія',
+        menuLabel: 'Нейрохірург',
+        description: 'Нейрохірургія займається діагностикою та лікуванням порушень центральної та периферичної нервової системи. Найчастіше хворих направляють до нейрохірурга через неефективно лікований біль у спині.',
+        conditionsLabel: 'У нашій клініці ми лікуємо',
+        conditions: [
+          'Дегенеративне захворювання хребта',
+          'Дископатія шийного, грудного та поперекового відділів хребта',
+          'Стеноз',
+          'Перевантажувальні захворювання хребта',
+          'Компресійні переломи хребта',
+          'Ішіас (сідничний біль)',
+          'Стегнова невралгія',
+          'Гідроцефалія',
+          'Больові синдроми хребта',
+          'Спондилолістез',
+          'Судинні захворювання ЦНС',
+          'Пухлини ЦНС (мозку, хребта, спинного мозку)',
+          'Мальформація Кіарі та сирингомієлія',
+          'Хвороба Паркінсона',
+          'Розлади екстрапірамідної системи',
+          'Захворювання периферичних нервів',
+        ],
+      },
+    },
   },
   {
     id: 8,
@@ -258,6 +452,20 @@ export const specializations: Specialization[] = [
       'USG',
       'EEG',
     ],
+    translations: {
+      en: {
+        name: 'Neurology',
+        menuLabel: 'Neurologist',
+        description: 'The diagnosis of neurological disorders is based on a thorough medical history, clinical symptom analysis and diagnostic tests (EEG, MRI). Rapid diagnosis of syncope can prevent further episodes. On-site EEG combined with affordable MRI and experienced doctors allows full diagnosis and treatment of most neurological disorders. All EEG examinations are evaluated by a certified neurologist.',
+        examinations: ['Ultrasound (USG)', 'EEG'],
+      },
+      ua: {
+        name: 'Неврологія',
+        menuLabel: 'Невролог',
+        description: 'Діагностика неврологічних розладів ґрунтується на ретельно зібраному анамнезі, аналізі клінічних симптомів та діагностичних дослідженнях (ЕЕГ, МРТ). Швидка діагностика синкопальних станів може запобігти подальшим епізодам. ЕЕГ на місці та доступне МРТ у поєднанні з досвідом лікарів дозволяють проводити повну діагностику та лікування більшості неврологічних розладів. Всі ЕЕГ оцінюються сертифікованим неврологом.',
+        examinations: ['УЗД', 'ЕЕГ'],
+      },
+    },
   },
   {
     id: 9,
@@ -276,6 +484,40 @@ export const specializations: Specialization[] = [
       'Leczenie zaburzeń nerwicowych',
       'Leczenie zaburzeń snu',
     ],
+    translations: {
+      en: {
+        name: 'Psychiatry',
+        menuLabel: 'Psychiatrist',
+        description: 'We offer a modern approach to mental health. Psychiatry studies the biological, psychological, family-genetic, social and constitutional determinants of mental disorders and ways to prevent them. A psychiatry specialist is often indispensable for reactive neuroses in our increasingly fast-paced world – a growing problem of the 21st century.',
+        examinations: [
+          'Psychiatric medical consultations',
+          'Pharmacotherapy',
+          'Treatment of emotional disorders caused by stress',
+          'Treatment of psychotic disorders',
+          'Treatment of depressive disorders',
+          'Treatment of anxiety disorders',
+          'Treatment of psychosomatic disorders',
+          'Treatment of neurotic disorders',
+          'Treatment of sleep disorders',
+        ],
+      },
+      ua: {
+        name: 'Психіатрія',
+        menuLabel: 'Психіатр',
+        description: 'Ми забезпечуємо сучасний підхід до психічного здоров\'я. Психіатрія вивчає біологічні, психологічні, сімейно-генетичні, соціальні та конституційні детермінанти психічних розладів та способи їх профілактики. Спеціаліст із психіатрії часто є незамінним при реактивних неврозах в умовах прискорення темпу повсякденного життя — зростаюча проблема XXI століття.',
+        examinations: [
+          'Психіатричні медичні консультації',
+          'Фармакотерапія',
+          'Лікування емоційних розладів, спричинених стресом',
+          'Лікування психотичних розладів',
+          'Лікування депресивних розладів',
+          'Лікування тривожних розладів',
+          'Лікування психосоматичних розладів',
+          'Лікування невротичних розладів',
+          'Лікування розладів сну',
+        ],
+      },
+    },
   },
   {
     id: 10,
@@ -297,6 +539,40 @@ export const specializations: Specialization[] = [
       'Konsultacja specjalistyczna',
       'Inna usługa',
     ],
+    translations: {
+      en: {
+        name: 'Psychology',
+        menuLabel: 'Psychologist',
+        description: 'Individual psychotherapy for adults and young people is a specialised form of psychological help based on direct contact between the psychotherapist and the client. Psychotherapy is aimed especially at people who experience chronic psychological discomfort or have great difficulty coping independently with suffering or mental disorders.',
+        conditionsLabel: 'Individual psychotherapy addresses, among others',
+        conditions: [
+          'Anxiety disorders (neuroses)',
+          'Mood disorders (depression)',
+          'Crisis, trauma, loss of a loved one',
+          'Sense of injustice, inability to forgive related to the past',
+          'Adult Children of Alcoholics syndrome (ACA)',
+          'Difficulties in relationships and everyday functioning',
+          'Personality disorders',
+        ],
+        examinations: ['Specialist consultation', 'Other service'],
+      },
+      ua: {
+        name: 'Психологія',
+        menuLabel: 'Психолог',
+        description: 'Індивідуальна психотерапія для дорослих та підлітків — спеціалізована форма психологічної допомоги, заснована на безпосередньому контакті психотерапевта з клієнтом. Психотерапія спрямована перш за все на осіб, які відчувають хронічний психологічний дискомфорт або мають великі труднощі з самостійним подоланням страждань чи психічних розладів.',
+        conditionsLabel: 'Індивідуальна психотерапія стосується, зокрема',
+        conditions: [
+          'Тривожні розлади (неврози)',
+          'Розлади настрою (депресія)',
+          'Криза, травма, втрата близької людини',
+          'Відчуття несправедливості, нездатність пробачити пов\'язані з минулим',
+          'Синдром дорослих дітей алкоголіків (ДДА)',
+          'Труднощі у стосунках та повсякденному функціонуванні',
+          'Розлади особистості',
+        ],
+        examinations: ['Консультація спеціаліста', 'Інша послуга'],
+      },
+    },
   },
   {
     id: 11,
@@ -308,8 +584,140 @@ export const specializations: Specialization[] = [
       'Konsultacja specjalistyczna',
       'Inna usługa',
     ],
+    translations: {
+      en: {
+        name: 'Urology',
+        menuLabel: 'Urologist',
+        description: 'Urology deals with the diagnosis, treatment and prevention of urinary tract diseases in women and men, as well as male reproductive tract diseases. Our specialists treat kidney, bladder, ureter, urethra, prostate and testicular disorders. We address kidney stones, urinary infections, prostate hypertrophy, urinary incontinence and urogenital tumours. We use modern diagnostic methods including ultrasound, urodynamic tests and laboratory blood and urine tests. Surgical treatment is also available where needed.',
+        examinations: ['Specialist consultation', 'Other service'],
+      },
+      ua: {
+        name: 'Урологія',
+        menuLabel: 'Уролог',
+        description: 'Урологія займається діагностикою, лікуванням та профілактикою захворювань сечовивідних шляхів у жінок і чоловіків, а також захворювань чоловічої статевої системи. Наші спеціалісти комплексно лікують захворювання нирок, сечового міхура, сечоводів, сечівника, простати та яєчок. Ми займаємося нирковокам\'яною хворобою, інфекціями сечовивідних шляхів, гіперплазією простати, нетриманням сечі та пухлинами сечостатевої системи. Використовуємо сучасні методи діагностики, включаючи УЗД, уродинамічні та лабораторні дослідження. За потреби пропонуємо хірургічне лікування.',
+        examinations: ['Консультація спеціаліста', 'Інша послуга'],
+      },
+    },
   },
-  { id: 12, slug: 'dietetyka', name: 'Dietetyka', menuLabel: 'Dietetyk', description: 'Indywidualne plany żywieniowe, leczenie dietetyczne otyłości, cukrzycy i chorób metabolicznych. Wsparcie żywieniowe w terapii chorób przewlekłych.' },
+  {
+    id: 12,
+    slug: 'dietetyka',
+    name: 'Dietetyka',
+    menuLabel: 'Dietetyk',
+    description: 'Zdrowe odżywianie to fundament dobrego samopoczucia i profilaktyki wielu chorób cywilizacyjnych. W naszej klinice oferujemy kompleksowe konsultacje dietetyczne prowadzone przez doświadczonych specjalistów, którzy pomagają pacjentom osiągnąć cele zdrowotne poprzez indywidualnie dopasowane strategie żywieniowe. Niezależnie od tego, czy zmagasz się z nadwagą, chorobami metabolicznymi, czy po prostu chcesz poprawić jakość swojego życia — jesteśmy tu, by Ci pomóc.',
+    serviceGroups: [
+      {
+        title: 'Indywidualne plany żywieniowe',
+        items: [
+          'Redukcja masy ciała',
+          'Przyrost masy mięśniowej',
+          'Dieta lecznicza',
+        ],
+      },
+      {
+        title: 'Dieta przy chorobach metabolicznych',
+        items: [
+          'Cukrzyca typu 2',
+          'Insulinooporność',
+          'Niedoczynność tarczycy',
+        ],
+      },
+      {
+        title: 'Żywienie w chorobach układu pokarmowego',
+        items: [
+          'SIBO',
+          'IBS',
+          'Refluks',
+          'Nietolerancje pokarmowe',
+        ],
+      },
+      {
+        title: 'Wsparcie żywieniowe',
+        items: [
+          'Wsparcie żywieniowe w onkologii i rekonwalescencji pooperacyjnej',
+          'Dietetyka pediatryczna',
+          'Żywienie kobiet w ciąży oraz karmiących',
+          'Edukacja żywieniowa i warsztaty zdrowego gotowania',
+        ],
+      },
+    ],
+    infoSections: [
+      {
+        title: 'Jak wygląda wizyta u dietetyka?',
+        content: 'Nasz dietetyk kliniczny przeprowadza szczegółowy wywiad zdrowotny, analizę składu ciała oraz wyników badań laboratoryjnych, na podstawie których układa spersonalizowany plan żywieniowy. Każdy jadłospis jest dostosowany do Twoich potrzeb, trybu życia, preferencji smakowych oraz ewentualnych schorzeń towarzyszących. Regularne wizyty kontrolne pozwalają na bieżące modyfikowanie diety i monitorowanie postępów terapii.',
+      },
+    ],
+    translations: {
+      en: {
+        name: 'Dietetics',
+        menuLabel: 'Dietitian',
+        description: 'Healthy nutrition is the foundation of wellbeing and prevention of many civilisation diseases. Our clinic offers comprehensive dietary consultations conducted by experienced specialists who help patients achieve health goals through individually tailored nutritional strategies. Whether you struggle with excess weight, metabolic diseases, or simply want to improve your quality of life – we are here to help.',
+        serviceGroups: [
+          {
+            title: 'Individual nutritional plans',
+            items: ['Weight reduction', 'Muscle mass gain', 'Therapeutic diet'],
+          },
+          {
+            title: 'Diet in metabolic diseases',
+            items: ['Type 2 diabetes', 'Insulin resistance', 'Hypothyroidism'],
+          },
+          {
+            title: 'Nutrition in gastrointestinal diseases',
+            items: ['SIBO', 'IBS', 'Reflux', 'Food intolerances'],
+          },
+          {
+            title: 'Nutritional support',
+            items: [
+              'Nutritional support in oncology and post-operative recovery',
+              'Paediatric dietetics',
+              'Nutrition for pregnant and breastfeeding women',
+              'Nutritional education and healthy cooking workshops',
+            ],
+          },
+        ],
+        infoSections: [
+          {
+            title: 'What does a visit to the dietitian look like?',
+            content: 'Our clinical dietitian conducts a detailed health history, body composition analysis and laboratory results evaluation, on the basis of which an individualised nutritional plan is drawn up. Each meal plan is tailored to your needs, lifestyle, taste preferences and any coexisting conditions. Regular follow-up visits allow ongoing modification of the diet and monitoring of therapy progress.',
+          },
+        ],
+      },
+      ua: {
+        name: 'Дієтетика',
+        menuLabel: 'Дієтолог',
+        description: 'Здорове харчування є основою гарного самопочуття та профілактики багатьох цивілізаційних хвороб. Наша клініка пропонує комплексні дієтологічні консультації досвідчених спеціалістів, які допомагають пацієнтам досягти цілей здоров\'я через індивідуально підібрані дієтологічні стратегії. Незалежно від того, чи ви страждаєте від зайвої ваги, метаболічних захворювань, чи просто хочете покращити якість свого життя — ми тут, щоб допомогти.',
+        serviceGroups: [
+          {
+            title: 'Індивідуальні плани харчування',
+            items: ['Зниження ваги', 'Набір м\'язової маси', 'Лікувальна дієта'],
+          },
+          {
+            title: 'Дієта при метаболічних захворюваннях',
+            items: ['Цукровий діабет 2 типу', 'Інсулінорезистентність', 'Гіпотиреоз'],
+          },
+          {
+            title: 'Харчування при захворюваннях ШКТ',
+            items: ['СІБО', 'СПК', 'Рефлюкс', 'Харчова непереносимість'],
+          },
+          {
+            title: 'Нутритивна підтримка',
+            items: [
+              'Нутритивна підтримка в онкології та після операційного відновлення',
+              'Дієтологія для дітей',
+              'Харчування вагітних та жінок, що годують груддю',
+              'Дієтологічна освіта та майстер-класи здорового приготування їжі',
+            ],
+          },
+        ],
+        infoSections: [
+          {
+            title: 'Як проходить візит до дієтолога?',
+            content: 'Наш клінічний дієтолог проводить детальний анамнез здоров\'я, аналіз складу тіла та оцінку результатів лабораторних досліджень, на основі яких складає індивідуалізований план харчування. Кожне меню підлаштовується під ваші потреби, спосіб життя, смакові уподобання та будь-які супутні захворювання. Регулярні контрольні візити дозволяють постійно коригувати дієту та контролювати прогрес терапії.',
+          },
+        ],
+      },
+    },
+  },
   {
     id: 13,
     slug: 'diabetologia',
@@ -331,6 +739,38 @@ export const specializations: Specialization[] = [
       'Aktywnego trybu życia',
       'Samokontroli i kontynuacji leczenia w chorobach współistniejących',
     ],
+    translations: {
+      en: {
+        name: 'Diabetology',
+        menuLabel: 'Diabetologist',
+        description: 'The diabetology outpatient clinic deals with the diagnosis and treatment of diabetes in adults, as well as education in healthy lifestyle and blood glucose self-monitoring.',
+        conditionsLabel: 'Diagnosis and treatment of diabetes',
+        conditions: ['Type 1 and Type 2 diabetes', 'Gestational diabetes', 'Secondary diabetes', 'Hypoglycaemia and hyperglycaemia'],
+        examinationsLabel: 'We provide education in the field of',
+        examinations: [
+          'Diet',
+          'Blood glucose self-monitoring',
+          'Insulin pen use',
+          'Active lifestyle',
+          'Self-monitoring and treatment continuation in coexisting diseases',
+        ],
+      },
+      ua: {
+        name: 'Діабетологія',
+        menuLabel: 'Діабетолог',
+        description: 'Діабетологічна клініка займається діагностикою та лікуванням цукрового діабету у дорослих, а також навчанням щодо здорового способу життя та самоконтролю глікемії.',
+        conditionsLabel: 'Діагностика та лікування цукрового діабету',
+        conditions: ['Цукровий діабет 1 та 2 типу', 'Гестаційний діабет', 'Вторинний діабет', 'Гіпоглікемія та гіперглікемія'],
+        examinationsLabel: 'Ми проводимо навчання у сфері',
+        examinations: [
+          'Дієти',
+          'Самостійного контролю глікемії',
+          'Використання інсулінового шприц-ручки',
+          'Активного способу життя',
+          'Самоконтролю та продовження лікування при супутніх захворюваннях',
+        ],
+      },
+    },
   },
   {
     id: 14,
@@ -338,7 +778,7 @@ export const specializations: Specialization[] = [
     name: 'Medycyna Estetyczna',
     menuLabel: 'Medycyna Estetyczna',
     hideFromMenu: true,
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+    description: 'Oferujemy szeroki zakres zabiegów z dziedziny medycyny estetycznej wykonywanych przez doświadczonych specjalistów. W naszej ofercie znajdują się zabiegi z kwasem hialuronowym, toksyna botulinową (botox) oraz innowacyjne nici liftingujące. Każdy zabieg przeprowadzany jest z dbałością o naturalny efekt końcowy i bezpieczeństwo pacjenta.',
     serviceGroups: [
       {
         title: 'Zabiegi przeprowadzone przy pomocy kwasu hialuronowego',
@@ -393,6 +833,116 @@ export const specializations: Specialization[] = [
         content: 'Aplikacja nici jest praktycznie bezinwazyjna i bezbolesna, trwa około pół godziny, nie pozostawia żadnych blizn ani nacięć, a drobne zaczerwienienia znikają w ciągu kilku dni. Dodatkowo można je aplikować niemal na całym ciele – tak delikatnych i wszechstronnych nici jeszcze nie było!',
       },
     ],
+    translations: {
+      en: {
+        name: 'Aesthetic Medicine',
+        menuLabel: 'Aesthetic Medicine',
+        description: 'We offer a wide range of aesthetic medicine procedures performed by experienced specialists. Our services include hyaluronic acid fillers, botulinum toxin (botox) and innovative thread lifting. Every procedure is carried out with a focus on natural-looking results and patient safety.',
+        serviceGroups: [
+          {
+            title: 'Hyaluronic acid treatments',
+            items: [
+              'Lip modelling and augmentation',
+              'Correction of frown lines (glabellar lines)',
+              'Correction of marionette lines',
+              'Correction of nasolabial folds',
+              'Tear trough filling',
+              'Correction of smoker\'s lines',
+              'Cheek volumisation',
+              'Correction of any other age-related or trauma-related wrinkles',
+            ],
+          },
+          {
+            title: 'Botox treatments',
+            items: ['Frown lines', 'Horizontal forehead lines', 'Crow\'s feet', 'Perioral lines'],
+          },
+          {
+            title: 'Thread lifting treatments',
+            items: [
+              'Vertical and horizontal forehead wrinkles',
+              'Forehead lift, lowered outer brow edges, sagging tissue, drooping eyebrows',
+              'Lower eyelid – bags',
+              'Cheeks',
+              'Prominent nasolabial fold',
+              'Cheek-zygomatic groove',
+              'Chin fold',
+              'Marionette fold',
+              'V-lift',
+              'Drooping cheeks and area under the lower jaw',
+              'Skin folds on the cheek',
+            ],
+          },
+        ],
+        infoSections: [
+          {
+            title: 'Hyaluronic acid',
+            content: 'Hyaluronic acid-based wrinkle fillers take the form of a crystalline, highly pliable and elastic gel that, after being introduced into the skin, fills the wrinkle giving a very natural effect. After injection into the wrinkle line or lips, the preparation binds water and increases volume, smoothes the area or gives the desired shape.',
+          },
+          {
+            title: 'Botox',
+            content: 'Botox effectively blocks impulse conduction from nerves to facial muscles. It counteracts contractions of those muscles and prevents skin wrinkling. Botox acts only on the muscles into which it is injected, so facial expression is preserved while wrinkles disappear. It starts working 2–3 days after the procedure, full effect is visible after 7–10 days, and it lasts 3–5 months.',
+          },
+          {
+            title: 'Thread lifting',
+            content: 'Thread application is practically non-invasive and painless, takes about half an hour, leaves no scars or incisions, and minor redness disappears within a few days. They can be applied to almost any part of the body.',
+          },
+        ],
+      },
+      ua: {
+        name: 'Естетична медицина',
+        menuLabel: 'Естетична медицина',
+        description: 'Ми пропонуємо широкий спектр процедур естетичної медицини, що виконуються досвідченими спеціалістами. У нашій пропозиції — ін\'єкції гіалуронової кислоти, ботулінічного токсину (ботокс) та інноваційні ліфтингові нитки. Кожна процедура проводиться з акцентом на природний результат та безпеку пацієнта.',
+        serviceGroups: [
+          {
+            title: 'Процедури з гіалуроновою кислотою',
+            items: [
+              'Моделювання та збільшення губ',
+              'Корекція зморшок між бровами (зморшки лева)',
+              'Корекція маріонеткових ліній',
+              'Корекція носогубних складок',
+              'Заповнення сльозової борозни',
+              'Корекція зморшок курця',
+              'Волюметрія щік',
+              'Корекція будь-яких інших зморшок, що виникли з віком або внаслідок травми',
+            ],
+          },
+          {
+            title: 'Процедури з ботоксом',
+            items: ['Зморшки між бровами', 'Горизонтальні зморшки чола', 'Зморшки-гусячі лапки', 'Зморшки навколо рота'],
+          },
+          {
+            title: 'Процедури з ліфтинговими нитками',
+            items: [
+              'Вертикальні та горизонтальні зморшки на чолі',
+              'Ліфтинг чола, опущені зовнішні краї брів, в\'яла тканина, опущені брови',
+              'Нижнє повіко — мішки',
+              'Щоки',
+              'Виражена носогубна складка',
+              'Щічно-вилична борозна',
+              'Складка підборіддя',
+              'Маріонеткова складка',
+              'V-ліфтинг',
+              'Опущені щоки та область під нижньою щелепою',
+              'Складки шкіри на щоці',
+            ],
+          },
+        ],
+        infoSections: [
+          {
+            title: 'Гіалуронова кислота',
+            content: 'Препарати для заповнення зморшок на основі гіалуронової кислоти мають вигляд кристалічного, дуже пластичного та еластичного гелю, який після введення в шкіру заповнює зморшку, даючи природний ефект. Після ін\'єкції гель зв\'язує воду, збільшує об\'єм ділянки, розгладжує її або надає заданої форми.',
+          },
+          {
+            title: 'Ботокс',
+            content: 'Ботокс ефективно блокує передачу імпульсів від нервів до мімічних м\'язів обличчя. Він протидіє скороченням цих м\'язів і запобігає поглибленню зморшок. Ботокс діє лише на ті м\'язи, в які його ввели, тому вираз обличчя зберігається, а зморшки зникають. Починає діяти через 2–3 дні, повний ефект — через 7–10 днів, утримується 3–5 місяців.',
+          },
+          {
+            title: 'Ліфтингові нитки',
+            content: 'Нанесення ниток практично неінвазивне та безболісне, займає близько півгодини, не залишає жодних шрамів або надрізів, а незначне почервоніння зникає протягом кількох днів. Їх можна наносити майже на будь-яку частину тіла.',
+          },
+        ],
+      },
+    },
   },
   {
     id: 15,
@@ -410,6 +960,38 @@ export const specializations: Specialization[] = [
         content: 'Biopsja cienkoigłowa rutynowo nie wymaga żadnych środków przeciwbólowych ani przed, ani po jej wykonaniu. W celu zlokalizowania odpowiedniego miejsca do skóry przykładana jest sonda. Po odnalezieniu przez badającego podejrzanej zmiany na monitorze USG, lekarz wkłuwa cienką igłę (zazwyczaj o średnicy 0,4–0,7 mm), jednocześnie cały czas śledząc to, co się dzieje na monitorze aparatury USG. Po przekłuciu skóry i w momencie dotarcia do zmiany, specjalista pobiera materiał komórkowy. Kiedy wyjmuje igłę, zakłada osobie badanej jałowy opatrunek.',
       },
     ],
+    translations: {
+      en: {
+        name: 'Fine-needle Biopsy',
+        menuLabel: 'Biopsy',
+        description: 'In addition to cardiological and neurological care, the Vitalis clinic offers professional oncological diagnostics – cytopathological diagnosis of disease-altered tissues in the thyroid gland, salivary glands and lymph nodes.',
+        infoSections: [
+          {
+            title: 'Detailed information',
+            content: 'Ultrasound-guided fine-needle aspiration biopsy is one of the least invasive methods of obtaining cytological material. It involves puncturing the examined area with a fine needle under constant ultrasound monitoring. The material is evaluated under a microscope by a cytopathologist. This method enables rapid and accurate diagnosis of both benign and malignant tumours. Besides its minimal invasiveness, it allows material to be obtained from deeply located tumours without general anaesthesia.',
+          },
+          {
+            title: 'Examination procedure',
+            content: 'Fine-needle biopsy routinely requires no analgesics before or after the procedure. A probe is placed on the skin to locate the appropriate site. After the examiner locates a suspicious lesion on the ultrasound monitor, the doctor inserts a fine needle (usually 0.4–0.7 mm in diameter) while continuously monitoring the ultrasound screen. After piercing the skin and reaching the lesion, the specialist collects cell material. When the needle is removed, a sterile dressing is applied.',
+          },
+        ],
+      },
+      ua: {
+        name: 'Тонкоголкова біопсія',
+        menuLabel: 'Біопсія',
+        description: 'Окрім кардіологічної та неврологічної допомоги, клініка Vitalis пропонує професійну онкологічну діагностику — цитопатологічну діагностику змінених хворобою тканин щитоподібної залози, слинних залоз та лімфатичних вузлів.',
+        infoSections: [
+          {
+            title: 'Детальна інформація',
+            content: 'Аспіраційна тонкоголкова біопсія під контролем УЗД є одним з найменш інвазивних методів отримання цитологічного матеріалу. Вона полягає у проколюванні досліджуваної ділянки тонкою голкою під постійним ультразвуковим контролем. Матеріал оцінює під мікроскопом цитопатолог. Метод дозволяє швидко та точно діагностувати як доброякісні, так і злоякісні пухлини. Крім мінімальної інвазивності, дозволяє отримати матеріал з глибоко розташованих пухлин без загального знеболення.',
+          },
+          {
+            title: 'Процедура обстеження',
+            content: 'Тонкоголкова біопсія зазвичай не вимагає жодних знеболювальних засобів. Датчик прикладається до шкіри для локалізації місця. Після знаходження підозрілої зміни на моніторі УЗД лікар вводить тонку голку (зазвичай діаметром 0,4–0,7 мм), постійно стежачи за екраном. Після проколювання шкіри та досягнення зміни спеціаліст збирає клітинний матеріал. Після видалення голки накладають стерильну пов\'язку.',
+          },
+        ],
+      },
+    },
   },
   {
     id: 16,
@@ -465,6 +1047,112 @@ export const specializations: Specialization[] = [
         content: 'Ta oferta skierowana jest do osób po 65. roku życia, chcących w sposób regularny dbać o swoją sprawność fizyczną oraz działać profilaktycznie. Dostępna wyłącznie w pakiecie 10 zabiegów.',
       },
     ],
+    translations: {
+      en: {
+        name: 'Rehabilitation',
+        menuLabel: 'Rehabilitation',
+        description: 'The foundation of our rehabilitation is the proper approach to the patient. The effectiveness of any action aimed at restoring full physical ability lies in the holistic treatment of each person\'s body. A comprehensive view of the patient enables rehabilitation to be conducted so that they regain full fitness in the shortest possible time.',
+        conditionsLabel: 'Rehabilitation covers',
+        conditions: [
+          'Treatment of acute and chronic spinal pain syndromes (disc disease, sciatica, femoral neuralgia, arm neuralgia)',
+          'Treatment of acute and chronic joint pain syndromes (Subacromial Impingement, "frozen shoulder", golfer\'s and tennis elbow, jumper\'s knee, chondromalacia patella)',
+          'Conservative and post-operative physiotherapy of the knee joint (ACL, PCL, MCL, LCL injuries)',
+          'Prevention of spinal pain and workplace ergonomics training',
+          'Post-operative spine rehabilitation',
+          'Rehabilitation after injuries (dislocations, sprains, fractures)',
+          'Temporomandibular joint dysfunction (headaches, facial and jaw muscle pain)',
+        ],
+        examinationsLabel: 'Bring to your appointment',
+        examinations: [
+          'Comfortable sportswear that does not restrict movement and allows access to the treated area',
+          'Sports footwear',
+          'A towel',
+          'Medical records of previous treatment and tests performed (if available)',
+        ],
+        infoSections: [
+          {
+            title: 'Individual approach',
+            content: 'An individual rehabilitation programme must be tailored to each patient based on the type and severity of the ailment, general health and the treatment goal. A properly tailored programme allows for effective treatment, consolidates its effects and minimises the risk of injury recurrence.',
+          },
+          {
+            title: 'Appropriate facilities',
+            content: 'We have a modern gymnasium enabling rehabilitation and strength, endurance, functional and dynamic training, rebuilding correct movement patterns and correcting posture defects, as well as rebuilding balance and neuromuscular coordination. Rehabilitation is carried out by qualified physiotherapists with many years of experience.',
+          },
+          {
+            title: 'Diagnostic visit',
+            content: 'The first visit is diagnostic and therapeutic. Most of the time is devoted to a comprehensive physiotherapy examination and detailed patient interview. Precise diagnosis identifies the cause of the dysfunction and an individual therapeutic programme begins during the first visit.',
+          },
+          {
+            title: 'Standard visit',
+            content: 'A standard physiotherapy visit combines manual therapy with exercises using modern rehabilitation equipment. Training in the gymnasium consolidates the effects of therapy.',
+          },
+          {
+            title: 'Individual visit',
+            content: 'An individual physiotherapy visit is for patients requiring individual manual work. During this type of therapy, the physiotherapist is exclusively devoted to one patient.',
+          },
+          {
+            title: 'Functional training',
+            content: 'Functional training is established individually – depending on the type of ailment, general health and treatment goals, a set of exercises covering movement in all planes is selected.',
+          },
+          {
+            title: 'Health Prevention and Promotion Programme',
+            content: 'This offer is addressed to people over 65 who wish to regularly take care of their physical fitness and act preventively. Available exclusively in a package of 10 treatments.',
+          },
+        ],
+      },
+      ua: {
+        name: 'Реабілітація',
+        menuLabel: 'Реабілітація',
+        description: 'Основою нашої реабілітації є правильний підхід до пацієнта. Ефективність будь-якої дії, спрямованої на відновлення повної фізичної дієздатності, полягає у цілісному ставленні до організму кожної людини. Комплексний погляд на пацієнта дозволяє проводити реабілітацію так, щоб пацієнт відновив повну дієздатність у найкоротші терміни.',
+        conditionsLabel: 'Реабілітація охоплює',
+        conditions: [
+          'Лікування гострих та хронічних больових синдромів хребта (дископатія, ішіас, стегнова невралгія, невралгія плеча)',
+          'Лікування гострих та хронічних больових синдромів суглобів (синдром субакроміального защемлення, "заморожене плече", ліктьовий епікондиліт, коліно стрибуна, хондромаляція надколінника)',
+          'Консервативна та постопераційна фізіотерапія колінного суглоба (пошкодження ПХЗ, ЗХЗ, МБЗ, ЛБЗ)',
+          'Профілактика болю у спині та навчання ергономіці робочого місця',
+          'Реабілітація після операцій на хребті',
+          'Реабілітація після травм (вивихів, розтягнень, переломів)',
+          'Дисфункції скронево-нижньощелепного суглоба (головні болі, болі м\'язів обличчя та щелепи)',
+        ],
+        examinationsLabel: 'Візьміть із собою на прийом',
+        examinations: [
+          'Зручний спортивний одяг, що не обмежує рухів і дозволяє доступ до лікованої ділянки тіла',
+          'Спортивне взуття',
+          'Рушник',
+          'Медичну документацію попереднього лікування та проведених досліджень (якщо є)',
+        ],
+        infoSections: [
+          {
+            title: 'Індивідуальний підхід',
+            content: 'До кожного пацієнта необхідно підібрати індивідуальну програму реабілітації з урахуванням типу та ступеня недуги, загального стану здоров\'я та поставленої мети. Відповідно підібрана програма дозволить ефективно лікуватися, закріпити її результати та мінімізувати ризик повторного травмування.',
+          },
+          {
+            title: 'Відповідна база',
+            content: 'У нас є сучасно обладнаний спортивний зал для проведення реабілітації та силових, витривалісних, функціональних і динамічних тренувань, відновлення правильних рухових патернів, корекції порушень постави та відновлення балансу і нервово-м\'язової координації. Реабілітацію проводять кваліфіковані фізіотерапевти з багаторічним досвідом.',
+          },
+          {
+            title: 'Діагностичний візит',
+            content: 'Перший візит має діагностично-терапевтичний характер. Більша частина часу присвячена комплексному фізіотерапевтичному обстеженню та детальному анамнезу. Точна діагностика визначає причину дисфункції, а індивідуальна терапевтична програма розпочинається вже на першому візиті.',
+          },
+          {
+            title: 'Стандартний візит',
+            content: 'Стандартний фізіотерапевтичний візит поєднує мануальну терапію та вправи з використанням сучасного реабілітаційного обладнання. Тренування в спортивному залі закріплює результати терапії.',
+          },
+          {
+            title: 'Індивідуальний візит',
+            content: 'Індивідуальний фізіотерапевтичний візит призначений для пацієнтів, які потребують індивідуальної мануальної роботи. Під час такого типу терапії фізіотерапевт приділяє увагу виключно одному пацієнту.',
+          },
+          {
+            title: 'Функціональне тренування',
+            content: 'Функціональне тренування встановлюється індивідуально — залежно від типу недуги, загального стану здоров\'я та поставленої мети підбирається комплекс вправ у всіх площинах руху.',
+          },
+          {
+            title: 'Програма профілактики та зміцнення здоров\'я',
+            content: 'Ця пропозиція орієнтована на осіб старше 65 років, які хочуть регулярно дбати про свою фізичну форму та діяти профілактично. Доступна виключно в пакеті 10 процедур.',
+          },
+        ],
+      },
+    },
   },
   {
     id: 17,
@@ -500,6 +1188,72 @@ export const specializations: Specialization[] = [
         content: 'Pracownia wyposażona jest w nowoczesne aparaty USG: Philips Affinity, Philips HD7, Siemens Accuson NX3 oraz Philips HD11XE.',
       },
     ],
+    translations: {
+      en: {
+        name: 'Ultrasound Diagnostics',
+        menuLabel: 'Ultrasound Diagnostics',
+        description: 'The ultrasound diagnostic laboratory is equipped with 3 high-class ultrasound machines (Philips HD7, Philips HD11XE, Siemens Accuson NX3) enabling comprehensive diagnostics of all human organs. In addition to standard examinations we perform specialist cardiac and oncological diagnostics including biopsy.',
+        examinationsLabel: 'Services provided',
+        examinations: [
+          'Abdominal ultrasound',
+          'Lymph node ultrasound',
+          'Soft tissue ultrasound of the whole body',
+          'Ultrasound – locating embedded foreign bodies',
+          'Joint ultrasound',
+          'Neck ultrasound',
+          'Doppler vascular examination',
+          'Thyroid ultrasound',
+          'Breast ultrasound',
+          'Salivary gland ultrasound',
+          'Urinary system ultrasound (kidneys, bladder)',
+          'Cardiac ultrasound (ECHO, UKG)',
+          'Stress Echo',
+          'Transesophageal echo',
+        ],
+        infoSections: [
+          {
+            title: 'Specialist examinations',
+            content: 'As one of the few clinics, we perform cardiac ultrasound using a transesophageal probe (transesophageal ECHO) and stress echocardiography (Stress ECHO). We also offer rapid breast and thyroid diagnosis through fine-needle and core-needle biopsy and close cooperation with the histopathology laboratory.',
+          },
+          {
+            title: 'Our equipment',
+            content: 'The laboratory is equipped with modern ultrasound machines: Philips Affinity, Philips HD7, Siemens Accuson NX3 and Philips HD11XE.',
+          },
+        ],
+      },
+      ua: {
+        name: 'УЗД діагностика',
+        menuLabel: 'УЗД діагностика',
+        description: 'Діагностична лабораторія УЗД оснащена 3 апаратами УЗД високого класу (Philips HD7, Philips HD11XE, Siemens Accuson NX3), що дозволяють проводити повну діагностику всіх органів людини. Окрім стандартних досліджень виконуємо спеціалізовані кардіологічні та онкологічні дослідження, включаючи біопсію.',
+        examinationsLabel: 'Послуги, що надаються',
+        examinations: [
+          'УЗД черевної порожнини',
+          'УЗД лімфатичних вузлів',
+          'УЗД м\'яких тканин усього тіла',
+          'УЗД — пошук сторонніх тіл',
+          'УЗД суглобів',
+          'УЗД шиї',
+          'Допплерівське дослідження судин',
+          'УЗД щитоподібної залози',
+          'УЗД грудей',
+          'УЗД слинних залоз',
+          'УЗД сечовидільної системи (нирки, сечовий міхур)',
+          'УЗД серця (ЕХОКГ, УКГ)',
+          'Стрес-Ехо',
+          'Трансезофагеальне ехо',
+        ],
+        infoSections: [
+          {
+            title: 'Спеціалізовані дослідження',
+            content: 'Як одна з небагатьох клінік, ми виконуємо УЗД серця за допомогою трансезофагеального датчика (трансезофагеальне ЕХОКГ) та стрес-ехокардіографію (Стрес-ЕХОКГ). Крім того, пропонуємо швидку діагностику грудей та щитоподібної залози завдяки тонко- та товстоголковій біопсії і тісній співпраці з гістопатологічною лабораторією.',
+          },
+          {
+            title: 'Наше обладнання',
+            content: 'Лабораторія оснащена сучасними апаратами УЗД: Philips Affinity, Philips HD7, Siemens Accuson NX3 та Philips HD11XE.',
+          },
+        ],
+      },
+    },
   },
   {
     id: 18,
@@ -523,6 +1277,42 @@ export const specializations: Specialization[] = [
         content: 'Biopsję gruboigłową poprzedza się znieczuleniem – pacjentka dostaje lidokainę. Zabieg jest małoinwazyjny, nie wymaga zakładania szwów; igła wprowadzana jest przez małe, 2–3 milimetrowe nacięcie skóry. Po zabiegu pacjentka otrzymuje opatrunek i zalecenie, aby przez 2–3 dni prowadzić oszczędny tryb życia. Powikłań w zasadzie nie ma; co najwyżej może pojawić się siniak w miejscu ukłucia lub loża, w której był guzek i która może napełnić się krwią.',
       },
     ],
+    translations: {
+      en: {
+        name: 'Core-needle Biopsy – Breast Tumour',
+        menuLabel: 'Core-needle Biopsy',
+        description: 'At the Vitalis clinic we offer quick and reliable diagnostics of breast tumours based on ultrasound performed on a high-class Philips Affinity machine and possible core-needle biopsy. Breast cancer is the most common cancer among women and one of the main causes of cancer-related deaths.',
+        examinationsLabel: 'In breast cancer diagnostics we perform',
+        examinations: ['Breast ultrasound', 'Fine-needle and core-needle breast biopsy', 'Histopathological examination'],
+        infoSections: [
+          {
+            title: 'Detailed information',
+            content: 'Core-needle biopsy has almost completely replaced fine-needle biopsy. In this method the needle has a larger diameter and a special tip that allows for tissue collection. It is performed to rule out cancer suspicion or determine its extent.',
+          },
+          {
+            title: 'Examination procedure',
+            content: 'Core-needle biopsy is preceded by local anaesthesia with lidocaine. The procedure is minimally invasive and does not require sutures; the needle is inserted through a small 2–3 mm skin incision. After the procedure the patient receives a dressing and is advised to rest for 2–3 days. Complications are virtually absent; at most a bruise may appear at the puncture site.',
+          },
+        ],
+      },
+      ua: {
+        name: 'Товстоголкова біопсія – пухлина грудей',
+        menuLabel: 'Товстоголкова біопсія',
+        description: 'У клініці Vitalis ми пропонуємо швидку та надійну діагностику пухлин грудей на основі УЗД на апараті Philips Affinity та можливої товстоголкової біопсії. Рак грудей є найпоширенішим онкологічним захворюванням серед жінок та однією з основних причин смерті від злоякісних пухлин.',
+        examinationsLabel: 'У рамках діагностики раку грудей ми виконуємо',
+        examinations: ['УЗД грудей', 'Тонко- та товстоголкову біопсію грудей', 'Гістопатологічне дослідження'],
+        infoSections: [
+          {
+            title: 'Детальна інформація',
+            content: 'Товстоголкова біопсія майже повністю витіснила тонкоголкову. У цьому методі голка має більший діаметр та спеціальний наконечник для забору тканин. Її виконують, щоб виключити підозру на рак або визначити ступінь його поширення.',
+          },
+          {
+            title: 'Процедура обстеження',
+            content: 'Товстоголковій біопсії передує місцеве знеболення лідокаїном. Процедура мінімально інвазивна, не вимагає швів; голка вводиться через невеликий надріз шкіри 2–3 мм. Після процедури пацієнтка отримує пов\'язку та рекомендацію відпочивати 2–3 дні. Ускладнень практично немає; в крайньому випадку може з\'явитися синець.',
+          },
+        ],
+      },
+    },
   },
 ]
 
@@ -676,6 +1466,306 @@ export const pricing: PricingCategory[] = [
         ],
       },
     ],
+    translations: {
+      en: {
+        title: 'Specialist Outpatient Clinics',
+        sections: [
+          {
+            subtitle: 'Cardiology',
+            items: [
+              { name: 'Transthoracic echocardiography (TTE)' },
+              { name: 'Transoesophageal echocardiography (TEE) – Dobutamine stress test' },
+              { name: 'Doppler flow study of lower limbs' },
+              { name: 'Doppler flow study of carotid arteries' },
+              { name: 'ICD pacemaker check' },
+              { name: 'Tilt Test' },
+              { name: 'Exercise stress test (treadmill)' },
+              { name: 'ECG with cardiologist report (outside specialist visit)' },
+              { name: 'Cardiology consultation with resting ECG – Dr P. Nowak' },
+              { name: 'Cardiology consultation with resting ECG – Dr J. Nowak' },
+              { name: 'Cardiology consultation with resting ECG – Dr A. Żurakowski' },
+              { name: 'Cardiology consultation with resting ECG – Dr Chodur' },
+              { name: 'Cardiology consultation with resting ECG – Dr M. Bońkowski' },
+              { name: 'Vascular ultrasound – Dr M. Bońkowski' },
+              { name: 'Vascular consultation – Dr M. Bońkowski' },
+              { name: 'Vascular consultation with Doppler – Dr M. Bońkowski' },
+              { name: 'Cardiac surgery consultation' },
+              { name: 'Holter ECG 1/2/3/4 days' },
+              { name: 'Holter BP 1 day' },
+              { name: 'Istel ECG (1 week)' },
+            ],
+          },
+          {
+            subtitle: 'Neurology clinic',
+            items: [
+              { name: 'Neurology consultation' },
+              { name: 'EEG examination' },
+            ],
+          },
+          {
+            subtitle: 'Neurosurgery clinic',
+            items: [
+              { name: 'Neurosurgery consultation' },
+            ],
+          },
+          {
+            subtitle: 'Psychiatry clinic',
+            items: [
+              { name: 'Psychiatric consultation – dr Woźniak' },
+              { name: 'Psychiatric consultation – dr Wajda' },
+            ],
+          },
+          {
+            subtitle: 'Endocrinology clinic',
+            items: [
+              { name: 'Endocrinology consultation – dr Szymkowiak' },
+              { name: 'Endocrinology consultation with ultrasound – dr Szymkowiak' },
+              { name: 'Endocrinology consultation – dr Pierzchała' },
+              { name: 'Endocrinology follow-up consultation – dr Pierzchała' },
+            ],
+          },
+          {
+            subtitle: 'Urology clinic',
+            items: [
+              { name: 'Urology consultation – dr Sołtys' },
+              { name: 'Urology consultation with ultrasound – dr Sołtys' },
+              { name: 'Uroflowmetry – dr Sołtys' },
+              { name: 'Testicular ultrasound' },
+            ],
+          },
+          {
+            subtitle: 'Diabetology clinic',
+            items: [
+              { name: 'Diabetology consultation' },
+              { name: 'Dietitian consultation' },
+            ],
+          },
+          {
+            subtitle: 'Gastroenterology clinic',
+            items: [
+              { name: 'Gastroenterology consultation – dr Fic' },
+              { name: 'Gastroenterology consultation – dr Szulewski' },
+            ],
+          },
+          {
+            subtitle: 'Orthopaedic procedures',
+            items: [
+              { name: 'First orthopaedic consultation' },
+              { name: 'Orthopaedic consultation' },
+              { name: 'Viscosupplementation Cignal' },
+              { name: 'Viscosupplementation Monovisc' },
+              { name: 'Viscosupplementation Ortovisc' },
+              { name: 'Ortokol injection' },
+              { name: 'Ortovisc T injection' },
+              { name: 'Biolevox 2.2% 2 ml' },
+              { name: 'Biolevox 2.5% 4.8 ml' },
+              { name: 'Intra-articular plasma injection' },
+              { name: 'Puncture / injection' },
+              { name: 'Diprofos' },
+            ],
+          },
+          {
+            subtitle: 'Gynaecological procedures',
+            items: [
+              { name: 'Gynaecological consultation' },
+              { name: 'Gynaecological consultation with ultrasound' },
+              { name: 'Gynaecological ultrasound examination' },
+              { name: 'Breast ultrasound examination' },
+              { name: 'Cytological examination (Pap smear)' },
+            ],
+          },
+          {
+            subtitle: 'Endoscopy unit',
+            items: [
+              { name: 'Diagnostic gastroscopy' },
+              { name: 'Diagnostic gastroscopy + H. pylori test' },
+              { name: 'Diagnostic gastroscopy + 1 histopathological examination' },
+              { name: 'Additional histopathological examination' },
+              { name: 'Diagnostic gastroscopy + 1 histopathological examination + H. pylori test' },
+              { name: 'Diagnostic colonoscopy' },
+              { name: 'Diagnostic colonoscopy + 1 histopathological examination' },
+              { name: 'Additional histopathological examination (colonoscopy)' },
+              { name: 'Diagnostic colonoscopy with polypectomy (1 polyp) + 1 histopathological examination' },
+              { name: 'Each additional polyp with histopathological examination' },
+              { name: 'Histochemical examination' },
+              { name: 'General anaesthesia' },
+              { name: 'General anaesthesia (gastroscopy + colonoscopy combined)' },
+            ],
+          },
+          {
+            subtitle: 'Ultrasound (USG)',
+            items: [
+              { name: 'Thyroid and parathyroid ultrasound' },
+              { name: 'Abdominal, retroperitoneal and pelvic ultrasound' },
+              { name: 'Soft tissue ultrasound' },
+              { name: 'Abdominal Doppler flow ultrasound' },
+              { name: 'Salivary gland ultrasound' },
+              { name: 'Cervical lymph nodes / axillary nodes ultrasound' },
+              { name: 'Urinary tract ultrasound' },
+              { name: 'Neck ultrasound' },
+              { name: 'Breast ultrasound' },
+              { name: 'Testicular ultrasound' },
+            ],
+          },
+          {
+            subtitle: 'Other examinations',
+            items: [
+              { name: 'Spirometry examination' },
+              { name: 'Quick visit / prescription' },
+            ],
+          },
+        ],
+      },
+      ua: {
+        title: 'Спеціалізовані амбулаторні клініки',
+        sections: [
+          {
+            subtitle: 'Кардіологія',
+            items: [
+              { name: 'Черезгрудна ехокардіографія (TTE)' },
+              { name: 'Черезстравохідна ехокардіографія (TEE) – Добутаміновий стрес-тест' },
+              { name: 'Допплерографія судин нижніх кінцівок' },
+              { name: 'Допплерографія сонних артерій' },
+              { name: 'Перевірка кардіостимулятора ICD' },
+              { name: 'Тілт-тест' },
+              { name: 'Навантажувальний тест (бігова доріжка)' },
+              { name: 'ЕКГ з описом кардіолога (поза консультацією спеціаліста)' },
+              { name: 'Кардіологічна консультація з ЕКГ спокою – Dr P. Nowak' },
+              { name: 'Кардіологічна консультація з ЕКГ спокою – Dr J. Nowak' },
+              { name: 'Кардіологічна консультація з ЕКГ спокою – Dr A. Żurakowski' },
+              { name: 'Кардіологічна консультація з ЕКГ спокою – Dr Chodur' },
+              { name: 'Кардіологічна консультація з ЕКГ спокою – Dr M. Bońkowski' },
+              { name: 'Судинне УЗД – Dr M. Bońkowski' },
+              { name: 'Судинна консультація – Dr M. Bońkowski' },
+              { name: 'Судинна консультація з допплером – Dr M. Bońkowski' },
+              { name: 'Кардіохірургічна консультація' },
+              { name: 'Холтер ЕКГ 1/2/3/4 доби' },
+              { name: 'Холтер АТ 1 доба' },
+              { name: 'Istel ЕКГ (тиждень)' },
+            ],
+          },
+          {
+            subtitle: 'Неврологічна поліклініка',
+            items: [
+              { name: 'Неврологічна консультація' },
+              { name: 'Дослідження ЕЕГ' },
+            ],
+          },
+          {
+            subtitle: 'Нейрохірургічна поліклініка',
+            items: [
+              { name: 'Нейрохірургічна консультація' },
+            ],
+          },
+          {
+            subtitle: 'Психіатрична поліклініка',
+            items: [
+              { name: 'Психіатрична консультація – dr Woźniak' },
+              { name: 'Психіатрична консультація – dr Wajda' },
+            ],
+          },
+          {
+            subtitle: 'Ендокринологічна поліклініка',
+            items: [
+              { name: 'Ендокринологічна консультація – dr Szymkowiak' },
+              { name: 'Ендокринологічна консультація з УЗД – dr Szymkowiak' },
+              { name: 'Ендокринологічна консультація – dr Pierzchała' },
+              { name: 'Контрольна ендокринологічна консультація – dr Pierzchała' },
+            ],
+          },
+          {
+            subtitle: 'Урологічна поліклініка',
+            items: [
+              { name: 'Урологічна консультація – dr Sołtys' },
+              { name: 'Урологічна консультація з УЗД – dr Sołtys' },
+              { name: 'Урофлоуметрія – dr Sołtys' },
+              { name: 'УЗД яєчок' },
+            ],
+          },
+          {
+            subtitle: 'Діабетологічна поліклініка',
+            items: [
+              { name: 'Діабетологічна консультація' },
+              { name: 'Дієтологічна консультація' },
+            ],
+          },
+          {
+            subtitle: 'Гастроентерологічна поліклініка',
+            items: [
+              { name: 'Гастроентерологічна консультація – dr Fic' },
+              { name: 'Гастроентерологічна консультація – dr Szulewski' },
+            ],
+          },
+          {
+            subtitle: 'Ортопедичні процедури',
+            items: [
+              { name: 'Перша ортопедична консультація' },
+              { name: 'Ортопедична консультація' },
+              { name: 'Вискосаплементація Cignal' },
+              { name: 'Вискосаплементація Monovisc' },
+              { name: 'Вискосаплементація Ortovisc' },
+              { name: 'Ін\'єкція Ortokol' },
+              { name: 'Ін\'єкція Ortovisc T' },
+              { name: 'Biolevox 2,2% 2 мл' },
+              { name: 'Biolevox 2,5% 4,8 мл' },
+              { name: 'Внутрішньосуглобове введення плазми' },
+              { name: 'Пункція / ін\'єкція' },
+              { name: 'Diprofos' },
+            ],
+          },
+          {
+            subtitle: 'Гінекологічні процедури',
+            items: [
+              { name: 'Гінекологічна консультація' },
+              { name: 'Гінекологічна консультація з УЗД' },
+              { name: 'Гінекологічне УЗД дослідження' },
+              { name: 'УЗД молочної залози' },
+              { name: 'Цитологічне дослідження (мазок Папаніколау)' },
+            ],
+          },
+          {
+            subtitle: 'Відділення ендоскопії',
+            items: [
+              { name: 'Діагностична гастроскопія' },
+              { name: 'Діагностична гастроскопія + тест на H. pylori' },
+              { name: 'Діагностична гастроскопія + 1 гістопатологічне дослідження' },
+              { name: 'Додаткове гістопатологічне дослідження' },
+              { name: 'Діагностична гастроскопія + 1 гістопатологічне дослідження + тест на H. pylori' },
+              { name: 'Діагностична колоноскопія' },
+              { name: 'Діагностична колоноскопія + 1 гістопатологічне дослідження' },
+              { name: 'Додаткове гістопатологічне дослідження (колоноскопія)' },
+              { name: 'Діагностична колоноскопія з поліпектомією (1 поліп) + 1 гістопатологічне дослідження' },
+              { name: 'Кожен наступний поліп з гістопатологічним дослідженням' },
+              { name: 'Гістохімічне дослідження' },
+              { name: 'Загальна анестезія' },
+              { name: 'Загальна анестезія (гастроскопія + колоноскопія одночасно)' },
+            ],
+          },
+          {
+            subtitle: 'УЗД',
+            items: [
+              { name: 'УЗД щитоподібної та прищитоподібної залоз' },
+              { name: 'УЗД черевної порожнини, заочеревинного простору та малого тазу' },
+              { name: 'УЗД м\'яких тканин' },
+              { name: 'Допплерографія судин черевної порожнини' },
+              { name: 'УЗД слинних залоз' },
+              { name: 'УЗД лімфатичних вузлів шиї / пахвових вузлів' },
+              { name: 'УЗД сечовивідної системи' },
+              { name: 'УЗД шиї' },
+              { name: 'УЗД молочної залози' },
+              { name: 'УЗД яєчок' },
+            ],
+          },
+          {
+            subtitle: 'Інші дослідження',
+            items: [
+              { name: 'Дослідження спірометрії' },
+              { name: 'Швидкий візит / рецепт' },
+            ],
+          },
+        ],
+      },
+    },
   },
   {
     id: 2,
@@ -702,6 +1792,58 @@ export const pricing: PricingCategory[] = [
         ],
       },
     ],
+    translations: {
+      en: {
+        title: 'Rehabilitation',
+        sections: [
+          {
+            subtitle: 'Single visit',
+            items: [
+              { name: 'First diagnostic-therapeutic consultation' },
+              { name: 'First diagnostic consultation' },
+              { name: 'Standard physiotherapy visit' },
+              { name: 'Individual physiotherapy visit' },
+              { name: 'Functional training' },
+            ],
+          },
+          {
+            subtitle: 'Visit package',
+            items: [
+              { name: 'Health prevention and promotion programme for people aged 65+' },
+              { name: 'Small package of standard physiotherapy visits' },
+              { name: 'Large package of standard physiotherapy visits' },
+              { name: 'Small functional training package' },
+              { name: 'Large functional training package' },
+            ],
+          },
+        ],
+      },
+      ua: {
+        title: 'Реабілітація',
+        sections: [
+          {
+            subtitle: 'Одиночний візит',
+            items: [
+              { name: 'Перша діагностично-терапевтична консультація' },
+              { name: 'Перша діагностична консультація' },
+              { name: 'Стандартний фізіотерапевтичний візит' },
+              { name: 'Індивідуальний фізіотерапевтичний візит' },
+              { name: 'Функціональне тренування' },
+            ],
+          },
+          {
+            subtitle: 'Пакет візитів',
+            items: [
+              { name: 'Програма профілактики та зміцнення здоров\'я для осіб від 65 років' },
+              { name: 'Малий пакет стандартних фізіотерапевтичних візитів' },
+              { name: 'Великий пакет стандартних фізіотерапевтичних візитів' },
+              { name: 'Малий пакет функціонального тренування' },
+              { name: 'Великий пакет функціонального тренування' },
+            ],
+          },
+        ],
+      },
+    },
   },
   {
     id: 3,
@@ -765,6 +1907,132 @@ export const pricing: PricingCategory[] = [
         ],
       },
     ],
+    translations: {
+      en: {
+        title: 'Aesthetic Medicine',
+        sections: [
+          {
+            subtitle: 'Wrinkle correction',
+            items: [
+              { name: 'Glabellar lines (lion\'s wrinkle)' },
+              { name: 'Forehead horizontal lines' },
+              { name: 'Crow\'s feet' },
+              { name: 'Nefertiti lift' },
+            ],
+          },
+          {
+            subtitle: 'Hyperhidrosis treatment',
+            items: [
+              { name: 'Armpits' },
+              { name: 'Hands' },
+            ],
+          },
+          {
+            subtitle: 'Wrinkle filling',
+            items: [
+              { name: 'Nasolabial folds' },
+              { name: 'Lip augmentation' },
+              { name: 'Tear trough' },
+              { name: 'Cheek volumetry' },
+              { name: 'Volumetry – temporal hollows' },
+              { name: 'Hand volumetry' },
+            ],
+          },
+          {
+            subtitle: 'Non-surgical lift',
+            items: [
+              { name: 'Lower face lift' },
+              { name: 'Neck lift' },
+            ],
+          },
+          {
+            subtitle: 'Needle mesotherapy',
+            items: [
+              { name: 'Face' },
+              { name: 'Scalp' },
+            ],
+          },
+          {
+            subtitle: 'Injection lipolysis',
+            items: [
+              { name: 'Chin' },
+              { name: 'Inner knee' },
+              { name: 'Abdomen' },
+              { name: 'Waist / flanks' },
+            ],
+          },
+          {
+            subtitle: 'Lifting threads',
+            items: [
+              { name: 'Screw' },
+              { name: 'Barb' },
+            ],
+          },
+        ],
+      },
+      ua: {
+        title: 'Естетична медицина',
+        sections: [
+          {
+            subtitle: 'Корекція зморшок',
+            items: [
+              { name: 'Зморшки між бровами (лев\'яча зморшка)' },
+              { name: 'Поперечні зморшки чола' },
+              { name: '"Гусячі лапки"' },
+              { name: 'Ліфтинг Нефертіті' },
+            ],
+          },
+          {
+            subtitle: 'Лікування гіпергідрозу',
+            items: [
+              { name: 'Пахви' },
+              { name: 'Долоні' },
+            ],
+          },
+          {
+            subtitle: 'Заповнення зморшок',
+            items: [
+              { name: 'Носогубні складки' },
+              { name: 'Моделювання губ' },
+              { name: 'Долина сліз' },
+              { name: 'Волюметрія щік' },
+              { name: 'Волюметрія – скроневі западини' },
+              { name: 'Волюметрія рук' },
+            ],
+          },
+          {
+            subtitle: 'Безопераційний ліфтинг',
+            items: [
+              { name: 'Ліфтинг нижньої частини обличчя' },
+              { name: 'Ліфтинг шиї' },
+            ],
+          },
+          {
+            subtitle: 'Голкова мезотерапія',
+            items: [
+              { name: 'Обличчя' },
+              { name: 'Шкіра голови' },
+            ],
+          },
+          {
+            subtitle: 'Ін\'єкційний ліполіз',
+            items: [
+              { name: 'Підборіддя' },
+              { name: 'Внутрішня сторона коліна' },
+              { name: 'Живіт' },
+              { name: 'Поперек' },
+            ],
+          },
+          {
+            subtitle: 'Ліфтингові нитки',
+            items: [
+              { name: 'Screw' },
+              { name: 'Barbe' },
+            ],
+          },
+        ],
+      },
+    },
   },
 ]
 
@@ -779,6 +2047,16 @@ export const specialists: Specialist[] = [
     photo: '',
     bio: 'Profesor nadzwyczajny i specjalista chorób wewnętrznych z tytułem doktora habilitowanego nauk medycznych. Współzałożyciel Poradni Vitalis w 2014 roku. Posiada wieloletnie doświadczenie w kardiologii klinicznej i diagnostycznej.',
     isFounder: true,
+    translations: {
+      en: {
+        role: 'Internal medicine specialist – cardiologist',
+        bio: 'Associate professor and internal medicine specialist with a postdoctoral degree in medical sciences. Co-founder of the Vitalis Clinic in 2014. Has many years of experience in clinical and diagnostic cardiology.',
+      },
+      ua: {
+        role: 'Спеціаліст внутрішніх хвороб – кардіолог',
+        bio: 'Доцент і спеціаліст з внутрішніх хвороб зі ступенем доктора медичних наук. Співзасновник клініки Vitalis у 2014 році. Має багаторічний досвід у клінічній та діагностичній кардіології.',
+      },
+    },
   },
   {
     id: 2,
@@ -790,6 +2068,16 @@ export const specialists: Specialist[] = [
     photo: '',
     bio: 'Doktor nauk medycznych, specjalista chorób wewnętrznych i kardiologii. Współzałożyciel Poradni Vitalis. Specjalizuje się w diagnostyce i leczeniu arytmii oraz niewydolności serca.',
     isFounder: true,
+    translations: {
+      en: {
+        role: 'Internal medicine specialist – cardiologist',
+        bio: 'Doctor of medical sciences, specialist in internal medicine and cardiology. Co-founder of the Vitalis Clinic. Specialises in the diagnosis and treatment of arrhythmias and heart failure.',
+      },
+      ua: {
+        role: 'Спеціаліст внутрішніх хвороб – кардіолог',
+        bio: 'Доктор медичних наук, спеціаліст з внутрішніх хвороб та кардіології. Співзасновник клініки Vitalis. Спеціалізується на діагностиці та лікуванні аритмій та серцевої недостатності.',
+      },
+    },
   },
   {
     id: 3,
@@ -800,6 +2088,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'kardiologia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Cardiologist' },
+      ua: { role: 'Кардіолог' },
+    },
   },
   {
     id: 4,
@@ -810,6 +2102,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'kardiologia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Cardiologist, vascular surgery specialist' },
+      ua: { role: 'Кардіолог, спеціаліст судинної хірургії' },
+    },
   },
   {
     id: 5,
@@ -820,6 +2116,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'kardiologia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Cardiologist' },
+      ua: { role: 'Кардіолог' },
+    },
   },
   {
     id: 6,
@@ -830,6 +2130,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'kardiologia-dziecieca',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Paediatric cardiologist' },
+      ua: { role: 'Дитячий кардіолог' },
+    },
   },
   {
     id: 7,
@@ -840,6 +2144,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'ginekologia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Gynaecologist, obstetrician' },
+      ua: { role: 'Гінеколог, акушер' },
+    },
   },
   {
     id: 8,
@@ -850,6 +2158,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'gastroenterologia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Gastroenterologist' },
+      ua: { role: 'Гастроентеролог' },
+    },
   },
   {
     id: 9,
@@ -860,6 +2172,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'gastroenterologia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Gastroenterologist' },
+      ua: { role: 'Гастроентеролог' },
+    },
   },
   {
     id: 10,
@@ -870,6 +2186,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'gastroenterologia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Gastroenterologist' },
+      ua: { role: 'Гастроентеролог' },
+    },
   },
   {
     id: 11,
@@ -880,6 +2200,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'gastroenterologia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Gastroenterologist' },
+      ua: { role: 'Гастроентеролог' },
+    },
   },
   {
     id: 12,
@@ -890,6 +2214,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'gastroenterologia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Gastroenterologist' },
+      ua: { role: 'Гастроентеролог' },
+    },
   },
   {
     id: 13,
@@ -900,6 +2228,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'endokrynologia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Endocrinologist' },
+      ua: { role: 'Ендокринолог' },
+    },
   },
   {
     id: 14,
@@ -910,6 +2242,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'endokrynologia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Endocrinologist' },
+      ua: { role: 'Ендокринолог' },
+    },
   },
   {
     id: 15,
@@ -920,6 +2256,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'endokrynologia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Endocrinologist, thyroid biopsies' },
+      ua: { role: 'Ендокринолог, біопсії щитоподібної залози' },
+    },
   },
   {
     id: 16,
@@ -930,6 +2270,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'ortopedia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Orthopaedist' },
+      ua: { role: 'Ортопед' },
+    },
   },
   {
     id: 17,
@@ -940,6 +2284,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'ortopedia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Orthopaedist' },
+      ua: { role: 'Ортопед' },
+    },
   },
   {
     id: 18,
@@ -950,6 +2298,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'ortopedia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Orthopaedist' },
+      ua: { role: 'Ортопед' },
+    },
   },
   {
     id: 19,
@@ -960,6 +2312,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'neurochirurgia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Neurosurgeon' },
+      ua: { role: 'Нейрохірург' },
+    },
   },
   {
     id: 20,
@@ -970,6 +2326,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'neurologia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Neurologist' },
+      ua: { role: 'Невролог' },
+    },
   },
   {
     id: 21,
@@ -980,6 +2340,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'neurologia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Neurologist' },
+      ua: { role: 'Невролог' },
+    },
   },
   {
     id: 22,
@@ -990,6 +2354,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'neurologia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'EEG Nurse' },
+      ua: { role: 'Медсестра ЕЕГ' },
+    },
   },
   {
     id: 23,
@@ -1000,6 +2368,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'psychiatria',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Psychiatrist' },
+      ua: { role: 'Психіатр' },
+    },
   },
   {
     id: 24,
@@ -1010,6 +2382,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'psychiatria',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Psychiatrist' },
+      ua: { role: 'Психіатр' },
+    },
   },
   {
     id: 25,
@@ -1020,6 +2396,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'psychiatria',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Psychiatrist' },
+      ua: { role: 'Психіатр' },
+    },
   },
   {
     id: 26,
@@ -1030,6 +2410,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'psychologia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Psychotherapist' },
+      ua: { role: 'Психотерапевт' },
+    },
   },
   {
     id: 27,
@@ -1040,6 +2424,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'urologia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Urologist' },
+      ua: { role: 'Уролог' },
+    },
   },
   {
     id: 28,
@@ -1050,6 +2438,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'urologia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Urologist' },
+      ua: { role: 'Уролог' },
+    },
   },
   {
     id: 29,
@@ -1060,6 +2452,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'urologia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Urologist' },
+      ua: { role: 'Уролог' },
+    },
   },
   {
     id: 30,
@@ -1070,6 +2466,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'diabetologia',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Diabetologist' },
+      ua: { role: 'Діабетолог' },
+    },
   },
   {
     id: 31,
@@ -1080,6 +2480,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'medycyna-estetyczna',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Aesthetic medicine specialist' },
+      ua: { role: 'Спеціаліст естетичної медицини' },
+    },
   },
   {
     id: 32,
@@ -1090,6 +2494,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'biopsja',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Cytopathologist, thyroid biopsies' },
+      ua: { role: 'Цитопатолог, біопсії щитоподібної залози' },
+    },
   },
   {
     id: 33,
@@ -1100,6 +2508,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'biopsja-grubogłowa',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Surgeon, breast diagnostics' },
+      ua: { role: 'Хірург, діагностика грудей' },
+    },
   },
   {
     id: 34,
@@ -1110,6 +2522,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'rehabilitacja',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Physiotherapist' },
+      ua: { role: 'Фізіотерапевт' },
+    },
   },
   {
     id: 35,
@@ -1120,6 +2536,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'rehabilitacja',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Physiotherapist' },
+      ua: { role: 'Фізіотерапевт' },
+    },
   },
   {
     id: 36,
@@ -1130,6 +2550,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'rehabilitacja',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Physiotherapist' },
+      ua: { role: 'Фізіотерапевт' },
+    },
   },
   {
     id: 37,
@@ -1140,6 +2564,10 @@ export const specialists: Specialist[] = [
     specializationSlug: 'diagnostyka-usg',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Ultrasound diagnostics specialist' },
+      ua: { role: 'Спеціаліст УЗД діагностики' },
+    },
   },
   {
     id: 38,
@@ -1150,5 +2578,9 @@ export const specialists: Specialist[] = [
     specializationSlug: 'diagnostyka-usg',
     photo: '',
     bio: '',
+    translations: {
+      en: { role: 'Surgeon, ultrasound diagnostics' },
+      ua: { role: 'Хірург, УЗД діагностика' },
+    },
   },
 ]

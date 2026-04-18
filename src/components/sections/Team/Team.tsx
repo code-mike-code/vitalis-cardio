@@ -6,7 +6,7 @@ import styles from './Team.module.scss'
 import { waveSpans } from '@/utils/waveSpans'
 
 function AvatarPlaceholder({ index }: { index: number }) {
-  // Alternuje między dwoma wariantami tła
+  // Alternates between two background variants
   const variant = index % 2 === 0 ? styles.avatarBgA : styles.avatarBgB
   return (
     <div className={`${styles.avatarPlaceholder} ${variant}`} aria-hidden="true">
@@ -29,7 +29,7 @@ function Team() {
     <section className={styles.team} id="team">
       <div className={styles.container}>
 
-        {/* ── Nagłówek (styl cennika — wyrównany do lewej) ────────── */}
+        {/* ── Heading (pricing style — left-aligned) ───────────────── */}
         <div className={styles.headerWrap} ref={headingRef}>
           <span className={styles.label}>{t('team.label')}</span>
           <h2 className={styles.heading} aria-label={t('team.heading')}>
@@ -38,16 +38,16 @@ function Team() {
           <p className={styles.subheading}>{t('team.subheading')}</p>
         </div>
 
-        {/* ── Lista specjalistów — editorial numbered list ─────────── */}
+        {/* ── Specialists list — editorial numbered list ───────────── */}
         <ol className={styles.list}>
           {team.map((member, index) => (
             <li key={member.id} className={styles.item}>
-              {/* Numer w tle */}
+              {/* Background number */}
               <span className={styles.number} aria-hidden="true">
                 {String(index + 1).padStart(2, '0')}
               </span>
 
-              {/* Zdjęcie */}
+              {/* Photo */}
               <div className={styles.photoWrap}>
                 {member.photo ? (
                   <img
@@ -62,14 +62,14 @@ function Team() {
                 <span className={styles.badge}>{t(`team.member${member.id}.specialization`)}</span>
               </div>
 
-              {/* Treść */}
+              {/* Content */}
               <div className={styles.content}>
                 <h3 className={styles.name}>{member.name}</h3>
                 <span className={styles.role}>{t(`team.member${member.id}.role`)}</span>
                 <p className={styles.bio}>{t(`team.member${member.id}.bio`)}</p>
               </div>
 
-              {/* Linia — widoczna dzięki ::after w SCSS */}
+              {/* Divider line — rendered via ::after in SCSS */}
             </li>
           ))}
         </ol>

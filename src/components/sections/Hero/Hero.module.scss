@@ -2,13 +2,13 @@
 @use '@/styles/mixins' as *;
 
 // ── Fluid typography ──────────────────────────────────────────────
-$hero-slide-heading-fs: clamp(1.8rem, 4vw, 3.5rem);
-$hero-slide-desc-fs:    clamp(0.9rem, 1.4vw, 1.1rem);
-$hero-bullets-fs:       clamp(0.85rem, 1.2vw, 1rem);
+$hero-slide-heading-fs: clamp(2.1rem, 4.8vw, 4.2rem);
+$hero-slide-desc-fs:    clamp(1rem, 1.6vw, 1.25rem);
+$hero-bullets-fs:       clamp(0.95rem, 1.4vw, 1.15rem);
 $hero-text-large-fs:    clamp(1.4rem, 3.2vw, 3.8rem);
 $hero-text-small-fs:    clamp(0.75rem, 1.6vw, 2rem);
 
-// ── Sekcja 1 w stosie: karuzela (65svh) ───────────────────────────
+// ── Stack section 1: carousel (65svh) ─────────────────────────────
 .heroCarousel {
   position: sticky;
   top: var(--sticky-top, 0px);
@@ -17,7 +17,7 @@ $hero-text-small-fs:    clamp(0.75rem, 1.6vw, 2rem);
   overflow: hidden;
 }
 
-// ── Sekcja 2 w stosie: nagłówek główny (35svh) ────────────────────
+// ── Stack section 2: main heading (35svh) ─────────────────────────
 .heroHeading {
   position: sticky;
   top: var(--sticky-top, 0px);
@@ -64,7 +64,7 @@ $hero-text-small-fs:    clamp(0.75rem, 1.6vw, 2rem);
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.52);
+  background: rgba(255, 255, 255, 0.6);
   z-index: 0;
   pointer-events: none;
 }
@@ -89,7 +89,7 @@ $hero-text-small-fs:    clamp(0.75rem, 1.6vw, 2rem);
 .slideHeading {
   font-family: $font-family-heading;
   font-size: $hero-slide-heading-fs;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 1.1;
@@ -100,12 +100,12 @@ $hero-text-small-fs:    clamp(0.75rem, 1.6vw, 2rem);
 .slideDesc {
   font-size: $hero-slide-desc-fs;
   line-height: 1.6;
-  color: $color-text-light;
+  color: $color-text;
   max-width: 580px;
   margin: 0;
 }
 
-// ── Lista bullet points na slajdzie ──────────────────────────────
+// ── Slide bullet list ─────────────────────────────────────────────
 .slideBullets {
   list-style: none;
   display: flex;
@@ -143,7 +143,7 @@ $hero-text-small-fs:    clamp(0.75rem, 1.6vw, 2rem);
   50%       { transform: translateX(8px); }
 }
 
-// ── Przycisk CTA na slajdzie ──────────────────────────────────────
+// ── Slide CTA button ──────────────────────────────────────────────
 .slideCtaWrap {
   margin-top: $spacing-xs;
 }
@@ -158,7 +158,7 @@ $hero-text-small-fs:    clamp(0.75rem, 1.6vw, 2rem);
   --btn-hover-border-color: #{$color-primary-dark};
 }
 
-// ── Wskaźniki (dots) ──────────────────────────────────────────────
+// ── Dot indicators ────────────────────────────────────────────────
 .dots {
   position: absolute;
   bottom: $spacing-xl;
@@ -194,11 +194,11 @@ $hero-text-small-fs:    clamp(0.75rem, 1.6vw, 2rem);
   border-radius: 4px;
 }
 
-// ── Pasek postępu (auto-play) — ukryty ───────────────────────────
+// ── Progress bar (auto-play) — hidden ────────────────────────────
 .progressBar { display: none; }
 .progressFill { display: none; }
 
-// ── Nagłówek główny h1 ────────────────────────────────────────────
+// ── Main heading h1 ───────────────────────────────────────────────
 .container {
   width: 100%;
   padding: $spacing-lg 30px;
@@ -272,7 +272,7 @@ $hero-text-small-fs:    clamp(0.75rem, 1.6vw, 2rem);
   text-transform: uppercase;
 }
 
-// ── Animacja wave ─────────────────────────────────────────────────
+// ── Wave animation ────────────────────────────────────────────────
 .waveWrap {
   display: inline-block;
   overflow: hidden;

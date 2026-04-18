@@ -14,12 +14,12 @@ $eu-project-name-fs: clamp(#{$font-size-xl}, 3vw, #{$font-size-2xl});
   @include section-padding;
 }
 
-// ── Kontener ──────────────────────────────────────────────────────
+// ── Container ─────────────────────────────────────────────────────
 .container {
   @include container;
 }
 
-// ── Logo EU ───────────────────────────────────────────────────────
+// ── EU logo ───────────────────────────────────────────────────────
 .logoWrap {
   display: flex;
   justify-content: center;
@@ -37,7 +37,7 @@ $eu-project-name-fs: clamp(#{$font-size-xl}, 3vw, #{$font-size-2xl});
   }
 }
 
-// ── Nagłówek ─────────────────────────────────────────────────────
+// ── Heading ───────────────────────────────────────────────────────
 .header {
   text-align: center;
   margin-bottom: $spacing-2xl;
@@ -75,7 +75,7 @@ $eu-project-name-fs: clamp(#{$font-size-xl}, 3vw, #{$font-size-2xl});
   margin: 0 auto;
 }
 
-// ── Treść ─────────────────────────────────────────────────────────
+// ── Content ───────────────────────────────────────────────────────
 .body {
   max-width: 860px;
   margin: 0 auto;
@@ -90,7 +90,7 @@ $eu-project-name-fs: clamp(#{$font-size-xl}, 3vw, #{$font-size-2xl});
   color: $color-text-light;
 }
 
-// ── Lista ─────────────────────────────────────────────────────────
+// ── List ──────────────────────────────────────────────────────────
 .listBlock {
   display: flex;
   flex-direction: column;
@@ -128,7 +128,7 @@ $eu-project-name-fs: clamp(#{$font-size-xl}, 3vw, #{$font-size-2xl});
   margin-top: 8px;
 }
 
-// ── Stopka sekcji ────────────────────────────────────────────────
+// ── Section footer ────────────────────────────────────────────────
 .footer {
   font-size: $font-size-sm;
   line-height: $line-height-base;

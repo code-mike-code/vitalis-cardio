@@ -1,4 +1,5 @@
 import { services } from '@/data'
+import { useLanguage } from '@/hooks/useLanguage'
 import SectionHeader from '@components/common/SectionHeader/SectionHeader'
 import styles from './Services.module.scss'
 
@@ -24,12 +25,14 @@ const serviceIcons: Record<string, JSX.Element> = {
 }
 
 function Services() {
+  const { t } = useLanguage()
+
   return (
     <section className={styles.services} id="services">
       <div className={styles.container}>
         <SectionHeader
-          title="Nasze specjalizacje"
-          subtitle="Oferujemy szeroki zakres usług medycznych w ramach specjalistycznych poradni i centrum rehabilitacji."
+          title={t('services.sectionTitle')}
+          subtitle={t('services.sectionSubtitle')}
         />
         <div className={styles.grid}>
           {services.map(service => (
@@ -38,10 +41,10 @@ function Services() {
                 {serviceIcons[service.icon]}
               </div>
               <div className={styles.content}>
-                <h3 className={styles.title}>{service.title}</h3>
-                <p className={styles.description}>{service.description}</p>
+                <h3 className={styles.title}>{t(`services.${service.icon}.title`)}</h3>
+                <p className={styles.description}>{t(`services.${service.icon}.desc`)}</p>
                 <a href="#contact" className={styles.link}>
-                  Dowiedz się więcej →
+                  {t('services.learnMore')}
                 </a>
               </div>
             </div>

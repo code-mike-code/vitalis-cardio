@@ -46,7 +46,7 @@ export function MapPopover({ address, open, onClose }: MapPopoverProps) {
           {open && (
             <iframe
               className={styles.iframe}
-              title="Lokalizacja"
+              title={t('common.mapLocation')}
               src={`https://maps.google.com/maps?q=${encodedAddress}&output=embed&hl=pl`}
               allowFullScreen
               loading="lazy"

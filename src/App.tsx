@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { LanguageProvider } from '@/hooks/useLanguage'
+import { LanguageProvider, useLanguage } from '@/hooks/useLanguage'
 import ScrollToHash from '@components/ui/ScrollToHash'
 import CookieConsent from '@components/ui/CookieConsent/CookieConsent'
 import HomePage from '@/pages/HomePage'
@@ -12,13 +12,14 @@ import TermsPage from '@/pages/TermsPage'
 import PartnerNfzPage from '@/pages/PartnerNfzPage'
 import PartnerLuxmedPage from '@/pages/PartnerLuxmedPage'
 
-// Lazy-loaded: kod kalendarza pobierany tylko gdy użytkownik wchodzi na stronę rezerwacji
+// Lazy-loaded: calendar code is fetched only when the user navigates to the booking page
 const BookingPage = lazy(() => import('@/pages/BookingPage'))
 
 function BookingFallback() {
+  const { t } = useLanguage()
   return (
     <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <p style={{ color: '#8A8A8A', fontSize: '14px' }}>Ładowanie formularza rezerwacji…</p>
+      <p style={{ color: '#8A8A8A', fontSize: '14px' }}>{t('common.loadingBooking')}</p>
     </div>
   )
 }

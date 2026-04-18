@@ -16,7 +16,7 @@ function About() {
     <section className={styles.about} id="about">
       <div className={styles.container}>
 
-        {/* Założyciele */}
+        {/* Founders */}
         <div className={styles.subsection}>
           <div className={styles.headerWrap} ref={foundersHeading.ref}>
             <span className={styles.label}>{t('about.foundersLabel')}</span>
@@ -45,7 +45,7 @@ function About() {
           </div>
         </div>
 
-        {/* Nasz gabinet */}
+        {/* Our clinic */}
         <div className={styles.subsection}>
           <div className={styles.headerWrap} ref={cabinetHeading.ref}>
             <span className={styles.label}>{t('about.cabinetLabel')}</span>

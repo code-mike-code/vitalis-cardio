@@ -2,12 +2,14 @@ import { useParams, Navigate, Link } from 'react-router-dom'
 import { specializations } from '@/data'
 import { calendarConfig } from '@/data/calendarConfig'
 import { CalendarSlot } from '@/features/calendar'
+import { useLanguage } from '@/hooks/useLanguage'
 import PageLayout from '@components/layout/PageLayout/PageLayout'
 import CtaButton from '@components/common/CtaButton/CtaButton'
 import styles from './BookingPage.module.scss'
 
 function BookingPage() {
   const { slug } = useParams<{ slug: string }>()
+  const { t } = useLanguage()
   const specialization = specializations.find(s => s.slug === slug)
 
   if (!specialization) return <Navigate to="/specjalizacje" replace />
@@ -23,9 +25,9 @@ function BookingPage() {
               {specialization.name}
             </Link>
             {' / '}
-            Umów wizytę
+            {t('bookingPage.breadcrumbBook')}
           </p>
-          <h1 className={styles.heroTitle}>Umów wizytę — {specialization.name}</h1>
+          <h1 className={styles.heroTitle}>{t('bookingPage.titlePrefix')}{specialization.name}</h1>
         </div>
       </div>
 
@@ -37,11 +39,10 @@ function BookingPage() {
             <div className={styles.fallback}>
               <div className={styles.fallbackIcon}>📅</div>
               <h2 className={styles.fallbackTitle}>
-                Rezerwacja online dla tej specjalizacji jest niedostępna
+                {t('bookingPage.unavailableTitle')}
               </h2>
               <p className={styles.fallbackText}>
-                Aby umówić wizytę w poradni <strong>{specialization.name}</strong>,
-                skontaktuj się z rejestracją telefonicznie lub osobiście.
+                {t('bookingPage.unavailableTextBefore')} <strong>{specialization.name}</strong>{t('bookingPage.unavailableTextAfter')}
               </p>
               <div className={styles.fallbackContacts}>
                 <CtaButton href="tel:+48221234567" variant="secondary">
@@ -52,7 +53,7 @@ function BookingPage() {
                 </CtaButton>
               </div>
               <p className={styles.fallbackHours}>
-                Rejestracja czynna: Pon–Pt 7:00–20:00, Sob 8:00–14:00
+                {t('bookingPage.unavailableHours')}
               </p>
             </div>
           )}
