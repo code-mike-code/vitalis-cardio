@@ -102,6 +102,7 @@ export interface PricingItem {
 
 export interface PricingSection {
   subtitle: string
+  slug?: string
   items: PricingItem[]
 }
 
