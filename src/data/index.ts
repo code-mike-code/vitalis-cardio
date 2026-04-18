@@ -1323,6 +1323,7 @@ export const pricing: PricingCategory[] = [
     sections: [
       {
         subtitle: 'Kardiologia',
+        slug: 'kardiologia',
         items: [
           { name: 'Badanie echokardiografii przezklatkowej TTE', price: '150 PLN' },
           { name: 'Badanie echokardiografii przezprzełykowej TEE – Próba dobutaminowa', price: '360 PLN' },
@@ -1348,6 +1349,7 @@ export const pricing: PricingCategory[] = [
       },
       {
         subtitle: 'Poradnia neurologiczna',
+        slug: 'neurologia',
         items: [
           { name: 'Konsultacja neurologiczna', price: '250 PLN / 220 PLN' },
           { name: 'Wykonanie badania EEG', price: '300 PLN' },
@@ -1355,12 +1357,14 @@ export const pricing: PricingCategory[] = [
       },
       {
         subtitle: 'Poradnia neurochirurgiczna',
+        slug: 'neurochirurgia',
         items: [
           { name: 'Konsultacja neurochirurgiczna', price: '240 PLN' },
         ],
       },
       {
         subtitle: 'Poradnia psychiatryczna',
+        slug: 'psychiatria',
         items: [
           { name: 'Konsultacja psychiatryczna – dr Woźniak', price: '280 PLN' },
           { name: 'Konsultacja psychiatryczna – dr Wajda', price: '280 PLN' },
@@ -1368,6 +1372,7 @@ export const pricing: PricingCategory[] = [
       },
       {
         subtitle: 'Poradnia endokrynologiczna',
+        slug: 'endokrynologia',
         items: [
           { name: 'Konsultacja endokrynologiczna – dr Szymkowiak', price: '280 PLN' },
           { name: 'Konsultacja endokrynologiczna z USG – dr Szymkowiak', price: '330 PLN' },
@@ -1377,6 +1382,7 @@ export const pricing: PricingCategory[] = [
       },
       {
         subtitle: 'Poradnia urologiczna',
+        slug: 'urologia',
         items: [
           { name: 'Konsultacja urologiczna – dr Sołtys', price: '250 PLN / 200 PLN' },
           { name: 'Konsultacja urologiczna z USG – dr Sołtys', price: '350 PLN / 250 PLN' },
@@ -1386,6 +1392,7 @@ export const pricing: PricingCategory[] = [
       },
       {
         subtitle: 'Poradnia diabetologiczna',
+        slug: 'diabetologia',
         items: [
           { name: 'Konsultacja diabetologiczna', price: '270 PLN / 220 PLN' },
           { name: 'Konsultacja dietetyczna', price: '150 PLN' },
@@ -1393,6 +1400,7 @@ export const pricing: PricingCategory[] = [
       },
       {
         subtitle: 'Poradnia gastroenterologiczna',
+        slug: 'gastroenterologia',
         items: [
           { name: 'Konsultacja gastrologiczna – dr Fic', price: '250 PLN' },
           { name: 'Konsultacja gastrologiczna – dr Szulewski', price: '250 PLN' },
@@ -1400,6 +1408,7 @@ export const pricing: PricingCategory[] = [
       },
       {
         subtitle: 'Procedury ortopedyczne',
+        slug: 'ortopedia',
         items: [
           { name: 'Pierwsza konsultacja ortopedyczna', price: '300 PLN' },
           { name: 'Konsultacja ortopedyczna', price: '200 PLN' },
@@ -1417,6 +1426,7 @@ export const pricing: PricingCategory[] = [
       },
       {
         subtitle: 'Procedury ginekologiczne',
+        slug: 'ginekologia',
         items: [
           { name: 'Konsultacja ginekologiczna', price: '150 PLN' },
           { name: 'Konsultacja ginekologiczna z USG', price: '240 PLN' },
@@ -1427,6 +1437,7 @@ export const pricing: PricingCategory[] = [
       },
       {
         subtitle: 'Pracownia Endoskopii',
+        slug: 'gastroenterologia',
         items: [
           { name: 'Gastroskopia diagnostyczna', price: '350 PLN' },
           { name: 'Gastroskopia diagnostyczna + test na HP', price: '370 PLN' },
@@ -1445,6 +1456,7 @@ export const pricing: PricingCategory[] = [
       },
       {
         subtitle: 'USG',
+        slug: 'diagnostyka-usg',
         items: [
           { name: 'USG tarczycy, przytarczyc', price: '170 PLN' },
           { name: 'USG jamy brzusznej, przestrzeni zaotrzewnowej i miednicy mniejszej', price: '190 PLN' },
@@ -1773,6 +1785,7 @@ export const pricing: PricingCategory[] = [
     sections: [
       {
         subtitle: 'Pojedyncza wizyta',
+        slug: 'rehabilitacja',
         items: [
           { name: 'Konsultacja (pierwszorazowa) diagnostyczno-terapeutyczna', price: '100 PLN / 90 min' },
           { name: 'Konsultacja (pierwszorazowa) diagnostyczna', price: '85 PLN / 45 min' },
@@ -1783,6 +1796,7 @@ export const pricing: PricingCategory[] = [
       },
       {
         subtitle: 'Pakiet wizyt',
+        slug: 'rehabilitacja',
         items: [
           { name: 'Program profilaktyki i promocji zdrowia dla osób po 65 roku życia', price: '120 PLN / 10 × 40 min' },
           { name: 'Pakiet mały standardowych wizyt fizjoterapeutycznych', price: '350 PLN / 5 × 60 min' },
@@ -1851,6 +1865,7 @@ export const pricing: PricingCategory[] = [
     sections: [
       {
         subtitle: 'Korekcja zmarszczek',
+        slug: 'medycyna-estetyczna',
         items: [
           { name: 'Lwia zmarszczka', price: '300 PLN' },
           { name: 'Zmarszczki poprzeczne czoła', price: '300 PLN' },
@@ -1860,6 +1875,7 @@ export const pricing: PricingCategory[] = [
       },
       {
         subtitle: 'Leczenie nadpotliwości',
+        slug: 'medycyna-estetyczna',
         items: [
           { name: 'Pachy', price: '1050 PLN' },
           { name: 'Dłonie', price: '1200 PLN' },
@@ -1867,6 +1883,7 @@ export const pricing: PricingCategory[] = [
       },
       {
         subtitle: 'Wypełnianie zmarszczek',
+        slug: 'medycyna-estetyczna',
         items: [
           { name: 'Bruzda nosowo-wargowa', price: '600 PLN' },
           { name: 'Modelowanie ust', price: '600 PLN' },
@@ -1878,6 +1895,7 @@ export const pricing: PricingCategory[] = [
       },
       {
         subtitle: 'Bezoperacyjny lifting',
+        slug: 'medycyna-estetyczna',
         items: [
           { name: 'Lifting dolnej części twarzy', price: '1100 PLN' },
           { name: 'Lifting szyi', price: '1100 PLN' },
@@ -1885,6 +1903,7 @@ export const pricing: PricingCategory[] = [
       },
       {
         subtitle: 'Mezoterapia igłowa',
+        slug: 'medycyna-estetyczna',
         items: [
           { name: 'Twarz', price: '450 PLN' },
           { name: 'Skalp', price: '350 PLN' },
@@ -1892,6 +1911,7 @@ export const pricing: PricingCategory[] = [
       },
       {
         subtitle: 'Lipoliza iniekcyjna',
+        slug: 'medycyna-estetyczna',
         items: [
           { name: 'Podbródek', price: '260 PLN' },
           { name: 'Kolano strona wewnętrzna', price: '400 PLN' },
@@ -1901,6 +1921,7 @@ export const pricing: PricingCategory[] = [
       },
       {
         subtitle: 'Nici liftingujące',
+        slug: 'medycyna-estetyczna',
         items: [
           { name: 'Screw', price: '350–400 PLN' },
           { name: 'Barbe', price: '970 PLN' },
