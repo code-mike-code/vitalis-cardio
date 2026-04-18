@@ -1437,7 +1437,7 @@ export const pricing: PricingCategory[] = [
       },
       {
         subtitle: 'Pracownia Endoskopii',
-        slug: 'gastroenterologia',
+        slug: 'gastroenterologia', // endoscopy bookings go through the gastroenterology page
         items: [
           { name: 'Gastroskopia diagnostyczna', price: '350 PLN' },
           { name: 'Gastroskopia diagnostyczna + test na HP', price: '370 PLN' },
