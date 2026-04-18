@@ -203,8 +203,17 @@ function Offer() {
                             <ul className={styles.priceList}>
                               {section.items.map((item, i) => (
                                 <li key={i} className={styles.priceItem}>
-                                  <span className={styles.priceName}>{item.name}</span>
-                                  <span className={styles.priceValue}>{item.price}</span>
+                                  {section.slug ? (
+                                    <Link to={`/specjalizacje/${section.slug}/umow-wizyte`}>
+                                      <span className={styles.priceName}>{item.name}</span>
+                                      <span className={styles.priceValue}>{item.price}</span>
+                                    </Link>
+                                  ) : (
+                                    <>
+                                      <span className={styles.priceName}>{item.name}</span>
+                                      <span className={styles.priceValue}>{item.price}</span>
+                                    </>
+                                  )}
                                 </li>
                               ))}
                             </ul>

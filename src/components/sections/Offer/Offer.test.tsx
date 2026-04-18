@@ -1,12 +1,18 @@
 import { render, screen, fireEvent } from '@testing-library/react'
+import { MemoryRouter } from 'react-router-dom'
 import { LanguageProvider } from '@/hooks/useLanguage'
 import Offer from './Offer'
 
 function renderOffer() {
+  // Set Polish as default language for tests
+  localStorage.setItem('vitalis-lang', 'pl')
+
   return render(
-    <LanguageProvider>
-      <Offer />
-    </LanguageProvider>
+    <MemoryRouter>
+      <LanguageProvider>
+        <Offer />
+      </LanguageProvider>
+    </MemoryRouter>
   )
 }
 
@@ -57,5 +63,25 @@ describe('Offer', () => {
     fireEvent.click(screen.getByRole('button', { name: /neurologia/i }))
     expect(screen.getByText('EKG spoczynkowe')).toBeInTheDocument()
     expect(screen.getByText('EEG')).toBeInTheDocument()
+  })
+
+  it('renders a booking link on a price item when section has a slug', () => {
+    renderOffer()
+    fireEvent.click(screen.getByRole('button', { name: /kardiologia/i }))
+    const links = screen.getAllByRole('link')
+    const bookingLinks = links.filter(l =>
+      l.getAttribute('href')?.includes('/umow-wizyte')
+    )
+    expect(bookingLinks.length).toBeGreaterThan(0)
+    expect(bookingLinks[0].getAttribute('href')).toBe(
+      '/specjalizacje/kardiologia/umow-wizyte'
+    )
+  })
+
+  it('does not render a booking link for sections without a slug', () => {
+    renderOffer()
+    fireEvent.click(screen.getByRole('button', { name: /pozostałe badania/i }))
+    const spirometria = screen.getByText('Wykonanie badania spirometrii')
+    expect(spirometria.closest('a')).toBeNull()
   })
 })
