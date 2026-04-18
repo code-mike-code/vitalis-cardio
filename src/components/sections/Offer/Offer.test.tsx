@@ -17,6 +17,10 @@ function renderOffer() {
 }
 
 describe('Offer', () => {
+  beforeEach(() => {
+    localStorage.clear()
+  })
+
   it('renders the pricing section heading', () => {
     renderOffer()
     expect(screen.getByText('CENNIK')).toBeInTheDocument()
@@ -24,17 +28,17 @@ describe('Offer', () => {
 
   it('renders all four service area titles', () => {
     renderOffer()
-    expect(screen.getByText('Poradnie Specjalistyczne')).toBeInTheDocument()
-    expect(screen.getByText('Diagnostyka USG')).toBeInTheDocument()
-    expect(screen.getByText('Rehabilitacja')).toBeInTheDocument()
-    expect(screen.getByText('Medycyna Estetyczna')).toBeInTheDocument()
+    expect(screen.getAllByText('Poradnie Specjalistyczne').length).toBeGreaterThanOrEqual(1)
+    expect(screen.getAllByText('Diagnostyka USG').length).toBeGreaterThanOrEqual(1)
+    expect(screen.getAllByText('Rehabilitacja').length).toBeGreaterThanOrEqual(1)
+    expect(screen.getAllByText('Medycyna Estetyczna').length).toBeGreaterThanOrEqual(1)
   })
 
   it('renders all pricing accordion categories', () => {
     renderOffer()
-    expect(screen.getByText('Kardiologia')).toBeInTheDocument()
-    expect(screen.getByText('Rehabilitacja i Fizjoterapia')).toBeInTheDocument()
-    expect(screen.getByText('Medycyna Estetyczna')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Kardiologia' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Pojedyncza wizyta' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Korekcja zmarszczek' })).toBeInTheDocument()
   })
 
   it('accordion item is collapsed by default', () => {
@@ -44,25 +48,25 @@ describe('Offer', () => {
 
   it('opens accordion item on click', () => {
     renderOffer()
-    const trigger = screen.getByRole('button', { name: /kardiologia/i })
+    const trigger = screen.getByRole('button', { name: 'Kardiologia' })
     fireEvent.click(trigger)
-    expect(screen.getByText('EKG spoczynkowe')).toBeInTheDocument()
+    expect(screen.getByText('Holter RR 1 doba')).toBeInTheDocument()
   })
 
   it('closes accordion item on second click', () => {
     renderOffer()
-    const trigger = screen.getByRole('button', { name: /kardiologia/i })
+    const trigger = screen.getByRole('button', { name: 'Kardiologia' })
     fireEvent.click(trigger)
     fireEvent.click(trigger)
-    expect(screen.queryByText('EKG spoczynkowe')).not.toBeInTheDocument()
+    expect(trigger).toHaveAttribute('aria-expanded', 'false')
   })
 
   it('multiple accordion items can be open simultaneously', () => {
     renderOffer()
-    fireEvent.click(screen.getByRole('button', { name: /kardiologia/i }))
-    fireEvent.click(screen.getByRole('button', { name: /neurologia/i }))
-    expect(screen.getByText('EKG spoczynkowe')).toBeInTheDocument()
-    expect(screen.getByText('EEG')).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: 'Kardiologia' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Poradnia neurologiczna' }))
+    expect(screen.getByText('Holter RR 1 doba')).toBeInTheDocument()
+    expect(screen.getByText('Konsultacja neurologiczna')).toBeInTheDocument()
   })
 
   it('renders a booking link on a price item when section has a slug', () => {

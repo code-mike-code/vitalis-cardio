@@ -204,7 +204,10 @@ function Offer() {
                               {section.items.map((item, i) => (
                                 <li key={i} className={styles.priceItem}>
                                   {section.slug ? (
-                                    <Link to={`/specjalizacje/${section.slug}/umow-wizyte`}>
+                                    <Link
+                                      to={`/specjalizacje/${section.slug}/umow-wizyte`}
+                                      aria-label={`Umów wizytę: ${item.name}`}
+                                    >
                                       <span className={styles.priceName}>{item.name}</span>
                                       <span className={styles.priceValue}>{item.price}</span>
                                     </Link>
