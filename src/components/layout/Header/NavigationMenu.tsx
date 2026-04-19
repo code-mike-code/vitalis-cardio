@@ -77,7 +77,6 @@ const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
         <div className={styles.col}>
           <h2>{t('nav.openingHours')}</h2>
           <p>{t('nav.weekdaysHours')}</p>
-          <p>{t('nav.saturdayHours')}</p>
         </div>
         <div className={styles.col}>
           <h2>{t('nav.address')}</h2>

@@ -33,7 +33,6 @@ function Footer() {
           <div className={styles.col}>
             <h3 className={styles.colTitle}>{t('nav.openingHours')}</h3>
             <p>{t('nav.weekdaysHours')}</p>
-            <p>{t('nav.saturdayHours')}</p>
           </div>
           <div className={styles.col}>
             <h3 className={styles.colTitle}>{t('nav.address')}</h3>

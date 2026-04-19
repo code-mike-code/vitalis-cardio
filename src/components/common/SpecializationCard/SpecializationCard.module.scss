@@ -29,7 +29,20 @@
 }
 
 .link {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
   margin-top: $spacing-sm;
-  // pointer-events none — the parent <Link> already handles navigation
-  pointer-events: none;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+
+  .arrow {
+    display: inline-block;
+    transition: transform $transition-base;
+  }
+}
+
+.card:hover .link .arrow {
+  transform: rotate(-45deg);
 }

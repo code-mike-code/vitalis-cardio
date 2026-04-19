@@ -1,6 +1,6 @@
 .hero {
   background: $color-secondary;
-  padding: $spacing-2xl $spacing-lg;
+  padding: calc(#{$header-height} + #{$spacing-2xl}) $spacing-lg $spacing-2xl;
   border-bottom: 3px solid $color-primary;
 }
 

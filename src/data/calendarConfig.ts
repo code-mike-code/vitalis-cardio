@@ -1,27 +1,16 @@
-/**
- * Mapa slug specjalizacji → serviceId w systemie medycynaPraktyczna.
- *
- * Jak uzupełnić:
- *  1. Zaloguj się do panelu medycynaPraktyczna
- *  2. Wejdź w Ustawienia → Widget → wybierz specjalizację/lekarza
- *  3. Skopiuj ID usługi i wklej jako wartość dla odpowiedniego klucza
- *
- * Specjalizacje bez serviceId pokażą fallback z numerem telefonu.
- */
 export const calendarConfig: Record<string, string> = {
-  // kardiologia:             'MP_SERVICE_ID_HERE',
-  // 'kardiologia-dziecieca': 'MP_SERVICE_ID_HERE',
-  // ginekologia:             'MP_SERVICE_ID_HERE',
-  // gastroenterologia:       'MP_SERVICE_ID_HERE',
-  // endokrynologia:          'MP_SERVICE_ID_HERE',
-  // ortopedia:               'MP_SERVICE_ID_HERE',
-  // neurochirurgia:          'MP_SERVICE_ID_HERE',
-  // neurologia:              'MP_SERVICE_ID_HERE',
-  // psychiatria:             'MP_SERVICE_ID_HERE',
-  // psychologia:             'MP_SERVICE_ID_HERE',
-  // urologia:                'MP_SERVICE_ID_HERE',
-  // dietetyka:               'MP_SERVICE_ID_HERE',
-  // diabetologia:            'MP_SERVICE_ID_HERE',
-  // 'medycyna-estetyczna':   'MP_SERVICE_ID_HERE',
-  // biopsja:                 'MP_SERVICE_ID_HERE',
+  'kardiologia':           'https://e-rejestracja.mp.pl/Tickets/w/c1920ef1-cf37-4225-9dd6-2fe0b38638c1',
+  'kardiologia-dziecieca': 'https://e-rejestracja.mp.pl/Tickets/w/c1920ef1-cf37-4225-9dd6-2fe0b38638c1',
+  'ginekologia':           'https://e-rejestracja.mp.pl/Tickets/w/01051397-03f0-4aae-996b-0ddf63dca65b',
+  'gastroenterologia':     'https://e-rejestracja.mp.pl/Tickets/4b52b070-b498-4be6-9c25-603f369294fd',
+  'endokrynologia':        'https://e-rejestracja.mp.pl/Tickets/w/197a9007-635f-41fa-88be-03351f1b6402',
+  'ortopedia':             'https://e-rejestracja.mp.pl/Tickets/w/49b6615f-403f-4f4b-b52d-005a01407822',
+  'neurochirurgia':        'https://e-rejestracja.mp.pl/Tickets/cc11f046-cfee-437f-a798-20e4de9091b3',
+  'neurologia':            'https://e-rejestracja.mp.pl/Tickets/cc11f046-cfee-437f-a798-20e4de9091b3',
+  'psychiatria':           'https://e-rejestracja.mp.pl/Tickets/b0a96427-43f3-4187-bf1b-7607623797d4',
+  'psychologia':           'https://e-rejestracja.mp.pl/Tickets/w/e517ef96-ebfd-42d4-ab7f-1b101b18f507',
+  'urologia':              'https://e-rejestracja.mp.pl/Tickets/w/673893c0-f517-439f-b3ba-2b327aacd080',
+  'diabetologia':          'https://e-rejestracja.mp.pl/Tickets/w/76622260-0ae1-4671-a052-1096227c4876',
+  'rehabilitacja':         'https://e-rejestracja.mp.pl/Tickets/w/0f50f1e9-3e56-4657-9b5b-d6dad5e1d76e',
+  'diagnostyka-usg':       'https://e-rejestracja.mp.pl/Tickets/w/8c50e78e-30ab-4b80-a054-bc68f5dcb7b6',
 }

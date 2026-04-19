@@ -16,7 +16,6 @@ export const en = {
     partners: 'Our Partners',
     siteMenu: 'Site Menu',
     weekdaysHours: 'Mon - Fri: 10:00 - 18:00',
-    saturdayHours: 'Saturday: 08:00 - 15:00',
     linkAbout: 'About Us',
     linkPricing: 'Pricing',
     linkTeam: 'Team',
@@ -263,7 +262,7 @@ export const en = {
     unavailableTitle: 'Online booking for this specialisation is unavailable',
     unavailableTextBefore: 'To book an appointment at the',
     unavailableTextAfter: ' clinic, please contact our reception by phone or in person.',
-    unavailableHours: 'Reception open: Mon–Fri 7:00–20:00, Sat 8:00–14:00',
+    unavailableHours: 'Reception open: Mon–Fri 10:00–18:00',
   },
   partnerNfz: {
     heroTitle: 'Vitalis Clinic and the National Health Fund',

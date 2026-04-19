@@ -16,7 +16,6 @@ export const ua = {
     partners: 'Наші партнери',
     siteMenu: 'Меню сайту',
     weekdaysHours: 'Пн - Пт: 10:00 - 18:00',
-    saturdayHours: 'Субота: 08:00 - 15:00',
     linkAbout: 'Про нас',
     linkPricing: 'Ціни',
     linkTeam: 'Команда',
@@ -263,7 +262,7 @@ export const ua = {
     unavailableTitle: 'Онлайн-запис для цієї спеціалізації недоступний',
     unavailableTextBefore: 'Щоб записатися до',
     unavailableTextAfter: ', зверніться до реєстратури телефоном або особисто.',
-    unavailableHours: 'Реєстратура: Пн–Пт 7:00–20:00, Сб 8:00–14:00',
+    unavailableHours: 'Реєстратура: Пн–Пт 10:00–18:00',
   },
   partnerNfz: {
     heroTitle: 'Клініка Vitalis і Національний фонд здоров\'я',

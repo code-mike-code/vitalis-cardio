@@ -16,7 +16,6 @@ export const pl = {
     partners: 'Współpracujemy',
     siteMenu: 'Menu strony',
     weekdaysHours: 'Pon - Pt: 10:00 - 18:00',
-    saturdayHours: 'Sobota: 08:00 - 15:00',
     linkAbout: 'O nas',
     linkPricing: 'Cennik',
     linkTeam: 'Zespół',
@@ -263,7 +262,7 @@ export const pl = {
     unavailableTitle: 'Rezerwacja online dla tej specjalizacji jest niedostępna',
     unavailableTextBefore: 'Aby umówić wizytę w poradni',
     unavailableTextAfter: ', skontaktuj się z rejestracją telefonicznie lub osobiście.',
-    unavailableHours: 'Rejestracja czynna: Pon–Pt 7:00–20:00, Sob 8:00–14:00',
+    unavailableHours: 'Rejestracja czynna: Pon–Pt 10:00–18:00',
   },
   partnerNfz: {
     heroTitle: 'Poradnia Vitalis w Narodowym Funduszu Zdrowia',

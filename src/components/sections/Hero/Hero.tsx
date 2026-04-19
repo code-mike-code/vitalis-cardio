@@ -65,7 +65,7 @@ function Hero() {
                 className={styles.slideImg}
                 aria-hidden="true"
                 loading={i === 0 ? 'eager' : 'lazy'}
-                fetchPriority={i === 0 ? 'high' : 'auto'}
+                {...({ fetchpriority: i === 0 ? 'high' : 'auto' } as object)}
                 decoding="async"
               />
               <div className={styles.slideContent}>

@@ -9,12 +9,14 @@ import styles from './BookingPage.module.scss'
 
 function BookingPage() {
   const { slug } = useParams<{ slug: string }>()
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const specialization = specializations.find(s => s.slug === slug)
 
   if (!specialization) return <Navigate to="/specjalizacje" replace />
 
-  const serviceId = calendarConfig[specialization.slug]
+  const langKey = language as 'en' | 'ua'
+  const loc = { ...specialization, ...(specialization.translations?.[langKey] ?? {}) }
+  const iframeUrl = calendarConfig[specialization.slug]
 
   return (
     <PageLayout>
@@ -22,19 +24,19 @@ function BookingPage() {
         <div className={styles.heroContent}>
           <p className={styles.breadcrumb}>
             <Link to={`/specjalizacje/${specialization.slug}`}>
-              {specialization.name}
+              {loc.name}
             </Link>
             {' / '}
             {t('bookingPage.breadcrumbBook')}
           </p>
-          <h1 className={styles.heroTitle}>{t('bookingPage.titlePrefix')}{specialization.name}</h1>
+          <h1 className={styles.heroTitle}>{t('bookingPage.titlePrefix')}{loc.name}</h1>
         </div>
       </div>
 
       <section className={styles.content}>
         <div className={styles.container}>
-          {serviceId ? (
-            <CalendarSlot serviceId={serviceId} className={styles.calendar} />
+          {iframeUrl ? (
+            <CalendarSlot iframeUrl={iframeUrl} className={styles.calendar} />
           ) : (
             <div className={styles.fallback}>
               <div className={styles.fallbackIcon}>📅</div>
@@ -42,14 +44,14 @@ function BookingPage() {
                 {t('bookingPage.unavailableTitle')}
               </h2>
               <p className={styles.fallbackText}>
-                {t('bookingPage.unavailableTextBefore')} <strong>{specialization.name}</strong>{t('bookingPage.unavailableTextAfter')}
+                {t('bookingPage.unavailableTextBefore')} <strong>{loc.name}</strong>{t('bookingPage.unavailableTextAfter')}
               </p>
               <div className={styles.fallbackContacts}>
-                <CtaButton href="tel:+48221234567" variant="secondary">
-                  📞 22 123 45 67
+                <CtaButton href="tel:+48322109866" variant="secondary">
+                  📞 32 210 98 66
                 </CtaButton>
-                <CtaButton href="tel:+48500100200" variant="secondary">
-                  📞 500 100 200
+                <CtaButton href="tel:+48326200293" variant="secondary">
+                  📞 32 620 02 93
                 </CtaButton>
               </div>
               <p className={styles.fallbackHours}>
