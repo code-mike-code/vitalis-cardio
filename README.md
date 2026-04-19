@@ -1,19 +1,19 @@
-# Vitalis — Strona Gabinetu Stomatologicznego
+# Vitalis — Private Medical Clinic Website
 
-Strona internetowa prywatnego gabinetu stomatologicznego zbudowana w React + TypeScript + SCSS.
+Website for a private medical clinic built with React + TypeScript + SCSS.
 
-## Stos technologiczny
+## Tech Stack
 
-| Warstwa | Technologia |
+| Layer | Technology |
 |---|---|
 | Framework | React 18 + TypeScript 5 |
 | Bundler | Vite 5 |
-| Style | SCSS Modules + globalne zmienne/mixiny |
+| Styles | SCSS Modules + global variables/mixins |
 | Routing | React Router DOM v7 |
-| Testy | Jest 29 + Testing Library |
-| i18n | Własny kontekst (PL / EN / UA) |
+| Testing | Jest 29 + Testing Library |
+| i18n | Custom context (PL / EN / UA) |
 
-## Struktura projektu
+## Project Structure
 
 ```
 src/
@@ -23,51 +23,51 @@ src/
 │   ├── sections/      # Hero, Features, Services, About, Team, Contact
 │   └── ui/            # WaveText, Reveal, MapPopover
 ├── features/
-│   └── calendar/      # CalendarSlot — placeholder widgetu rezerwacji
+│   └── calendar/      # CalendarSlot — booking widget (e-rejestracja.mp.pl iframe)
 ├── hooks/
-│   └── useLanguage    # LanguageProvider + hook + funkcja t()
-├── i18n/              # Słowniki: pl.ts, en.ts, ua.ts
-├── data/              # Dane statyczne (specjalizacje, konfiguracja kalendarza)
+│   └── useLanguage    # LanguageProvider + hook + t() function
+├── i18n/              # Dictionaries: pl.ts, en.ts, ua.ts
+├── data/              # Static data (specializations, calendar config)
 ├── pages/             # HomePage, SpecializationsPage, SpecializationPage, BookingPage
-├── styles/            # Zmienne SCSS, reset, typografia, mixiny
-└── types/             # Typy globalne
+├── styles/            # SCSS variables, reset, typography, mixins
+└── types/             # Global types
 ```
 
-## Podstrony (routing)
+## Routes
 
-| Ścieżka | Strona |
+| Path | Page |
 |---|---|
-| `/` | Strona główna (Hero → Features → Services → About → Team → Contact) |
-| `/specjalizacje` | Lista specjalizacji |
-| `/specjalizacje/:slug` | Szczegóły specjalizacji |
-| `/specjalizacje/:slug/umow-wizyte` | Formularz rezerwacji (lazy-loaded) |
+| `/` | Home (Hero → Features → Services → About → Team → Contact) |
+| `/specjalizacje` | Specializations list |
+| `/specjalizacje/:slug` | Specialization detail |
+| `/specjalizacje/:slug/umow-wizyte` | Booking page (lazy-loaded) |
 
-## Uruchomienie
+## Getting Started
 
 ```bash
 npm install
 npm run dev        # dev server: http://localhost:5173
-npm run build      # produkcja → dist/
-npm run preview    # podgląd buildu
-npm test           # testy jednostkowe
+npm run build      # production build → dist/
+npm run preview    # preview production build
+npm test           # unit tests
 npm run test:coverage
 ```
 
-## Internacjonalizacja
+## Internationalisation
 
-Język przechowywany w `localStorage` (klucz: `vitalis-lang`). Domyślnie wykrywany z przeglądarki — ukraiński (`uk`) → `ua`, angielski → `en`, reszta → `pl`.
+Language is stored in `localStorage` (key: `vitalis-lang`). Auto-detected from the browser — Ukrainian (`uk`) → `ua`, English → `en`, everything else → `pl`.
 
-Tłumaczenia: `src/i18n/pl.ts` | `src/i18n/en.ts` | `src/i18n/ua.ts`
+Translations: `src/i18n/pl.ts` | `src/i18n/en.ts` | `src/i18n/ua.ts`
 
-## Rezerwacja wizyt
+## Online Booking
 
-`CalendarSlot` (`src/features/calendar/`) to placeholder pod widget medycynaPraktyczna. Szczegóły integracji opisane są w komentarzach komponentu.
+`CalendarSlot` (`src/features/calendar/`) embeds the e-rejestracja.mp.pl booking portal via iframe. Specializations without a calendar URL fall back to a phone contact screen. URL mappings are defined in `src/data/calendarConfig.ts`.
 
-## Paleta kolorów
+## Colour Palette
 
-| Zmienna | Wartość | Użycie |
+| Variable | Value | Usage |
 |---|---|---|
-| `$color-primary` | `#C41E3A` | Akcent główny (czerwień medyczna) |
-| `$color-secondary` | `#1B4965` | Nagłówki, tła akcentowe |
-| `$color-bg` | `#F8F8FA` | Tło sekcji |
+| `$color-primary` | `#C41E3A` | Primary accent (medical red) |
+| `$color-secondary` | `#1B4965` | Headings, accent backgrounds |
+| `$color-bg` | `#F8F8FA` | Section backgrounds |
 | `$color-bg-dark` | `#1A2332` | Footer |
