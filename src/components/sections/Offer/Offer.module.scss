@@ -2,8 +2,8 @@
 @use '@/styles/mixins' as *;
 
 // ── Fluid typography ──────────────────────────────────────────────
-$offer-text-large-fs:    clamp(1.6rem, 3.8vw, 4.2rem);
-$offer-text-small-fs:    clamp(0.9rem, 1.9vw, 2.1rem);
+$offer-text-large-fs:    clamp(1.6rem, 3.8vw, 3.85rem);
+$offer-text-small-fs:    clamp(0.9rem, 1.9vw, 1.93rem);
 $offer-pricing-fs:       clamp(1.6rem, 3.5vw, 3.8rem);
 
 // ─────────────────────────────────────────────────────────────────
