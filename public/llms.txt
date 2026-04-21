@@ -53,12 +53,12 @@ W pełni wyposażony gabinet (USG, USG 3D, głowica przezpochwowa, KTG). Specjal
 - USG piersi
 - Badanie cytologiczne
 
-### Gastroenterologia
+### Gastrologia
 
 Pełna diagnostyka i leczenie chorób układu pokarmowego. Pracownia Endoskopii.
 
 **Wykonywane badania i zabiegi:**
-- Konsultacja gastroenterologiczna
+- Konsultacja gastrologiczna
 - Gastroskopia diagnostyczna
 - Gastroskopia z testem na Helicobacter pylori (HP)
 - Gastroskopia z badaniem histopatologicznym
@@ -259,7 +259,7 @@ Zabiegi estetyczne wykonywane przez lekarzy.
 ## Partnerzy
 
 - **NFZ** — wybrane świadczenia bezpłatne: konsultacje psychologiczne, gastroskopia, rehabilitacja lecznicza
-- **LuxMed** — kardiologia, gastroenterologia, psychiatria, ortopedia, rehabilitacja, neurologia, endokrynologia, diagnostyka USG, urologia, psychologia
+- **LuxMed** — kardiologia, gastrologia, psychiatria, ortopedia, rehabilitacja, neurologia, endokrynologia, diagnostyka USG, urologia, psychologia
 - **Projekt UE** — Profilaktyka i rehabilitacja osób z dysfunkcjami narządu ruchu w powiecie chrzanowskim (FEMP.06.08-IP.02-0454/24, od 1 listopada 2025)
 
 ---

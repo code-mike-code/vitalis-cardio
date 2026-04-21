@@ -6,7 +6,7 @@ import logoLuxmed from '@/assets/logo/logo-luxmed.png'
 
 const LUXMED_META = [
   { slug: 'kardiologia', itemCount: 5 },
-  { slug: 'gastroenterologia', itemCount: 3 },
+  { slug: 'gastrologia', itemCount: 3 },
   { slug: 'psychiatria', itemCount: 1 },
   { slug: 'ortopedia', itemCount: 2 },
   { slug: 'rehabilitacja', itemCount: 5 },

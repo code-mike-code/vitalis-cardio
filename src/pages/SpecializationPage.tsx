@@ -8,7 +8,7 @@ import SpecialistCard from '@components/common/SpecialistCard/SpecialistCard'
 import cardiologyHero from '@/assets/img/hero/cardiology-hero.webp'
 import pediatricCardiologyHero from '@/assets/img/hero/pediatric-cardiology.webp'
 import gynecologyHero from '@/assets/img/hero/gynecology-hero.webp'
-import gastroenterologyHero from '@/assets/img/hero/gastroenterology.webp'
+import gastrologyHero from '@/assets/img/hero/gastrology.webp'
 import orthopedicsHero from '@/assets/img/hero/orthopedics-hero.webp'
 import neurosurgeryHero from '@/assets/img/hero/neurosurgery.webp'
 import neurologyHero from '@/assets/img/hero/neurology-hero.webp'
@@ -25,7 +25,7 @@ const heroImages: Record<string, string> = {
   'kardiologia':          cardiologyHero,
   'kardiologia-dziecieca': pediatricCardiologyHero,
   'ginekologia':          gynecologyHero,
-  'gastroenterologia':    gastroenterologyHero,
+  'gastrologia':    gastrologyHero,
   'endokrynologia':       diabetologyHero,
   'ortopedia':            orthopedicsHero,
   'neurochirurgia':       neurosurgeryHero,

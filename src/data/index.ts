@@ -267,8 +267,8 @@ export const specializations: Specialization[] = [
   },
   {
     id: 4,
-    slug: 'gastroenterologia',
-    name: 'Gastroenterologia',
+    slug: 'gastrologia',
+    name: 'Gastrologia',
     menuLabel: 'Gastrolog',
     description: 'Oferujemy Państwu pełną diagnostykę i leczenie chorób układu pokarmowego.',
     examinations: [
@@ -279,8 +279,8 @@ export const specializations: Specialization[] = [
     ],
     translations: {
       en: {
-        name: 'Gastroenterology',
-        menuLabel: 'Gastroenterologist',
+        name: 'Gastrology',
+        menuLabel: 'Gastrologist',
         description: 'We offer comprehensive diagnostics and treatment of gastrointestinal diseases.',
         examinations: ['Colonoscopy, general anaesthesia', 'Gastroscopy', 'Endoscopic polyp removal', 'Ultrasound (USG)'],
       },
@@ -1414,8 +1414,8 @@ export const pricing: PricingCategory[] = [
         ],
       },
       {
-        subtitle: 'Poradnia gastroenterologiczna',
-        slug: 'gastroenterologia',
+        subtitle: 'Poradnia gastrologiczna',
+        slug: 'gastrologia',
         items: [
           { name: 'Konsultacja gastrologiczna – dr Fic', price: '250 PLN' },
           { name: 'Konsultacja gastrologiczna – dr Szulewski', price: '250 PLN' },
@@ -1452,7 +1452,7 @@ export const pricing: PricingCategory[] = [
       },
       {
         subtitle: 'Pracownia Endoskopii',
-        slug: 'gastroenterologia', // endoscopy bookings go through the gastroenterology page
+        slug: 'gastrologia', // endoscopy bookings go through the gastrology page
         items: [
           { name: 'Gastroskopia diagnostyczna', price: '350 PLN' },
           { name: 'Gastroskopia diagnostyczna + test na HP', price: '370 PLN' },
@@ -1568,10 +1568,10 @@ export const pricing: PricingCategory[] = [
             ],
           },
           {
-            subtitle: 'Gastroenterology clinic',
+            subtitle: 'Gastrology clinic',
             items: [
-              { name: 'Gastroenterology consultation – dr Fic' },
-              { name: 'Gastroenterology consultation – dr Szulewski' },
+              { name: 'Gastrology consultation – dr Fic' },
+              { name: 'Gastrology consultation – dr Szulewski' },
             ],
           },
           {
@@ -2137,11 +2137,17 @@ export const specialists: Specialist[] = [
     role: 'Kardiolog, specjalista chirurgii naczyniowej',
     specializationSlug: 'kardiologia',
     photo: imgAvatarMan,
-    bio: '',
+    bio: 'Doświadczony lekarz z wieloletnią praktyką od 2011 roku. Specjalizuje się w diagnostyce i leczeniu chorób układu sercowo-naczyniowego, w tym choroby wieńcowej, nadciśnienia, niewydolności serca, arytmii oraz stanów po zawale serca.',
     translations: {
-      en: { role: 'Cardiologist, vascular surgery specialist' },
-      ua: { role: 'Кардіолог, спеціаліст судинної хірургії' },
+      en: {
+        role: 'Cardiologist',
+        bio: 'Experienced physician practising since 2011. Specialises in the diagnosis and treatment of cardiovascular diseases, including coronary artery disease, hypertension, heart failure, arrhythmia and post-myocardial infarction care.',
+    } ,
+      ua: {
+        role: 'Кардіолог',
+        bio: 'Досвідчений лікар, що практикує з 2011 року. Спеціалізується на діагностиці та лікуванні серцево-судинних захворювань, зокрема ішемічної хвороби серця, гіпертонії, серцевої недостатності та аритмії.',
     },
+  },
   },
   {
     id: 5,
@@ -2165,11 +2171,17 @@ export const specialists: Specialist[] = [
     role: 'Kardiolog dziecięcy',
     specializationSlug: 'kardiologia-dziecieca',
     photo: imgAvatarWoman,
-    bio: '',
-    translations: {
-      en: { role: 'Paediatric cardiologist' },
-      ua: { role: 'Дитячий кардіолог' },
+    bio: 'Specjalistka pediatrii i kardiologii dziecięcej, absolwentka Śląskiej Akademii Medycznej w Katowicach. Zajmuje się diagnostyką i leczeniem wad wrodzonych serca, zaburzeń rytmu serca, nadciśnienia tętniczego oraz chorób układu krążenia u dzieci.',
+  translations: {
+    en: {
+      role: 'Paediatrician – paediatric cardiologist',
+      bio: 'Specialist in paediatrics and paediatric cardiology, graduate of the Silesian Medical Academy in Katowice. Focuses on congenital heart defects, arrhythmias, arterial hypertension and cardiovascular diseases in children.',
     },
+    ua: {
+      role: 'Педіатр – дитячий кардіолог',
+      bio: 'Спеціалістка з педіатрії та дитячої кардіології, випускниця Сілезької медичної академії в Катовіцах. Займається діагностикою та лікуванням вроджених вад серця, аритмій, артеріальної гіпертензії та хвороб серцево-судинної системи у дітей.',
+    },
+  },
   },
   {
     id: 7,
@@ -2179,81 +2191,117 @@ export const specialists: Specialist[] = [
     role: 'Ginekolog, położnik',
     specializationSlug: 'ginekologia',
     photo: imgAvatarMan,
-    bio: '',
-    translations: {
-      en: { role: 'Gynaecologist, obstetrician' },
-      ua: { role: 'Гінеколог, акушер' },
+    bio: 'Doświadczony ginekolog z praktyką lekarską od 1999 roku. Specjalizuje się w diagnostyce i leczeniu endometriozy, niepłodności, zaburzeń miesiączkowania, prowadzeniu ciąży oraz wykonywaniu badań ginekologicznych.',
+  translations: {
+    en: {
+      role: 'Gynaecologist',
+      bio: 'Experienced gynaecologist with a medical practice dating back to 1999. Specialises in endometriosis, infertility, menstrual disorders, pregnancy care and gynaecological examinations.',
     },
+    ua: {
+      role: 'Гінеколог',
+      bio: 'Досвідчений гінеколог, що практикує з 1999 року. Спеціалізується на діагностиці та лікуванні ендометріозу, безпліддя, порушень менструального циклу, ведення вагітності та гінекологічних обстежень.',
+    },
+  },
   },
   {
     id: 8,
     slug: 'jaroslaw-bigaj',
     titlePrefix: 'lek. med.',
     name: 'Jarosław Bigaj',
-    role: 'Gastroenterolog',
-    specializationSlug: 'gastroenterologia',
+    role: 'Gastrolog',
+    specializationSlug: 'gastrologia',
     photo: imgJaroslawBigaj,
-    bio: '',
-    translations: {
-      en: { role: 'Gastroenterologist' },
-      ua: { role: 'Гастроентеролог' },
+    bio: 'Doświadczony lekarz z praktyką od 2012 roku. Zajmuje się diagnostyką i leczeniem schorzeń chirurgicznych, w tym kamicy żółciowej, przepukliny pachwinowej, żylaków kończyn dolnych, guzków tarczycy, zapalenia wyrostka robaczkowego oraz torbieli skóry.',
+  translations: {
+    en: {
+      role: 'General surgeon',
+      bio: 'Experienced physician practising since 2012. Specialises in surgical conditions including gallstones, inguinal hernia, varicose veins, thyroid nodules, appendicitis and skin cysts.',
     },
+    ua: {
+      role: 'Загальний хірург',
+      bio: 'Досвідчений лікар, що практикує з 2012 року. Займається діагностикою та лікуванням хірургічних захворювань: жовчнокам\'яної хвороби, пахової грижі, варикозного розширення вен, вузлів щитоподібної залози, апендициту та кіст шкіри.',
+    },
+  },
   },
   {
     id: 9,
     slug: 'pawel-szulewski',
     titlePrefix: 'dr n. med.',
     name: 'Paweł Szulewski',
-    role: 'Gastroenterolog',
-    specializationSlug: 'gastroenterologia',
+    role: 'Gastrolog',
+    specializationSlug: 'gastrologia',
     photo: imgAvatarMan,
-    bio: '',
-    translations: {
-      en: { role: 'Gastroenterologist' },
-      ua: { role: 'Гастроентеролог' },
+    bio: 'Gastrolog z pasją oddany medycynie od 2001 roku. Specjalizuje się w diagnostyce i leczeniu chorób przewodu pokarmowego, w tym celiakii, choroby Leśniowskiego-Crohna, marskości wątroby, wrzodziejącego zapalenia jelita grubego, zespołu jelita drażliwego, wrzodów żołądka oraz refluksu.',
+  translations: {
+    en: {
+      role: 'Gastrologist',
+      bio: 'Gastrologist devoted to medicine since 2001. Specialises in coeliac disease, Crohn\'s disease, liver cirrhosis, ulcerative colitis, irritable bowel syndrome, peptic ulcers and gastro-oesophageal reflux disease.',
     },
+    ua: {
+      role: 'Гастроентеролог',
+      bio: 'Гастроентеролог, відданий медицині з 2001 року. Спеціалізується на діагностиці та лікуванні целіакії, хвороби Крона, цирозу печінки, виразкового коліту, синдрому подразненого кишківника, виразки шлунка та гастроезофагеального рефлюксу.',
+    },
+  },
   },
   {
     id: 10,
     slug: 'edward-surma',
     titlePrefix: 'lek. med.',
     name: 'Edward Surma',
-    role: 'Gastroenterolog',
-    specializationSlug: 'gastroenterologia',
+    role: 'Gastrolog',
+    specializationSlug: 'gastrologia',
     photo: imgAvatarMan,
-    bio: '',
-    translations: {
-      en: { role: 'Gastroenterologist' },
-      ua: { role: 'Гастроентеролог' },
+    bio: 'Gastrolog zajmujący się poradnictwem i leczeniem chorób przewodu pokarmowego. Konsultuje pacjentów z czynnościowymi chorobami przewodu pokarmowego, nieswoistymi chorobami zapalnymi jelit oraz chorobą refluksową.',
+  translations: {
+    en: {
+      role: 'Gastrologist',
+      bio: 'Gastrologist specialising in counselling and treatment of gastrointestinal diseases. Consults patients with functional gastrointestinal disorders, inflammatory bowel diseases and reflux disease.',
     },
+    ua: {
+      role: 'Гастроентеролог',
+      bio: 'Гастроентеролог, що спеціалізується на консультуванні та лікуванні захворювань шлунково-кишкового тракту. Консультує пацієнтів із функціональними розладами ШКТ, запальними захворюваннями кишківника та рефлюксною хворобою.',
+    },
+  },
   },
   {
     id: 11,
     slug: 'pawel-tyrawski',
     titlePrefix: 'lek. med.',
     name: 'Paweł Tyrawski',
-    role: 'Gastroenterolog',
-    specializationSlug: 'gastroenterologia',
+    role: 'Gastrolog',
+    specializationSlug: 'gastrologia',
     photo: imgAvatarMan,
-    bio: '',
-    translations: {
-      en: { role: 'Gastroenterologist' },
-      ua: { role: 'Гастроентеролог' },
+    bio: 'Specjalista chirurgii ogólnej II stopnia z praktyką od 2006 roku. Zajmuje się diagnostyką i leczeniem schorzeń chirurgicznych: kamicy żółciowej, przepukliny pachwinowej, żylaków kończyn dolnych, guzków tarczycy, zapalenia wyrostka robaczkowego oraz torbieli skóry.',
+  translations: {
+    en: {
+      role: 'General surgeon',
+      bio: 'Second-degree specialist in general surgery, practising since 2006. Treats surgical conditions including gallstones, inguinal hernia, varicose veins, thyroid nodules, appendicitis and skin cysts.',
     },
+    ua: {
+      role: 'Загальний хірург',
+      bio: 'Спеціаліст загальної хірургії другого ступеня, що практикує з 2006 року. Займається лікуванням жовчнокам\'яної хвороби, пахової грижі, варикозного розширення вен, вузлів щитоподібної залози, апендициту та кіст шкіри.',
+    },
+  },
   },
   {
     id: 12,
     slug: 'krystyna-fic',
     titlePrefix: 'lek. med.',
     name: 'Krystyna Fic',
-    role: 'Gastroenterolog',
-    specializationSlug: 'gastroenterologia',
+    role: 'Gastrolog',
+    specializationSlug: 'gastrologia',
     photo: imgKrystynaFic,
-    bio: '',
-    translations: {
-      en: { role: 'Gastroenterologist' },
-      ua: { role: 'Гастроентеролог' },
+    bio: 'Gastrolog z wieloletnim doświadczeniem, wspierająca pacjentów od 2007 roku. Zajmuje się diagnostyką i leczeniem celiakii, choroby Leśniowskiego-Crohna, marskości wątroby, wrzodziejącego zapalenia jelita grubego, zespołu jelita drażliwego, wrzodów żołądka oraz refluksu.',
+  translations: {
+    en: {
+      role: 'Gastrologist',
+      bio: 'Gastrologist with extensive experience, supporting patients since 2007. Specialises in coeliac disease, Crohn\'s disease, liver cirrhosis, ulcerative colitis, irritable bowel syndrome, peptic ulcers and reflux disease.',
     },
+    ua: {
+      role: 'Гастроентеролог',
+      bio: 'Гастроентеролог із багаторічним досвідом, що підтримує пацієнтів з 2007 року. Спеціалізується на целіакії, хворобі Крона, цирозі печінки, виразковому коліті, синдромі подразненого кишківника, виразці шлунка та рефлюксній хворобі.',
+    },
+  },
   },
   {
     id: 13,
@@ -2263,11 +2311,17 @@ export const specialists: Specialist[] = [
     role: 'Endokrynolog',
     specializationSlug: 'endokrynologia',
     photo: imgAvatarMan,
-    bio: '',
-    translations: {
-      en: { role: 'Endocrinologist' },
-      ua: { role: 'Ендокринолог' },
+    bio: 'Specjalista II stopnia chorób wewnętrznych oraz endokrynologii. Zapewnia kompleksową opiekę internistyczną i hormonalną, opierając leczenie na indywidualnym podejściu i wieloletnim doświadczeniu, zarejestrowanym od 2014 roku.',
+  translations: {
+    en: {
+      role: 'Internist – endocrinologist',
+      bio: 'Second-degree specialist in internal medicine and endocrinology. Provides comprehensive internistic and hormonal care, combining individual approach with extensive clinical experience since 2014.',
     },
+    ua: {
+      role: 'Терапевт – ендокринолог',
+      bio: 'Спеціаліст другого ступеня з внутрішніх хвороб та ендокринології. Забезпечує комплексну терапевтичну та гормональну допомогу, поєднуючи індивідуальний підхід із багаторічним клінічним досвідом з 2014 року.',
+    },
+  },
   },
   {
     id: 14,
@@ -2277,11 +2331,17 @@ export const specialists: Specialist[] = [
     role: 'Endokrynolog',
     specializationSlug: 'endokrynologia',
     photo: imgAvatarWoman,
-    bio: '',
-    translations: {
-      en: { role: 'Endocrinologist' },
-      ua: { role: 'Ендокринолог' },
+    bio: 'Lekarz w trakcie szkolenia specjalizacyjnego z endokrynologii w Uniwersyteckim Centrum Klinicznym w Katowicach. Członkini Polskiego Towarzystwa Endokrynologicznego, posiadaczka certyfikatu ultrasonografii tarczycy. W pracy stawia na partnerską relację i wspólne podejmowanie decyzji diagnostyczno-terapeutycznych.',
+  translations: {
+    en: {
+      role: 'Endocrinologist (specialist in training)',
+      bio: 'Physician in endocrinology specialist training at the University Clinical Centre in Katowice. Member of the Polish Society of Endocrinology, certified in thyroid ultrasonography. Committed to a partnership approach and shared decision-making with patients.',
     },
+    ua: {
+      role: 'Ендокринолог (лікар-резидент)',
+      bio: 'Лікар на спеціалізаційному навчанні з ендокринології в Університетському клінічному центрі в Катовіцах. Членкиня Польського товариства ендокринологів, сертифікована з ультразвукової діагностики щитоподібної залози. Прихильниця партнерських відносин із пацієнтом та спільного прийняття терапевтичних рішень.',
+    },
+  },
   },
   {
     id: 15,
@@ -2291,11 +2351,17 @@ export const specialists: Specialist[] = [
     role: 'Endokrynolog, biopsje tarczycy',
     specializationSlug: 'endokrynologia',
     photo: imgAvatarMan,
-    bio: '',
-    translations: {
-      en: { role: 'Endocrinologist, thyroid biopsies' },
-      ua: { role: 'Ендокринолог, біопсії щитоподібної залози' },
+    bio: 'Specjalista II stopnia w dziedzinie patomorfologii z praktyką od 2000 roku. Wykonuje konsultacje endokrynologiczne oraz biopsje tarczycy, zapewniając pacjentom precyzyjną diagnostykę i profesjonalne wsparcie na dalszych etapach leczenia.',
+  translations: {
+    en: {
+      role: 'Endocrinologist – thyroid biopsy specialist',
+      bio: 'Second-degree specialist in pathomorphology, practising since 2000. Performs endocrinological consultations and thyroid biopsies, providing patients with precise diagnostics and professional guidance throughout their treatment.',
     },
+    ua: {
+      role: 'Ендокринолог – спеціаліст з біопсії щитоподібної залози',
+      bio: 'Спеціаліст другого ступеня з патоморфології, що практикує з 2000 року. Проводить ендокринологічні консультації та біопсії щитоподібної залози, забезпечуючи точну діагностику та фахову підтримку пацієнтів.',
+    },
+  },
   },
   {
     id: 16,
@@ -2305,11 +2371,17 @@ export const specialists: Specialist[] = [
     role: 'Ortopeda',
     specializationSlug: 'ortopedia',
     photo: imgKrzysztofNiemiec,
-    bio: '',
-    translations: {
-      en: { role: 'Orthopaedist' },
-      ua: { role: 'Ортопед' },
+    bio: 'Ortopeda z doświadczeniem zawodowym od 2009 roku. Zajmuje się diagnostyką i leczeniem schorzeń narządu ruchu, w tym dyskopatii, łokcia tenisisty, zespołu cieśni nadgarstka, zapalenia ścięgna Achillesa, zmian zwyrodnieniowych stawów, skręceń stawu skokowego oraz skoliozy.',
+  translations: {
+    en: {
+      role: 'Orthopaedic surgeon',
+      bio: 'Orthopaedic specialist with clinical experience since 2009. Treats musculoskeletal conditions including disc disease, tennis elbow, carpal tunnel syndrome, Achilles tendinitis, joint degeneration, ankle sprains and scoliosis.',
     },
+    ua: {
+      role: 'Ортопед',
+      bio: 'Ортопед із клінічним досвідом з 2009 року. Займається діагностикою та лікуванням захворювань опорно-рухового апарату: дископатії, ліктя тенісиста, синдрому зап\'ястного каналу, тендиніту ахіллового сухожилля, дегенерації суглобів, розтягнень гомілковостопного суглоба та сколіозу.',
+    },
+  },
   },
   {
     id: 17,
@@ -2319,11 +2391,17 @@ export const specialists: Specialist[] = [
     role: 'Ortopeda',
     specializationSlug: 'ortopedia',
     photo: imgAvatarMan,
-    bio: '',
-    translations: {
-      en: { role: 'Orthopaedist' },
-      ua: { role: 'Ортопед' },
+    bio: 'Specjalista ortopedii zajmujący się diagnostyką i leczeniem schorzeń oraz urazów narządu ruchu. W pracy z pacjentem stawia na dokładną ocenę problemu, dobór odpowiedniego leczenia i wsparcie w powrocie do sprawności.',
+  translations: {
+    en: {
+      role: 'Orthopaedic surgeon',
+      bio: 'Orthopaedic specialist focused on the diagnosis and treatment of musculoskeletal conditions and injuries. Committed to thorough assessment, tailored treatment and supporting patients in their recovery.',
     },
+    ua: {
+      role: 'Ортопед',
+      bio: 'Спеціаліст ортопедії, що займається діагностикою та лікуванням захворювань і травм опорно-рухового апарату. Приділяє особливу увагу ретельній оцінці стану пацієнта, підбору лікування та підтримці у відновленні.',
+    },
+  },
   },
   {
     id: 18,
@@ -2333,11 +2411,17 @@ export const specialists: Specialist[] = [
     role: 'Ortopeda',
     specializationSlug: 'ortopedia',
     photo: imgWojciechJurek,
-    bio: '',
-    translations: {
-      en: { role: 'Orthopaedist' },
-      ua: { role: 'Ортопед' },
+    bio: 'Ortopeda z doświadczeniem zawodowym od 2013 roku. Zajmuje się diagnostyką i leczeniem dyskopatii, łokcia tenisisty, zespołu cieśni nadgarstka, zapalenia ścięgna Achillesa, zmian zwyrodnieniowych stawów, skręceń stawu skokowego oraz skoliozy.',
+  translations: {
+    en: {
+      role: 'Orthopaedic surgeon',
+      bio: 'Orthopaedic specialist practising since 2013. Treats disc disease, tennis elbow, carpal tunnel syndrome, Achilles tendinitis, joint degeneration, ankle sprains and scoliosis.',
     },
+    ua: {
+      role: 'Ортопед',
+      bio: 'Ортопед, що практикує з 2013 року. Займається лікуванням дископатії, ліктя тенісиста, синдрому зап\'ястного каналу, тендиніту ахіллового сухожилля, дегенерації суглобів, розтягнень гомілковостопного суглоба та сколіозу.',
+    },
+  },
   },
   {
     id: 19,
@@ -2347,11 +2431,17 @@ export const specialists: Specialist[] = [
     role: 'Neurochirurg',
     specializationSlug: 'neurochirurgia',
     photo: imgAvatarMan,
-    bio: '',
-    translations: {
-      en: { role: 'Neurosurgeon' },
-      ua: { role: 'Нейрохірург' },
+    bio: 'Neurochirurg z wieloletnim doświadczeniem, praktykujący od 2001 roku. W swojej pracy skupia się na rzetelnej diagnostyce i bezpiecznym leczeniu schorzeń neurochirurgicznych, stawiając dobro pacjenta w centrum każdej decyzji klinicznej.',
+  translations: {
+    en: {
+      role: 'Neurosurgeon',
+      bio: 'Neurosurgeon with extensive experience, practising since 2001. Focuses on reliable diagnostics and safe treatment of neurosurgical conditions, placing patient well-being at the centre of every clinical decision.',
     },
+    ua: {
+      role: 'Нейрохірург',
+      bio: 'Нейрохірург із багаторічним досвідом, що практикує з 2001 року. Зосереджується на надійній діагностиці та безпечному лікуванні нейрохірургічних захворювань, ставлячи добробут пацієнта в центр кожного клінічного рішення.',
+    },
+  },
   },
   {
     id: 20,
@@ -2361,11 +2451,17 @@ export const specialists: Specialist[] = [
     role: 'Neurolog',
     specializationSlug: 'neurologia',
     photo: imgAvatarWoman,
-    bio: '',
-    translations: {
-      en: { role: 'Neurologist' },
-      ua: { role: 'Невролог' },
+    bio: 'Specjalistka neurologii zajmująca się diagnostyką i leczeniem chorób układu nerwowego. W pracy z pacjentem stawia na dokładny wywiad, wnikliwą ocenę objawów i indywidualne podejście terapeutyczne.',
+  translations: {
+    en: {
+      role: 'Neurologist',
+      bio: 'Neurology specialist focused on the diagnosis and treatment of nervous system disorders. Committed to thorough patient history, careful symptom assessment and an individualised therapeutic approach.',
     },
+    ua: {
+      role: 'Невролог',
+      bio: 'Спеціалістка неврології, що займається діагностикою та лікуванням захворювань нервової системи. Надає пріоритет ретельному збору анамнезу, уважній оцінці симптомів та індивідуальному терапевтичному підходу.',
+    },
+  },
   },
   {
     id: 21,
@@ -2389,11 +2485,17 @@ export const specialists: Specialist[] = [
     role: 'Pielęgniarka EEG',
     specializationSlug: 'neurologia',
     photo: imgAvatarWoman,
-    bio: '',
-    translations: {
-      en: { role: 'EEG Nurse' },
-      ua: { role: 'Медсестра ЕЕГ' },
+    bio: 'Pielęgniarka EEG specjalizująca się w profesjonalnym wykonywaniu badań elektroencefalograficznych. Dba o komfort pacjenta, spokojną atmosferę badania oraz najwyższą jakość uzyskanych wyników diagnostycznych.',
+  translations: {
+    en: {
+      role: 'EEG nurse',
+      bio: 'EEG nurse specialising in professional electroencephalographic examinations. Ensures patient comfort, a calm examination environment and the highest quality of diagnostic results.',
     },
+    ua: {
+      role: 'Медсестра ЕЕГ',
+      bio: 'Медсестра ЕЕГ, що спеціалізується на проведенні електроенцефалографічних досліджень. Забезпечує комфорт пацієнта, спокійну атмосферу обстеження та найвищу якість діагностичних результатів.',
+    },
+  },
   },
   {
     id: 23,
@@ -2403,11 +2505,17 @@ export const specialists: Specialist[] = [
     role: 'Psychiatra',
     specializationSlug: 'psychiatria',
     photo: imgAvatarWoman,
-    bio: '',
-    translations: {
-      en: { role: 'Psychiatrist' },
-      ua: { role: 'Психіатр' },
+    bio: 'Psychiatra z praktyką od 2012 roku, skoncentrowana na wszechstronnej opiece nad zdrowiem psychicznym. Zajmuje się diagnostyką i leczeniem depresji, zaburzeń lękowych, zaburzeń snu, stanów stresowych, zaburzeń obsesyjno-kompulsyjnych oraz ADHD.',
+  translations: {
+    en: {
+      role: 'Psychiatrist',
+      bio: 'Psychiatrist practising since 2012, focused on comprehensive mental health care. Specialises in the diagnosis and treatment of depression, anxiety disorders, sleep disorders, stress, OCD and ADHD.',
     },
+    ua: {
+      role: 'Психіатр',
+      bio: 'Психіатр, що практикує з 2012 року, зосереджена на комплексній охороні психічного здоров\'я. Спеціалізується на діагностиці та лікуванні депресії, тривожних розладів, порушень сну, стресових станів, ОКР та СДУГ.',
+    },
+  },
   },
   {
     id: 24,
@@ -2417,11 +2525,17 @@ export const specialists: Specialist[] = [
     role: 'Psychiatra',
     specializationSlug: 'psychiatria',
     photo: imgAvatarMan,
-    bio: '',
-    translations: {
-      en: { role: 'Psychiatrist' },
-      ua: { role: 'Психіатр' },
+    bio: 'Psychiatra z doświadczeniem zawodowym od 2011 roku. W swojej praktyce zajmuje się diagnostyką i leczeniem depresji, zaburzeń lękowych, zaburzeń snu, stresu, zaburzeń obsesyjno-kompulsyjnych oraz ADHD, dbając o komfort i zrozumienie procesu leczenia przez pacjenta.',
+  translations: {
+    en: {
+      role: 'Psychiatrist',
+      bio: 'Psychiatrist with professional experience since 2011. Specialises in depression, anxiety disorders, sleep disorders, stress, OCD and ADHD, with a focus on patient comfort and clear communication throughout the treatment process.',
     },
+    ua: {
+      role: 'Психіатр',
+      bio: 'Психіатр із досвідом роботи з 2011 року. Спеціалізується на депресії, тривожних розладах, порушеннях сну, стресі, ОКР та СДУГ, приділяючи увагу комфорту пацієнта та чіткому роз\'ясненню процесу лікування.',
+    },
+  },
   },
   {
     id: 25,
@@ -2431,11 +2545,17 @@ export const specialists: Specialist[] = [
     role: 'Psychiatra',
     specializationSlug: 'psychiatria',
     photo: imgSebastianWajda,
-    bio: '',
-    translations: {
-      en: { role: 'Psychiatrist' },
-      ua: { role: 'Психіатр' },
+    bio: 'Absolwent Wydziału Lekarskiego Śląskiego Uniwersytetu Medycznego w Katowicach. Pracuje z pacjentami w Oddziale Psychiatrii Ogólnej, zajmując się zaburzeniami nastroju, lękowymi, psychosomatycznymi i osobowości, a także schizofrenią i chorobą afektywną dwubiegunową. Certyfikowany specjalista leczenia bólu przewlekłego akredytowany przez Polskie Towarzystwo Badania Bólu.',
+  translations: {
+    en: {
+      role: 'Psychiatrist',
+      bio: 'Graduate of the Medical Faculty of the Silesian University of Medicine in Katowice. Works in the General Psychiatry Ward, treating mood, anxiety, psychosomatic and personality disorders, as well as schizophrenia and bipolar disorder. Certified specialist in chronic pain management, accredited by the Polish Association for the Study of Pain.',
     },
+    ua: {
+      role: 'Психіатр',
+      bio: 'Випускник медичного факультету Сілезького університету медицини в Катовіцах. Працює у відділенні загальної психіатрії, лікуючи афективні, тривожні, психосоматичні та особистісні розлади, а також шизофренію та біполярний афективний розлад. Сертифікований спеціаліст із лікування хронічного болю, акредитований Польським товариством вивчення болю.',
+    },
+  },
   },
   {
     id: 26,
@@ -2445,11 +2565,17 @@ export const specialists: Specialist[] = [
     role: 'Psychoterapeuta',
     specializationSlug: 'psychologia',
     photo: imgIzabelaWilgaMalota,
-    bio: '',
-    translations: {
-      en: { role: 'Psychotherapist' },
-      ua: { role: 'Психотерапевт' },
+    bio: 'Specjalista psychologii klinicznej oraz certyfikowany psychoterapeuta Polskiego Towarzystwa Psychoterapii Psychodynamicznej. Od ponad 15 lat prowadzi psychoterapię indywidualną i grupową w nurcie psychodynamicznym. Wykonuje diagnozy zaburzeń psychicznych, testy osobowości i oceny poziomu inteligencji. Regularnie superwizuje swoją pracę i prowadzi szkolenia z zakresu kompetencji społecznych.',
+  translations: {
+    en: {
+      role: 'Clinical psychologist – psychotherapist',
+      bio: 'Specialist in clinical psychology and certified psychotherapist of the Polish Society of Psychodynamic Psychotherapy. Has been conducting individual and group psychodynamic psychotherapy for over 15 years. Performs psychological assessments, personality tests and intelligence evaluations. Regularly supervises her work and conducts social competence training.',
     },
+    ua: {
+      role: 'Клінічний психолог – психотерапевт',
+      bio: 'Спеціаліст клінічної психології та сертифікований психотерапевт Польського товариства психодинамічної психотерапії. Понад 15 років проводить індивідуальну та групову психотерапію в психодинамічному напрямку. Здійснює психологічну діагностику, тести особистості та оцінку рівня інтелекту. Регулярно супервізує свою роботу та проводить тренінги соціальних компетенцій.',
+    },
+  },
   },
   {
     id: 27,
@@ -2459,11 +2585,17 @@ export const specialists: Specialist[] = [
     role: 'Urolog',
     specializationSlug: 'urologia',
     photo: imgRafalKasperczyk,
-    bio: '',
-    translations: {
-      en: { role: 'Urologist' },
-      ua: { role: 'Уролог' },
+    bio: 'Urolog z wieloletnim doświadczeniem, świadczący profesjonalne usługi zdrowotne od 2007 roku. W swojej praktyce stawia na kompleksowe podejście do diagnostyki i leczenia schorzeń układu moczowo-płciowego.',
+  translations: {
+    en: {
+      role: 'Urologist',
+      bio: 'Urologist with extensive experience, providing professional healthcare since 2007. Committed to a comprehensive approach to the diagnosis and treatment of urological and genitourinary conditions.',
     },
+    ua: {
+      role: 'Уролог',
+      bio: 'Уролог із багаторічним досвідом, що надає фахову медичну допомогу з 2007 року. Дотримується комплексного підходу до діагностики та лікування захворювань сечостатевої системи.',
+    },
+  },
   },
   {
     id: 28,
@@ -2473,11 +2605,17 @@ export const specialists: Specialist[] = [
     role: 'Urolog',
     specializationSlug: 'urologia',
     photo: imgAvatarMan,
-    bio: '',
-    translations: {
-      en: { role: 'Urologist' },
-      ua: { role: 'Уролог' },
+    bio: 'Urolog praktykujący od 2015 roku, zapewniający pacjentom kompleksową opiekę w zakresie schorzeń układu moczowego. Specjalizuje się w diagnostyce i leczeniu nietrzymania moczu, raka prostaty, zapalenia pęcherza moczowego, kamicy nerkowej, przerostu prostaty oraz zapalenia gruczołu krokowego.',
+  translations: {
+    en: {
+      role: 'Urologist',
+      bio: 'Urologist practising since 2015, providing comprehensive urological care. Specialises in urinary incontinence, prostate cancer, bladder infections, kidney stones, benign prostatic hyperplasia and prostatitis.',
     },
+    ua: {
+      role: 'Уролог',
+      bio: 'Уролог, що практикує з 2015 року та забезпечує комплексну урологічну допомогу. Спеціалізується на нетриманні сечі, раку простати, запаленні сечового міхура, нирковокам\'яній хворобі, гіперплазії простати та простатиті.',
+    },
+  },
   },
   {
     id: 29,
@@ -2487,11 +2625,17 @@ export const specialists: Specialist[] = [
     role: 'Urolog',
     specializationSlug: 'urologia',
     photo: imgAvatarMan,
-    bio: '',
-    translations: {
-      en: { role: 'Urologist' },
-      ua: { role: 'Уролог' },
+    bio: 'Urolog z praktyką od 2013 roku, zajmujący się diagnostyką i leczeniem schorzeń układu moczowego. Specjalizuje się m.in. w nietrzymaniu moczu, raku prostaty, zapaleniu pęcherza moczowego, kamicy nerkowej, przeroście prostaty oraz zapaleniu gruczołu krokowego.',
+  translations: {
+    en: {
+      role: 'Urologist',
+      bio: 'Urologist practising since 2013, focused on the diagnosis and treatment of urinary tract conditions. Specialises in urinary incontinence, prostate cancer, bladder infections, kidney stones, benign prostatic hyperplasia and prostatitis.',
     },
+    ua: {
+      role: 'Уролог',
+      bio: 'Уролог, що практикує з 2013 року, зосереджений на діагностиці та лікуванні захворювань сечовивідних шляхів. Спеціалізується на нетриманні сечі, раку простати, запаленні сечового міхура, нирковокам\'яній хворобі, гіперплазії простати та простатиті.',
+    },
+  },
   },
   {
     id: 30,
@@ -2501,11 +2645,17 @@ export const specialists: Specialist[] = [
     role: 'Diabetolog',
     specializationSlug: 'diabetologia',
     photo: imgBeataJakubiec,
-    bio: '',
-    translations: {
-      en: { role: 'Diabetologist' },
-      ua: { role: 'Діабетолог' },
+    bio: 'Specjalistka chorób wewnętrznych I i II stopnia oraz diabetologii z praktyką od 2008 roku. Oferuje kompleksowe konsultacje internistyczne i diabetologiczne, łącząc wieloletnie doświadczenie z indywidualnym podejściem do każdego pacjenta.',
+  translations: {
+    en: {
+      role: 'Internist – diabetologist',
+      bio: 'First and second-degree specialist in internal medicine and diabetology, practising since 2008. Provides comprehensive internistic and diabetological consultations, combining extensive experience with an individual approach to each patient.',
     },
+    ua: {
+      role: 'Терапевт – діабетолог',
+      bio: 'Спеціаліст першого та другого ступеня з внутрішніх хвороб та діабетології, що практикує з 2008 року. Проводить комплексні терапевтичні та діабетологічні консультації, поєднуючи багаторічний досвід із індивідуальним підходом до кожного пацієнта.',
+    },
+  },
   },
   {
     id: 31,
@@ -2515,11 +2665,17 @@ export const specialists: Specialist[] = [
     role: 'Specjalista medycyny estetycznej',
     specializationSlug: 'medycyna-estetyczna',
     photo: imgEwelinaKubanska,
-    bio: '',
-    translations: {
-      en: { role: 'Aesthetic medicine specialist' },
-      ua: { role: 'Спеціаліст естетичної медицини' },
+    bio: 'Specjalistka medycyny estetycznej koncentrująca się na poprawie wyglądu i komfortu pacjentów przy zachowaniu bezpieczeństwa i naturalnych efektów. W pracy stawia na dokładną konsultację i dobór rozwiązań dopasowanych do indywidualnych potrzeb.',
+  translations: {
+    en: {
+      role: 'Aesthetic medicine specialist',
+      bio: 'Aesthetic medicine specialist focused on enhancing patients\' appearance and comfort while ensuring safety and natural-looking results. Committed to thorough consultations and treatments tailored to individual needs.',
     },
+    ua: {
+      role: 'Спеціаліст естетичної медицини',
+      bio: 'Спеціаліст естетичної медицини, зосереджена на покращенні зовнішнього вигляду та комфорту пацієнтів із дотриманням безпеки та природного результату. Приділяє особливу увагу детальній консультації та підбору процедур відповідно до індивідуальних потреб.',
+    },
+  },
   },
   {
     id: 32,
@@ -2529,11 +2685,17 @@ export const specialists: Specialist[] = [
     role: 'Cytopatolog, biopsje tarczycy',
     specializationSlug: 'biopsja',
     photo: imgAvatarMan,
-    bio: '',
-    translations: {
-      en: { role: 'Cytopathologist, thyroid biopsies' },
-      ua: { role: 'Цитопатолог, біопсії щитоподібної залози' },
+    bio: 'Cytopatolog z wieloletnim doświadczeniem, specjalizujący się w diagnostyce cytologicznej i biopsjach tarczycy. Zapewnia pacjentom precyzyjną ocenę zmian oraz profesjonalne wsparcie na etapie dalszej diagnostyki i leczenia.',
+  translations: {
+    en: {
+      role: 'Cytopathologist – thyroid biopsy specialist',
+      bio: 'Cytopathologist with extensive experience, specialising in cytological diagnostics and thyroid biopsies. Provides precise lesion assessment and professional guidance throughout the diagnostic and treatment process.',
     },
+    ua: {
+      role: 'Цитопатолог – спеціаліст з біопсії щитоподібної залози',
+      bio: 'Цитопатолог із багаторічним досвідом, що спеціалізується на цитологічній діагностиці та біопсіях щитоподібної залози. Забезпечує точну оцінку змін та фахову підтримку на етапах подальшої діагностики та лікування.',
+    },
+  },
   },
   {
     id: 33,
@@ -2557,11 +2719,17 @@ export const specialists: Specialist[] = [
     role: 'Fizjoterapeuta',
     specializationSlug: 'rehabilitacja',
     photo: imgKamilaJachna,
-    bio: '',
-    translations: {
-      en: { role: 'Physiotherapist' },
-      ua: { role: 'Фізіотерапевт' },
+    bio: 'Fizjoterapeutka wspierająca pacjentów w powrocie do sprawności i poprawie komfortu codziennego funkcjonowania. W pracy stawia na indywidualnie dobrane metody terapeutyczne, dokładną ocenę potrzeb oraz edukację pacjenta.',
+  translations: {
+    en: {
+      role: 'Physiotherapist',
+      bio: 'Physiotherapist supporting patients in regaining mobility and improving their quality of daily life. Focuses on individually tailored therapeutic methods, thorough needs assessment and patient education.',
     },
+    ua: {
+      role: 'Фізіотерапевт',
+      bio: 'Фізіотерапевт, що допомагає пацієнтам відновити рухливість та покращити якість повсякденного життя. Зосереджується на індивідуально підібраних методах терапії, ретельній оцінці потреб та освіті пацієнта.',
+    },
+  },
   },
   {
     id: 35,
@@ -2571,11 +2739,17 @@ export const specialists: Specialist[] = [
     role: 'Fizjoterapeuta',
     specializationSlug: 'rehabilitacja',
     photo: imgGrzegorzDankow,
-    bio: '',
-    translations: {
-      en: { role: 'Physiotherapist' },
-      ua: { role: 'Фізіотерапевт' },
+    bio: 'Fizjoterapeuta specjalizujący się w leczeniu dolegliwości bólowych i usprawnianiu narządu ruchu. Koncentruje się na indywidualnym podejściu do pacjenta, terapii funkcjonalnej oraz stopniowym przywracaniu sprawności.',
+  translations: {
+    en: {
+      role: 'Physiotherapist',
+      bio: 'Physiotherapist specialising in pain management and musculoskeletal rehabilitation. Focuses on an individual approach, functional therapy and the gradual restoration of physical fitness.',
     },
+    ua: {
+      role: 'Фізіотерапевт',
+      bio: 'Фізіотерапевт, що спеціалізується на лікуванні больових синдромів та реабілітації опорно-рухового апарату. Зосереджується на індивідуальному підході до пацієнта, функціональній терапії та поступовому відновленні рухової активності.',
+    },
+  },
   },
   {
     id: 36,
@@ -2585,11 +2759,17 @@ export const specialists: Specialist[] = [
     role: 'Fizjoterapeuta',
     specializationSlug: 'rehabilitacja',
     photo: imgAvatarWoman,
-    bio: '',
-    translations: {
-      en: { role: 'Physiotherapist' },
-      ua: { role: 'Фізіотерапевт' },
+    bio: 'Magister rehabilitacji i fizjoterapeutka z doświadczeniem w kompleksowym usprawnianiu pacjentów. W pracy łączy wiedzę teoretyczną z praktyką, dobierając metody terapeutyczne indywidualnie do problemu i potrzeb zdrowotnych pacjenta.',
+  translations: {
+    en: {
+      role: 'Physiotherapist',
+      bio: 'Master of rehabilitation and physiotherapist with experience in comprehensive patient rehabilitation. Combines theoretical knowledge with clinical practice, tailoring therapeutic methods to each patient\'s specific condition and needs.',
     },
+    ua: {
+      role: 'Фізіотерапевт',
+      bio: 'Магістр реабілітації та фізіотерапевт із досвідом комплексного відновлення пацієнтів. Поєднує теоретичні знання з клінічною практикою, індивідуально підбираючи методи терапії відповідно до стану та потреб пацієнта.',
+    },
+  },
   },
   {
     id: 37,
@@ -2599,11 +2779,17 @@ export const specialists: Specialist[] = [
     role: 'Specjalista diagnostyki USG',
     specializationSlug: 'diagnostyka-usg',
     photo: imgAvatarWoman,
-    bio: '',
-    translations: {
-      en: { role: 'Ultrasound diagnostics specialist' },
-      ua: { role: 'Спеціаліст УЗД діагностики' },
+    bio: 'Lekarz medycyny specjalizujący się w diagnostyce ultrasonograficznej. W swojej pracy koncentruje się na precyzyjnej ocenie obrazowej, rzetelnej diagnostyce oraz zapewnieniu pacjentom profesjonalnej i spokojnej opieki podczas badania.',
+  translations: {
+    en: {
+      role: 'Ultrasound diagnostics specialist',
+      bio: 'Medical doctor specialising in ultrasound diagnostics. Focused on precise imaging assessment, reliable diagnostics and providing patients with professional and reassuring care during examinations.',
     },
+    ua: {
+      role: 'Спеціаліст ультразвукової діагностики',
+      bio: 'Лікар, що спеціалізується на ультразвуковій діагностиці. Зосереджується на точній оцінці зображень, достовірній діагностиці та забезпеченні пацієнтам фахової та комфортної допомоги під час обстеження.',
+    },
+  },
   },
   {
     id: 38,
@@ -2613,10 +2799,16 @@ export const specialists: Specialist[] = [
     role: 'Chirurg, diagnostyka USG',
     specializationSlug: 'diagnostyka-usg',
     photo: imgAvatarMan,
-    bio: '',
-    translations: {
-      en: { role: 'Surgeon, ultrasound diagnostics' },
-      ua: { role: 'Хірург, УЗД діагностика' },
+    bio: 'Lekarz chirurg ze specjalizacją w diagnostyce ultrasonograficznej. Łączy doświadczenie kliniczne z diagnostyką obrazową, zapewniając pacjentom kompleksowe podejście do rozpoznania i leczenia problemów zdrowotnych.',
+  translations: {
+    en: {
+      role: 'Surgeon – ultrasound diagnostics specialist',
+      bio: 'Surgeon with a specialisation in ultrasound diagnostics. Combines clinical expertise with imaging diagnostics to provide patients with a comprehensive approach to diagnosis and treatment.',
     },
+    ua: {
+      role: 'Хірург – спеціаліст ультразвукової діагностики',
+      bio: 'Хірург зі спеціалізацією в ультразвуковій діагностиці. Поєднує клінічний досвід із діагностикою зображень, забезпечуючи пацієнтам комплексний підхід до діагностики та лікування.',
+    },
+  },
   },
 ]

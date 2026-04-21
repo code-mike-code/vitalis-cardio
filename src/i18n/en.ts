@@ -292,7 +292,7 @@ export const en = {
     learnMore: 'Learn more →',
     disclaimer: 'The scope of services available under the LuxMed subscription is subject to change. The current list of services is available in the LuxMed app or via the hotline.',
     svc1: { title: 'Cardiology', item1: 'Cardiology consultation', item2: 'ECG examination', item3: 'Echocardiography (cardiac ultrasound)', item4: '24-hour Holter ECG', item5: 'Stress test' },
-    svc2: { title: 'Gastroenterology', item1: 'Gastroenterology consultation', item2: 'Gastroscopy', item3: 'Colonoscopy' },
+    svc2: { title: 'Gastrology', item1: 'Gastrology consultation', item2: 'Gastroscopy', item3: 'Colonoscopy' },
     svc3: { title: 'Psychiatry', item1: 'Psychiatric consultation' },
     svc4: { title: 'Orthopaedics', item1: 'Orthopaedic consultation', item2: 'Ultrasound joint diagnostics' },
     svc5: { title: 'Rehabilitation', item1: 'Physiotherapy', item2: 'Kinesiotherapy', item3: 'Physical therapy', item4: 'Therapeutic massage', item5: 'Kinesiotaping' },

@@ -4,7 +4,7 @@ import PageLayout from '@components/layout/PageLayout/PageLayout'
 import styles from './PartnerNfzPage.module.scss'
 import logoNfz from '@/assets/logo/logo-nfz.webp'
 
-const NFZ_SLUGS = ['psychologia', 'gastroenterologia', 'rehabilitacja'] as const
+const NFZ_SLUGS = ['psychologia', 'gastrologia', 'rehabilitacja'] as const
 
 function PartnerNfzPage() {
   const { t } = useLanguage()

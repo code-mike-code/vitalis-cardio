@@ -2,7 +2,7 @@ export const calendarConfig: Record<string, string> = {
   'kardiologia':           'https://e-rejestracja.mp.pl/Tickets/w/c1920ef1-cf37-4225-9dd6-2fe0b38638c1',
   'kardiologia-dziecieca': 'https://e-rejestracja.mp.pl/Tickets/w/c1920ef1-cf37-4225-9dd6-2fe0b38638c1',
   'ginekologia':           'https://e-rejestracja.mp.pl/Tickets/w/01051397-03f0-4aae-996b-0ddf63dca65b',
-  'gastroenterologia':     'https://e-rejestracja.mp.pl/Tickets/4b52b070-b498-4be6-9c25-603f369294fd',
+  'gastrologia':     'https://e-rejestracja.mp.pl/Tickets/4b52b070-b498-4be6-9c25-603f369294fd',
   'endokrynologia':        'https://e-rejestracja.mp.pl/Tickets/w/197a9007-635f-41fa-88be-03351f1b6402',
   'ortopedia':             'https://e-rejestracja.mp.pl/Tickets/w/49b6615f-403f-4f4b-b52d-005a01407822',
   'neurochirurgia':        'https://e-rejestracja.mp.pl/Tickets/cc11f046-cfee-437f-a798-20e4de9091b3',

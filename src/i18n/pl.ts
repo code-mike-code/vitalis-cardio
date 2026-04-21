@@ -292,7 +292,7 @@ export const pl = {
     learnMore: 'Dowiedz się więcej →',
     disclaimer: 'Zakres usług dostępnych w ramach abonamentu LuxMed może ulec zmianie. Aktualna lista świadczeń dostępna jest w aplikacji LuxMed lub pod numerem infolinii.',
     svc1: { title: 'Kardiologia', item1: 'Konsultacja kardiologiczna', item2: 'Badanie EKG', item3: 'Echokardiografia (UKG)', item4: 'Holter EKG', item5: 'Próba wysiłkowa' },
-    svc2: { title: 'Gastroenterologia', item1: 'Konsultacja gastroenterologiczna', item2: 'Gastroskopia', item3: 'Kolonoskopia' },
+    svc2: { title: 'Gastrologia', item1: 'Konsultacja gastrologiczna', item2: 'Gastroskopia', item3: 'Kolonoskopia' },
     svc3: { title: 'Psychiatria', item1: 'Konsultacja psychiatryczna' },
     svc4: { title: 'Ortopedia', item1: 'Konsultacja ortopedyczna', item2: 'Diagnostyka USG stawów' },
     svc5: { title: 'Rehabilitacja', item1: 'Fizjoterapia', item2: 'Kinezyterapia', item3: 'Fizykoterapia', item4: 'Masaż leczniczy', item5: 'Kinesiotaping' },
