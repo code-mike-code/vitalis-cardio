@@ -76,7 +76,7 @@ function Team() {
 
         {/* ── CTA ─────────────────────────────────────────────────── */}
         <div className={styles.ctaWrap}>
-          <CtaButton to="/specjalizacje" variant="outline" size="md">
+          <CtaButton to="/zespol" variant="outline" size="md">
             {t('team.ctaAll')}
           </CtaButton>
         </div>

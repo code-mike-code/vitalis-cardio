@@ -381,4 +381,10 @@ export const pl = {
     messagePlaceholder: 'Opisz swoje potrzeby...',
     submitBtn: 'Wyślij wiadomość',
   },
+  teamPage: {
+    label: 'Poznaj nasz zespół',
+    heroTitle: 'Nasz Zespół',
+    heroSubtitle: 'Lekarze i terapeuci Vitalis – pasja do medycyny, wieloletnie doświadczenie i indywidualne podejście do każdego pacjenta.',
+    specialistCount: 'spec.',
+  },
 }

@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import styles from './NavigationMenu.module.scss'
 import { useLanguage } from '@/hooks/useLanguage'
 import { specializations } from '@/data'
+import { scrollToHash } from '@components/ui/ScrollToHash'
 import logoNfz from '@/assets/logo/logo-nfz.webp'
 import logoLuxmed from '@/assets/logo/logo-luxmed.png'
 
@@ -18,6 +19,18 @@ interface Props {
 const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
   const { t, language } = useLanguage()
   const langKey = language as 'en' | 'ua'
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  function handleHashLink(e: React.MouseEvent<HTMLAnchorElement>, hash: string) {
+    e.preventDefault()
+    onClose()
+    if (location.pathname === '/') {
+      scrollToHash(hash)
+    } else {
+      navigate(`/#${hash}`)
+    }
+  }
   const specLabel = (spec: (typeof specializations)[number]) =>
     spec.translations?.[langKey]?.menuLabel ?? spec.menuLabel
 
@@ -27,10 +40,10 @@ const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
       {/* ── MOBILE LAYOUT (order: siteNav → phones → CTA → specGrid) ── */}
       <div className={styles.mobileMenu}>
         <nav className={styles.mobileSiteNav}>
-          <Link to="/#about" onClick={onClose}>{t('nav.linkAbout')}</Link>
-          <Link to="/#offer" onClick={onClose}>{t('nav.linkPricing')}</Link>
-          <Link to="/#team" onClick={onClose}>{t('nav.linkTeam')}</Link>
-          <Link to="/#reviews" onClick={onClose}>{t('nav.linkReviews')}</Link>
+          <a href="/#about" onClick={e => handleHashLink(e, 'about')}>{t('nav.linkAbout')}</a>
+          <a href="/#pricing" onClick={e => handleHashLink(e, 'pricing')}>{t('nav.linkPricing')}</a>
+          <Link to="/zespol" onClick={onClose}>{t('nav.linkTeam')}</Link>
+          <a href="/#reviews" onClick={e => handleHashLink(e, 'reviews')}>{t('nav.linkReviews')}</a>
         </nav>
 
         <div className={styles.mobilePhones}>
@@ -166,10 +179,10 @@ const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
         <div className={styles.col}>
           <h2>{t('nav.siteMenu')}</h2>
           <nav className={styles.siteNav}>
-            <Link to="/#about" onClick={onClose}>{t('nav.linkAbout')}</Link>
-            <Link to="/#offer" onClick={onClose}>{t('nav.linkPricing')}</Link>
-            <Link to="/#team" onClick={onClose}>{t('nav.linkTeam')}</Link>
-            <Link to="/#reviews" onClick={onClose}>{t('nav.linkReviews')}</Link>
+            <a href="/#about" onClick={e => handleHashLink(e, 'about')}>{t('nav.linkAbout')}</a>
+            <a href="/#pricing" onClick={e => handleHashLink(e, 'pricing')}>{t('nav.linkPricing')}</a>
+            <Link to="/zespol" onClick={onClose}>{t('nav.linkTeam')}</Link>
+            <a href="/#reviews" onClick={e => handleHashLink(e, 'reviews')}>{t('nav.linkReviews')}</a>
             <hr className={styles.separator} />
             <Link to="/rodo" className={styles.legal} onClick={onClose}>{t('nav.linkRodo')}</Link>
             <Link to="/prywatnosc" className={styles.legal} onClick={onClose}>{t('nav.linkPrivacy')}</Link>

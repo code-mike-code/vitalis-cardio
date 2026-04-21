@@ -381,4 +381,10 @@ export const en = {
     messagePlaceholder: 'Describe your needs...',
     submitBtn: 'Send Message',
   },
+  teamPage: {
+    label: 'Meet our team',
+    heroTitle: 'Our Team',
+    heroSubtitle: 'Vitalis doctors and therapists – a passion for medicine, years of clinical experience, and individual care for every patient.',
+    specialistCount: 'spec.',
+  },
 }

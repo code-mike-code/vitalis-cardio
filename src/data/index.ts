@@ -1,4 +1,19 @@
 import type { NavLink, Feature, Service, TeamMember, ContactInfo, Stat, Specialist, Specialization, PricingCategory } from '@/types'
+import imgAleksanderZurakowski from '@/assets/img/team/aleksander-zurakowski.webp'
+import imgBeataJakubiec from '@/assets/img/team/beata-jakubiec.webp'
+import imgEwelinaKubanska from '@/assets/img/team/ewelina-kubanska.webp'
+import imgGrzegorzDankow from '@/assets/img/team/grzegorz-dankow.webp'
+import imgIzabelaWilgaMalota from '@/assets/img/team/izabela-wilga-malota.webp'
+import imgJaroslawBigaj from '@/assets/img/team/jaroslaw-bigaj.webp'
+import imgJacekNowak from '@/assets/img/team/jacek-nowak.webp'
+import imgKamilaJachna from '@/assets/img/team/kamila-jachna.webp'
+import imgKrystynaFic from '@/assets/img/team/krystyna-fic.webp'
+import imgKrzysztofNiemiec from '@/assets/img/team/krzysztof-niemiec.webp'
+import imgRafalKasperczyk from '@/assets/img/team/rafal-kasperczyk.webp'
+import imgSebastianWajda from '@/assets/img/team/sebastian-wajda.webp'
+import imgWojciechJurek from '@/assets/img/team/wojciech-jurek.webp'
+import imgAvatarMan from '@/assets/img/team/avatar-man-red.webp'
+import imgAvatarWoman from '@/assets/img/team/avatar-woman-red.webp'
 
 export const navLinks: NavLink[] = [
   { label: 'Strona główna', href: '#home' },
@@ -81,7 +96,7 @@ export const team: TeamMember[] = [
     name: 'Prof. nadzw. dr hab. n. med. Aleksander Żurakowski',
     role: 'Dyrektor medyczny, współzałożyciel',
     specialization: 'Kardiolog',
-    photo: '',
+    photo: imgAleksanderZurakowski,
     bio: 'Profesor nadzwyczajny i specjalista chorób wewnętrznych z tytułem doktora habilitowanego nauk medycznych. Współzałożyciel Poradni Vitalis w 2014 roku. Posiada wieloletnie doświadczenie w kardiologii klinicznej i diagnostycznej.',
   },
   {
@@ -89,31 +104,31 @@ export const team: TeamMember[] = [
     name: 'Dr n. med. Jacek Nowak',
     role: 'Specjalista chorób wewnętrznych, współzałożyciel',
     specialization: 'Kardiolog',
-    photo: '',
+    photo: imgJacekNowak,
     bio: 'Doktor nauk medycznych, specjalista chorób wewnętrznych i kardiologii. Współzałożyciel Poradni Vitalis. Specjalizuje się w diagnostyce i leczeniu arytmii oraz niewydolności serca.',
   },
   {
     id: 3,
-    name: 'Dr n. med. Katarzyna Malinowska',
+    name: 'Dr n. med. Ewelina Kubańska',
     role: 'Specjalista neurologii',
     specialization: 'Neurolog',
-    photo: '',
-    bio: 'Doktor nauk medycznych w dziedzinie neurologii. Doświadczenie w diagnostyce i leczeniu migren, padaczki oraz chorób neurodegeneracyjnych. Prowadzi badania EEG i EMG.',
+    photo: imgEwelinaKubanska,
+    bio: 'Doktor nauk medycznych w dziedzinie neurologii. Prowadzi badania EEG i EMG.',
   },
   {
     id: 4,
-    name: 'Dr Paweł Kowalczyk',
+    name: 'Dr n. med. Krzysztof Niemiec',
     role: 'Specjalista ortopedii i traumatologii',
     specialization: 'Ortopeda',
-    photo: '',
+    photo: imgKrzysztofNiemiec,
     bio: 'Specjalista ortopedii i traumatologii narządu ruchu. Ekspert w leczeniu urazów sportowych, artroskopii stawów oraz schorzeń kręgosłupa. Wykonuje iniekcje dostawowe pod kontrolą USG.',
   },
   {
     id: 5,
-    name: 'Mgr Marta Zielińska',
-    role: 'Kierownik działu rehabilitacji',
+    name: 'Mgr Kamila Jachna',
+    role: 'Dział rehabilitacji',
     specialization: 'Fizjoterapeutka',
-    photo: '',
+    photo: imgKamilaJachna,
     bio: 'Certyfikowana fizjoterapeutka z tytułem magistra. Specjalizuje się w terapii manualnej, kinesiotapingu oraz rehabilitacji pourazowej. Prowadzi indywidualne programy kinezyterapii.',
   },
 ]
@@ -2065,7 +2080,7 @@ export const specialists: Specialist[] = [
     name: 'Aleksander Żurakowski',
     role: 'Specjalista chorób wewnętrznych - kardiolog',
     specializationSlug: 'kardiologia',
-    photo: '',
+    photo: imgAleksanderZurakowski,
     bio: 'Profesor nadzwyczajny i specjalista chorób wewnętrznych z tytułem doktora habilitowanego nauk medycznych. Współzałożyciel Poradni Vitalis w 2014 roku. Posiada wieloletnie doświadczenie w kardiologii klinicznej i diagnostycznej.',
     isFounder: true,
     translations: {
@@ -2086,7 +2101,7 @@ export const specialists: Specialist[] = [
     name: 'Jacek Nowak',
     role: 'Specjalista chorób wewnętrznych - kardiolog',
     specializationSlug: 'kardiologia',
-    photo: '',
+    photo: imgJacekNowak,
     bio: 'Doktor nauk medycznych, specjalista chorób wewnętrznych i kardiologii. Współzałożyciel Poradni Vitalis. Specjalizuje się w diagnostyce i leczeniu arytmii oraz niewydolności serca.',
     isFounder: true,
     translations: {
@@ -2107,7 +2122,7 @@ export const specialists: Specialist[] = [
     name: 'Maciej Chodur',
     role: 'Kardiolog',
     specializationSlug: 'kardiologia',
-    photo: '',
+    photo: imgAvatarMan,
     bio: '',
     translations: {
       en: { role: 'Cardiologist' },
@@ -2121,7 +2136,7 @@ export const specialists: Specialist[] = [
     name: 'Michał Bońkowski',
     role: 'Kardiolog, specjalista chirurgii naczyniowej',
     specializationSlug: 'kardiologia',
-    photo: '',
+    photo: imgAvatarMan,
     bio: '',
     translations: {
       en: { role: 'Cardiologist, vascular surgery specialist' },
@@ -2135,7 +2150,7 @@ export const specialists: Specialist[] = [
     name: 'Piotr Nowak',
     role: 'Kardiolog',
     specializationSlug: 'kardiologia',
-    photo: '',
+    photo: imgAvatarMan,
     bio: '',
     translations: {
       en: { role: 'Cardiologist' },
@@ -2149,7 +2164,7 @@ export const specialists: Specialist[] = [
     name: 'Katarzyna Michalak',
     role: 'Kardiolog dziecięcy',
     specializationSlug: 'kardiologia-dziecieca',
-    photo: '',
+    photo: imgAvatarWoman,
     bio: '',
     translations: {
       en: { role: 'Paediatric cardiologist' },
@@ -2163,7 +2178,7 @@ export const specialists: Specialist[] = [
     name: 'Janusz Gajda',
     role: 'Ginekolog, położnik',
     specializationSlug: 'ginekologia',
-    photo: '',
+    photo: imgAvatarMan,
     bio: '',
     translations: {
       en: { role: 'Gynaecologist, obstetrician' },
@@ -2177,7 +2192,7 @@ export const specialists: Specialist[] = [
     name: 'Jarosław Bigaj',
     role: 'Gastroenterolog',
     specializationSlug: 'gastroenterologia',
-    photo: '',
+    photo: imgJaroslawBigaj,
     bio: '',
     translations: {
       en: { role: 'Gastroenterologist' },
@@ -2191,7 +2206,7 @@ export const specialists: Specialist[] = [
     name: 'Paweł Szulewski',
     role: 'Gastroenterolog',
     specializationSlug: 'gastroenterologia',
-    photo: '',
+    photo: imgAvatarMan,
     bio: '',
     translations: {
       en: { role: 'Gastroenterologist' },
@@ -2205,7 +2220,7 @@ export const specialists: Specialist[] = [
     name: 'Edward Surma',
     role: 'Gastroenterolog',
     specializationSlug: 'gastroenterologia',
-    photo: '',
+    photo: imgAvatarMan,
     bio: '',
     translations: {
       en: { role: 'Gastroenterologist' },
@@ -2219,7 +2234,7 @@ export const specialists: Specialist[] = [
     name: 'Paweł Tyrawski',
     role: 'Gastroenterolog',
     specializationSlug: 'gastroenterologia',
-    photo: '',
+    photo: imgAvatarMan,
     bio: '',
     translations: {
       en: { role: 'Gastroenterologist' },
@@ -2233,7 +2248,7 @@ export const specialists: Specialist[] = [
     name: 'Krystyna Fic',
     role: 'Gastroenterolog',
     specializationSlug: 'gastroenterologia',
-    photo: '',
+    photo: imgKrystynaFic,
     bio: '',
     translations: {
       en: { role: 'Gastroenterologist' },
@@ -2247,7 +2262,7 @@ export const specialists: Specialist[] = [
     name: 'Jacek Szymkowiak',
     role: 'Endokrynolog',
     specializationSlug: 'endokrynologia',
-    photo: '',
+    photo: imgAvatarMan,
     bio: '',
     translations: {
       en: { role: 'Endocrinologist' },
@@ -2261,7 +2276,7 @@ export const specialists: Specialist[] = [
     name: 'Sylwia Pierzchała',
     role: 'Endokrynolog',
     specializationSlug: 'endokrynologia',
-    photo: '',
+    photo: imgAvatarWoman,
     bio: '',
     translations: {
       en: { role: 'Endocrinologist' },
@@ -2275,7 +2290,7 @@ export const specialists: Specialist[] = [
     name: 'Jacek Pająk',
     role: 'Endokrynolog, biopsje tarczycy',
     specializationSlug: 'endokrynologia',
-    photo: '',
+    photo: imgAvatarMan,
     bio: '',
     translations: {
       en: { role: 'Endocrinologist, thyroid biopsies' },
@@ -2289,7 +2304,7 @@ export const specialists: Specialist[] = [
     name: 'Krzysztof Niemiec',
     role: 'Ortopeda',
     specializationSlug: 'ortopedia',
-    photo: '',
+    photo: imgKrzysztofNiemiec,
     bio: '',
     translations: {
       en: { role: 'Orthopaedist' },
@@ -2303,7 +2318,7 @@ export const specialists: Specialist[] = [
     name: 'Mateusz Mroczkowski',
     role: 'Ortopeda',
     specializationSlug: 'ortopedia',
-    photo: '',
+    photo: imgAvatarMan,
     bio: '',
     translations: {
       en: { role: 'Orthopaedist' },
@@ -2317,7 +2332,7 @@ export const specialists: Specialist[] = [
     name: 'Wojciech Jurek',
     role: 'Ortopeda',
     specializationSlug: 'ortopedia',
-    photo: '',
+    photo: imgWojciechJurek,
     bio: '',
     translations: {
       en: { role: 'Orthopaedist' },
@@ -2331,7 +2346,7 @@ export const specialists: Specialist[] = [
     name: 'Przemysław Masłowski',
     role: 'Neurochirurg',
     specializationSlug: 'neurochirurgia',
-    photo: '',
+    photo: imgAvatarMan,
     bio: '',
     translations: {
       en: { role: 'Neurosurgeon' },
@@ -2345,7 +2360,7 @@ export const specialists: Specialist[] = [
     name: 'Anna Brożek-Stanisławska',
     role: 'Neurolog',
     specializationSlug: 'neurologia',
-    photo: '',
+    photo: imgAvatarWoman,
     bio: '',
     translations: {
       en: { role: 'Neurologist' },
@@ -2359,7 +2374,7 @@ export const specialists: Specialist[] = [
     name: 'Ewelina Kubańska',
     role: 'Neurolog',
     specializationSlug: 'neurologia',
-    photo: '',
+    photo: imgEwelinaKubanska,
     bio: '',
     translations: {
       en: { role: 'Neurologist' },
@@ -2373,7 +2388,7 @@ export const specialists: Specialist[] = [
     name: 'Barbara Kosowska',
     role: 'Pielęgniarka EEG',
     specializationSlug: 'neurologia',
-    photo: '',
+    photo: imgAvatarWoman,
     bio: '',
     translations: {
       en: { role: 'EEG Nurse' },
@@ -2387,7 +2402,7 @@ export const specialists: Specialist[] = [
     name: 'Katarzyna Drozdowicz',
     role: 'Psychiatra',
     specializationSlug: 'psychiatria',
-    photo: '',
+    photo: imgAvatarWoman,
     bio: '',
     translations: {
       en: { role: 'Psychiatrist' },
@@ -2401,7 +2416,7 @@ export const specialists: Specialist[] = [
     name: 'Jarosław Woźniak',
     role: 'Psychiatra',
     specializationSlug: 'psychiatria',
-    photo: '',
+    photo: imgAvatarMan,
     bio: '',
     translations: {
       en: { role: 'Psychiatrist' },
@@ -2415,7 +2430,7 @@ export const specialists: Specialist[] = [
     name: 'Sebastian Wajda',
     role: 'Psychiatra',
     specializationSlug: 'psychiatria',
-    photo: '',
+    photo: imgSebastianWajda,
     bio: '',
     translations: {
       en: { role: 'Psychiatrist' },
@@ -2429,7 +2444,7 @@ export const specialists: Specialist[] = [
     name: 'Izabela Wilga-Malota',
     role: 'Psychoterapeuta',
     specializationSlug: 'psychologia',
-    photo: '',
+    photo: imgIzabelaWilgaMalota,
     bio: '',
     translations: {
       en: { role: 'Psychotherapist' },
@@ -2443,7 +2458,7 @@ export const specialists: Specialist[] = [
     name: 'Rafał Kasperczyk',
     role: 'Urolog',
     specializationSlug: 'urologia',
-    photo: '',
+    photo: imgRafalKasperczyk,
     bio: '',
     translations: {
       en: { role: 'Urologist' },
@@ -2457,7 +2472,7 @@ export const specialists: Specialist[] = [
     name: 'Krzysztof Sołtys',
     role: 'Urolog',
     specializationSlug: 'urologia',
-    photo: '',
+    photo: imgAvatarMan,
     bio: '',
     translations: {
       en: { role: 'Urologist' },
@@ -2471,7 +2486,7 @@ export const specialists: Specialist[] = [
     name: 'Marcin Warzecha',
     role: 'Urolog',
     specializationSlug: 'urologia',
-    photo: '',
+    photo: imgAvatarMan,
     bio: '',
     translations: {
       en: { role: 'Urologist' },
@@ -2485,7 +2500,7 @@ export const specialists: Specialist[] = [
     name: 'Beata Jakubiec',
     role: 'Diabetolog',
     specializationSlug: 'diabetologia',
-    photo: '',
+    photo: imgBeataJakubiec,
     bio: '',
     translations: {
       en: { role: 'Diabetologist' },
@@ -2499,7 +2514,7 @@ export const specialists: Specialist[] = [
     name: 'Ewelina Kubańska',
     role: 'Specjalista medycyny estetycznej',
     specializationSlug: 'medycyna-estetyczna',
-    photo: '',
+    photo: imgEwelinaKubanska,
     bio: '',
     translations: {
       en: { role: 'Aesthetic medicine specialist' },
@@ -2513,7 +2528,7 @@ export const specialists: Specialist[] = [
     name: 'Jacek Pająk',
     role: 'Cytopatolog, biopsje tarczycy',
     specializationSlug: 'biopsja',
-    photo: '',
+    photo: imgAvatarMan,
     bio: '',
     translations: {
       en: { role: 'Cytopathologist, thyroid biopsies' },
@@ -2527,7 +2542,7 @@ export const specialists: Specialist[] = [
     name: 'Tomasz Blachura',
     role: 'Chirurg, diagnostyka piersi',
     specializationSlug: 'biopsja-grubogłowa',
-    photo: '',
+    photo: imgAvatarMan,
     bio: '',
     translations: {
       en: { role: 'Surgeon, breast diagnostics' },
@@ -2541,7 +2556,7 @@ export const specialists: Specialist[] = [
     name: 'Kamila Jachna',
     role: 'Fizjoterapeuta',
     specializationSlug: 'rehabilitacja',
-    photo: '',
+    photo: imgKamilaJachna,
     bio: '',
     translations: {
       en: { role: 'Physiotherapist' },
@@ -2555,7 +2570,7 @@ export const specialists: Specialist[] = [
     name: 'Grzegorz Dańków',
     role: 'Fizjoterapeuta',
     specializationSlug: 'rehabilitacja',
-    photo: '',
+    photo: imgGrzegorzDankow,
     bio: '',
     translations: {
       en: { role: 'Physiotherapist' },
@@ -2569,7 +2584,7 @@ export const specialists: Specialist[] = [
     name: 'Elżbieta Piątkowska',
     role: 'Fizjoterapeuta',
     specializationSlug: 'rehabilitacja',
-    photo: '',
+    photo: imgAvatarWoman,
     bio: '',
     translations: {
       en: { role: 'Physiotherapist' },
@@ -2583,7 +2598,7 @@ export const specialists: Specialist[] = [
     name: 'Katarzyna Wacławek-Ślusarczyk',
     role: 'Specjalista diagnostyki USG',
     specializationSlug: 'diagnostyka-usg',
-    photo: '',
+    photo: imgAvatarWoman,
     bio: '',
     translations: {
       en: { role: 'Ultrasound diagnostics specialist' },
@@ -2597,7 +2612,7 @@ export const specialists: Specialist[] = [
     name: 'Tomasz Blachura',
     role: 'Chirurg, diagnostyka USG',
     specializationSlug: 'diagnostyka-usg',
-    photo: '',
+    photo: imgAvatarMan,
     bio: '',
     translations: {
       en: { role: 'Surgeon, ultrasound diagnostics' },

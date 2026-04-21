@@ -11,6 +11,7 @@ import PrivacyPage from '@/pages/PrivacyPage'
 import TermsPage from '@/pages/TermsPage'
 import PartnerNfzPage from '@/pages/PartnerNfzPage'
 import PartnerLuxmedPage from '@/pages/PartnerLuxmedPage'
+import TeamPage from '@/pages/TeamPage'
 
 // Lazy-loaded: calendar code is fetched only when the user navigates to the booking page
 const BookingPage = lazy(() => import('@/pages/BookingPage'))
@@ -42,6 +43,7 @@ function App() {
               </Suspense>
             }
           />
+          <Route path="/zespol" element={<TeamPage />} />
           <Route path="/rodo" element={<RodoPage />} />
           <Route path="/prywatnosc" element={<PrivacyPage />} />
           <Route path="/regulamin" element={<TermsPage />} />

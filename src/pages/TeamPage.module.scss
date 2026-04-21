@@ -1,0 +1,177 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+$tp-heading-fs: clamp(2rem, 5vw, 5rem);
+
+// ── Hero ──────────────────────────────────────────────────────────
+
+.hero {
+  position: relative;
+  min-height: 40svh;
+  display: flex;
+  align-items: flex-end;
+  background-color: $color-bg-dark;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  padding: $spacing-4xl $spacing-3xl $spacing-3xl;
+
+  @include respond-to('tablet') {
+    padding: $spacing-3xl $spacing-xl $spacing-2xl;
+    min-height: 32svh;
+  }
+
+  @include respond-to('mobile') {
+    padding: $spacing-2xl $spacing-md $spacing-xl;
+    min-height: 28svh;
+  }
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 35, 50, 0.96) 0%,
+    rgba(26, 35, 50, 0.85) 60%,
+    rgba(196, 30, 58, 0.25) 100%
+  );
+  z-index: 0;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  max-width: 800px;
+}
+
+.heroLabel {
+  font-size: $font-size-sm;
+  color: $color-primary-light;
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  font-family: $font-family-heading;
+  font-size: $tp-heading-fs;
+  font-weight: 300;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: $color-white;
+  line-height: 1.0;
+}
+
+.heroSubtitle {
+  font-size: $font-size-lg;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: $line-height-base;
+  max-width: 560px;
+  margin-top: $spacing-xs;
+
+  @include respond-to('mobile') {
+    font-size: $font-size-base;
+  }
+}
+
+// ── Section ───────────────────────────────────────────────────────
+
+.section {
+  background: $color-bg-dark;
+  padding: $spacing-3xl 0 $spacing-4xl;
+
+  @include respond-to('tablet') { padding: $spacing-2xl 0 $spacing-3xl; }
+  @include respond-to('mobile') { padding: $spacing-xl 0 $spacing-2xl; }
+}
+
+.container {
+  @include container;
+}
+
+// ── Accordion ─────────────────────────────────────────────────────
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.accordionItem {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.accordionTrigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: $spacing-xl 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: $spacing-md;
+  color: $color-white;
+
+  &:hover .accordionArrow { transform: rotate(90deg); }
+  &:hover .accordionTitle  { color: $color-primary-light; }
+}
+
+.accordionTitle {
+  font-family: $font-family-heading;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  flex: 1;
+  transition: color $transition-fast;
+}
+
+.accordionMeta {
+  font-size: $font-size-sm;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+
+  @include respond-to('mobile') { display: none; }
+}
+
+.accordionArrow {
+  font-size: $font-size-lg;
+  color: $color-primary;
+  transition: transform $transition-base;
+  flex-shrink: 0;
+}
+
+.open .accordionArrow {
+  transform: rotate(90deg);
+}
+
+// ── Accordion body ────────────────────────────────────────────────
+
+.accordionBody {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.open .accordionBody {
+  grid-template-rows: 1fr;
+}
+
+.accordionBodyInner {
+  overflow: hidden;
+}
+
+.specialistsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-lg;
+  padding: $spacing-lg 0 $spacing-2xl;
+
+  @include respond-to('tablet') { grid-template-columns: 1fr; }
+}
