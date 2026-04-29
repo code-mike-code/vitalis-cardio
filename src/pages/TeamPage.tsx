@@ -11,7 +11,7 @@ function TeamPage() {
   const langKey = language as 'en' | 'ua'
 
   const grouped = specializations
-    .filter(spec => specialists.some(s => s.specializationSlug === spec.slug))
+    .filter(spec => !spec.hidden && specialists.some(s => s.specializationSlug === spec.slug))
     .map(spec => ({
       spec,
       members: specialists.filter(s => s.specializationSlug === spec.slug),

@@ -62,7 +62,7 @@ const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
         <div className={styles.mobileSpecs}>
           <h2>{t('nav.specializations')}</h2>
           <div className={styles.mobileSpecGrid}>
-            {specializations.filter(s => !s.hideFromMenu).map(spec => (
+            {specializations.filter(s => !s.hideFromMenu && !s.hidden).map(spec => (
               <Link
                 key={spec.id}
                 to={`/specjalizacje/${spec.slug}`}
@@ -127,7 +127,7 @@ const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
         <div className={styles.col}>
           <h2>{t('nav.specializations')}</h2>
           <div className={styles.specializationGrid}>
-            {specializations.filter(s => !s.hideFromMenu).map(spec => (
+            {specializations.filter(s => !s.hideFromMenu && !s.hidden).map(spec => (
               <Link
                 key={spec.id}
                 to={`/specjalizacje/${spec.slug}`}

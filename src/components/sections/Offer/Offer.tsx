@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '@/hooks/useLanguage'
@@ -13,6 +13,9 @@ import offerImg4 from '@/assets/img/offer-4.webp'
 import styles from './Offer.module.scss'
 import { waveSpans } from '@/utils/waveSpans'
 
+const PARTNER_NFZ_COLOR = '#003399'
+const PARTNER_LUXMED_COLOR = '#00A551'
+
 const areaKeys = ['clinics', 'usg', 'rehab', 'aesthetic'] as const
 
 const areaImages: Record<typeof areaKeys[number], string> = {
@@ -25,9 +28,9 @@ const areaImages: Record<typeof areaKeys[number], string> = {
 
 function Offer() {
   const { t, language } = useLanguage()
-  const langKey = language as 'en' | 'ua'
-  const localizedPricing = pricing.map(category => {
-    const catTr = category.translations?.[langKey]
+  const langKey = language !== 'pl' ? language as 'en' | 'ua' : null
+  const localizedPricing = useMemo(() => pricing.map(category => {
+    const catTr = langKey ? category.translations?.[langKey] : undefined
     return {
       ...category,
       title: catTr?.title ?? category.title,
@@ -43,7 +46,7 @@ function Offer() {
         }
       }),
     }
-  })
+  }), [langKey])
   const [openIds, setOpenIds] = useState<Set<string>>(new Set())
   const [hoveredKey, setHoveredKey] = useState<string | null>(null)
   const { ref: headingRef, isVisible: headingVisible } = useScrollReveal<HTMLDivElement>(0.2)
@@ -146,7 +149,7 @@ function Offer() {
           <div className={styles.pricingContent}>
             <div className={styles.pricingHeader}>
               <span className={styles.pricingLabel}>{t('offer.pricingSubheading')}</span>
-              <h2 className={styles.pricingHeading}>{t('offer.pricingHeading')}</h2>
+              <h3 className={styles.pricingHeading}>{t('offer.pricingHeading')}</h3>
             </div>
 
             <div className={styles.pricingCtaWrap}>
@@ -170,15 +173,17 @@ function Offer() {
 
                     return (
                       <div
-                        key={si}
+                        key={key}
                         className={`${styles.accordionItem} ${isOpen ? styles.open : ''}`}
                       >
                         <button
+                          id={`pricing-trigger-${key}`}
                           className={styles.accordionTrigger}
                           onClick={() => toggleAccordion(key)}
                           onMouseEnter={() => setHoveredKey(key)}
                           onMouseLeave={() => setHoveredKey(null)}
                           aria-expanded={isOpen}
+                          aria-controls={`pricing-body-${key}`}
                         >
                           <span className={styles.accordionTitle} aria-label={section.subtitle}>
                             {section.subtitle.split('').map((char, i) => (
@@ -198,11 +203,16 @@ function Offer() {
                           <span className={styles.accordionArrow} aria-hidden="true">→</span>
                         </button>
 
-                        <div className={styles.accordionBody}>
+                        <div
+                          id={`pricing-body-${key}`}
+                          role="region"
+                          aria-labelledby={`pricing-trigger-${key}`}
+                          className={styles.accordionBody}
+                        >
                           <div className={styles.accordionBodyInner}>
                             <ul className={styles.priceList}>
-                              {section.items.map((item, i) => (
-                                <li key={i} className={styles.priceItem}>
+                              {section.items.map((item) => (
+                                <li key={item.name} className={styles.priceItem}>
                                   {section.slug ? (
                                     <Link
                                       to={`/specjalizacje/${section.slug}/umow-wizyte`}
@@ -235,7 +245,7 @@ function Offer() {
         <div className={styles.partnerCards}>
 
           <Link to="/partnerzy/nfz" className={styles.partnerCard}>
-            <div className={styles.partnerAccent} style={{ background: '#003399' }} />
+            <div className={styles.partnerAccent} style={{ background: PARTNER_NFZ_COLOR }} />
             <div className={styles.partnerLogoWrap}>
               <img src={logoNfz} alt="NFZ" className={styles.logoNfz} />
             </div>
@@ -250,7 +260,7 @@ function Offer() {
           </Link>
 
           <Link to="/partnerzy/luxmed" className={styles.partnerCard}>
-            <div className={styles.partnerAccent} style={{ background: '#00A551' }} />
+            <div className={styles.partnerAccent} style={{ background: PARTNER_LUXMED_COLOR }} />
             <div className={styles.partnerLogoWrap}>
               <img src={logoLuxmed} alt="LuxMed" className={styles.logoLuxmed} />
             </div>

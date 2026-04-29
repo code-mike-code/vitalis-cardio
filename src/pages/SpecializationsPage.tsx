@@ -20,7 +20,7 @@ function SpecializationsPage() {
       <section className={styles.section}>
         <div className={styles.container}>
           <div className={styles.grid}>
-            {specializations.map(spec => (
+            {specializations.filter(s => !s.hidden).map(spec => (
               <SpecializationCard key={spec.id} specialization={spec} />
             ))}
           </div>

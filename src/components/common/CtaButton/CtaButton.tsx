@@ -9,6 +9,7 @@ interface Props {
   children: ReactNode
   to?: string
   href?: string
+  target?: '_blank' | '_self'
   onClick?: () => void
   variant?: Variant
   size?: Size
@@ -21,6 +22,7 @@ function CtaButton({
   children,
   to,
   href,
+  target,
   onClick,
   variant = 'primary',
   size = 'md',
@@ -42,7 +44,7 @@ function CtaButton({
   }
 
   if (href) {
-    return <a href={href} className={cls} rel="noopener noreferrer">{content}</a>
+    return <a href={href} className={cls} target={target} rel="noopener noreferrer">{content}</a>
   }
 
   return (

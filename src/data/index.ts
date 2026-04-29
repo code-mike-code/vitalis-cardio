@@ -193,6 +193,7 @@ export const specializations: Specialization[] = [
   {
     id: 2,
     slug: 'kardiologia-dziecieca',
+    hidden: true, // brak specjalisty — odblokować gdy znajdziemy
     name: 'Kardiologia dziecięca',
     menuLabel: 'Kardiolog dziecięcy',
     description: 'Kardiolog dziecięcy to specjalista zajmujący się leczeniem chorób układu sercowo-naczyniowego u pacjentów do 18. roku życia. Do najczęstszych chorób kardiologicznych wieku dziecięcego należą: arytmie, ubytek przegrody międzykomorowej lub międzyprzedsionkowej, przerost prawej komory, niewydolność serca, wady zastawki tętnicy płucnej i aorty.',

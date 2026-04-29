@@ -68,7 +68,7 @@ function Footer() {
           <div className={styles.col}>
             <h3 className={styles.colTitle}>{t('nav.specializations')}</h3>
             <div className={styles.specGrid}>
-              {specializations.filter(s => !s.hideFromMenu).map(spec => (
+              {specializations.filter(s => !s.hideFromMenu && !s.hidden).map(spec => (
                 <Link key={spec.id} to={`/specjalizacje/${spec.slug}`} className={styles.specLink}>
                   {specLabel(spec)}
                 </Link>

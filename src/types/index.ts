@@ -86,6 +86,7 @@ export interface Specialization {
   menuLabel: string
   description: string
   hideFromMenu?: boolean
+  hidden?: boolean
   conditions?: string[]
   conditionsLabel?: string
   examinations?: string[]

@@ -47,7 +47,7 @@ const TOTAL = reviews.length
 const SLIDES = [reviews[TOTAL - 1], ...reviews, reviews[0]]
 const TRANSITION_MS = 500
 const DRAG_THRESHOLD_RATIO = 0.18 // 18% of slide width triggers navigation
-const GOOGLE_REVIEW_URL = `https://search.google.com/local/writereview?placeid=${import.meta.env.VITE_GOOGLE_PLACE_ID ?? 'PLACE_ID_DO_UZUPELNIENIA'}`
+const GOOGLE_REVIEW_URL = 'https://g.page/r/CR7MlhR-_E2OEBE/review'
 
 function getRealIndex(index: number): number {
   if (index === 0) return TOTAL - 1
@@ -379,7 +379,7 @@ export default function SocialProof() {
         </div>
 
         {/* Google review CTA */}
-        <CtaButton href={GOOGLE_REVIEW_URL} variant="outline" size="md" className={styles.reviewBtn}>
+        <CtaButton href={GOOGLE_REVIEW_URL} target="_blank" variant="outline" size="md" className={styles.reviewBtn}>
           {t('socialProof.addReview')}
         </CtaButton>
 
