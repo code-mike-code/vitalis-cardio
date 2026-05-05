@@ -4,17 +4,16 @@ import { specializations } from '@/data'
 import styles from './Footer.module.scss'
 import logoNfz from '@/assets/logo/logo-nfz.webp'
 import logoLuxmed from '@/assets/logo/logo-luxmed.png'
+import { MAPS_LINK, MAPS_EMBED } from '@/data/mapsConfig'
+import { getTranslationKey } from '@/utils/langUtils'
 
-const MAPS_ADDRESS = 'ul. Kopernika 25, 32-540 Trzebinia'
-const MAPS_LINK = `https://maps.google.com/?q=${encodeURIComponent(MAPS_ADDRESS)}`
-const MAPS_EMBED = `https://maps.google.com/maps?q=${encodeURIComponent(MAPS_ADDRESS)}&output=embed&hl=pl`
+const CURRENT_YEAR = new Date().getFullYear()
 
 function Footer() {
   const { t, language } = useLanguage()
-  const langKey = language as 'en' | 'ua'
+  const langKey = getTranslationKey(language)
   const specLabel = (spec: (typeof specializations)[number]) =>
-    spec.translations?.[langKey]?.menuLabel ?? spec.menuLabel
-  const currentYear = new Date().getFullYear()
+    (langKey ? spec.translations?.[langKey]?.menuLabel : undefined) ?? spec.menuLabel
 
   return (
     <footer className={styles.footer}>
@@ -132,7 +131,7 @@ function Footer() {
       {/* COPYRIGHT */}
       <div className={styles.bottom}>
         <span>©</span>
-        <p>{currentYear} {t('footer.copyright')}</p>
+        <p>{CURRENT_YEAR} {t('footer.copyright')}</p>
       </div>
 
     </footer>

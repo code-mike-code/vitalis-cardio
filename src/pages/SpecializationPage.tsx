@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useParams, Navigate } from 'react-router-dom'
 import { specializations, specialists } from '@/data'
 import { useLanguage } from '@/hooks/useLanguage'
+import { getTranslationKey } from '@/utils/langUtils'
 import PageLayout from '@components/layout/PageLayout/PageLayout'
 import CtaButton from '@components/common/CtaButton/CtaButton'
 import SpecialistCard from '@components/common/SpecialistCard/SpecialistCard'
@@ -50,8 +51,8 @@ function SpecializationPage() {
   const specialization = specializations.find(s => s.slug === slug)
   if (!specialization) return <Navigate to="/specjalizacje" replace />
 
-  const langKey = language as 'en' | 'ua'
-  const loc = { ...specialization, ...(specialization.translations?.[langKey] ?? {}) }
+  const langKey = getTranslationKey(language)
+  const loc = { ...specialization, ...(langKey ? (specialization.translations?.[langKey] ?? {}) : {}) }
   const pageSpecialists = specialists.filter(s => s.specializationSlug === slug)
   const heroImage = heroImages[specialization.slug]
 

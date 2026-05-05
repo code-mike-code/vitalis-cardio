@@ -5,10 +5,8 @@ import { specializations } from '@/data'
 import { scrollToHash } from '@components/ui/ScrollToHash'
 import logoNfz from '@/assets/logo/logo-nfz.webp'
 import logoLuxmed from '@/assets/logo/logo-luxmed.png'
-
-const MAPS_ADDRESS = 'ul. Kopernika 25, 32-540 Trzebinia'
-const MAPS_LINK = `https://maps.google.com/?q=${encodeURIComponent(MAPS_ADDRESS)}`
-const MAPS_EMBED = `https://maps.google.com/maps?q=${encodeURIComponent(MAPS_ADDRESS)}&output=embed&hl=pl`
+import { MAPS_LINK, MAPS_EMBED } from '@/data/mapsConfig'
+import { getTranslationKey } from '@/utils/langUtils'
 
 interface Props {
   isOpen: boolean
@@ -18,7 +16,7 @@ interface Props {
 
 const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
   const { t, language } = useLanguage()
-  const langKey = language as 'en' | 'ua'
+  const langKey = getTranslationKey(language)
   const location = useLocation()
   const navigate = useNavigate()
 
@@ -32,7 +30,7 @@ const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
     }
   }
   const specLabel = (spec: (typeof specializations)[number]) =>
-    spec.translations?.[langKey]?.menuLabel ?? spec.menuLabel
+    (langKey ? spec.translations?.[langKey]?.menuLabel : undefined) ?? spec.menuLabel
 
   return (
     <div className={`${styles.menuOverlay} ${isOpen ? styles.active : ''} ${isFooter ? styles.footerTheme : ''}`}>

@@ -2,6 +2,7 @@ import type { Specialist } from '@/types'
 import LearnMoreLink from '@components/common/LearnMoreLink/LearnMoreLink'
 import CtaButton from '@components/common/CtaButton/CtaButton'
 import { useLanguage } from '@/hooks/useLanguage'
+import { getTranslationKey } from '@/utils/langUtils'
 import styles from './SpecialistCard.module.scss'
 
 interface Props {
@@ -16,8 +17,8 @@ interface Props {
 
 function SpecialistCard({ specialist, learnMoreTo, bookingTo, size = 'md' }: Props) {
   const { t, language } = useLanguage()
-  const langKey = language as 'en' | 'ua'
-  const loc = { ...specialist, ...(specialist.translations?.[langKey] ?? {}) }
+  const langKey = getTranslationKey(language)
+  const loc = { ...specialist, ...(langKey ? (specialist.translations?.[langKey] ?? {}) : {}) }
   return (
     <div id={specialist.slug} className={[styles.card, styles[size]].join(' ')}>
       <div className={styles.photo}>
