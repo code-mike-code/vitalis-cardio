@@ -110,6 +110,7 @@ function SpecializationPage() {
                   return (
                     <div key={gi} className={`${styles.serviceGroupItem} ${isOpen ? styles.open : ''}`}>
                       <button
+                        id={`service-group-trigger-${gi}`}
                         className={styles.serviceGroupTrigger}
                         onClick={() => toggleGroup(gi)}
                         aria-expanded={isOpen}
@@ -121,6 +122,7 @@ function SpecializationPage() {
                       <div
                         id={`service-group-${gi}`}
                         role="region"
+                        aria-labelledby={`service-group-trigger-${gi}`}
                         className={styles.serviceGroupBody}
                       >
                         <div className={styles.serviceGroupBodyInner}>

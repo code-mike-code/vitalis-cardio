@@ -1,0 +1,15 @@
+.container {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.code {
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 700;
+  opacity: 0.15;
+  line-height: 1;
+}
