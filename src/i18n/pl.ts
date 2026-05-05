@@ -173,6 +173,7 @@ export const pl = {
     accept: 'Akceptuję',
     decline: 'Odrzucam',
     learnMore: 'Polityka prywatności',
+    ariaLabel: 'Zgoda na pliki cookie',
   },
   offer: {
     headingPart1: 'NOWOCZESNY',
@@ -239,6 +240,7 @@ export const pl = {
     goTo: 'Przejdź do opinii',
     stars: 'gwiazdek na 5',
     addReview: 'Wystaw opinię na Google',
+    carouselRoleDesc: 'karuzela',
   },
   calendar: {
     title: 'Rejestracja Online',

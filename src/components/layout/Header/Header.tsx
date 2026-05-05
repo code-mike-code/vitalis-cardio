@@ -25,6 +25,8 @@ const Header = () => {
               className={styles.hamburger}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? t('common.close') : t('common.menu')}
+              aria-expanded={isMenuOpen}
+              aria-controls="navigation-menu"
             >
               <span className={`${styles.hamburgerLine} ${styles.line1} ${isMenuOpen ? styles.line1Open : ''}`} />
               <span className={`${styles.hamburgerLine} ${isMenuOpen ? styles.line2Open : ''}`} />

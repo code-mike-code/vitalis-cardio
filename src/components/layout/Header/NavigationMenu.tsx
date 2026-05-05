@@ -33,7 +33,10 @@ const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
     (langKey ? spec.translations?.[langKey]?.menuLabel : undefined) ?? spec.menuLabel
 
   return (
-    <div className={`${styles.menuOverlay} ${isOpen ? styles.active : ''} ${isFooter ? styles.footerTheme : ''}`}>
+    <div
+      id="navigation-menu"
+      className={`${styles.menuOverlay} ${isOpen ? styles.active : ''} ${isFooter ? styles.footerTheme : ''}`}
+    >
 
       {/* ── MOBILE LAYOUT (order: siteNav → phones → CTA → specGrid) ── */}
       <div className={styles.mobileMenu}>

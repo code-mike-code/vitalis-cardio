@@ -127,11 +127,16 @@ function SpecializationPage() {
                         className={styles.serviceGroupTrigger}
                         onClick={() => toggleGroup(gi)}
                         aria-expanded={isOpen}
+                        aria-controls={`service-group-${gi}`}
                       >
                         <span className={styles.serviceGroupTitle}>{group.title}</span>
                         <span className={styles.serviceGroupArrow} aria-hidden="true">→</span>
                       </button>
-                      <div className={styles.serviceGroupBody}>
+                      <div
+                        id={`service-group-${gi}`}
+                        role="region"
+                        className={styles.serviceGroupBody}
+                      >
                         <div className={styles.serviceGroupBodyInner}>
                           <ul className={styles.serviceGroupList}>
                             {group.items.map((item, i) => (

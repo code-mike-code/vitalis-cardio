@@ -173,6 +173,7 @@ export const en = {
     accept: 'Accept',
     decline: 'Decline',
     learnMore: 'Privacy Policy',
+    ariaLabel: 'Cookie consent',
   },
   offer: {
     headingPart1: 'MODERN',
@@ -239,6 +240,7 @@ export const en = {
     goTo: 'Go to review',
     stars: 'stars out of 5',
     addReview: 'Leave a review on Google',
+    carouselRoleDesc: 'carousel',
   },
   calendar: {
     title: 'Online Registration',

@@ -273,7 +273,7 @@ export default function SocialProof() {
           className={styles.carouselWrap}
           onKeyDown={handleKeyDown}
           role="region"
-          aria-roledescription="karuzela"
+          aria-roledescription={t('socialProof.carouselRoleDesc')}
           aria-label={t('socialProof.label')}
           tabIndex={0}
         >

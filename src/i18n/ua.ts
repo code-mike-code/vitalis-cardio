@@ -173,6 +173,7 @@ export const ua = {
     accept: 'Прийняти',
     decline: 'Відхилити',
     learnMore: 'Політика конфіденційності',
+    ariaLabel: 'Згода на файли cookie',
   },
   offer: {
     headingPart1: 'СУЧАСНА',
@@ -239,6 +240,7 @@ export const ua = {
     goTo: 'Перейти до відгуку',
     stars: 'зірок з 5',
     addReview: 'Залишити відгук у Google',
+    carouselRoleDesc: 'карусель',
   },
   calendar: {
     title: 'Онлайн-реєстрація',

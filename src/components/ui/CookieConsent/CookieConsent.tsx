@@ -25,7 +25,7 @@ function CookieConsent() {
   if (!visible) return null
 
   return (
-    <div className={styles.bar} role="dialog" aria-label="Polityka cookies">
+    <div className={styles.bar} role="dialog" aria-label={t('cookies.ariaLabel')}>
       <p className={styles.message}>
         {t('cookies.message')}{' '}
         <Link to="/prywatnosc" className={styles.link}>
