@@ -389,4 +389,8 @@ export const pl = {
     heroSubtitle: 'Lekarze i terapeuci Vitalis – pasja do medycyny, wieloletnie doświadczenie i indywidualne podejście do każdego pacjenta.',
     specialistCount: 'spec.',
   },
+  notFound: {
+    message: 'Strona nie istnieje.',
+    backHome: 'Wróć na stronę główną',
+  },
 }

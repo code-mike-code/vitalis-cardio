@@ -12,6 +12,8 @@ import TermsPage from '@/pages/TermsPage'
 import PartnerNfzPage from '@/pages/PartnerNfzPage'
 import PartnerLuxmedPage from '@/pages/PartnerLuxmedPage'
 import TeamPage from '@/pages/TeamPage'
+import { ErrorBoundary } from '@components/common/ErrorBoundary/ErrorBoundary'
+import NotFoundPage from '@/pages/NotFoundPage'
 
 // Lazy-loaded: calendar code is fetched only when the user navigates to the booking page
 const BookingPage = lazy(() => import('@/pages/BookingPage'))
@@ -38,9 +40,11 @@ function App() {
           <Route
             path="/specjalizacje/:slug/umow-wizyte"
             element={
-              <Suspense fallback={<BookingFallback />}>
-                <BookingPage />
-              </Suspense>
+              <ErrorBoundary>
+                <Suspense fallback={<BookingFallback />}>
+                  <BookingPage />
+                </Suspense>
+              </ErrorBoundary>
             }
           />
           <Route path="/zespol" element={<TeamPage />} />
@@ -49,6 +53,7 @@ function App() {
           <Route path="/regulamin" element={<TermsPage />} />
           <Route path="/partnerzy/nfz" element={<PartnerNfzPage />} />
           <Route path="/partnerzy/luxmed" element={<PartnerLuxmedPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </LanguageProvider>

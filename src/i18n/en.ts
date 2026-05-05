@@ -389,4 +389,8 @@ export const en = {
     heroSubtitle: 'Vitalis doctors and therapists – a passion for medicine, years of clinical experience, and individual care for every patient.',
     specialistCount: 'spec.',
   },
+  notFound: {
+    message: 'Page not found.',
+    backHome: 'Back to home',
+  },
 }
