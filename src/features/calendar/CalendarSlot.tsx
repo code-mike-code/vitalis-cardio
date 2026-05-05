@@ -12,8 +12,6 @@ export function CalendarSlot({ iframeUrl, className = '' }: CalendarSlotProps) {
         src={iframeUrl}
         className={styles.iframe}
         title="Rejestracja online"
-        frameBorder="0"
-        scrolling="yes"
         allowFullScreen
       />
     </div>

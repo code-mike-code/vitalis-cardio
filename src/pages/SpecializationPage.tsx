@@ -97,8 +97,8 @@ function SpecializationPage() {
             <div className={styles.examinations}>
               <h2 className={styles.examinationsTitle}>{loc.conditionsLabel ?? t('specializationPage.conditionsLabel')}</h2>
               <ul className={styles.examinationsList}>
-                {loc.conditions.map((item, i) => (
-                  <li key={i} className={styles.examinationsItem}>{item}</li>
+                {loc.conditions.map((item) => (
+                  <li key={item} className={styles.examinationsItem}>{item}</li>
                 ))}
               </ul>
             </div>
@@ -108,8 +108,8 @@ function SpecializationPage() {
             <div className={styles.examinations}>
               <h2 className={styles.examinationsTitle}>{loc.examinationsLabel ?? t('specializationPage.examinationsLabel')}</h2>
               <ul className={styles.examinationsList}>
-                {loc.examinations.map((exam, i) => (
-                  <li key={i} className={styles.examinationsItem}>{exam}</li>
+                {loc.examinations.map((exam) => (
+                  <li key={exam} className={styles.examinationsItem}>{exam}</li>
                 ))}
               </ul>
             </div>
@@ -139,8 +139,8 @@ function SpecializationPage() {
                       >
                         <div className={styles.serviceGroupBodyInner}>
                           <ul className={styles.serviceGroupList}>
-                            {group.items.map((item, i) => (
-                              <li key={i} className={styles.examinationsItem}>{item}</li>
+                            {group.items.map((item) => (
+                              <li key={item} className={styles.examinationsItem}>{item}</li>
                             ))}
                           </ul>
                         </div>
