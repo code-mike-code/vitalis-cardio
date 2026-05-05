@@ -6,41 +6,27 @@ import { getTranslationKey } from '@/utils/langUtils'
 import PageLayout from '@components/layout/PageLayout/PageLayout'
 import CtaButton from '@components/common/CtaButton/CtaButton'
 import SpecialistCard from '@components/common/SpecialistCard/SpecialistCard'
-import cardiologyHero from '@/assets/img/hero/cardiology-hero.webp'
-import pediatricCardiologyHero from '@/assets/img/hero/pediatric-cardiology.webp'
-import gynecologyHero from '@/assets/img/hero/gynecology-hero.webp'
-import gastrologyHero from '@/assets/img/hero/gastrology.webp'
-import orthopedicsHero from '@/assets/img/hero/orthopedics-hero.webp'
-import neurosurgeryHero from '@/assets/img/hero/neurosurgery.webp'
-import neurologyHero from '@/assets/img/hero/neurology-hero.webp'
-import rehabilitationHero from '@/assets/img/hero/rehabilitation-hero.webp'
-import psychoHero from '@/assets/img/hero/psycho-hero.webp'
-import urologyHero from '@/assets/img/hero/urology.webp'
-import diabetologyHero from '@/assets/img/hero/diabetology.webp'
-import aestheticsHero from '@/assets/img/hero/aesthetics-hero.webp'
-import biopsyHero from '@/assets/img/hero/core-needle-biopsy.webp'
-import multiSpecHero from '@/assets/img/hero/multi-spec-hero.webp'
 import styles from './SpecializationPage.module.scss'
 
 const heroImages: Record<string, string> = {
-  'kardiologia':          cardiologyHero,
-  'kardiologia-dziecieca': pediatricCardiologyHero,
-  'ginekologia':          gynecologyHero,
-  'gastrologia':    gastrologyHero,
-  'endokrynologia':       diabetologyHero,
-  'ortopedia':            orthopedicsHero,
-  'neurochirurgia':       neurosurgeryHero,
-  'neurologia':           neurologyHero,
-  'psychiatria':          psychoHero,
-  'psychologia':          psychoHero,
-  'urologia':             urologyHero,
-  'dietetyka':            multiSpecHero,
-  'diabetologia':         diabetologyHero,
-  'medycyna-estetyczna':  aestheticsHero,
-  'biopsja':              biopsyHero,
-  'biopsja-grubogłowa':   biopsyHero,
-  'rehabilitacja':        rehabilitationHero,
-  'diagnostyka-usg':      multiSpecHero,
+  'kardiologia':          '/img/hero/cardiology-hero.webp',
+  'kardiologia-dziecieca': '/img/hero/pediatric-cardiology.webp',
+  'ginekologia':          '/img/hero/gynecology-hero.webp',
+  'gastrologia':          '/img/hero/gastrology.webp',
+  'endokrynologia':       '/img/hero/diabetology.webp',
+  'ortopedia':            '/img/hero/orthopedics-hero.webp',
+  'neurochirurgia':       '/img/hero/neurosurgery.webp',
+  'neurologia':           '/img/hero/neurology-hero.webp',
+  'psychiatria':          '/img/hero/psycho-hero.webp',
+  'psychologia':          '/img/hero/psycho-hero.webp',
+  'urologia':             '/img/hero/urology.webp',
+  'dietetyka':            '/img/hero/multi-spec-hero.webp',
+  'diabetologia':         '/img/hero/diabetology.webp',
+  'medycyna-estetyczna':  '/img/hero/aesthetics-hero.webp',
+  'biopsja':              '/img/hero/core-needle-biopsy.webp',
+  'biopsja-grubogłowa':   '/img/hero/core-needle-biopsy.webp',
+  'rehabilitacja':        '/img/hero/rehabilitation-hero.webp',
+  'diagnostyka-usg':      '/img/hero/multi-spec-hero.webp',
 }
 
 function SpecializationPage() {

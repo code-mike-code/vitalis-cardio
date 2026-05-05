@@ -4,22 +4,14 @@ import { useLanguage } from '@/hooks/useLanguage'
 import CtaButton from '@components/common/CtaButton/CtaButton'
 import { waveSpans } from '@/utils/waveSpans'
 
-import cardiologyImg    from '@/assets/img/hero/cardiology-hero.webp'
-import gynecologyImg    from '@/assets/img/hero/gynecology-hero.webp'
-import orthopedicsImg   from '@/assets/img/hero/orthopedics-hero.webp'
-import neurologyImg     from '@/assets/img/hero/neurology-hero.webp'
-import rehabilitationImg from '@/assets/img/hero/rehabilitation-hero.webp'
-import psychoImg        from '@/assets/img/hero/psycho-hero.webp'
-import aestheticsImg    from '@/assets/img/hero/aesthetics-hero.webp'
-
 const SLIDES = [
-  { slug: 'kardiologia',         bg: '#1B4965', img: cardiologyImg },
-  { slug: 'ginekologia',         bg: '#6B3A6E', img: gynecologyImg },
-  { slug: 'ortopedia',           bg: '#2D6A4F', img: orthopedicsImg },
-  { slug: 'neurologia',          bg: '#4A3580', img: neurologyImg },
-  { slug: 'rehabilitacja',       bg: '#3D5A80', img: rehabilitationImg },
-  { slug: 'psychiatria',         bg: '#7A3535', img: psychoImg },
-  { slug: 'medycyna-estetyczna', bg: '#4A5568', img: aestheticsImg },
+  { slug: 'kardiologia',         bg: '#1B4965', img: '/img/hero/cardiology-hero.webp' },
+  { slug: 'ginekologia',         bg: '#6B3A6E', img: '/img/hero/gynecology-hero.webp' },
+  { slug: 'ortopedia',           bg: '#2D6A4F', img: '/img/hero/orthopedics-hero.webp' },
+  { slug: 'neurologia',          bg: '#4A3580', img: '/img/hero/neurology-hero.webp' },
+  { slug: 'rehabilitacja',       bg: '#3D5A80', img: '/img/hero/rehabilitation-hero.webp' },
+  { slug: 'psychiatria',         bg: '#7A3535', img: '/img/hero/psycho-hero.webp' },
+  { slug: 'medycyna-estetyczna', bg: '#4A5568', img: '/img/hero/aesthetics-hero.webp' },
 ] as const
 
 const AUTOPLAY_MS = 3500
