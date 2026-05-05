@@ -109,7 +109,7 @@ const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
               style={{ border: 0 }}
               loading="lazy"
               title={t('common.mapDirections')}
-              sandbox="allow-scripts allow-same-origin"
+              sandbox="allow-scripts"
             />
             <a
               href={MAPS_LINK}

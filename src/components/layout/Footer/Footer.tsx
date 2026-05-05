@@ -51,7 +51,8 @@ function Footer() {
                 height="100%"
                 style={{ border: 0 }}
                 loading="lazy"
-                title="Mapa"
+                title={t('common.mapDirections')}
+                sandbox="allow-scripts"
               />
               <a
                 href={MAPS_LINK}
