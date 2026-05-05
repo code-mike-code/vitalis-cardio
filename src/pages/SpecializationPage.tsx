@@ -44,16 +44,16 @@ const heroImages: Record<string, string> = {
 
 function SpecializationPage() {
   const { slug } = useParams<{ slug: string }>()
-  const specialization = specializations.find(s => s.slug === slug)
+  const { t, language } = useLanguage()
+  const [openGroups, setOpenGroups] = useState<Set<number>>(new Set())
 
+  const specialization = specializations.find(s => s.slug === slug)
   if (!specialization) return <Navigate to="/specjalizacje" replace />
 
-  const { t, language } = useLanguage()
   const langKey = language as 'en' | 'ua'
   const loc = { ...specialization, ...(specialization.translations?.[langKey] ?? {}) }
   const pageSpecialists = specialists.filter(s => s.specializationSlug === slug)
   const heroImage = heroImages[specialization.slug]
-  const [openGroups, setOpenGroups] = useState<Set<number>>(new Set())
 
   function toggleGroup(idx: number) {
     setOpenGroups(prev => {
