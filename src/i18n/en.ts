@@ -265,6 +265,7 @@ export const en = {
     unavailableTextBefore: 'To book an appointment at the',
     unavailableTextAfter: ' clinic, please contact our reception by phone or in person.',
     unavailableHours: 'Reception open: Mon–Fri 10:00–18:00',
+    errorFallback: 'Failed to load the booking page. Please refresh.',
   },
   partnerNfz: {
     heroTitle: 'Vitalis Clinic and the National Health Fund',

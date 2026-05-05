@@ -27,6 +27,15 @@ function BookingFallback() {
   )
 }
 
+function BookingErrorFallback() {
+  const { t } = useLanguage()
+  return (
+    <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <p style={{ color: '#8A8A8A', fontSize: '14px' }}>{t('bookingPage.errorFallback')}</p>
+    </div>
+  )
+}
+
 function App() {
   return (
     <LanguageProvider>
@@ -40,7 +49,7 @@ function App() {
           <Route
             path="/specjalizacje/:slug/umow-wizyte"
             element={
-              <ErrorBoundary>
+              <ErrorBoundary fallback={<BookingErrorFallback />}>
                 <Suspense fallback={<BookingFallback />}>
                   <BookingPage />
                 </Suspense>

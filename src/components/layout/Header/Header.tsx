@@ -5,6 +5,7 @@ import Logo from '@components/common/Logo/Logo'
 import { LanguageSwitcher } from '@components/common/LanguageSwitcher/LanguageSwitcher'
 import CtaButton from '@components/common/CtaButton/CtaButton'
 import { useLanguage } from '@/hooks/useLanguage'
+import { MAPS_LINK } from '@/data/mapsConfig'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -36,7 +37,7 @@ const Header = () => {
             {!isMenuOpen && (
               <div className={styles.desktopAddress}>
                 <a
-                  href="https://maps.google.com/?q=ul.+Kopernika+25,+32-540+Trzebinia"
+                  href={MAPS_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.addressLink}

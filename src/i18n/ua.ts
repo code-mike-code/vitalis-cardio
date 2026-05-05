@@ -265,6 +265,7 @@ export const ua = {
     unavailableTextBefore: 'Щоб записатися до',
     unavailableTextAfter: ', зверніться до реєстратури телефоном або особисто.',
     unavailableHours: 'Реєстратура: Пн–Пт 10:00–18:00',
+    errorFallback: 'Не вдалося завантажити сторінку бронювання. Оновіть сторінку.',
   },
   partnerNfz: {
     heroTitle: 'Клініка Vitalis і Національний фонд здоров\'я',

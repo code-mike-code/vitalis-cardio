@@ -265,6 +265,7 @@ export const pl = {
     unavailableTextBefore: 'Aby umówić wizytę w poradni',
     unavailableTextAfter: ', skontaktuj się z rejestracją telefonicznie lub osobiście.',
     unavailableHours: 'Rejestracja czynna: Pon–Pt 10:00–18:00',
+    errorFallback: 'Nie udało się załadować strony rezerwacji. Odśwież stronę.',
   },
   partnerNfz: {
     heroTitle: 'Poradnia Vitalis w Narodowym Funduszu Zdrowia',
