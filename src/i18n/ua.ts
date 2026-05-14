@@ -167,6 +167,10 @@ export const ua = {
     changeLanguage: 'Змінити мову',
     brandAlt: 'Клініка Vitalis',
     loadingBooking: 'Завантаження сторінки бронювання…',
+    skipToContent: 'Перейти до основного вмісту',
+    pauseCarousel: 'Зупинити показ слайдів',
+    playCarousel: 'Відновити показ слайдів',
+    opensNewTab: '(відкривається в новій вкладці)',
   },
   cookies: {
     message: 'Цей сайт використовує файли cookie та Google Analytics для аналізу трафіку та покращення якості послуг. Ви можете прийняти або відхилити аналітичні cookie.',

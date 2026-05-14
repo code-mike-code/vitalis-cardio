@@ -198,6 +198,41 @@ $hero-text-small-fs:    clamp(0.75rem, 1.6vw, 1.54rem);
 .progressBar { display: none; }
 .progressFill { display: none; }
 
+// ── Pause / play button ───────────────────────────────────────────
+.pauseBtn {
+  position: absolute;
+  bottom: $spacing-xl;
+  right: $spacing-xl;
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1;
+  transition: background $transition-fast, border-color $transition-fast;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+  }
+
+  @include respond-to('tablet') {
+    bottom: $spacing-md;
+    right: $spacing-md;
+  }
+}
+
 // ── Main heading h1 ───────────────────────────────────────────────
 .container {
   width: 100%;

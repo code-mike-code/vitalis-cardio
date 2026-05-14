@@ -66,7 +66,10 @@ function Offer() {
 
         {/* ── Heading ──────────────────────────────────────────────── */}
         <div className={styles.headingWrap} ref={headingRef}>
-          <h2 className={styles.heading}>
+          <h2
+            className={styles.heading}
+            aria-label={`${t('offer.headingPart1')} ${t('offer.headingPart2')} ${t('offer.headingPart3')} ${t('offer.headingPart4')} ${t('offer.headingPart5')}`}
+          >
             <span className={`${styles.headingRow} ${styles.row1}`}>
               <span className={styles.textLarge}>
                 {headingVisible && waveSpans(t('offer.headingPart1'), 0, styles.waveChar, styles.waveWrap)}
@@ -216,7 +219,7 @@ function Offer() {
                                   {section.slug ? (
                                     <Link
                                       to={`/specjalizacje/${section.slug}/umow-wizyte`}
-                                      aria-label={`Umów wizytę: ${item.name}`}
+                                      aria-label={`${t('common.bookAppointment')}: ${item.name}`}
                                     >
                                       <span className={styles.priceName}>{item.name}</span>
                                       <span className={styles.priceValue}>{item.price}</span>

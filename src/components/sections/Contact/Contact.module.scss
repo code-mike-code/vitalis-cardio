@@ -150,9 +150,10 @@
     font-family: inherit;
 
     &:focus {
-      outline: none;
+      outline: 2px solid $color-primary;
+      outline-offset: 0px;
       border-color: $color-primary;
-      box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
+      box-shadow: 0 0 0 3px rgba($color-primary, 0.15);
     }
 
     &::placeholder {

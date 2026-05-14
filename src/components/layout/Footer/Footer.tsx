@@ -40,8 +40,9 @@ function Footer() {
               href={MAPS_LINK}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`${t('nav.addressValue')} ${t('common.opensNewTab')}`}
             >
-              📍 {t('nav.addressValue')}
+              <span aria-hidden="true">📍</span>{' '}{t('nav.addressValue')}
             </a>
             <div className={styles.mapThumb}>
               <iframe
@@ -114,7 +115,7 @@ function Footer() {
           </div>
           <div className={styles.col}>
             <h3 className={styles.colTitle}>{t('nav.siteMenu')}</h3>
-            <nav className={styles.siteNav}>
+            <nav className={styles.siteNav} aria-label={t('nav.siteMenu')}>
               <Link to="/#about">{t('nav.linkAbout')}</Link>
               <Link to="/#offer">{t('nav.linkPricing')}</Link>
               <Link to="/#team">{t('nav.linkTeam')}</Link>

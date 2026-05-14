@@ -26,8 +26,15 @@ export function LanguageSwitcher({ variant }: LanguageSwitcherProps = {}) {
         setExpanded(false)
       }
     }
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === 'Escape') setExpanded(false)
+    }
     document.addEventListener('mousedown', handleClick)
-    return () => document.removeEventListener('mousedown', handleClick)
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('mousedown', handleClick)
+      document.removeEventListener('keydown', handleKeyDown)
+    }
   }, [expanded])
 
   const inactiveLangs = LANGUAGES.filter(l => l.code !== language)

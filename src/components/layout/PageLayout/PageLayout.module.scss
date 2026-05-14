@@ -4,6 +4,27 @@
   flex-direction: column;
 }
 
+.skipLink {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 9999;
+  padding: 12px 24px;
+  background: #C41E3A;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+  transition: top 0.1s;
+
+  &:focus {
+    top: 0;
+    outline: 3px solid #ffffff;
+    outline-offset: -3px;
+  }
+}
+
 .main {
   flex: 1;
 }

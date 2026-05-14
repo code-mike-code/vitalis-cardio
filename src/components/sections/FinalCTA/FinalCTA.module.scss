@@ -58,6 +58,7 @@ $fcta-text-italic-fs: clamp(1rem, 2vw, 2.2rem);
   line-height: 1.0;
   text-transform: uppercase;
   color: $color-white;
+  white-space: nowrap;
 }
 
 .textItalic {
@@ -69,6 +70,7 @@ $fcta-text-italic-fs: clamp(1rem, 2vw, 2.2rem);
   line-height: 1.0;
   text-transform: uppercase;
   color: $color-white;
+  white-space: nowrap;
 }
 
 .waveWrap {

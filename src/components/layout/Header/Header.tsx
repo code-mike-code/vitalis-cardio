@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import styles from './Header.module.scss'
 import NavigationMenu from './NavigationMenu'
 import Logo from '@components/common/Logo/Logo'
@@ -10,10 +10,25 @@ import { MAPS_LINK } from '@/data/mapsConfig'
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { t } = useLanguage()
+  const hamburgerRef = useRef<HTMLButtonElement>(null)
+  const menuRef = useRef<HTMLDivElement>(null)
+  const wasOpen = useRef(false)
 
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
+  }, [isMenuOpen])
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      wasOpen.current = true
+      const firstFocusable = menuRef.current?.querySelector<HTMLElement>(
+        'a[href], button:not([disabled])'
+      )
+      firstFocusable?.focus()
+    } else if (wasOpen.current) {
+      hamburgerRef.current?.focus()
+    }
   }, [isMenuOpen])
 
   return (
@@ -23,6 +38,7 @@ const Header = () => {
           {/* LEFT: Hamburger + Address */}
           <div className={styles.leftSection}>
             <button
+              ref={hamburgerRef}
               className={styles.hamburger}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? t('common.close') : t('common.menu')}
@@ -58,7 +74,7 @@ const Header = () => {
             <LanguageSwitcher />
 
             <div className={styles.phoneWrapper}>
-              <span className={styles.pulseDot} />
+              <span className={styles.pulseDot} aria-hidden="true" />
               <a href="tel:+48322109866" className={styles.phone}>
                 32 210 98 66
               </a>
@@ -78,7 +94,7 @@ const Header = () => {
         </div>
       </header>
 
-      <NavigationMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+      <NavigationMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} menuRef={menuRef} />
     </>
   )
 }

@@ -167,6 +167,10 @@ export const en = {
     changeLanguage: 'Switch language',
     brandAlt: 'Vitalis Clinic',
     loadingBooking: 'Loading booking page…',
+    skipToContent: 'Skip to main content',
+    pauseCarousel: 'Pause slideshow',
+    playCarousel: 'Play slideshow',
+    opensNewTab: '(opens in new tab)',
   },
   cookies: {
     message: 'This website uses cookies and Google Analytics to analyse traffic and improve service quality. You can accept or decline analytical cookies.',

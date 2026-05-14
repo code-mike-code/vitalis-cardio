@@ -11,7 +11,10 @@ function FinalCTA() {
       <div className={styles.container}>
         {/* Left column – animated heading */}
         <div className={styles.headingCol}>
-          <h2 className={styles.heading}>
+          <h2
+            className={styles.heading}
+            aria-label={`${t('finalCta.headingPart1')} ${t('finalCta.headingPart2')} ${t('finalCta.headingPart3')}`}
+          >
             <span className={`${styles.headingRow} ${styles.row1}`}>
               <span className={styles.textLarge}>
                 {waveSpans(t('finalCta.headingPart1'), 0.1, styles.waveChar, styles.waveWrap, 0.05)}

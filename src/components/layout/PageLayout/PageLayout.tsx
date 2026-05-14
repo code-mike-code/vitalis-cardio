@@ -1,6 +1,7 @@
 import { useRef, useEffect, type ReactNode } from 'react'
 import Header from '@components/layout/Header/Header'
 import Footer from '@components/layout/Footer/Footer'
+import { useLanguage } from '@/hooks/useLanguage'
 import styles from './PageLayout.module.scss'
 
 interface Props {
@@ -9,6 +10,7 @@ interface Props {
 }
 
 function PageLayout({ children, stickyStack }: Props) {
+  const { t } = useLanguage()
   const mainRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -38,8 +40,9 @@ function PageLayout({ children, stickyStack }: Props) {
 
   return (
     <div className={styles.layout}>
+      <a href="#main-content" className={styles.skipLink}>{t('common.skipToContent')}</a>
       <Header />
-      <main ref={mainRef} className={styles.main}>{children}</main>
+      <main id="main-content" ref={mainRef} className={styles.main}>{children}</main>
       <Footer />
     </div>
   )

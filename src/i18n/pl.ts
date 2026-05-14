@@ -167,6 +167,10 @@ export const pl = {
     changeLanguage: 'Zmień język',
     brandAlt: 'Klinika Vitalis',
     loadingBooking: 'Ładowanie strony rezerwacji…',
+    skipToContent: 'Przejdź do treści głównej',
+    pauseCarousel: 'Zatrzymaj pokaz slajdów',
+    playCarousel: 'Wznów pokaz slajdów',
+    opensNewTab: '(otwiera w nowej karcie)',
   },
   cookies: {
     message: 'Ta strona używa plików cookie i Google Analytics w celu analizy ruchu oraz poprawy jakości usług. Możesz zaakceptować lub odrzucić pliki cookie analityczne.',

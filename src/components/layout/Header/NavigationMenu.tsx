@@ -12,9 +12,10 @@ interface Props {
   isOpen: boolean
   onClose: () => void
   isFooter?: boolean
+  menuRef?: React.RefObject<HTMLDivElement>
 }
 
-const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
+const NavigationMenu = ({ isOpen, onClose, isFooter = false, menuRef }: Props) => {
   const { t, language } = useLanguage()
   const langKey = getTranslationKey(language)
   const location = useLocation()
@@ -35,12 +36,14 @@ const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
   return (
     <div
       id="navigation-menu"
+      ref={menuRef}
       className={`${styles.menuOverlay} ${isOpen ? styles.active : ''} ${isFooter ? styles.footerTheme : ''}`}
+      aria-hidden={!isOpen}
     >
 
       {/* ── MOBILE LAYOUT (order: siteNav → phones → CTA → specGrid) ── */}
       <div className={styles.mobileMenu}>
-        <nav className={styles.mobileSiteNav}>
+        <nav className={styles.mobileSiteNav} aria-label={t('nav.siteMenu')}>
           <a href="/#about" onClick={e => handleHashLink(e, 'about')}>{t('nav.linkAbout')}</a>
           <a href="/#pricing" onClick={e => handleHashLink(e, 'pricing')}>{t('nav.linkPricing')}</a>
           <Link to="/zespol" onClick={onClose}>{t('nav.linkTeam')}</Link>
@@ -99,8 +102,9 @@ const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
             href={MAPS_LINK}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`${t('nav.addressValue')} ${t('common.opensNewTab')}`}
           >
-            📍 {t('nav.addressValue')}
+            <span aria-hidden="true">📍</span>{' '}{t('nav.addressValue')}
           </a>
           <div className={styles.mapThumb}>
             <iframe
@@ -179,7 +183,7 @@ const NavigationMenu = ({ isOpen, onClose, isFooter = false }: Props) => {
         </div>
         <div className={styles.col}>
           <h2>{t('nav.siteMenu')}</h2>
-          <nav className={styles.siteNav}>
+          <nav className={styles.siteNav} aria-label={t('nav.siteMenu')}>
             <a href="/#about" onClick={e => handleHashLink(e, 'about')}>{t('nav.linkAbout')}</a>
             <a href="/#pricing" onClick={e => handleHashLink(e, 'pricing')}>{t('nav.linkPricing')}</a>
             <Link to="/zespol" onClick={onClose}>{t('nav.linkTeam')}</Link>

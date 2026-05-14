@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import logoImg from '@/assets/logo/logo-vitalis-no-bg.svg'
 import { useLanguage } from '@/hooks/useLanguage'
 import styles from './Logo.module.scss'
@@ -18,7 +19,7 @@ function Logo({ size = 'md', className = '', showText = true }: LogoProps) {
   const classes = [styles.logo, styles[size], className].filter(Boolean).join(' ')
 
   return (
-    <a href="/" className={classes}>
+    <Link to="/" className={classes}>
       <div className={styles.logoWrapper}>
         <img src={logoImg} alt={showText ? t('common.brandAlt') : ''} className={styles.logoImg} />
 
@@ -65,7 +66,7 @@ function Logo({ size = 'md', className = '', showText = true }: LogoProps) {
           </rect>
         </svg>
       </div>
-    </a>
+    </Link>
   )
 }
 

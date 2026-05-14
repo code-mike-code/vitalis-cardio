@@ -96,6 +96,15 @@ function Hero() {
           ))}
         </div>
 
+        <button
+          className={styles.pauseBtn}
+          onClick={() => setIsPaused(p => !p)}
+          aria-label={isPaused ? t('common.playCarousel') : t('common.pauseCarousel')}
+          aria-pressed={isPaused}
+        >
+          <span aria-hidden="true">{isPaused ? '▶' : '⏸'}</span>
+        </button>
+
         <div className={styles.dots} role="tablist" aria-label="Slajdy karuzeli">
           {SLIDES.map((slide, i) => (
             <button
@@ -121,7 +130,10 @@ function Hero() {
       {/* Main heading — separate stack section, z-index: 2 */}
       <section className={styles.heroHeading}>
         <div className={styles.container}>
-          <h1 className={styles.heading}>
+          <h1
+            className={styles.heading}
+            aria-label={`${t('hero.headingPart1')} ${t('hero.headingPart2')} ${t('hero.headingPart3')} ${t('hero.headingPart4')} ${t('hero.headingPart5')} ${t('hero.headingPart6')}`}
+          >
             <span className={`${styles.headingRow} ${styles.row1}`}>
               <span className={styles.textLarge}>
                 {waveSpans(t('hero.headingPart1'), 0.15, styles.waveChar, styles.waveWrap, 0.05)}
