@@ -370,6 +370,7 @@ export const ua = {
     mapSoon: 'Карта незабаром буде додана',
     formTitle: 'Форма зворотного зв\'язку',
     formSubtitle: 'Заповніть форму нижче, і наша команда зв\'яжеться з вами протягом 24 годин.',
+    requiredNote: 'Обов\'язкові поля',
     nameLabel: 'Ім\'я та прізвище',
     namePlaceholder: 'Іван Коваленко',
     phoneInputLabel: 'Телефон',

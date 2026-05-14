@@ -370,6 +370,7 @@ export const en = {
     mapSoon: 'Map coming soon',
     formTitle: 'Contact Form',
     formSubtitle: 'Fill in the form below and our team will contact you within 24 hours.',
+    requiredNote: 'Required fields',
     nameLabel: 'Full Name',
     namePlaceholder: 'John Smith',
     phoneInputLabel: 'Phone',

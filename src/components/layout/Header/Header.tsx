@@ -20,6 +20,15 @@ const Header = () => {
   }, [isMenuOpen])
 
   useEffect(() => {
+    if (!isMenuOpen) return
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === 'Escape') setIsMenuOpen(false)
+    }
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
+  }, [isMenuOpen])
+
+  useEffect(() => {
     if (isMenuOpen) {
       wasOpen.current = true
       const firstFocusable = menuRef.current?.querySelector<HTMLElement>(

@@ -39,6 +39,7 @@ const NavigationMenu = ({ isOpen, onClose, isFooter = false, menuRef }: Props) =
       ref={menuRef}
       className={`${styles.menuOverlay} ${isOpen ? styles.active : ''} ${isFooter ? styles.footerTheme : ''}`}
       aria-hidden={!isOpen}
+      inert={isOpen ? undefined : ''}
     >
 
       {/* ── MOBILE LAYOUT (order: siteNav → phones → CTA → specGrid) ── */}

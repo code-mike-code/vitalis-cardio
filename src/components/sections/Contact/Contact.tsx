@@ -69,19 +69,20 @@ function Contact() {
           <form className={styles.form} onSubmit={e => e.preventDefault()}>
             <h3 className={styles.formTitle}>{t('contact.formTitle')}</h3>
             <p className={styles.formSubtitle}>{t('contact.formSubtitle')}</p>
+            <p className={styles.requiredNote}><span aria-hidden="true">* </span>{t('contact.requiredNote')}</p>
             <div className={styles.formRow}>
               <div className={styles.formGroup}>
-                <label htmlFor="name">{t('contact.nameLabel')}</label>
-                <input id="name" type="text" placeholder={t('contact.namePlaceholder')} required aria-required="true" />
+                <label htmlFor="name">{t('contact.nameLabel')}<span className={styles.required} aria-hidden="true"> *</span></label>
+                <input id="name" type="text" placeholder={t('contact.namePlaceholder')} required aria-required="true" autoComplete="name" />
               </div>
               <div className={styles.formGroup}>
                 <label htmlFor="phone">{t('contact.phoneInputLabel')}</label>
-                <input id="phone" type="tel" placeholder={t('contact.phonePlaceholder')} aria-required="false" />
+                <input id="phone" type="tel" placeholder={t('contact.phonePlaceholder')} aria-required="false" autoComplete="tel" />
               </div>
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="email">{t('contact.emailInputLabel')}</label>
-              <input id="email" type="email" placeholder={t('contact.emailPlaceholder')} required aria-required="true" />
+              <label htmlFor="email">{t('contact.emailInputLabel')}<span className={styles.required} aria-hidden="true"> *</span></label>
+              <input id="email" type="email" placeholder={t('contact.emailPlaceholder')} required aria-required="true" autoComplete="email" />
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="specialty">{t('contact.clinicLabel')}</label>

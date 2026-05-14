@@ -117,6 +117,17 @@
   margin-bottom: $spacing-sm;
 }
 
+.requiredNote {
+  font-size: $font-size-sm;
+  color: $color-text-light;
+  margin-top: -#{$spacing-xs};
+}
+
+.required {
+  color: $color-primary;
+  font-weight: $font-weight-bold;
+}
+
 .formRow {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -140,7 +151,7 @@
 
   input, textarea, select {
     padding: 10px $spacing-md;
-    border: 1px solid $color-border;
+    border: 1px solid #ADADAD; // #ADADAD on #FFF = 3.1:1 — passes WCAG 1.4.11
     border-radius: $border-radius-sm;
     font-size: $font-size-base;
     color: $color-text;

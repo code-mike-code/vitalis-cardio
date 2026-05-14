@@ -370,6 +370,7 @@ export const pl = {
     mapSoon: 'Mapa zostanie dodana wkrótce',
     formTitle: 'Formularz kontaktowy',
     formSubtitle: 'Wypełnij poniższy formularz, a nasz zespół skontaktuje się z Tobą w ciągu 24h.',
+    requiredNote: 'Pola wymagane',
     nameLabel: 'Imię i nazwisko',
     namePlaceholder: 'Jan Kowalski',
     phoneInputLabel: 'Telefon',
