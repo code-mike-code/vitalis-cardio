@@ -67,6 +67,12 @@ $h-cta-py:        clamp(5px, 0.7vw, #{$spacing-sm});
   width: 55px;
   height: 40px;
   flex-shrink: 0;
+  border-radius: $border-radius-sm;
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 3px;
+  }
 }
 
 .hamburgerLine {

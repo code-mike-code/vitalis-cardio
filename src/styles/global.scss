@@ -3,6 +3,21 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
+// Global focus ring — applies to any element without its own :focus-visible rule
+:focus-visible {
+  outline: 2px solid $color-primary;
+  outline-offset: 3px;
+}
+
+// Body-text links must be visually distinguishable from surrounding text (WCAG 1.4.1)
+p a,
+li a,
+td a,
+dd a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .container {
   @include container;
 }
