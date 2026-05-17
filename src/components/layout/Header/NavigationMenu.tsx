@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import styles from './NavigationMenu.module.scss'
 import { useLanguage } from '@/hooks/useLanguage'
@@ -20,6 +21,36 @@ const NavigationMenu = ({ isOpen, onClose, isFooter = false, menuRef }: Props) =
   const langKey = getTranslationKey(language)
   const location = useLocation()
   const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!isOpen) return
+    const menuEl = document.getElementById('navigation-menu')
+    if (!menuEl) return
+    const focusable = Array.from(
+      menuEl.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )
+    )
+    if (focusable.length === 0) return
+    const first = focusable[0]
+    const last = focusable[focusable.length - 1]
+    function handleTab(e: KeyboardEvent) {
+      if (e.key !== 'Tab') return
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault()
+          last.focus()
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault()
+          first.focus()
+        }
+      }
+    }
+    document.addEventListener('keydown', handleTab)
+    return () => document.removeEventListener('keydown', handleTab)
+  }, [isOpen])
 
   function handleHashLink(e: React.MouseEvent<HTMLAnchorElement>, hash: string) {
     e.preventDefault()

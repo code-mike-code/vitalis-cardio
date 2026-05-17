@@ -96,6 +96,10 @@ function Hero() {
           ))}
         </div>
 
+        <span className="srOnly" aria-live="polite" aria-atomic="true">
+          {t(`hero.carousel.slide${current + 1}.name`)}
+        </span>
+
         <button
           className={styles.pauseBtn}
           onClick={() => setIsPaused(p => !p)}

@@ -364,6 +364,10 @@ export default function SocialProof() {
           </button>
         </div>
 
+        <span className="srOnly" aria-live="polite" aria-atomic="true">
+          {reviews[realIndex]?.author}
+        </span>
+
         {/* Dots */}
         <div className={styles.dots} role="tablist" aria-label={t('socialProof.label')}>
           {reviews.map((_, di) => (
