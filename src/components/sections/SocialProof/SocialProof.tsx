@@ -15,6 +15,14 @@ import { waveSpans } from '@/utils/waveSpans'
 
 // ── Helpers ───────────────────────────────────────────────────────
 
+const dateCache: Record<string, Record<string, string>> = {}
+
+function getFormattedDate(iso: string, lang: string): string {
+  if (!dateCache[lang]) dateCache[lang] = {}
+  if (!dateCache[lang][iso]) dateCache[lang][iso] = formatDate(iso, lang)
+  return dateCache[lang][iso]
+}
+
 function StarIcon({ filled }: { filled: boolean }) {
   return (
     <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" className={styles.starSvg}>
@@ -335,7 +343,7 @@ export default function SocialProof() {
 
                         <div className={styles.authorInfo}>
                           <span className={styles.authorName}>{review.author}</span>
-                          <span className={styles.authorDate}>{formatDate(review.date, language)}</span>
+                          <span className={styles.authorDate}>{getFormattedDate(review.date, language)}</span>
                         </div>
 
                         <div

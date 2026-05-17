@@ -1,31 +1,33 @@
 import { useLanguage } from '@/hooks/useLanguage'
+import { useScrollReveal } from '@/hooks/useScrollReveal'
 import CtaButton from '@components/common/CtaButton/CtaButton'
 import styles from './FinalCTA.module.scss'
 import { waveSpans } from '@/utils/waveSpans'
 
 function FinalCTA() {
   const { t } = useLanguage()
+  const { ref: headingRef, isVisible: headingVisible } = useScrollReveal<HTMLDivElement>(0.2)
 
   return (
     <section className={styles.finalCta} id="final-cta">
       <div className={styles.container}>
         {/* Left column – animated heading */}
-        <div className={styles.headingCol}>
+        <div className={styles.headingCol} ref={headingRef}>
           <h2
             className={styles.heading}
             aria-label={`${t('finalCta.headingPart1')} ${t('finalCta.headingPart2')} ${t('finalCta.headingPart3')}`}
           >
             <span className={`${styles.headingRow} ${styles.row1}`}>
               <span className={styles.textLarge}>
-                {waveSpans(t('finalCta.headingPart1'), 0.1, styles.waveChar, styles.waveWrap, 0.05)}
+                {headingVisible && waveSpans(t('finalCta.headingPart1'), 0.1, styles.waveChar, styles.waveWrap, 0.05)}
               </span>
             </span>
             <span className={`${styles.headingRow} ${styles.row2}`}>
               <span className={styles.textItalic}>
-                {waveSpans(t('finalCta.headingPart2'), 0.4, styles.waveChar, styles.waveWrap, 0.05)}
+                {headingVisible && waveSpans(t('finalCta.headingPart2'), 0.4, styles.waveChar, styles.waveWrap, 0.05)}
               </span>
               <span className={styles.textLarge}>
-                {waveSpans(t('finalCta.headingPart3'), 0.5, styles.waveChar, styles.waveWrap, 0.05)}
+                {headingVisible && waveSpans(t('finalCta.headingPart3'), 0.5, styles.waveChar, styles.waveWrap, 0.05)}
               </span>
             </span>
           </h2>

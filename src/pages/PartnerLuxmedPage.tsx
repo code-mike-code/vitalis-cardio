@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useLanguage } from '@/hooks/useLanguage'
 import PageLayout from '@components/layout/PageLayout/PageLayout'
 import styles from './PartnerLuxmedPage.module.scss'
-import logoLuxmed from '@/assets/logo/logo-luxmed.png'
+import logoLuxmed from '@/assets/logo/logo-luxmed.webp'
 
 const LUXMED_META = [
   { slug: 'kardiologia', itemCount: 5 },

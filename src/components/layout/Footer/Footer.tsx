@@ -3,7 +3,7 @@ import { useLanguage } from '@/hooks/useLanguage'
 import { specializations } from '@/data'
 import styles from './Footer.module.scss'
 import logoNfz from '@/assets/logo/logo-nfz.webp'
-import logoLuxmed from '@/assets/logo/logo-luxmed.png'
+import logoLuxmed from '@/assets/logo/logo-luxmed.webp'
 import { MAPS_LINK, MAPS_EMBED } from '@/data/mapsConfig'
 import { getTranslationKey } from '@/utils/langUtils'
 

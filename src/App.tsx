@@ -4,19 +4,19 @@ import { LanguageProvider, useLanguage } from '@/hooks/useLanguage'
 import ScrollToHash from '@components/ui/ScrollToHash'
 import CookieConsent from '@components/ui/CookieConsent/CookieConsent'
 import HomePage from '@/pages/HomePage'
-import SpecializationsPage from '@/pages/SpecializationsPage'
-import SpecializationPage from '@/pages/SpecializationPage'
 import RodoPage from '@/pages/RodoPage'
 import PrivacyPage from '@/pages/PrivacyPage'
 import TermsPage from '@/pages/TermsPage'
 import PartnerNfzPage from '@/pages/PartnerNfzPage'
 import PartnerLuxmedPage from '@/pages/PartnerLuxmedPage'
-import TeamPage from '@/pages/TeamPage'
 import { ErrorBoundary } from '@components/common/ErrorBoundary/ErrorBoundary'
 import NotFoundPage from '@/pages/NotFoundPage'
 
-// Lazy-loaded: calendar code is fetched only when the user navigates to the booking page
-const BookingPage = lazy(() => import('@/pages/BookingPage'))
+// Lazy-loaded: fetched only when user navigates to these routes
+const BookingPage        = lazy(() => import('@/pages/BookingPage'))
+const SpecializationsPage = lazy(() => import('@/pages/SpecializationsPage'))
+const SpecializationPage  = lazy(() => import('@/pages/SpecializationPage'))
+const TeamPage            = lazy(() => import('@/pages/TeamPage'))
 
 function BookingFallback() {
   const { t } = useLanguage()
@@ -44,8 +44,8 @@ function App() {
         <CookieConsent />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/specjalizacje" element={<SpecializationsPage />} />
-          <Route path="/specjalizacje/:slug" element={<SpecializationPage />} />
+          <Route path="/specjalizacje" element={<Suspense fallback={null}><SpecializationsPage /></Suspense>} />
+          <Route path="/specjalizacje/:slug" element={<Suspense fallback={null}><SpecializationPage /></Suspense>} />
           <Route
             path="/specjalizacje/:slug/umow-wizyte"
             element={
@@ -56,7 +56,7 @@ function App() {
               </ErrorBoundary>
             }
           />
-          <Route path="/zespol" element={<TeamPage />} />
+          <Route path="/zespol" element={<Suspense fallback={null}><TeamPage /></Suspense>} />
           <Route path="/rodo" element={<RodoPage />} />
           <Route path="/prywatnosc" element={<PrivacyPage />} />
           <Route path="/regulamin" element={<TermsPage />} />

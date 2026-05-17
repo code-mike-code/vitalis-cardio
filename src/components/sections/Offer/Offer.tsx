@@ -1,11 +1,11 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useRef, useEffect } from 'react'
 import { useScrollReveal } from '@/hooks/useScrollReveal'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '@/hooks/useLanguage'
 import { pricing } from '@/data'
 import CtaButton from '@components/common/CtaButton/CtaButton'
 import logoNfz from '@/assets/logo/logo-nfz.webp'
-import logoLuxmed from '@/assets/logo/logo-luxmed.png'
+import logoLuxmed from '@/assets/logo/logo-luxmed.webp'
 import offerImg1 from '@/assets/img/offer-1.webp'
 import offerImg2 from '@/assets/img/offer-2.webp'
 import offerImg3 from '@/assets/img/offer-3.webp'
@@ -50,6 +50,32 @@ function Offer() {
   const [openIds, setOpenIds] = useState<Set<string>>(new Set())
   const [hoveredKey, setHoveredKey] = useState<string | null>(null)
   const { ref: headingRef, isVisible: headingVisible } = useScrollReveal<HTMLDivElement>(0.2)
+
+  const pricingVideoRef   = useRef<HTMLVideoElement>(null)
+  const pricingSectionRef = useRef<HTMLDivElement>(null)
+  const [pricingVideoLoaded, setPricingVideoLoaded] = useState(false)
+
+  useEffect(() => {
+    const section = pricingSectionRef.current
+    const video   = pricingVideoRef.current
+    if (!section) return
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        if (video && !pricingVideoLoaded) {
+          video.load()
+          video.play().catch(() => {})
+          setPricingVideoLoaded(true)
+        } else if (video && pricingVideoLoaded) {
+          video.play().catch(() => {})
+        }
+      } else {
+        video?.pause()
+      }
+    }, { threshold: 0.1 })
+    obs.observe(section)
+    return () => obs.disconnect()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pricingVideoLoaded])
 
   function toggleAccordion(key: string) {
     setOpenIds(prev => {
@@ -133,11 +159,11 @@ function Offer() {
         </div>
 
         {/* ── Pricing ───────────────────────────────────────────────── */}
-        <div className={styles.pricingSection} id="pricing">
+        <div className={styles.pricingSection} id="pricing" ref={pricingSectionRef}>
           {/* Video background */}
           <video
+            ref={pricingVideoRef}
             className={styles.pricingVideo}
-            autoPlay
             muted
             loop
             playsInline

@@ -1,20 +1,69 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, memo } from 'react'
 import styles from './Hero.module.scss'
 import { useLanguage } from '@/hooks/useLanguage'
 import CtaButton from '@components/common/CtaButton/CtaButton'
 import { waveSpans } from '@/utils/waveSpans'
+import imgCardiology     from '@/assets/img/hero/cardiology-hero.webp'
+import imgGynecology     from '@/assets/img/hero/gynecology-hero.webp'
+import imgOrthopedics    from '@/assets/img/hero/orthopedics-hero.webp'
+import imgNeurology      from '@/assets/img/hero/neurology-hero.webp'
+import imgRehabilitation from '@/assets/img/hero/rehabilitation-hero.webp'
+import imgPsycho         from '@/assets/img/hero/psycho-hero.webp'
+import imgAesthetics     from '@/assets/img/hero/aesthetics-hero.webp'
 
 const SLIDES = [
-  { slug: 'kardiologia',         bg: '#1B4965', img: '/img/hero/cardiology-hero.webp' },
-  { slug: 'ginekologia',         bg: '#6B3A6E', img: '/img/hero/gynecology-hero.webp' },
-  { slug: 'ortopedia',           bg: '#2D6A4F', img: '/img/hero/orthopedics-hero.webp' },
-  { slug: 'neurologia',          bg: '#4A3580', img: '/img/hero/neurology-hero.webp' },
-  { slug: 'rehabilitacja',       bg: '#3D5A80', img: '/img/hero/rehabilitation-hero.webp' },
-  { slug: 'psychiatria',         bg: '#7A3535', img: '/img/hero/psycho-hero.webp' },
-  { slug: 'medycyna-estetyczna', bg: '#4A5568', img: '/img/hero/aesthetics-hero.webp' },
+  { slug: 'kardiologia',         bg: '#1B4965', img: imgCardiology },
+  { slug: 'ginekologia',         bg: '#6B3A6E', img: imgGynecology },
+  { slug: 'ortopedia',           bg: '#2D6A4F', img: imgOrthopedics },
+  { slug: 'neurologia',          bg: '#4A3580', img: imgNeurology },
+  { slug: 'rehabilitacja',       bg: '#3D5A80', img: imgRehabilitation },
+  { slug: 'psychiatria',         bg: '#7A3535', img: imgPsycho },
+  { slug: 'medycyna-estetyczna', bg: '#4A5568', img: imgAesthetics },
 ] as const
 
 const AUTOPLAY_MS = 3500
+
+const HeroHeading = memo(function HeroHeading() {
+  const { t } = useLanguage()
+  return (
+    <section className={styles.heroHeading}>
+      <div className={styles.container}>
+        <h1
+          className={styles.heading}
+          aria-label={`${t('hero.headingPart1')} ${t('hero.headingPart2')} ${t('hero.headingPart3')} ${t('hero.headingPart4')} ${t('hero.headingPart5')} ${t('hero.headingPart6')}`}
+        >
+          <span className={`${styles.headingRow} ${styles.row1}`}>
+            <span className={styles.textLarge}>
+              {waveSpans(t('hero.headingPart1'), 0.15, styles.waveChar, styles.waveWrap, 0.05)}
+            </span>
+            <span className={`${styles.textLarge} ${styles.mobileOnly}`}>
+              {waveSpans(t('hero.headingPart2'), 0.2, styles.waveChar, styles.waveWrap, 0.05)}
+            </span>
+          </span>
+          <span className={`${styles.headingRow} ${styles.row2}`}>
+            <span className={`${styles.textLarge} ${styles.desktopOnly}`}>
+              {waveSpans(t('hero.headingPart2'), 0.1, styles.waveChar, styles.waveWrap, 0.05)}
+            </span>
+            <span className={styles.textLarge}>
+              {waveSpans(t('hero.headingPart3'), 0.1, styles.waveChar, styles.waveWrap, 0.05)}
+            </span>
+            <span className={styles.textSmall}>
+              {waveSpans(t('hero.headingPart4'), 0.2, styles.waveChar, styles.waveWrap, 0.05)}
+            </span>
+          </span>
+          <span className={`${styles.headingRow} ${styles.row3}`}>
+            <span className={styles.textSmall}>
+              {waveSpans(t('hero.headingPart5'), 1.2, styles.waveChar, styles.waveWrap, 0.05)}
+            </span>
+            <span className={styles.textLarge}>
+              {waveSpans(t('hero.headingPart6'), 1.3, styles.waveChar, styles.waveWrap, 0.05)}
+            </span>
+          </span>
+        </h1>
+      </div>
+    </section>
+  )
+})
 
 function Hero() {
   const { t } = useLanguage()
@@ -132,42 +181,7 @@ function Hero() {
       </section>
 
       {/* Main heading — separate stack section, z-index: 2 */}
-      <section className={styles.heroHeading}>
-        <div className={styles.container}>
-          <h1
-            className={styles.heading}
-            aria-label={`${t('hero.headingPart1')} ${t('hero.headingPart2')} ${t('hero.headingPart3')} ${t('hero.headingPart4')} ${t('hero.headingPart5')} ${t('hero.headingPart6')}`}
-          >
-            <span className={`${styles.headingRow} ${styles.row1}`}>
-              <span className={styles.textLarge}>
-                {waveSpans(t('hero.headingPart1'), 0.15, styles.waveChar, styles.waveWrap, 0.05)}
-              </span>
-              <span className={`${styles.textLarge} ${styles.mobileOnly}`}>
-                {waveSpans(t('hero.headingPart2'), 0.2, styles.waveChar, styles.waveWrap, 0.05)}
-              </span>
-            </span>
-            <span className={`${styles.headingRow} ${styles.row2}`}>
-              <span className={`${styles.textLarge} ${styles.desktopOnly}`}>
-                {waveSpans(t('hero.headingPart2'), 0.1, styles.waveChar, styles.waveWrap, 0.05)}
-              </span>
-              <span className={styles.textLarge}>
-                {waveSpans(t('hero.headingPart3'), 0.1, styles.waveChar, styles.waveWrap, 0.05)}
-              </span>
-              <span className={styles.textSmall}>
-                {waveSpans(t('hero.headingPart4'), 0.2, styles.waveChar, styles.waveWrap, 0.05)}
-              </span>
-            </span>
-            <span className={`${styles.headingRow} ${styles.row3}`}>
-              <span className={styles.textSmall}>
-                {waveSpans(t('hero.headingPart5'), 1.2, styles.waveChar, styles.waveWrap, 0.05)}
-              </span>
-              <span className={styles.textLarge}>
-                {waveSpans(t('hero.headingPart6'), 1.3, styles.waveChar, styles.waveWrap, 0.05)}
-              </span>
-            </span>
-          </h1>
-        </div>
-      </section>
+      <HeroHeading />
     </>
   )
 }
