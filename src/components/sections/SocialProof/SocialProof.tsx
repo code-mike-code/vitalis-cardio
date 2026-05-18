@@ -348,6 +348,7 @@ export default function SocialProof() {
 
                         <div
                           className={styles.stars}
+                          role="img"
                           aria-label={`${review.rating} ${t('socialProof.stars')}`}
                         >
                           {Array.from({ length: 5 }, (_, si) => (

@@ -101,7 +101,7 @@ $bottom-h: 52px;
   font-size: $ft-col-title-fs;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: rgba($color-white, 0.45);
+  color: rgba($color-white, 0.60);
   margin-bottom: $ft-col-title-mb;
   padding-bottom: $ft-col-title-pb;
   border-bottom: 1px solid rgba($color-white, 0.1);
@@ -253,7 +253,7 @@ $bottom-h: 52px;
 .legal {
   font-size: $ft-legal-fs;
   font-weight: $font-weight-normal;
-  color: rgba($color-white, 0.35);
+  color: rgba($color-white, 0.55);
 }
 
 .separator {
@@ -290,7 +290,7 @@ $bottom-h: 52px;
   gap: $spacing-xs;
   border-top: 1px solid rgba($color-white, 0.1);
   font-size: $font-size-sm;
-  color: rgba($color-white, 0.4);
+  color: rgba($color-white, 0.55);
 
   p { margin: 0; }
 }

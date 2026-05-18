@@ -366,19 +366,38 @@ $sp-review-text-fs: clamp(#{$font-size-base}, 1.1vw, #{$font-size-lg});
 }
 
 .dot {
-  height: 8px;
-  width: 8px;
-  border-radius: 100px;
-  background: rgba(255, 255, 255, 0.30);
+  position: relative;
+  width: 44px;
+  height: 44px;
+  background: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
-  transition: width $transition-base, background $transition-base;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  &:hover { background: rgba(255, 255, 255, 0.55); }
+  &::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.30);
+    transition: width $transition-base, background $transition-base;
+  }
+
+  &:hover::before { background: rgba(255, 255, 255, 0.55); }
+
+  &:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
+  }
 }
 
 .dotActive {
-  width: 28px;
-  background: $color-white;
+  &::before {
+    width: 28px;
+    background: $color-white;
+  }
 }
