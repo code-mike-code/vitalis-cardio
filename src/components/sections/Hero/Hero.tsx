@@ -99,6 +99,7 @@ function Hero() {
               className={styles.slide}
               style={{ background: slide.bg }}
               aria-hidden={i !== current}
+              inert={i !== current ? '' : undefined}
             >
               <img
                 src={slide.img}
@@ -110,9 +111,9 @@ function Hero() {
                 decoding="async"
               />
               <div className={styles.slideContent}>
-                <h2 className={styles.slideHeading}>
+                <p className={styles.slideHeading}>
                   {t(`hero.carousel.slide${i + 1}.name`)}
-                </h2>
+                </p>
                 <p className={styles.slideDesc}>
                   {t(`hero.carousel.slide${i + 1}.desc`)}
                 </p>
@@ -136,6 +137,7 @@ function Hero() {
                     variant="outline"
                     size="md"
                     className={styles.slideBtn}
+                    ariaLabel={`${t('hero.carousel.cta')}: ${t(`hero.carousel.slide${i + 1}.name`)}`}
                   >
                     {t('hero.carousel.cta')}
                   </CtaButton>

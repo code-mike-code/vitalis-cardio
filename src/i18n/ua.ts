@@ -24,6 +24,7 @@ export const ua = {
     linkRodo: 'GDPR',
     linkPrivacy: 'Політика конфіденційності',
     linkTerms: 'Умови використання',
+    linkAccessibility: 'Декларація доступності',
     partnerNfzLink: 'Перевірити пропозицію NFZ →',
     partnerLuxmedLink: 'Перевірити пропозицію LuxMed →',
   },

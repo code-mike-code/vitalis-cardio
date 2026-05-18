@@ -9,6 +9,7 @@ import PrivacyPage from '@/pages/PrivacyPage'
 import TermsPage from '@/pages/TermsPage'
 import PartnerNfzPage from '@/pages/PartnerNfzPage'
 import PartnerLuxmedPage from '@/pages/PartnerLuxmedPage'
+import AccessibilityPage from '@/pages/AccessibilityPage'
 import { ErrorBoundary } from '@components/common/ErrorBoundary/ErrorBoundary'
 import NotFoundPage from '@/pages/NotFoundPage'
 
@@ -62,6 +63,7 @@ function App() {
           <Route path="/regulamin" element={<TermsPage />} />
           <Route path="/partnerzy/nfz" element={<PartnerNfzPage />} />
           <Route path="/partnerzy/luxmed" element={<PartnerLuxmedPage />} />
+          <Route path="/deklaracja-dostepnosci" element={<AccessibilityPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>

@@ -16,6 +16,7 @@ interface Props {
   type?: 'button' | 'submit'
   className?: string
   disabled?: boolean
+  ariaLabel?: string
 }
 
 function CtaButton({
@@ -29,6 +30,7 @@ function CtaButton({
   type = 'button',
   className = '',
   disabled = false,
+  ariaLabel,
 }: Props) {
   const cls = [styles.btn, styles[variant], styles[size], className].filter(Boolean).join(' ')
 
@@ -40,15 +42,15 @@ function CtaButton({
   )
 
   if (to) {
-    return <Link to={to} className={cls}>{content}</Link>
+    return <Link to={to} className={cls} aria-label={ariaLabel}>{content}</Link>
   }
 
   if (href) {
-    return <a href={href} className={cls} target={target} rel="noopener noreferrer">{content}</a>
+    return <a href={href} className={cls} target={target} rel="noopener noreferrer" aria-label={ariaLabel}>{content}</a>
   }
 
   return (
-    <button type={type} className={cls} onClick={onClick} disabled={disabled}>
+    <button type={type} className={cls} onClick={onClick} disabled={disabled} aria-label={ariaLabel}>
       {content}
     </button>
   )

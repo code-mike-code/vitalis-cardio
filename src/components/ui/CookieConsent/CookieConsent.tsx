@@ -2,12 +2,13 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '@/hooks/useLanguage'
 import { applyConsent, getStoredConsent } from '@/utils/analytics'
+import { useFocusTrap } from '@/hooks/useFocusTrap'
 import styles from './CookieConsent.module.scss'
 
 function CookieConsent() {
   const { t } = useLanguage()
   const [visible, setVisible] = useState(false)
-  const firstBtnRef = useRef<HTMLButtonElement>(null)
+  const barRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const stored = getStoredConsent()
@@ -18,21 +19,17 @@ function CookieConsent() {
     }
   }, [])
 
-  useEffect(() => {
-    if (visible) {
-      firstBtnRef.current?.focus()
-    }
-  }, [visible])
-
   function handle(accepted: boolean) {
     applyConsent(accepted)
     setVisible(false)
   }
 
+  useFocusTrap(barRef, visible, () => handle(false))
+
   if (!visible) return null
 
   return (
-    <div className={styles.bar} role="dialog" aria-modal="true" aria-label={t('cookies.ariaLabel')}>
+    <div ref={barRef} className={styles.bar} role="dialog" aria-modal="true" aria-label={t('cookies.ariaLabel')}>
       <p className={styles.message}>
         {t('cookies.message')}{' '}
         <Link to="/prywatnosc" className={styles.link}>
@@ -40,7 +37,7 @@ function CookieConsent() {
         </Link>
       </p>
       <div className={styles.actions}>
-        <button ref={firstBtnRef} className={styles.decline} onClick={() => handle(false)}>
+        <button className={styles.decline} onClick={() => handle(false)}>
           {t('cookies.decline')}
         </button>
         <button className={styles.accept} onClick={() => handle(true)}>

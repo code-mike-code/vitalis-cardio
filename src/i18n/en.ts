@@ -24,6 +24,7 @@ export const en = {
     linkRodo: 'GDPR',
     linkPrivacy: 'Privacy Policy',
     linkTerms: 'Terms of Service',
+    linkAccessibility: 'Accessibility Statement',
     partnerNfzLink: 'Check NFZ offer →',
     partnerLuxmedLink: 'Check LuxMed offer →',
   },

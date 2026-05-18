@@ -24,6 +24,7 @@ export const pl = {
     linkRodo: 'RODO',
     linkPrivacy: 'Polityka Prywatności',
     linkTerms: 'Regulamin',
+    linkAccessibility: 'Deklaracja Dostępności',
     partnerNfzLink: 'Sprawdź ofertę NFZ →',
     partnerLuxmedLink: 'Sprawdź ofertę LuxMed →',
   },

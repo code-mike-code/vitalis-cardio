@@ -124,6 +124,7 @@ function Footer() {
               <Link to="/rodo" className={styles.legal}>{t('nav.linkRodo')}</Link>
               <Link to="/prywatnosc" className={styles.legal}>{t('nav.linkPrivacy')}</Link>
               <Link to="/regulamin" className={styles.legal}>{t('nav.linkTerms')}</Link>
+              <Link to="/deklaracja-dostepnosci" className={styles.legal}>{t('nav.linkAccessibility')}</Link>
             </nav>
           </div>
         </div>
