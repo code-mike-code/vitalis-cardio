@@ -55,7 +55,7 @@ $eu-project-name-fs: clamp(#{$font-size-xl}, 3vw, #{$font-size-2xl});
 
 .projectId {
   font-size: $font-size-sm;
-  color: $color-text-muted;
+  color: $color-text-light;
   margin-bottom: $spacing-sm;
 
   strong {
@@ -149,7 +149,7 @@ $eu-project-name-fs: clamp(#{$font-size-xl}, 3vw, #{$font-size-2xl});
 .footer {
   font-size: $font-size-sm;
   line-height: $line-height-base;
-  color: $color-text-muted;
+  color: $color-text-light;
   border-top: 1px solid $color-border;
   padding-top: $spacing-lg;
   font-style: italic;

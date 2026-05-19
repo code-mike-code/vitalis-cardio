@@ -37,7 +37,7 @@ function CtaButton({
   const content = (
     <>
       {children}
-      <span className={styles.arrow}>→</span>
+      <span className={styles.arrow} aria-hidden="true">→</span>
     </>
   )
 

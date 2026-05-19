@@ -1,4 +1,5 @@
 import PageLayout from '@components/layout/PageLayout/PageLayout'
+import { useLanguage } from '@/hooks/useLanguage'
 import styles from './AccessibilityPage.module.scss'
 
 const ADMIN_NAME = 'Vitalis Nowak i Żurakowski Sp. z o.o.'
@@ -6,17 +7,19 @@ const ADMIN_ADDRESS = 'ul. Kopernika 25, 32-540 Trzebinia'
 const SITE_URL = 'klinika-vitalis.pl'
 const CONTACT_EMAIL = 'jnvitalis@wp.pl'
 const CONTACT_PHONE = '32 210 98 66'
-const STATEMENT_DATE = '18 maja 2026 r.'
-const SITE_PUBLISHED = '2024 r.'
+const PROJECT_ID = 'FEMP.06.08-IP.02-0454/24'
+const PROJECT_NAME = '„Profilaktyka i rehabilitacja mieszkańców powiatu chrzanowskiego…"'
 
 function AccessibilityPage() {
+  const { t } = useLanguage()
+
   return (
     <PageLayout>
       <div className={styles.hero}>
         <div className={styles.heroContent}>
-          <span className={styles.label}>Dostępność cyfrowa</span>
-          <h1 className={styles.title}>Deklaracja Dostępności</h1>
-          <p className={styles.meta}>Sporządzona dnia: {STATEMENT_DATE}</p>
+          <span className={styles.label}>{t('accessibility.label')}</span>
+          <h1 className={styles.title}>{t('accessibility.title')}</h1>
+          <p className={styles.meta}>{t('accessibility.meta')} {t('accessibility.statementDate')}</p>
         </div>
       </div>
 
@@ -24,168 +27,119 @@ function AccessibilityPage() {
         <div className={styles.container}>
 
           <section className={styles.section}>
-            <h2>1. Informacje ogólne</h2>
+            <h2>{t('accessibility.s1Title')}</h2>
             <p>
-              <strong>{ADMIN_NAME}</strong> zobowiązuje się zapewnić dostępność swojej strony
-              internetowej zgodnie z przepisami ustawy z dnia 4 kwietnia 2019 r.
-              o dostępności cyfrowej stron internetowych i aplikacji mobilnych podmiotów
-              publicznych (Dz.U. 2019 poz. 848 z późn. zm.).
+              <strong>{ADMIN_NAME}</strong> {t('accessibility.s1p1')}
             </p>
             <p>
-              Niniejsza deklaracja dostępności dotyczy strony internetowej dostępnej pod
-              adresem: <strong>{SITE_URL}</strong>.
+              {t('accessibility.s1p2_before')} <strong>{SITE_URL}</strong>.
             </p>
             <ul>
-              <li>Data publikacji strony internetowej: {SITE_PUBLISHED}</li>
-              <li>Data ostatniej istotnej aktualizacji: {STATEMENT_DATE}</li>
+              <li>{t('accessibility.s1li1_before')} {t('accessibility.sitePublished')}</li>
+              <li>{t('accessibility.s1li2_before')} {t('accessibility.statementDate')}</li>
             </ul>
           </section>
 
           <section className={styles.section}>
-            <h2>2. Status zgodności z ustawą</h2>
+            <h2>{t('accessibility.s2Title')}</h2>
             <p>
-              Strona internetowa jest <strong>częściowo zgodna</strong> z ustawą z dnia
-              4 kwietnia 2019 r. o dostępności cyfrowej stron internetowych i aplikacji
-              mobilnych podmiotów publicznych z powodu niezgodności wymienionych poniżej.
+              {t('accessibility.s2p1_pre')} <strong>{t('accessibility.s2p1_strong')}</strong> {t('accessibility.s2p1_post')}
             </p>
-            <p>
-              Dokładamy wszelkich starań, aby serwis spełniał wymagania standardu WCAG 2.1
-              na poziomie AA. Strona jest zoptymalizowana pod kątem: nawigacji klawiaturą,
-              współpracy z czytnikami ekranu, odpowiednich kontrastów kolorystycznych
-              oraz responsywności na różnych urządzeniach.
-            </p>
+            <p>{t('accessibility.s2p2')}</p>
           </section>
 
           <section className={styles.section}>
-            <h2>3. Treści niedostępne</h2>
-            <p>Poniższe treści lub funkcjonalności mogą nie spełniać w pełni wymagań dostępności cyfrowej:</p>
+            <h2>{t('accessibility.s3Title')}</h2>
+            <p>{t('accessibility.s3intro')}</p>
             <ul>
               <li>
-                <strong>Dokumenty PDF</strong> — klauzule informacyjne dostępne do pobrania
-                (Klauzula informacyjna dla pacjentów, dla kandydatów do pracy, dot.
-                monitoringu wizyjnego) mogą nie posiadać pełnego oznaczenia struktury
-                wymaganego przez WCAG 2.1, gdyż zostały opublikowane przed dniem
-                wejścia w życie przepisów o dostępności cyfrowej.
+                <strong>{t('accessibility.s3li1_title')}</strong> {t('accessibility.s3li1_text')}
               </li>
               <li>
-                <strong>Mapa Google</strong> — osadzony widżet mapy Google Maps (iframe)
-                pochodzi od zewnętrznego dostawcy i nie podlega pełnej kontroli
-                podmiotu w zakresie dostępności. Alternatywą jest link tekstowy
-                otwierający mapę w aplikacji Google Maps.
+                <strong>{t('accessibility.s3li2_title')}</strong> {t('accessibility.s3li2_text')}
               </li>
               <li>
-                <strong>Treści wideo i multimedia</strong> — serwis nie zawiera materiałów
-                wideo wymagających audiodeskrypcji lub napisów.
+                <strong>{t('accessibility.s3li3_title')}</strong> {t('accessibility.s3li3_text')}
               </li>
             </ul>
           </section>
 
           <section className={styles.section}>
-            <h2>4. Przygotowanie deklaracji dostępności</h2>
+            <h2>{t('accessibility.s4Title')}</h2>
             <ul>
-              <li>Deklarację sporządzono dnia: {STATEMENT_DATE}</li>
-              <li>Deklarację sporządzono na podstawie samooceny przeprowadzonej przez podmiot.</li>
-              <li>
-                Podczas oceny korzystano z narzędzi: walidator HTML W3C, narzędzia
-                Chrome DevTools Accessibility Panel, czytnik ekranu NVDA (Windows),
-                VoiceOver (macOS/iOS).
-              </li>
+              <li>{t('accessibility.s4li1_before')} {t('accessibility.statementDate')}</li>
+              <li>{t('accessibility.s4li2')}</li>
+              <li>{t('accessibility.s4li3')}</li>
             </ul>
           </section>
 
           <section className={styles.section}>
-            <h2>5. Informacje zwrotne i dane kontaktowe</h2>
-            <p>
-              W przypadku problemów z dostępnością strony internetowej prosimy o kontakt
-              z naszym biurem. Kontaktować można się:
-            </p>
+            <h2>{t('accessibility.s5Title')}</h2>
+            <p>{t('accessibility.s5p1')}</p>
             <ul>
               <li>
-                e-mail:{' '}
+                {t('accessibility.s5li_email')}{' '}
                 <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
               </li>
               <li>
-                telefonicznie: <a href={`tel:+48${CONTACT_PHONE.replace(/\s/g, '')}`}>{CONTACT_PHONE}</a>
+                {t('accessibility.s5li_phone')} <a href={`tel:+48${CONTACT_PHONE.replace(/\s/g, '')}`}>{CONTACT_PHONE}</a>
               </li>
               <li>
-                pisemnie na adres: {ADMIN_NAME}, {ADMIN_ADDRESS}
+                {t('accessibility.s5li_address')} {ADMIN_NAME}, {ADMIN_ADDRESS}
               </li>
             </ul>
-            <p>
-              Tą samą drogą można składać wnioski o udostępnienie informacji niedostępnej
-              oraz składać żądania zapewnienia dostępności.
-            </p>
+            <p>{t('accessibility.s5p2')}</p>
           </section>
 
           <section className={styles.section}>
-            <h2>6. Procedura wnioskowo-skargowa</h2>
-            <p>
-              Każdy ma prawo do wystąpienia z żądaniem zapewnienia dostępności cyfrowej
-              strony internetowej lub jakiegoś jej elementu. Można także zażądać
-              udostępnienia informacji za pomocą alternatywnego sposobu dostępu —
-              na przykład przez odczytanie niedostępnego cyfrowo dokumentu lub opisanie
-              zawartości materiału.
-            </p>
-            <p>
-              Żądanie powinno zawierać:
-            </p>
+            <h2>{t('accessibility.s6Title')}</h2>
+            <p>{t('accessibility.s6p1')}</p>
+            <p>{t('accessibility.s6p2')}</p>
             <ul>
-              <li>dane osoby zgłaszającej żądanie,</li>
-              <li>wskazanie, o którą stronę lub element chodzi,</li>
-              <li>sposób kontaktu,</li>
-              <li>preferowany sposób przedstawienia niedostępnej informacji (jeśli dotyczy).</li>
+              <li>{t('accessibility.s6li1')}</li>
+              <li>{t('accessibility.s6li2')}</li>
+              <li>{t('accessibility.s6li3')}</li>
+              <li>{t('accessibility.s6li4')}</li>
             </ul>
             <p>
-              Podmiot publiczny powinien zrealizować żądanie niezwłocznie, nie później niż
-              w ciągu <strong>7 dni</strong> od dnia wystąpienia z żądaniem. Jeżeli
-              dotrzymanie tego terminu nie jest możliwe, podmiot niezwłocznie informuje
-              o tym wnoszącego żądanie — termin realizacji nie może być jednak dłuższy
-              niż 2 miesiące od dnia złożenia żądania.
+              {t('accessibility.s6p3_pre')} <strong>{t('accessibility.s6p3_days')}</strong> {t('accessibility.s6p3_post')}
             </p>
+            <p>{t('accessibility.s6p4')}</p>
             <p>
-              Jeżeli zapewnienie dostępności cyfrowej nie jest możliwe, podmiot może
-              zaproponować alternatywny sposób dostępu do informacji.
-            </p>
-            <p>
-              W przypadku odmowy realizacji żądania wnoszący żądanie może złożyć skargę
-              do organu nadzorującego — <strong>Ministra właściwego do spraw informatyzacji</strong>.
-              Po wyczerpaniu tej procedury można również złożyć wniosek do{' '}
+              {t('accessibility.s6p5_pre')} <strong>{t('accessibility.s6p5_minister')}</strong>{t('accessibility.s6p5_mid')}{' '}
               <a
                 href="https://www.rpo.gov.pl"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Rzecznika Praw Obywatelskich
+                {t('accessibility.s6p5_rpo')}
               </a>.
             </p>
           </section>
 
           <section className={styles.section}>
-            <h2>7. Dostępność architektoniczna</h2>
+            <h2>{t('accessibility.s7Title')}</h2>
             <p>
-              Siedziba {ADMIN_NAME} mieści się pod adresem: <strong>{ADMIN_ADDRESS}</strong>.
+              {t('accessibility.s7p1_pre')} <strong>{ADMIN_NAME}</strong> {t('accessibility.s7p1_post')} <strong>{ADMIN_ADDRESS}</strong>.
             </p>
             <ul>
-              <li>Wejście do budynku jest dostępne dla osób poruszających się na wózkach inwalidzkich.</li>
-              <li>W budynku dostępna jest winda lub pochylnia umożliwiająca dostęp do poszczególnych kondygnacji.</li>
-              <li>Przy obiekcie dostępne są miejsca parkingowe wyznaczone dla osób z niepełnosprawnościami.</li>
-              <li>Brak barier architektonicznych uniemożliwiających wejście osobom z niepełnosprawnością ruchową.</li>
+              <li>{t('accessibility.s7li1')}</li>
+              <li>{t('accessibility.s7li2')}</li>
+              <li>{t('accessibility.s7li3')}</li>
+              <li>{t('accessibility.s7li4')}</li>
             </ul>
             <p>
-              W przypadku pytań dotyczących dostępności architektonicznej prosimy o
-              kontakt telefoniczny pod numer <a href={`tel:+48${CONTACT_PHONE.replace(/\s/g, '')}`}>{CONTACT_PHONE}</a>{' '}
-              przed planowaną wizytą.
+              {t('accessibility.s7p2_pre')} <a href={`tel:+48${CONTACT_PHONE.replace(/\s/g, '')}`}>{CONTACT_PHONE}</a>{' '}
+              {t('accessibility.s7p2_post')}
             </p>
           </section>
 
           <section className={styles.section}>
-            <h2>8. Projekt współfinansowany ze środków UE</h2>
+            <h2>{t('accessibility.s8Title')}</h2>
             <p>
-              Podmiot realizuje projekt nr <strong>FEMP.06.08-IP.02-0454/24</strong>{' '}
-              pn. <em>„Profilaktyka i rehabilitacja mieszkańców powiatu chrzanowskiego…"</em>{' '}
-              finansowany ze środków Unii Europejskiej. W związku z powyższym serwis
-              objęty jest obowiązkiem zapewnienia dostępności cyfrowej zgodnie z ustawą
-              z dnia 4 kwietnia 2019 r.
+              {t('accessibility.s8p1_pre')} <strong>{PROJECT_ID}</strong>{' '}
+              {t('accessibility.s8p1_name')} <em>{PROJECT_NAME}</em>{' '}
+              {t('accessibility.s8p1_post')}
             </p>
           </section>
 

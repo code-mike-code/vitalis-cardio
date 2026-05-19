@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import logoImg from '@/assets/logo/logo-vitalis-no-bg.svg'
 import { useLanguage } from '@/hooks/useLanguage'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 import styles from './Logo.module.scss'
 
 interface LogoProps {
@@ -16,6 +17,7 @@ const EKG_CLIP_PATH =
 
 function Logo({ size = 'md', className = '', showText = true }: LogoProps) {
   const { t } = useLanguage()
+  const prefersReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)')
   const classes = [styles.logo, styles[size], className].filter(Boolean).join(' ')
 
   return (
@@ -60,7 +62,7 @@ function Logo({ size = 'md', className = '', showText = true }: LogoProps) {
               from="12"
               to="315"
               dur="1.8s"
-              repeatCount="indefinite"
+              repeatCount={prefersReducedMotion ? '1' : 'indefinite'}
               calcMode="linear"
             />
           </rect>

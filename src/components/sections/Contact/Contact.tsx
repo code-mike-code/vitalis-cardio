@@ -1,11 +1,40 @@
+import { useState } from 'react'
 import { contactInfo } from '@/data'
 import { useLanguage } from '@/hooks/useLanguage'
 import Button from '@components/common/Button/Button'
 import SectionHeader from '@components/common/SectionHeader/SectionHeader'
 import styles from './Contact.module.scss'
 
+interface FormErrors {
+  name?: string
+  email?: string
+}
+
+function validate(name: string, email: string, t: (k: string) => string): FormErrors {
+  const errors: FormErrors = {}
+  if (!name.trim()) errors.name = t('contact.fieldRequired')
+  if (!email.trim()) errors.email = t('contact.fieldRequired')
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.email = t('contact.fieldInvalidEmail')
+  return errors
+}
+
 function Contact() {
   const { t } = useLanguage()
+  const [errors, setErrors] = useState<FormErrors>({})
+  const [touched, setTouched] = useState(false)
+  const [status, setStatus] = useState<'idle' | 'success'>('idle')
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    const form = e.currentTarget
+    const name = (form.elements.namedItem('name') as HTMLInputElement).value
+    const email = (form.elements.namedItem('email') as HTMLInputElement).value
+    const errs = validate(name, email, t)
+    setErrors(errs)
+    setTouched(true)
+    if (Object.keys(errs).length > 0) return
+    setStatus('success')
+  }
 
   return (
     <section className={styles.contact} id="contact">
@@ -66,44 +95,102 @@ function Contact() {
             </div>
           </div>
 
-          <form className={styles.form} onSubmit={e => e.preventDefault()}>
-            <h3 className={styles.formTitle}>{t('contact.formTitle')}</h3>
-            <p className={styles.formSubtitle}>{t('contact.formSubtitle')}</p>
-            <p className={styles.requiredNote}><span aria-hidden="true">* </span>{t('contact.requiredNote')}</p>
-            <div className={styles.formRow}>
-              <div className={styles.formGroup}>
-                <label htmlFor="name">{t('contact.nameLabel')}<span className={styles.required} aria-hidden="true"> *</span></label>
-                <input id="name" type="text" placeholder={t('contact.namePlaceholder')} required aria-required="true" autoComplete="name" />
+          {status === 'success' ? (
+            <div className={styles.form} role="alert" aria-live="polite">
+              <p className={styles.formTitle}>{t('contact.formSuccess')}</p>
+            </div>
+          ) : (
+            <form className={styles.form} onSubmit={handleSubmit} noValidate>
+              <h3 className={styles.formTitle}>{t('contact.formTitle')}</h3>
+              <p className={styles.formSubtitle}>{t('contact.formSubtitle')}</p>
+              <p className={styles.requiredNote}><span aria-hidden="true">* </span>{t('contact.requiredNote')}</p>
+
+              {touched && Object.keys(errors).length > 0 && (
+                <p className={styles.formErrorSummary} role="alert" aria-live="assertive">
+                  {t('contact.formError')}
+                </p>
+              )}
+
+              <div className={styles.formRow}>
+                <div className={styles.formGroup}>
+                  <label htmlFor="name">
+                    {t('contact.nameLabel')}<span className={styles.required} aria-hidden="true"> *</span>
+                  </label>
+                  <input
+                    id="name"
+                    type="text"
+                    placeholder={t('contact.namePlaceholder')}
+                    required
+                    aria-required="true"
+                    aria-invalid={touched && !!errors.name}
+                    aria-describedby={errors.name ? 'name-error' : undefined}
+                    autoComplete="name"
+                  />
+                  {touched && errors.name && (
+                    <span id="name-error" className={styles.fieldError} role="alert">
+                      {errors.name}
+                    </span>
+                  )}
+                </div>
+                <div className={styles.formGroup}>
+                  <label htmlFor="phone">{t('contact.phoneInputLabel')}</label>
+                  <input
+                    id="phone"
+                    type="tel"
+                    placeholder={t('contact.phonePlaceholder')}
+                    aria-required="false"
+                    autoComplete="tel"
+                  />
+                </div>
               </div>
+
               <div className={styles.formGroup}>
-                <label htmlFor="phone">{t('contact.phoneInputLabel')}</label>
-                <input id="phone" type="tel" placeholder={t('contact.phonePlaceholder')} aria-required="false" autoComplete="tel" />
+                <label htmlFor="email">
+                  {t('contact.emailInputLabel')}<span className={styles.required} aria-hidden="true"> *</span>
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder={t('contact.emailPlaceholder')}
+                  required
+                  aria-required="true"
+                  aria-invalid={touched && !!errors.email}
+                  aria-describedby={errors.email ? 'email-error' : undefined}
+                  autoComplete="email"
+                />
+                {touched && errors.email && (
+                  <span id="email-error" className={styles.fieldError} role="alert">
+                    {errors.email}
+                  </span>
+                )}
               </div>
-            </div>
-            <div className={styles.formGroup}>
-              <label htmlFor="email">{t('contact.emailInputLabel')}<span className={styles.required} aria-hidden="true"> *</span></label>
-              <input id="email" type="email" placeholder={t('contact.emailPlaceholder')} required aria-required="true" autoComplete="email" />
-            </div>
-            <div className={styles.formGroup}>
-              <label htmlFor="specialty">{t('contact.clinicLabel')}</label>
-              <select id="specialty" defaultValue="">
-                <option value="" disabled>{t('contact.clinicPlaceholder')}</option>
-                <option value="cardiology">{t('contact.clinicCardiology')}</option>
-                <option value="orthopedics">{t('contact.clinicOrthopedics')}</option>
-                <option value="neurology">{t('contact.clinicNeurology')}</option>
-                <option value="rehabilitation">{t('contact.clinicRehabilitation')}</option>
-                <option value="internal">{t('contact.clinicInternal')}</option>
-                <option value="physiotherapy">{t('contact.clinicPhysiotherapy')}</option>
-              </select>
-            </div>
-            <div className={styles.formGroup}>
-              <label htmlFor="message">{t('contact.messageLabel')}</label>
-              <textarea id="message" rows={4} placeholder={t('contact.messagePlaceholder')} />
-            </div>
-            <Button type="submit" size="lg" className={styles.submitBtn}>
-              {t('contact.submitBtn')}
-            </Button>
-          </form>
+
+              <div className={styles.formGroup}>
+                <label htmlFor="specialty">
+                  {t('contact.clinicLabel')}{' '}
+                  <span className={styles.optional}>{t('contact.clinicOptional')}</span>
+                </label>
+                <select id="specialty" defaultValue="">
+                  <option value="" disabled>{t('contact.clinicPlaceholder')}</option>
+                  <option value="cardiology">{t('contact.clinicCardiology')}</option>
+                  <option value="orthopedics">{t('contact.clinicOrthopedics')}</option>
+                  <option value="neurology">{t('contact.clinicNeurology')}</option>
+                  <option value="rehabilitation">{t('contact.clinicRehabilitation')}</option>
+                  <option value="internal">{t('contact.clinicInternal')}</option>
+                  <option value="physiotherapy">{t('contact.clinicPhysiotherapy')}</option>
+                </select>
+              </div>
+
+              <div className={styles.formGroup}>
+                <label htmlFor="message">{t('contact.messageLabel')}</label>
+                <textarea id="message" rows={4} placeholder={t('contact.messagePlaceholder')} />
+              </div>
+
+              <Button type="submit" size="lg" className={styles.submitBtn}>
+                {t('contact.submitBtn')}
+              </Button>
+            </form>
+          )}
         </div>
       </div>
     </section>

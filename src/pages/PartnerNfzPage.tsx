@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useLanguage } from '@/hooks/useLanguage'
+import { replaceAbbreviations } from '@/utils/replaceAbbreviations'
 import PageLayout from '@components/layout/PageLayout/PageLayout'
 import styles from './PartnerNfzPage.module.scss'
 import logoNfz from '@/assets/logo/logo-nfz.webp'
@@ -20,7 +21,7 @@ function PartnerNfzPage() {
       <div className={styles.hero}>
         <div className={styles.heroContent}>
           <img src={logoNfz} alt="Narodowy Fundusz Zdrowia" className={styles.heroLogo} />
-          <h1 className={styles.title}>{t('partnerNfz.heroTitle')}</h1>
+          <h1 className={styles.title}>{replaceAbbreviations(t('partnerNfz.heroTitle'))}</h1>
           <p className={styles.subtitle}>{t('partnerNfz.heroSubtitle')}</p>
         </div>
       </div>

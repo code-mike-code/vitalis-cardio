@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useLanguage } from '@/hooks/useLanguage'
+import { replaceAbbreviations } from '@/utils/replaceAbbreviations'
 import PageLayout from '@components/layout/PageLayout/PageLayout'
 import styles from './PartnerLuxmedPage.module.scss'
 import logoLuxmed from '@/assets/logo/logo-luxmed.webp'
@@ -33,7 +34,7 @@ function PartnerLuxmedPage() {
       <div className={styles.hero}>
         <div className={styles.heroContent}>
           <img src={logoLuxmed} alt="LuxMed" className={styles.heroLogo} />
-          <h1 className={styles.title}>{t('partnerLuxmed.heroTitle')}</h1>
+          <h1 className={styles.title}>{replaceAbbreviations(t('partnerLuxmed.heroTitle'))}</h1>
           <p className={styles.subtitle}>{t('partnerLuxmed.heroSubtitle')}</p>
         </div>
       </div>

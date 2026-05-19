@@ -17,7 +17,7 @@ function SpecializationCard({ specialization }: Props) {
       <p className={styles.desc}>{loc.description.slice(0, 100)}…</p>
       <span className={styles.link}>
         {t('common.learnMore')}
-        <span className={styles.arrow}>→</span>
+        <span className={styles.arrow} aria-hidden="true">→</span>
       </span>
     </Link>
   )

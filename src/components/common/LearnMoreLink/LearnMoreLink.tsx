@@ -14,7 +14,7 @@ function LearnMoreLink({ to, children, className = '' }: Props) {
   return (
     <Link to={to} className={[styles.link, className].filter(Boolean).join(' ')}>
       {children ?? t('common.learnMore')}
-      <span className={styles.arrow}>→</span>
+      <span className={styles.arrow} aria-hidden="true">→</span>
     </Link>
   )
 }

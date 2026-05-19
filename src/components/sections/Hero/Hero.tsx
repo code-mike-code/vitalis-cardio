@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, memo } from 'react'
+import { Link } from 'react-router-dom'
 import styles from './Hero.module.scss'
 import { useLanguage } from '@/hooks/useLanguage'
 import CtaButton from '@components/common/CtaButton/CtaButton'
@@ -112,17 +113,6 @@ function Hero() {
                 decoding="async"
               />
               <div className={styles.slideContent}>
-                {slide.slug === 'rehabilitacja' && (
-                  <div className={styles.euSlideBlock}>
-                    <img
-                      src={imgEuFunds}
-                      alt={t('euFunding.label')}
-                      className={styles.euLogoSlide}
-                    />
-                    <p className={styles.euSlideLabel}>{t('euFunding.label')}</p>
-                    <p className={styles.euSlideProject}>Projekt: <strong>{t('euFunding.projectId')}</strong></p>
-                  </div>
-                )}
                 <p className={styles.slideHeading}>
                   {t(`hero.carousel.slide${i + 1}.name`)}
                 </p>
@@ -134,15 +124,15 @@ function Hero() {
                 </p>
                 <ul className={styles.slideBullets}>
                   <li>
-                    <span className={styles.bulletArrow}>→</span>
+                    <span className={styles.bulletArrow} aria-hidden="true">→</span>
                     {t(`hero.carousel.slide${i + 1}.bullet1`)}
                   </li>
                   <li>
-                    <span className={styles.bulletArrow}>→</span>
+                    <span className={styles.bulletArrow} aria-hidden="true">→</span>
                     {t(`hero.carousel.slide${i + 1}.bullet2`)}
                   </li>
                   <li>
-                    <span className={styles.bulletArrow}>→</span>
+                    <span className={styles.bulletArrow} aria-hidden="true">→</span>
                     {t(`hero.carousel.slide${i + 1}.bullet3`)}
                   </li>
                 </ul>
@@ -157,6 +147,17 @@ function Hero() {
                     {t('hero.carousel.cta')}
                   </CtaButton>
                 </div>
+                {slide.slug === 'rehabilitacja' && (
+                  <Link to="/specjalizacje/rehabilitacja" className={styles.euSlideBlock}>
+                    <img
+                      src={imgEuFunds}
+                      alt={t('euFunding.label')}
+                      className={styles.euLogoSlide}
+                    />
+                    <p className={styles.euSlideLabel}>{t('euFunding.label')}</p>
+                    <p className={styles.euSlideProject}>Projekt: <strong>{t('euFunding.projectId')}</strong></p>
+                  </Link>
+                )}
               </div>
             </div>
           ))}
@@ -175,7 +176,7 @@ function Hero() {
           <span aria-hidden="true">{isPaused ? '▶' : '⏸'}</span>
         </button>
 
-        <div className={styles.dots} role="tablist" aria-label="Slajdy karuzeli">
+        <div className={styles.dots} role="tablist" aria-label={t('hero.carousel.dotsLabel')}>
           {SLIDES.map((slide, i) => (
             <button
               key={slide.slug}

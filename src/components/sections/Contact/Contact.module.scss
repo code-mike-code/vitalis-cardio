@@ -170,6 +170,14 @@
     &::placeholder {
       color: $color-text-muted;
     }
+
+    &[aria-invalid='true'] {
+      border-color: #c0392b;
+      &:focus {
+        outline-color: #c0392b;
+        box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.15);
+      }
+    }
   }
 
   select {
@@ -185,4 +193,26 @@
 .submitBtn {
   width: 100%;
   margin-top: $spacing-sm;
+}
+
+.fieldError {
+  font-size: $font-size-sm;
+  color: #c0392b;
+  font-weight: $font-weight-medium;
+}
+
+.formErrorSummary {
+  font-size: $font-size-sm;
+  color: #c0392b;
+  background: rgba(192, 57, 43, 0.08);
+  border: 1px solid rgba(192, 57, 43, 0.3);
+  border-radius: $border-radius-sm;
+  padding: $spacing-sm $spacing-md;
+  margin-bottom: $spacing-sm;
+}
+
+.optional {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  color: $color-text-muted;
 }

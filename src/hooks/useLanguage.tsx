@@ -53,6 +53,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     document.documentElement.lang = language
+    document.title = createT(translations[language])('meta.siteTitle')
   }, [language])
 
   const t = useMemo(() => createT(translations[language]), [language])

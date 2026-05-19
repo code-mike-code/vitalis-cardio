@@ -12,6 +12,7 @@ import offerImg3 from '@/assets/img/offer-3.webp'
 import offerImg4 from '@/assets/img/offer-4.webp'
 import styles from './Offer.module.scss'
 import { waveSpans } from '@/utils/waveSpans'
+import { replaceAbbreviations } from '@/utils/replaceAbbreviations'
 
 const PARTNER_NFZ_COLOR = '#003399'
 const PARTNER_LUXMED_COLOR = '#00A551'
@@ -279,7 +280,7 @@ function Offer() {
               <img src={logoNfz} alt="NFZ" className={styles.logoNfz} />
             </div>
             <div className={styles.partnerBody}>
-              <h3 className={styles.partnerTitle}>{t('offer.partnerNfzTitle')}</h3>
+              <h3 className={styles.partnerTitle}>{replaceAbbreviations(t('offer.partnerNfzTitle'))}</h3>
               <p className={styles.partnerDesc}>{t('offer.partnerNfzDesc')}</p>
             </div>
             <span className={styles.partnerCta}>
@@ -294,7 +295,7 @@ function Offer() {
               <img src={logoLuxmed} alt="LuxMed" className={styles.logoLuxmed} />
             </div>
             <div className={styles.partnerBody}>
-              <h3 className={styles.partnerTitle}>{t('offer.partnerLuxmedTitle')}</h3>
+              <h3 className={styles.partnerTitle}>{replaceAbbreviations(t('offer.partnerLuxmedTitle'))}</h3>
               <p className={styles.partnerDesc}>{t('offer.partnerLuxmedDesc')}</p>
             </div>
             <span className={styles.partnerCta}>

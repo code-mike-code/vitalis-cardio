@@ -18,7 +18,7 @@ function Features() {
   const { ref: headingRef, isVisible: headingVisible } = useScrollReveal<HTMLDivElement>(0.2)
 
   return (
-    <section className={styles.features} id="about">
+    <section className={styles.features} id="features">
       <div className={styles.container}>
         <div className={styles.headerWrap} ref={headingRef}>
           <span className={styles.label}>{t('features.label')}</span>

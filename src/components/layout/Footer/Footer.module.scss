@@ -69,7 +69,7 @@ $bottom-h: 52px;
 
 .ctaSubtext {
   font-size: $ft-cta-subtext-fs;
-  color: rgba($color-white, 0.5);
+  color: rgba($color-white, 0.75);
   line-height: 1.5;
   margin: 0;
   max-width: 500px;
@@ -101,7 +101,7 @@ $bottom-h: 52px;
   font-size: $ft-col-title-fs;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: rgba($color-white, 0.60);
+  color: rgba($color-white, 0.75);
   margin-bottom: $ft-col-title-mb;
   padding-bottom: $ft-col-title-pb;
   border-bottom: 1px solid rgba($color-white, 0.1);
@@ -110,7 +110,7 @@ $bottom-h: 52px;
 .col p {
   margin: $ft-p-margin 0;
   font-size: $ft-p-fs;
-  color: rgba($color-white, 0.7);
+  color: rgba($color-white, 0.87);
 
   a {
     color: inherit;
@@ -195,7 +195,7 @@ $bottom-h: 52px;
 
     &::before {
       content: '→\00A0';
-      color: rgba($color-white, 0.35);
+      color: rgba($color-white, 0.65);
       display: inline-block;
       transition: transform $transition-fast;
     }
@@ -256,7 +256,7 @@ $bottom-h: 52px;
 .legal {
   font-size: $ft-legal-fs;
   font-weight: $font-weight-normal;
-  color: rgba($color-white, 0.55);
+  color: rgba($color-white, 0.75);
 }
 
 .separator {
