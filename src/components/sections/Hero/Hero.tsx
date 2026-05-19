@@ -10,13 +10,14 @@ import imgNeurology      from '@/assets/img/hero/neurology-hero.webp'
 import imgRehabilitation from '@/assets/img/hero/rehabilitation-hero.webp'
 import imgPsycho         from '@/assets/img/hero/psycho-hero.webp'
 import imgAesthetics     from '@/assets/img/hero/aesthetics-hero.webp'
+import imgEuFunds        from '@/assets/logo/EU-founds.webp'
 
 const SLIDES = [
+  { slug: 'rehabilitacja',       bg: '#3D5A80', img: imgRehabilitation },
   { slug: 'kardiologia',         bg: '#1B4965', img: imgCardiology },
   { slug: 'ginekologia',         bg: '#6B3A6E', img: imgGynecology },
   { slug: 'ortopedia',           bg: '#2D6A4F', img: imgOrthopedics },
   { slug: 'neurologia',          bg: '#4A3580', img: imgNeurology },
-  { slug: 'rehabilitacja',       bg: '#3D5A80', img: imgRehabilitation },
   { slug: 'psychiatria',         bg: '#7A3535', img: imgPsycho },
   { slug: 'medycyna-estetyczna', bg: '#4A5568', img: imgAesthetics },
 ] as const
@@ -111,6 +112,13 @@ function Hero() {
                 decoding="async"
               />
               <div className={styles.slideContent}>
+                {slide.slug === 'rehabilitacja' && (
+                  <img
+                    src={imgEuFunds}
+                    alt={t('hero.carousel.euBadge')}
+                    className={styles.euLogoSlide}
+                  />
+                )}
                 <p className={styles.slideHeading}>
                   {t(`hero.carousel.slide${i + 1}.name`)}
                 </p>

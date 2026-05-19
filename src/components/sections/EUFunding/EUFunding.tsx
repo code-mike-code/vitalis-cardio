@@ -13,6 +13,13 @@ function EUFunding() {
     t('euFunding.item5'),
   ]
 
+  const specificGoals = [
+    t('euFunding.specificGoal1'),
+    t('euFunding.specificGoal2'),
+    t('euFunding.specificGoal3'),
+    t('euFunding.specificGoal4'),
+  ]
+
   return (
     <section className={styles.euFunding} id="eu-funding">
       <div className={styles.container}>
@@ -31,6 +38,19 @@ function EUFunding() {
         <div className={styles.body}>
           <p className={styles.paragraph}>{t('euFunding.intro')}</p>
           <p className={styles.paragraph}>{t('euFunding.goal')}</p>
+          <p className={styles.paragraph}>{t('euFunding.mainGoal')}</p>
+
+          <div className={styles.listBlock}>
+            <p className={styles.listTitle}>{t('euFunding.specificGoalsTitle')}</p>
+            <ul className={styles.list}>
+              {specificGoals.map((goal, i) => (
+                <li key={i} className={styles.listItem}>
+                  <span className={styles.bullet} aria-hidden="true" />
+                  {goal}
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <div className={styles.listBlock}>
             <p className={styles.listTitle}>{t('euFunding.listTitle')}</p>
@@ -42,6 +62,20 @@ function EUFunding() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          <p className={styles.paragraph}>{t('euFunding.qualificationInfo')}</p>
+          <p className={styles.paragraph}>{t('euFunding.educationInfo')}</p>
+
+          <div className={styles.accessibilityBlock}>
+            <p className={styles.listTitle}>{t('euFunding.accessibilityTitle')}</p>
+            <p className={styles.paragraph}>
+              <a href={`mailto:${t('euFunding.accessibilityEmail')}`} className={styles.accessibilityLink}>
+                {t('euFunding.accessibilityEmail')}
+              </a>
+            </p>
+            <p className={styles.paragraph}>{t('euFunding.accessibilityCoord1')}</p>
+            <p className={styles.paragraph}>{t('euFunding.accessibilityCoord2')}</p>
           </div>
 
           <p className={styles.footer}>{t('euFunding.footer')}</p>

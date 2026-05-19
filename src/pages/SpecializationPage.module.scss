@@ -29,6 +29,64 @@
   gap: $spacing-xl;
 }
 
+// ── EU banner (below hero, rehab only) ───────────────────────────
+.euBanner {
+  background: $color-white;
+  border-bottom: 1px solid $color-border;
+  padding: $spacing-xl $spacing-xl;
+  display: flex;
+  align-items: center;
+  gap: $spacing-2xl;
+  flex-wrap: wrap;
+
+  @include respond-to('tablet') {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-lg;
+    padding: $spacing-lg $spacing-md;
+  }
+}
+
+.euBannerLogo {
+  display: block;
+  width: clamp(200px, 30vw, 380px);
+  height: auto;
+  flex-shrink: 0;
+}
+
+.euBannerText {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.euBannerLabel {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #003399;
+}
+
+.euBannerProject {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+
+  strong {
+    color: $color-text-light;
+    font-weight: $font-weight-semibold;
+  }
+}
+
+.euBannerName {
+  font-family: $font-family-heading;
+  font-size: clamp(#{$font-size-base}, 2vw, #{$font-size-xl});
+  font-weight: $font-weight-normal;
+  color: $color-text;
+  margin: 0;
+  line-height: 1.3;
+}
+
 .slideBtn {
   --btn-bg:                 #{$color-primary};
   --btn-color:              #{$color-white};
@@ -240,6 +298,20 @@
   line-height: $line-height-base;
   color: $color-text-light;
   margin: 0;
+}
+
+// ── Rehabilitation image ──────────────────────────────────────
+.rehabilitationImgWrap {
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+}
+
+.rehabilitationImg {
+  width: 100%;
+  height: clamp(240px, 40vw, 480px);
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 // ── Specialists ───────────────────────────────────────────────

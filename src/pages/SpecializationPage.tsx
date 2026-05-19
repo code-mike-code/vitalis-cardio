@@ -6,6 +6,10 @@ import { getTranslationKey } from '@/utils/langUtils'
 import PageLayout from '@components/layout/PageLayout/PageLayout'
 import CtaButton from '@components/common/CtaButton/CtaButton'
 import SpecialistCard from '@components/common/SpecialistCard/SpecialistCard'
+import EUFunding from '@components/sections/EUFunding/EUFunding'
+import imgRehabilitation from '@/assets/img/rehabilitation.webp'
+import imgRehabilitationHero from '@/assets/img/hero/rehabilitation-hero.webp'
+import imgEuFunds from '@/assets/logo/EU-founds.webp'
 import styles from './SpecializationPage.module.scss'
 
 const heroImages: Record<string, string> = {
@@ -25,7 +29,7 @@ const heroImages: Record<string, string> = {
   'medycyna-estetyczna':  '/img/hero/aesthetics-hero.webp',
   'biopsja':              '/img/hero/core-needle-biopsy.webp',
   'biopsja-grubogłowa':   '/img/hero/core-needle-biopsy.webp',
-  'rehabilitacja':        '/img/hero/rehabilitation-hero.webp',
+  'rehabilitacja':        imgRehabilitationHero,
   'diagnostyka-usg':      '/img/hero/multi-spec-hero.webp',
 }
 
@@ -70,6 +74,21 @@ function SpecializationPage() {
           </CtaButton>
         </div>
       </div>
+
+      {specialization.slug === 'rehabilitacja' && (
+        <div className={styles.euBanner}>
+          <img
+            src={imgEuFunds}
+            alt={t('euFunding.label')}
+            className={styles.euBannerLogo}
+          />
+          <div className={styles.euBannerText}>
+            <span className={styles.euBannerLabel}>{t('euFunding.label')}</span>
+            <span className={styles.euBannerProject}>Projekt: <strong>{t('euFunding.projectId')}</strong></span>
+            <p className={styles.euBannerName}>{t('euFunding.projectName')}</p>
+          </div>
+        </div>
+      )}
 
       {/* Description + examinations + specialists */}
 
@@ -166,8 +185,22 @@ function SpecializationPage() {
               </div>
             </div>
           )}
+
+          {specialization.slug === 'rehabilitacja' && (
+            <div className={styles.rehabilitationImgWrap}>
+              <img
+                src={imgRehabilitation}
+                alt="Rehabilitacja — sala gimnastyczna Vitalis"
+                className={styles.rehabilitationImg}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          )}
         </div>
       </section>
+
+      {specialization.slug === 'rehabilitacja' && <EUFunding />}
     </PageLayout>
   )
 }

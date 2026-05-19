@@ -128,6 +128,23 @@ $eu-project-name-fs: clamp(#{$font-size-xl}, 3vw, #{$font-size-2xl});
   margin-top: 8px;
 }
 
+// ── Accessibility ─────────────────────────────────────────────────
+.accessibilityBlock {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  border-left: 3px solid $eu-blue;
+  padding-left: $spacing-lg;
+}
+
+.accessibilityLink {
+  color: $eu-blue;
+  text-decoration: underline;
+  font-weight: $font-weight-medium;
+
+  &:hover { opacity: 0.75; }
+}
+
 // ── Section footer ────────────────────────────────────────────────
 .footer {
   font-size: $font-size-sm;
