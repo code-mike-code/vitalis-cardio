@@ -173,6 +173,9 @@ $bottom-h: 52px;
   color: rgba($color-white, 0.65);
   text-decoration: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
   &:hover { color: $color-white; }
 }
 
@@ -290,7 +293,7 @@ $bottom-h: 52px;
   gap: $spacing-xs;
   border-top: 1px solid rgba($color-white, 0.1);
   font-size: $font-size-sm;
-  color: rgba($color-white, 0.55);
+  color: rgba($color-white, 0.75);
 
   p { margin: 0; }
 }

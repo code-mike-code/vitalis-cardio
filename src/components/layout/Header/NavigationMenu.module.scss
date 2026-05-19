@@ -171,6 +171,9 @@ $nm-partner-sub-fs:  clamp(11px, 1.1vw, 14px);
   text-decoration: none;
   cursor: pointer;
   transition: color $transition-fast;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
   &:hover { color: #1a73e8; }
 }
 
