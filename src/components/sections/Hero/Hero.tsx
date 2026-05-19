@@ -113,17 +113,24 @@ function Hero() {
               />
               <div className={styles.slideContent}>
                 {slide.slug === 'rehabilitacja' && (
-                  <img
-                    src={imgEuFunds}
-                    alt={t('hero.carousel.euBadge')}
-                    className={styles.euLogoSlide}
-                  />
+                  <div className={styles.euSlideBlock}>
+                    <img
+                      src={imgEuFunds}
+                      alt={t('euFunding.label')}
+                      className={styles.euLogoSlide}
+                    />
+                    <p className={styles.euSlideLabel}>{t('euFunding.label')}</p>
+                    <p className={styles.euSlideProject}>Projekt: <strong>{t('euFunding.projectId')}</strong></p>
+                  </div>
                 )}
                 <p className={styles.slideHeading}>
                   {t(`hero.carousel.slide${i + 1}.name`)}
                 </p>
                 <p className={styles.slideDesc}>
-                  {t(`hero.carousel.slide${i + 1}.desc`)}
+                  {slide.slug === 'rehabilitacja'
+                    ? t('euFunding.projectName')
+                    : t(`hero.carousel.slide${i + 1}.desc`)
+                  }
                 </p>
                 <ul className={styles.slideBullets}>
                   <li>
