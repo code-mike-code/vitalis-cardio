@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useLanguage } from '@/hooks/useLanguage'
 import { replaceAbbreviations } from '@/utils/replaceAbbreviations'
 import PageLayout from '@components/layout/PageLayout/PageLayout'
+import Breadcrumb from '@components/common/Breadcrumb/Breadcrumb'
 import styles from './PartnerLuxmedPage.module.scss'
 import logoLuxmed from '@/assets/logo/logo-luxmed.webp'
 
@@ -29,6 +30,12 @@ function PartnerLuxmedPage() {
     ),
   }))
 
+  const breadcrumbs = [
+    { label: t('common.breadcrumbHome'), href: '/' },
+    { label: t('common.breadcrumbPartners') },
+    { label: 'LuxMed' },
+  ]
+
   return (
     <PageLayout>
       <div className={styles.hero}>
@@ -38,6 +45,8 @@ function PartnerLuxmedPage() {
           <p className={styles.subtitle}>{t('partnerLuxmed.heroSubtitle')}</p>
         </div>
       </div>
+
+      <Breadcrumb items={breadcrumbs} />
 
       <section className={styles.section}>
         <div className={styles.container}>

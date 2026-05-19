@@ -186,6 +186,9 @@ export const pl = {
     pauseCarousel: 'Zatrzymaj pokaz slajdów',
     playCarousel: 'Wznów pokaz slajdów',
     opensNewTab: '(otwiera w nowej karcie)',
+    breadcrumbNav: 'Nawigacja okruszkowa',
+    breadcrumbHome: 'Strona główna',
+    breadcrumbPartners: 'Partnerzy',
   },
   cookies: {
     message: 'Ta strona używa plików cookie i Google Analytics w celu analizy ruchu oraz poprawy jakości usług. Możesz zaakceptować lub odrzucić pliki cookie analityczne.',

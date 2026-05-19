@@ -3,7 +3,9 @@ import { useParams, Navigate } from 'react-router-dom'
 import { specializations, specialists } from '@/data'
 import { useLanguage } from '@/hooks/useLanguage'
 import { getTranslationKey } from '@/utils/langUtils'
+import { replaceAbbreviations } from '@/utils/replaceAbbreviations'
 import PageLayout from '@components/layout/PageLayout/PageLayout'
+import Breadcrumb from '@components/common/Breadcrumb/Breadcrumb'
 import CtaButton from '@components/common/CtaButton/CtaButton'
 import SpecialistCard from '@components/common/SpecialistCard/SpecialistCard'
 import EUFunding from '@components/sections/EUFunding/EUFunding'
@@ -55,6 +57,12 @@ function SpecializationPage() {
     })
   }
 
+  const breadcrumbs = [
+    { label: t('common.breadcrumbHome'), href: '/' },
+    { label: t('nav.specializations'), href: '/specjalizacje' },
+    { label: loc.name },
+  ]
+
   return (
     <PageLayout>
       {/* Hero — 50svh */}
@@ -74,6 +82,8 @@ function SpecializationPage() {
           </CtaButton>
         </div>
       </div>
+
+      <Breadcrumb items={breadcrumbs} />
 
       {specialization.slug === 'rehabilitacja' && (
         <div className={styles.euBanner}>
@@ -95,7 +105,7 @@ function SpecializationPage() {
       <section className={styles.content}>
         <div className={styles.container}>
           <div className={styles.description}>
-            <p>{loc.description}</p>
+            <p>{replaceAbbreviations(loc.description)}</p>
           </div>
 
           {loc.conditions && loc.conditions.length > 0 && (
@@ -103,7 +113,7 @@ function SpecializationPage() {
               <h2 className={styles.examinationsTitle}>{loc.conditionsLabel ?? t('specializationPage.conditionsLabel')}</h2>
               <ul className={styles.examinationsList}>
                 {loc.conditions.map((item) => (
-                  <li key={item} className={styles.examinationsItem}>{item}</li>
+                  <li key={item} className={styles.examinationsItem}>{replaceAbbreviations(item)}</li>
                 ))}
               </ul>
             </div>
@@ -114,7 +124,7 @@ function SpecializationPage() {
               <h2 className={styles.examinationsTitle}>{loc.examinationsLabel ?? t('specializationPage.examinationsLabel')}</h2>
               <ul className={styles.examinationsList}>
                 {loc.examinations.map((exam) => (
-                  <li key={exam} className={styles.examinationsItem}>{exam}</li>
+                  <li key={exam} className={styles.examinationsItem}>{replaceAbbreviations(exam)}</li>
                 ))}
               </ul>
             </div>
@@ -147,7 +157,7 @@ function SpecializationPage() {
                         <div className={styles.serviceGroupBodyInner}>
                           <ul className={styles.serviceGroupList}>
                             {group.items.map((item) => (
-                              <li key={item} className={styles.examinationsItem}>{item}</li>
+                              <li key={item} className={styles.examinationsItem}>{replaceAbbreviations(item)}</li>
                             ))}
                           </ul>
                         </div>

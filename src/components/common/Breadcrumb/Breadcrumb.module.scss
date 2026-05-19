@@ -1,0 +1,48 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.breadcrumb {
+  background: $color-bg;
+  border-bottom: 1px solid $color-border;
+}
+
+.list {
+  @include container;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+  padding-top: $spacing-sm;
+  padding-bottom: $spacing-sm;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  font-size: $font-size-sm;
+  line-height: 1.4;
+}
+
+.sep {
+  color: $color-text-muted;
+  user-select: none;
+}
+
+.link {
+  color: $color-text-muted;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-primary;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+.current {
+  color: $color-text;
+  font-weight: $font-weight-medium;
+}

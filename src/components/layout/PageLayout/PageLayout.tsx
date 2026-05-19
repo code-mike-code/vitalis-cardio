@@ -42,7 +42,7 @@ function PageLayout({ children, stickyStack }: Props) {
     <div className={styles.layout}>
       <a href="#main-content" className={styles.skipLink}>{t('common.skipToContent')}</a>
       <Header />
-      <main id="main-content" ref={mainRef} className={styles.main}>{children}</main>
+      <main id="main-content" ref={mainRef} tabIndex={-1} className={styles.main}>{children}</main>
       <Footer />
     </div>
   )

@@ -186,6 +186,9 @@ export const en = {
     pauseCarousel: 'Pause slideshow',
     playCarousel: 'Play slideshow',
     opensNewTab: '(opens in new tab)',
+    breadcrumbNav: 'Breadcrumb navigation',
+    breadcrumbHome: 'Home',
+    breadcrumbPartners: 'Partners',
   },
   cookies: {
     message: 'This website uses cookies and Google Analytics to analyse traffic and improve service quality. You can accept or decline analytical cookies.',

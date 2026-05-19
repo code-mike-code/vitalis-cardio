@@ -17,6 +17,7 @@ export function scrollToHash(id: string) {
 
   if (!main || sectionEl.parentElement !== main) {
     window.scrollTo({ top: Math.max(0, el.offsetTop - HEADER_H), behavior: 'smooth' })
+    el.focus({ preventScroll: true })
     return true
   }
 
@@ -30,6 +31,7 @@ export function scrollToHash(id: string) {
 
   if (sectionEl === el) {
     window.scrollTo({ top: Math.max(0, sectionTop - HEADER_H), behavior: 'smooth' })
+    el.focus({ preventScroll: true })
     return true
   }
 
@@ -40,6 +42,7 @@ export function scrollToHash(id: string) {
   const relTop = el.getBoundingClientRect().top - sectionEl.getBoundingClientRect().top
 
   window.scrollTo({ top: Math.max(0, sectionTop + relTop - HEADER_H), behavior: 'smooth' })
+  el.focus({ preventScroll: true })
   return true
 }
 

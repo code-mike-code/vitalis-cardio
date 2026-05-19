@@ -172,10 +172,10 @@
     }
 
     &[aria-invalid='true'] {
-      border-color: #c0392b;
+      border-color: #a93226;
       &:focus {
-        outline-color: #c0392b;
-        box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.15);
+        outline-color: #a93226;
+        box-shadow: 0 0 0 3px rgba(169, 50, 38, 0.15);
       }
     }
   }
@@ -197,15 +197,15 @@
 
 .fieldError {
   font-size: $font-size-sm;
-  color: #c0392b;
+  color: #a93226;
   font-weight: $font-weight-medium;
 }
 
 .formErrorSummary {
   font-size: $font-size-sm;
-  color: #c0392b;
-  background: rgba(192, 57, 43, 0.08);
-  border: 1px solid rgba(192, 57, 43, 0.3);
+  color: #a93226;
+  background: rgba(169, 50, 38, 0.08);
+  border: 1px solid rgba(169, 50, 38, 0.3);
   border-radius: $border-radius-sm;
   padding: $spacing-sm $spacing-md;
   margin-bottom: $spacing-sm;

@@ -186,6 +186,9 @@ export const ua = {
     pauseCarousel: 'Зупинити показ слайдів',
     playCarousel: 'Відновити показ слайдів',
     opensNewTab: '(відкривається в новій вкладці)',
+    breadcrumbNav: 'Навігація хлібними крихтами',
+    breadcrumbHome: 'Головна',
+    breadcrumbPartners: 'Партнери',
   },
   cookies: {
     message: 'Цей сайт використовує файли cookie та Google Analytics для аналізу трафіку та покращення якості послуг. Ви можете прийняти або відхилити аналітичні cookie.',

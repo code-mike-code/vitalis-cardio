@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useLanguage } from '@/hooks/useLanguage'
 import { replaceAbbreviations } from '@/utils/replaceAbbreviations'
 import PageLayout from '@components/layout/PageLayout/PageLayout'
+import Breadcrumb from '@components/common/Breadcrumb/Breadcrumb'
 import styles from './PartnerNfzPage.module.scss'
 import logoNfz from '@/assets/logo/logo-nfz.webp'
 
@@ -16,6 +17,12 @@ function PartnerNfzPage() {
     desc: t(`partnerNfz.svc${i + 1}.desc`),
   }))
 
+  const breadcrumbs = [
+    { label: t('common.breadcrumbHome'), href: '/' },
+    { label: t('common.breadcrumbPartners') },
+    { label: 'NFZ' },
+  ]
+
   return (
     <PageLayout>
       <div className={styles.hero}>
@@ -25,6 +32,8 @@ function PartnerNfzPage() {
           <p className={styles.subtitle}>{t('partnerNfz.heroSubtitle')}</p>
         </div>
       </div>
+
+      <Breadcrumb items={breadcrumbs} />
 
       <section className={styles.section}>
         <div className={styles.container}>
