@@ -128,6 +128,73 @@ $eu-project-name-fs: clamp(#{$font-size-xl}, 3vw, #{$font-size-2xl});
   margin-top: 8px;
 }
 
+// ── Downloads ─────────────────────────────────────────────────────
+.downloadsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  border: 1px solid color-mix(in srgb, $eu-blue 20%, $color-white);
+  border-radius: 8px;
+  padding: $spacing-lg;
+  background: color-mix(in srgb, $eu-blue 4%, $color-white);
+}
+
+.downloadsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.downloadsItem {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid color-mix(in srgb, $eu-blue 12%, $color-white);
+  }
+}
+
+.docIcon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: $eu-blue;
+  opacity: 0.6;
+}
+
+.downloadLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-md;
+  width: 100%;
+  padding: $spacing-md 0;
+  font-size: $font-size-base;
+  color: $color-text;
+  text-decoration: none;
+  font-weight: $font-weight-medium;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $eu-blue;
+
+    .downloadIcon {
+      transform: translateY(2px);
+      color: $eu-blue;
+    }
+  }
+}
+
+.downloadIcon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: $color-text-light;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
 // ── Accessibility ─────────────────────────────────────────────────
 .accessibilityBlock {
   display: flex;
@@ -143,6 +210,48 @@ $eu-project-name-fs: clamp(#{$font-size-xl}, 3vw, #{$font-size-2xl});
   font-weight: $font-weight-medium;
 
   &:hover { opacity: 0.75; }
+}
+
+// ── Financing block ───────────────────────────────────────────────
+.financingBlock {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  background: color-mix(in srgb, $eu-blue 6%, $color-white);
+  border: 1px solid color-mix(in srgb, $eu-blue 20%, $color-white);
+  border-radius: 8px;
+  padding: $spacing-lg;
+}
+
+.financingList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.financingItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: $spacing-md;
+  font-size: $font-size-base;
+  flex-wrap: wrap;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid color-mix(in srgb, $eu-blue 15%, $color-white);
+    padding-bottom: $spacing-sm;
+  }
+}
+
+.financingLabel {
+  color: $color-text-light;
+}
+
+.financingValue {
+  color: $eu-blue;
+  font-weight: $font-weight-semibold;
+  white-space: nowrap;
 }
 
 // ── Section footer ────────────────────────────────────────────────

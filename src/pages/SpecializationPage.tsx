@@ -10,29 +10,42 @@ import CtaButton from '@components/common/CtaButton/CtaButton'
 import SpecialistCard from '@components/common/SpecialistCard/SpecialistCard'
 import EUFunding from '@components/sections/EUFunding/EUFunding'
 import imgRehabilitation from '@/assets/img/rehabilitation.webp'
-import imgRehabilitationHero from '@/assets/img/hero/rehabilitation-hero.webp'
+import imgHeroCardiology from '@/assets/img/hero/cardiology-hero.webp'
+import imgHeroPediatricCardiology from '@/assets/img/hero/pediatric-cardiology.webp'
+import imgHeroGynecology from '@/assets/img/hero/gynecology-hero.webp'
+import imgHeroGastrology from '@/assets/img/hero/gastrology.webp'
+import imgHeroDiabetology from '@/assets/img/hero/diabetology.webp'
+import imgHeroOrthopedics from '@/assets/img/hero/orthopedics-hero.webp'
+import imgHeroNeurosurgery from '@/assets/img/hero/neurosurgery.webp'
+import imgHeroNeurology from '@/assets/img/hero/neurology-hero.webp'
+import imgHeroPsycho from '@/assets/img/hero/psycho-hero.webp'
+import imgHeroUrology from '@/assets/img/hero/urology.webp'
+import imgHeroMultiSpec from '@/assets/img/hero/multi-spec-hero.webp'
+import imgHeroAesthetics from '@/assets/img/hero/aesthetics-hero.webp'
+import imgHeroBiopsy from '@/assets/img/hero/core-needle-biopsy.webp'
+import imgHeroRehabilitation from '@/assets/img/hero/rehabilitation-hero.webp'
 import imgEuFunds from '@/assets/logo/EU-founds.webp'
 import styles from './SpecializationPage.module.scss'
 
 const heroImages: Record<string, string> = {
-  'kardiologia':          '/img/hero/cardiology-hero.webp',
-  'kardiologia-dziecieca': '/img/hero/pediatric-cardiology.webp',
-  'ginekologia':          '/img/hero/gynecology-hero.webp',
-  'gastrologia':          '/img/hero/gastrology.webp',
-  'endokrynologia':       '/img/hero/diabetology.webp',
-  'ortopedia':            '/img/hero/orthopedics-hero.webp',
-  'neurochirurgia':       '/img/hero/neurosurgery.webp',
-  'neurologia':           '/img/hero/neurology-hero.webp',
-  'psychiatria':          '/img/hero/psycho-hero.webp',
-  'psychologia':          '/img/hero/psycho-hero.webp',
-  'urologia':             '/img/hero/urology.webp',
-  'dietetyka':            '/img/hero/multi-spec-hero.webp',
-  'diabetologia':         '/img/hero/diabetology.webp',
-  'medycyna-estetyczna':  '/img/hero/aesthetics-hero.webp',
-  'biopsja':              '/img/hero/core-needle-biopsy.webp',
-  'biopsja-grubogłowa':   '/img/hero/core-needle-biopsy.webp',
-  'rehabilitacja':        imgRehabilitationHero,
-  'diagnostyka-usg':      '/img/hero/multi-spec-hero.webp',
+  'kardiologia':           imgHeroCardiology,
+  'kardiologia-dziecieca': imgHeroPediatricCardiology,
+  'ginekologia':           imgHeroGynecology,
+  'gastrologia':           imgHeroGastrology,
+  'endokrynologia':        imgHeroDiabetology,
+  'ortopedia':             imgHeroOrthopedics,
+  'neurochirurgia':        imgHeroNeurosurgery,
+  'neurologia':            imgHeroNeurology,
+  'psychiatria':           imgHeroPsycho,
+  'psychologia':           imgHeroPsycho,
+  'urologia':              imgHeroUrology,
+  'dietetyka':             imgHeroMultiSpec,
+  'diabetologia':          imgHeroDiabetology,
+  'medycyna-estetyczna':   imgHeroAesthetics,
+  'biopsja':               imgHeroBiopsy,
+  'biopsja-grubogłowa':    imgHeroBiopsy,
+  'rehabilitacja':         imgHeroRehabilitation,
+  'diagnostyka-usg':       imgHeroMultiSpec,
 }
 
 function SpecializationPage() {

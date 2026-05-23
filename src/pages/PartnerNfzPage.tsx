@@ -19,7 +19,6 @@ function PartnerNfzPage() {
 
   const breadcrumbs = [
     { label: t('common.breadcrumbHome'), href: '/' },
-    { label: t('common.breadcrumbPartners') },
     { label: 'NFZ' },
   ]
 
