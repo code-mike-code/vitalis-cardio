@@ -190,7 +190,7 @@ export const en = {
     changeLanguage: 'Switch language',
     brandAlt: 'Vitalis Clinic',
     loadingBooking: 'Loading booking page…',
-    skipToContent: 'Go to home page',
+    skipToContent: 'Skip to main content',
     pauseCarousel: 'Pause slideshow',
     playCarousel: 'Play slideshow',
     opensNewTab: '(opens in new tab)',

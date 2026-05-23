@@ -190,7 +190,7 @@ export const ua = {
     changeLanguage: 'Змінити мову',
     brandAlt: 'Клініка Vitalis',
     loadingBooking: 'Завантаження сторінки бронювання…',
-    skipToContent: 'Перейти на головну сторінку',
+    skipToContent: 'Перейти до основного вмісту',
     pauseCarousel: 'Зупинити показ слайдів',
     playCarousel: 'Відновити показ слайдів',
     opensNewTab: '(відкривається в новій вкладці)',
