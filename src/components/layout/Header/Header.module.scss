@@ -111,6 +111,10 @@ $h-cta-py:        clamp(5px, 0.7vw, #{$spacing-sm});
   text-overflow: ellipsis;
   min-width: 0;
 
+  &:has(a:focus-visible) {
+    overflow: visible;
+  }
+
   @media (max-width: 1000px) {
     display: none;
   }
@@ -124,6 +128,12 @@ $h-cta-py:        clamp(5px, 0.7vw, #{$spacing-sm});
   &:hover {
     color: $color-primary;
     text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 3px;
+    border-radius: $border-radius-sm;
   }
 }
 

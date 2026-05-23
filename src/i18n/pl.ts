@@ -190,7 +190,7 @@ export const pl = {
     changeLanguage: 'Zmień język',
     brandAlt: 'Klinika Vitalis',
     loadingBooking: 'Ładowanie strony rezerwacji…',
-    skipToContent: 'Przejdź do treści głównej',
+    skipToContent: 'Przejdź do strony głównej',
     pauseCarousel: 'Zatrzymaj pokaz slajdów',
     playCarousel: 'Wznów pokaz slajdów',
     opensNewTab: '(otwiera w nowej karcie)',
