@@ -187,6 +187,27 @@ $eu-project-name-fs: clamp(#{$font-size-xl}, 3vw, #{$font-size-2xl});
   }
 }
 
+.downloadActions {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  flex-shrink: 0;
+}
+
+.fileMeta {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  color: $color-text-light;
+  opacity: 0.7;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+
+  .downloadLink:hover & {
+    color: $eu-blue;
+    opacity: 1;
+  }
+}
+
 .downloadIcon {
   flex-shrink: 0;
   width: 18px;

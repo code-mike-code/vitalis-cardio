@@ -1,0 +1,42 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.widget {
+  position: fixed;
+  bottom: clamp(1rem, 3vw, 1.5rem);
+  right: clamp(1rem, 3vw, 1.5rem);
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: $color-text;
+  text-decoration: none;
+  background: #fff;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: opacity $transition-base, transform $transition-base;
+
+  svg {
+    width: 45px;
+    height: 45px;
+    fill: currentColor;
+
+    @include respond-to('mobile') {
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  &:hover {
+    opacity: 0.65;
+    transform: scale(1.1);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 3px;
+  }
+}

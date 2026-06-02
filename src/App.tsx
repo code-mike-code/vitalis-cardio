@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { LanguageProvider, useLanguage } from '@/hooks/useLanguage'
 import ScrollToHash from '@components/ui/ScrollToHash'
 import CookieConsent from '@components/ui/CookieConsent/CookieConsent'
+import FacebookWidget from '@components/ui/FacebookWidget/FacebookWidget'
 import HomePage from '@/pages/HomePage'
 import RodoPage from '@/pages/RodoPage'
 import PrivacyPage from '@/pages/PrivacyPage'
@@ -43,6 +44,7 @@ function App() {
       <BrowserRouter>
         <ScrollToHash />
         <CookieConsent />
+        <FacebookWidget />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/specjalizacje" element={<Suspense fallback={null}><SpecializationsPage /></Suspense>} />

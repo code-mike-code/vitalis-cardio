@@ -8,11 +8,11 @@ import rodoUrl from '@/assets/docs/forms/rodo rehabilitacja (1).docx?url'
 import styles from './EUFunding.module.scss'
 
 const forms = [
-  { label: 'Dane uczestnika',                          href: daneUrl,              filename: 'Dane uczestnika.docx' },
-  { label: 'Formularz potrzeb pacjenta',               href: formularzUrl,         filename: 'FORMULARZ POTRZEB PACJENTA.docx' },
-  { label: 'Oświadczenie uczestnika projektu',         href: oswiadczenieUrl,      filename: 'OŚWIADCZENIE UCZESTNIKA PROJEKTU.docx' },
-  { label: 'Oświadczenie / zaświadczenie (do 4 tyg.)', href: oswiadczenieZaswUrl,  filename: 'oświadczenie zaświadczenie do 4 tygodni.docx' },
-  { label: 'RODO – rehabilitacja',                     href: rodoUrl,              filename: 'rodo rehabilitacja (1).docx' },
+  { label: 'Dane uczestnika',                          href: daneUrl,              filename: 'Dane uczestnika.docx',                          format: 'DOCX', size: '25 KB', lang: 'PL' },
+  { label: 'Formularz potrzeb pacjenta',               href: formularzUrl,         filename: 'FORMULARZ POTRZEB PACJENTA.docx',               format: 'DOCX', size: '21 KB', lang: 'PL' },
+  { label: 'Oświadczenie uczestnika projektu',         href: oswiadczenieUrl,      filename: 'OŚWIADCZENIE UCZESTNIKA PROJEKTU.docx',         format: 'DOCX', size: '56 KB', lang: 'PL' },
+  { label: 'Oświadczenie / zaświadczenie (do 4 tyg.)', href: oswiadczenieZaswUrl,  filename: 'oświadczenie zaświadczenie do 4 tygodni.docx',  format: 'DOCX', size: '20 KB', lang: 'PL' },
+  { label: 'RODO – rehabilitacja',                     href: rodoUrl,              filename: 'rodo rehabilitacja (1).docx',                   format: 'DOCX', size: '23 KB', lang: 'PL' },
 ]
 
 function EUFunding() {
@@ -83,7 +83,7 @@ function EUFunding() {
           <div className={styles.downloadsBlock}>
             <p className={styles.listTitle}>{t('euFunding.downloadsTitle')}</p>
             <ul className={styles.downloadsList}>
-              {forms.map(({ label, href, filename }) => (
+              {forms.map(({ label, href, filename, format, size, lang }) => (
                 <li key={filename} className={styles.downloadsItem}>
                   <svg className={styles.docIcon} aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -94,11 +94,14 @@ function EUFunding() {
                   </svg>
                   <a href={href} download={filename} className={styles.downloadLink}>
                     {label}
-                    <svg className={styles.downloadIcon} aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                      <polyline points="7 10 12 15 17 10" />
-                      <line x1="12" y1="15" x2="12" y2="3" />
-                    </svg>
+                    <span className={styles.downloadActions}>
+                      <span className={styles.fileMeta}>{format} · {size} · {lang}</span>
+                      <svg className={styles.downloadIcon} aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                      </svg>
+                    </span>
                   </a>
                 </li>
               ))}
