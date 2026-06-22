@@ -142,6 +142,7 @@ export const pl = {
     qualificationInfo: 'Kwalifikację uczestników przeprowadza zespół projektowy złożony z lekarza specjalisty ortopedy lub rehabilitacji kardiologicznej i fizjoterapeuty. Dla każdego zakwalifikowanego uczestnika opracowywany jest Indywidualny Plan Rehabilitacji dostosowany do jego stanu zdrowia i zakresu potrzebnej pomocy rehabilitacyjnej. Uczestnikowi zlecane jest co najmniej 7 procedur z zakresu fizjoterapii (kinezyterapii, fizykoterapii i masażu leczniczego), w tym co najmniej 4 z zakresu kinezyterapii.',
     educationInfo: 'Do wszystkich uczestników skierowany jest program edukacyjny obejmujący spotkania grupowe na temat chorób kręgosłupa i stawów obwodowych, instruktaże ergonomii w domu i pracy, zachowań prozdrowotnych, sposobów radzenia sobie ze stresem oraz ćwiczeń do wykonania w warunkach domowych.',
     downloadsTitle: 'Dokumenty do pobrania:',
+    formToggle: 'Wypełnij formularz zgłoszeniowy online',
     accessibilityTitle: 'Gdzie zgłosić brak dostępności:',
     accessibilityEmail: 'KPP_KPON@umwm.malopolska.pl',
     accessibilityCoord1: 'Koordynator ds. KPP z ramienia IZ FEM 2021–2027: Agnieszka Bartnik, tel. 12 299 06 72',

@@ -216,6 +216,68 @@ $eu-project-name-fs: clamp(#{$font-size-xl}, 3vw, #{$font-size-2xl});
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
+// ── Inline registration form (collapsible) ────────────────────────
+.formDetails {
+  margin-top: $spacing-md;
+  border-top: 1px solid color-mix(in srgb, $eu-blue 12%, $color-white);
+  padding-top: $spacing-md;
+}
+
+.formSummary {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  cursor: pointer;
+  list-style: none;
+  padding: $spacing-md 0;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-text;
+  transition: color 0.2s ease;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &:hover {
+    color: $eu-blue;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $eu-blue;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  span {
+    flex: 1;
+  }
+}
+
+.formIcon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: $eu-blue;
+  opacity: 0.6;
+}
+
+.formChevron {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: $color-text-light;
+  transition: transform 0.2s ease;
+
+  .formDetails[open] & {
+    transform: rotate(180deg);
+  }
+}
+
+.formInner {
+  margin-top: $spacing-sm;
+}
+
 // ── Accessibility ─────────────────────────────────────────────────
 .accessibilityBlock {
   display: flex;

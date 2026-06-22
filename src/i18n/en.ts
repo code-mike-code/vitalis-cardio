@@ -142,6 +142,7 @@ export const en = {
     qualificationInfo: 'Participant qualification is carried out by a project team of an orthopaedic or cardiac rehabilitation specialist and a physiotherapist. Each qualified participant receives an Individual Rehabilitation Plan tailored to their condition and the scope of rehabilitation needed. Each participant is prescribed at least 7 physiotherapy procedures (kinesiotherapy, physiotherapy and therapeutic massage), including at least 4 from kinesiotherapy.',
     educationInfo: 'All participants take part in an educational programme including group sessions on spinal and peripheral joint diseases, ergonomics at home and work, health-promoting behaviours, stress management and home exercise routines.',
     downloadsTitle: 'Documents to download:',
+    formToggle: 'Fill out the registration form online',
     accessibilityTitle: 'Where to report accessibility issues:',
     accessibilityEmail: 'KPP_KPON@umwm.malopolska.pl',
     accessibilityCoord1: 'KPP coordinator (IZ FEM 2021–2027): Agnieszka Bartnik, tel. 12 299 06 72',
