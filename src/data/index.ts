@@ -1273,7 +1273,7 @@ export const specializations: Specialization[] = [
   },
   {
     id: 18,
-    slug: 'biopsja-grubogłowa',
+    slug: 'biopsja-gruboiglowa',
     name: 'Biopsja gruboigłowa – guz piersi',
     menuLabel: 'Biopsja gruboigłowa',
     description: 'W Poradni Vitalis oferujemy szybką i rzetelną diagnostykę guzów piersi opartą na USG wykonywanym na wysokiej klasy aparacie Philips Affinity oraz ewentualnej biopsji gruboigłowej. Rak piersi jest najczęstszym nowotworem wśród kobiet i jedną z głównych przyczyn zgonów z powodu nowotworów złośliwych.',
@@ -2704,7 +2704,7 @@ export const specialists: Specialist[] = [
     titlePrefix: 'lek. med.',
     name: 'Tomasz Blachura',
     role: 'Chirurg, diagnostyka piersi',
-    specializationSlug: 'biopsja-grubogłowa',
+    specializationSlug: 'biopsja-gruboiglowa',
     photo: imgAvatarMan,
     bio: '',
     translations: {

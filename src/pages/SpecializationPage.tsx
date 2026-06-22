@@ -43,7 +43,7 @@ const heroImages: Record<string, string> = {
   'diabetologia':          imgHeroDiabetology,
   'medycyna-estetyczna':   imgHeroAesthetics,
   'biopsja':               imgHeroBiopsy,
-  'biopsja-grubogłowa':    imgHeroBiopsy,
+  'biopsja-gruboiglowa':   imgHeroBiopsy,
   'rehabilitacja':         imgHeroRehabilitation,
   'diagnostyka-usg':       imgHeroMultiSpec,
 }
