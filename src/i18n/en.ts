@@ -124,7 +124,7 @@ export const en = {
   euFunding: {
     label: 'EU Funding',
     projectId: 'FEMP.06.08-IP.02-0454/24',
-    projectName: 'Prevention and rehabilitation of people with musculoskeletal disorders in the Chrzanów district',
+    projectName: 'Prevention and rehabilitation of people with musculoskeletal disorders in the Chrzanów district run by the Vitalis Specialist Clinic and Rehabilitation Team in Trzebinia',
     intro: 'From 1 November 2025, our facility – the Vitalis Specialist Clinics and Rehabilitation Centre in Trzebinia – will launch a project co-financed by the European Union, aimed at implementing a prevention and rehabilitation programme for 400 residents of the Chrzanów district.',
     goal: 'The project aims to implement a health policy programme in the Chrzanów district focused on the prevention and rehabilitation of people with musculoskeletal dysfunctions that hinder professional work. Support will cover 400 people, including 120 aged 40–59, residing in the Chrzanów district, working or registered as unemployed, who have been previously diagnosed with a musculoskeletal dysfunction.',
     mainGoal: 'The main goal of the project is to restore full or maximum achievable physical fitness in at least 70% of participants.',

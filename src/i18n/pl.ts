@@ -124,7 +124,7 @@ export const pl = {
   euFunding: {
     label: 'Dofinansowanie z Unii Europejskiej',
     projectId: 'FEMP.06.08-IP.02-0454/24',
-    projectName: 'Profilaktyka i rehabilitacja osób z dysfunkcjami narządu ruchu w powiecie chrzanowskim',
+    projectName: 'Profilaktyka i rehabilitacja osób z dysfunkcjami narządu ruchu w powiecie chrzanowskim prowadzona przez Zespół Specjalistycznych Poradni i Rehabilitacji Vitalis w Trzebini',
     intro: 'Od 1 listopada 2025 roku w naszej placówce – Zespole Specjalistycznych Poradni i Rehabilitacji Vitalis w Trzebini – rusza projekt współfinansowany przez Unię Europejską, mający na celu wdrożenie programu profilaktyki i rehabilitacji dla 400 mieszkańców powiatu chrzanowskiego.',
     goal: 'Celem projektu jest wdrożenie programu realizującego na terenie powiatu chrzanowskiego politykę zdrowotną pn. „Profilaktyka i rehabilitacja osób z dysfunkcjami narządu ruchu utrudniającymi wykonywanie pracy zawodowej". Wsparciem objętych będzie 400 osób, w tym 120 osób w wieku 40–59 lat, mieszkających w powiecie chrzanowskim, pracujących lub zarejestrowanych jako bezrobotne, uprzednio zdiagnozowanych z dysfunkcją narządu ruchu.',
     mainGoal: 'Celem głównym wsparcia zaplanowanego w projekcie będzie przywrócenie pełnej lub maksymalnie możliwej do osiągnięcia sprawności fizycznej u co najmniej 70% uczestników.',
