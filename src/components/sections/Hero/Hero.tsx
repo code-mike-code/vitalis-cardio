@@ -136,28 +136,30 @@ function Hero() {
                     {t(`hero.carousel.slide${i + 1}.bullet3`)}
                   </li>
                 </ul>
-                <div className={styles.slideCtaWrap}>
-                  <CtaButton
-                    to={`/specjalizacje/${slide.slug}`}
-                    variant="outline"
-                    size="md"
-                    className={styles.slideBtn}
-                    ariaLabel={`${t('hero.carousel.cta')}: ${t(`hero.carousel.slide${i + 1}.name`)}`}
-                  >
-                    {t('hero.carousel.cta')}
-                  </CtaButton>
+                <div className={styles.slideCtaRow}>
+                  <div className={styles.slideCtaWrap}>
+                    <CtaButton
+                      to={`/specjalizacje/${slide.slug}`}
+                      variant="outline"
+                      size="md"
+                      className={styles.slideBtn}
+                      ariaLabel={`${t('hero.carousel.cta')}: ${t(`hero.carousel.slide${i + 1}.name`)}`}
+                    >
+                      {t('hero.carousel.cta')}
+                    </CtaButton>
+                  </div>
+                  {slide.slug === 'rehabilitacja' && (
+                    <Link to="/specjalizacje/rehabilitacja" className={styles.euSlideBlock}>
+                      <img
+                        src={imgEuFunds}
+                        alt={t('euFunding.label')}
+                        className={styles.euLogoSlide}
+                      />
+                      <p className={styles.euSlideLabel}>{t('euFunding.label')}</p>
+                      <p className={styles.euSlideProject}>Projekt: <strong>{t('euFunding.projectId')}</strong></p>
+                    </Link>
+                  )}
                 </div>
-                {slide.slug === 'rehabilitacja' && (
-                  <Link to="/specjalizacje/rehabilitacja" className={styles.euSlideBlock}>
-                    <img
-                      src={imgEuFunds}
-                      alt={t('euFunding.label')}
-                      className={styles.euLogoSlide}
-                    />
-                    <p className={styles.euSlideLabel}>{t('euFunding.label')}</p>
-                    <p className={styles.euSlideProject}>Projekt: <strong>{t('euFunding.projectId')}</strong></p>
-                  </Link>
-                )}
               </div>
             </div>
           ))}

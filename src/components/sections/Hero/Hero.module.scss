@@ -13,16 +13,16 @@ $hero-text-small-fs:    clamp(0.75rem, 1.6vw, 1.54rem);
   position: sticky;
   top: var(--sticky-top, 0px);
   z-index: 1;
-  height: 65svh;
+  height: 68svh;
   overflow: hidden;
 }
 
-// ── Stack section 2: main heading (35svh) ─────────────────────────
+// ── Stack section 2: main heading (32svh) ─────────────────────────
 .heroHeading {
   position: sticky;
   top: var(--sticky-top, 0px);
   z-index: 2;
-  height: 35svh;
+  height: 32svh;
   display: flex;
   align-items: center;
   background: $color-white;
@@ -192,9 +192,21 @@ $hero-text-small-fs:    clamp(0.75rem, 1.6vw, 1.54rem);
   50%       { transform: translateX(8px); }
 }
 
-// ── Slide CTA button ──────────────────────────────────────────────
-.slideCtaWrap {
+// ── Slide CTA button + EU funding block row ───────────────────────
+.slideCtaRow {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
   margin-top: $spacing-xs;
+
+  @include respond-to('tablet') {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.slideCtaWrap {
+  flex-shrink: 0;
 }
 
 .slideBtn {
@@ -212,7 +224,7 @@ $hero-text-small-fs:    clamp(0.75rem, 1.6vw, 1.54rem);
   position: absolute;
   bottom: 0;
   left: 50%;
-  padding-bottom: 10px;
+  padding-bottom: 2px;
   transform: translateX(-50%);
   display: flex;
   gap: $spacing-sm;
