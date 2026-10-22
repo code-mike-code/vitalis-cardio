@@ -11,6 +11,10 @@ import { Language, Translations, translations } from '@/i18n'
 
 const STORAGE_KEY = 'vitalis-lang'
 
+// Map internal language key to a valid BCP 47 / ISO 639-1 code for <html lang>.
+// Ukrainian is 'uk' (ISO 639-1); 'ua' is the country code, not a language code.
+const HTML_LANG: Record<Language, string> = { pl: 'pl', en: 'en', ua: 'uk' }
+
 function getInitialLanguage(): Language {
   const stored = localStorage.getItem(STORAGE_KEY) as Language | null
   if (stored && stored in translations) return stored
@@ -52,7 +56,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }, [])
 
   useEffect(() => {
-    document.documentElement.lang = language
+    document.documentElement.lang = HTML_LANG[language]
     document.title = createT(translations[language])('meta.siteTitle')
   }, [language])
 
